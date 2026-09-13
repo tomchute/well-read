@@ -1,0 +1,46 @@
+{
+  "id": "play-with-full-text",
+  "type": "play",
+  "title": "A Whole Script Shipped Whole",
+  "author": "Fixture Playwright",
+  "year": 1900,
+  "era": "19th_century",
+  "form": "one-act play",
+  "themes": ["home"],
+  "tags": ["fixture"],
+  "length": { "unit": "pages", "value": 4 },
+  "difficulty": 1,
+  "source": {
+    "name": "Fixture Public Domain Press",
+    "url": "https://example.org/fixtures/whole-script",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-01"
+  },
+  "textPolicy": "full",
+  "text": "This fixture pretends to hold an entire public-domain script, which is exactly what the never-full gate forbids: types 'book', 'essay', and 'play' must always use textPolicy 'excerpt' or 'pending', never 'full', regardless of rights status.",
+  "ebookLinks": [
+    {
+      "provider": "gutenberg",
+      "format": "epub",
+      "url": "https://example.org/fixtures/whole-script.epub"
+    }
+  ],
+  "masterNotes": {
+    "context": "Fixture for the book/essay/play-always-excerpt gate: type is 'play' but textPolicy is 'full'.",
+    "form": "Fixture form notes.",
+    "keyImages": ["Fixture image one.", "Fixture image two."],
+    "whatToNotice": ["Fixture notice."],
+    "discussionQuestions": [
+      "Fixture question one?",
+      "Fixture question two?",
+      "Fixture question three?"
+    ],
+    "furtherReading": ["Fixture further reading."]
+  },
+  "pipeline": {
+    "batchId": "fixture-batch",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "fixture",
+    "schemaVersion": 1
+  }
+}

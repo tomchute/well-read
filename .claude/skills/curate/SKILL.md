@@ -41,11 +41,14 @@ description: Add one validated batch of well-respected works to well-read and co
    and record the source in `source`. For public-domain text, run
    `npm run inject:excerpt -- --id <id> --url <raw github url>` (Standard
    Ebooks or GITenberg on GitHub) to copy the verbatim text by script — never
-   type or transcribe it from memory. Mark contemporary prose `pending` with
-   tag `needs-text` (no `text`/`excerpt` yet; full metadata, master notes, and
-   links still required) since it cannot be sourced by script and must not be
-   typed from memory. Contemporary short poems remain `full` only if the text
-   can be copied from a source file; otherwise mark them `pending` too.
+   type or transcribe it from memory. For text that has no fetchable raw-text
+   URL (a human-supplied paste, a print-only source), use the `--file` route
+   instead — see "Supplying text by hand" in `docs/editorial-policy.md`. Mark
+   contemporary prose `pending` with tag `needs-text` (no `text`/`excerpt` yet;
+   full metadata, master notes, and links still required) since it cannot be
+   sourced by script and must not be typed from memory. Contemporary short
+   poems remain `full` only if the text can be copied from a source file;
+   otherwise mark them `pending` too.
 
 5. **Assemble the batch**: 4–6 works total, mixing:
    - at least 2 poems
@@ -60,12 +63,23 @@ description: Add one validated batch of well-respected works to well-read and co
    `docs/master-notes-style-guide.md` — voice, length targets, and the banned
    moves list. No plot summary in place of reading; no invented biography.
 
-7. **Write the content files** at `content/works/<id>.json`, one per work.
+7. **Self-review each new work's notes.** Launch a `haiku` sub-agent per work
+   (or one sub-agent covering the whole batch) that reads the work's shipped
+   `text`/`excerpt` alongside its `masterNotes` and confirms, per
+   `docs/master-notes-style-guide.md`'s "Three hard rules", that every
+   `keyImages`, `whatToNotice`, and `discussionQuestions` entry is locatable
+   in that text — with at most one exception, prefixed `"Beyond this
+   excerpt:"` — and that the work is not one whose own notes have to warn
+   against its overfamiliarity. Any miss fails the batch: fix the offending
+   note (or swap the work, per `docs/editorial-policy.md`) before moving on to
+   validation.
+
+8. **Write the content files** at `content/works/<id>.json`, one per work.
    Id convention: `<author-short-name>-<short-title>-<year>`, kebab-case, e.g.
    `chekhov-lady-with-the-dog-1899`. Author short name is surname only unless
    that collides with an existing id, in which case add a given-name initial.
 
-8. **Validate.**
+9. **Validate.**
    ```
    npm run validate:content
    ```
@@ -74,20 +88,20 @@ description: Add one validated batch of well-respected works to well-read and co
    write a short failure summary (which file, which check, what you tried)
    instead of continuing to guess.
 
-9. **Rebuild the manifest.**
-   ```
-   npm run build:manifest
-   ```
-   Confirm it reports the expected new work count and no dedupe warnings for
-   this batch.
+10. **Rebuild the manifest.**
+    ```
+    npm run build:manifest
+    ```
+    Confirm it reports the expected new work count and no dedupe warnings for
+    this batch.
 
-10. **Run the test suite.**
+11. **Run the test suite.**
     ```
     npm test
     ```
     All green before committing — this is the last gate before `main`.
 
-11. **Commit and push directly to `main`.**
+12. **Commit and push directly to `main`.**
     ```
     git add content/works/ public/data/
     git commit -m "curate: batch <YYYY-MM-DD> (<n> works)"

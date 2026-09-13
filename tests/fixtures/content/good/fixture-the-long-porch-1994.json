@@ -1,0 +1,58 @@
+{
+  "id": "fixture-the-long-porch-1994",
+  "type": "play",
+  "title": "The Long Porch",
+  "author": "Fixture Playwright",
+  "year": 1994,
+  "era": "contemporary",
+  "form": "three-act drama",
+  "themes": ["family", "home", "memory"],
+  "tags": ["fixture", "regional-theater"],
+  "length": {
+    "unit": "pages",
+    "value": 6
+  },
+  "difficulty": 2,
+  "source": {
+    "name": "Fixture Dramatists Press",
+    "url": "https://example.org/fixtures/the-long-porch",
+    "license": "all-rights-reserved",
+    "retrievedDate": "2026-09-01"
+  },
+  "textPolicy": "excerpt",
+  "excerpt": "ACT ONE, SCENE ONE\n\n(A wraparound porch at dusk, late summer. Two rocking chairs, a screen door, a porch light not yet switched on. MARGARET, sixties, sits shelling peas into a bowl. Her son, DANNY, thirties, stands at the top of the porch steps with a duffel bag, not yet announcing himself.)\n\nMARGARET: You're going to stand there till the mosquitoes find you, or you're going to say something.\n\nDANNY: How'd you know it was me.\n\nMARGARET: Same walk your father had. Heavy on the left foot. I heard you from the mailbox.\n\n(DANNY sets the bag down but does not sit.)\n\nDANNY: I would've called first.\n\nMARGARET: You would've, and then you would've talked yourself out of it, same as the last four times. So I'm glad you didn't.\n\n(A long pause. MARGARET keeps shelling peas, not looking up.)\n\nDANNY: The house looks smaller.\n\nMARGARET: Houses don't shrink. People get used to bigger rooms elsewhere and come back expecting the old ones to have grown to match. It's the same porch it always was.\n\nDANNY: I didn't mean it as a complaint.\n\nMARGARET: I know what you meant it as. Sit down, Daniel, before I get a crick in my neck looking up at you like you're delivering a verdict.\n\n(DANNY sits, finally, in the second rocking chair. A silence. He looks out at the yard rather than at her.)\n\nDANNY: I saw Aunt Ruth's car wasn't in the drive. I thought maybe she'd be here.\n\nMARGARET: She comes Sundays now. Since your father. Says the house is too quiet otherwise, which I think is her way of saying she thinks I'm too quiet otherwise, and she may not be wrong about that.\n\nDANNY: I should've come for the funeral.\n\nMARGARET: You should have. But you didn't, and I'm not going to spend what's left of this evening telling you what you already know better than I could tell you.\n\n(She finally looks up at him.)\n\nMARGARET (CONT'D): You look like you haven't slept on a real bed in some time.\n\nDANNY: The truck seats recline further than you'd think.\n\nMARGARET: That's not an answer to what I said, it's a joke instead of one. Your father used to do that. Joke instead of answering. I never decided if I found it endearing or maddening. Some nights both.\n\n(DANNY takes a handful of unshelled peas from the bowl without being offered any, begins shelling them himself, clumsily.)\n\nDANNY: I don't know why I'm here, exactly. I had a whole speech worked out somewhere around the state line. Lost most of it by the time I hit the county road.\n\nMARGARET: Keep shelling. The good speeches usually come out sideways, once your hands are busy with something else. I've found that's true of most things worth saying.\n\n(Lights begin to dim slowly to end the scene, the two of them still shelling peas in near silence, the porch light finally switched on somewhere in the fade.)\n\nEND OF SCENE ONE",
+  "excerptNote": "Act One, Scene One, complete",
+  "externalLinks": [
+    {
+      "kind": "publisher",
+      "url": "https://example.org/fixtures/the-long-porch",
+      "label": "License from Fixture Dramatists Press"
+    }
+  ],
+  "masterNotes": {
+    "context": "This fixture stands in for a contemporary play shown as a complete-scene excerpt under mandatory outbound links, per the all-rights-reserved rights posture and the book/play chapter-or-scene excerpt rule.",
+    "form": "Two-hander dialogue scene relying on indirection and interrupted small talk to carry an estranged mother-and-son reunion, ending on an unresolved silence rather than a confrontation.",
+    "keyImages": [
+      "The bowl of peas passed wordlessly between them, giving both characters something to do with their hands while avoiding the real conversation.",
+      "The porch light switched on only in the fade, marking the threshold between the guarded opening exchange and whatever conversation follows."
+    ],
+    "whatToNotice": [
+      "Notice how Margaret answers Danny's small talk with something sharper each time, without ever raising her voice.",
+      "Notice that neither character says Danny's father's name directly in this scene — notice how they route around it instead."
+    ],
+    "discussionQuestions": [
+      "Why does Margaret redirect Danny toward shelling peas rather than pressing him to explain himself directly?",
+      "What does the missed funeral tell us about the history between Danny and Margaret that the scene never states outright?",
+      "How does the delayed porch light function as a piece of stage business rather than mere lighting design?"
+    ],
+    "furtherReading": [
+      "Fixture note: this entry exists only to exercise validate-content.mjs and has no real further reading."
+    ]
+  },
+  "pipeline": {
+    "batchId": "fixture-batch",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "fixture",
+    "schemaVersion": 1
+  }
+}

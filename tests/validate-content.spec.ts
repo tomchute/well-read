@@ -17,7 +17,8 @@ const BAD_FIXTURE_GATES: Record<string, string> = {
   'filename-does-not-match-id.json': 'filename must equal id',
   'missing-text-for-full-policy.json': 'requires `text` to be set',
   'excerpt-with-text-present.json': 'must not set `text`',
-  'book-not-using-excerpt.json': "must always use textPolicy 'excerpt'",
+  'book-not-using-excerpt.json': "must always use textPolicy 'excerpt' or 'pending'",
+  'play-with-full-text.json': "must always use textPolicy 'excerpt' or 'pending'",
   'theme-outside-vocabulary.json': 'controlled vocabulary',
   'key-images-below-minimum.json': 'keyImages must have at least 2 entries',
   'discussion-questions-below-minimum.json': 'discussionQuestions must have at least 3 entries',
@@ -36,16 +37,18 @@ describe('validate-content: good fixtures', () => {
     }
   });
 
-  it('covers poem, short_story, and book, and all three textPolicy values', () => {
+  it('covers poem, short_story, book, essay, and play, and all three textPolicy values', () => {
     const files = report.results.map((r) => r.file).join(' ');
     // Sanity check via the fixtures we authored, not a schema re-implementation.
-    expect(report.total).toBe(6);
+    expect(report.total).toBe(8);
     expect(files).toContain('dickinson-because-i-could-not-stop-for-death-1863.json'); // poem, full
     expect(files).toContain('anon-riverlight-verses-1888.json'); // poem, excerpt
     expect(files).toContain('fixture-office-hours-2019.json'); // short_story, excerpt
     expect(files).toContain('fixture-larkspur-street-2021.json'); // book, excerpt
     expect(files).toContain('fixture-porch-light-2022.json'); // poem, full
     expect(files).toContain('fixture-quiet-hours-2023.json'); // short_story, pending
+    expect(files).toContain('fixture-lamplight-hours-2018.json'); // essay, excerpt
+    expect(files).toContain('fixture-the-long-porch-1994.json'); // play, excerpt
   });
 });
 

@@ -6,6 +6,23 @@ voice, length, structure, and one worked example. Editorial input constraints
 (theme vocab, minimum counts) live in `docs/editorial-policy.md`; this file is
 about quality of the writing itself.
 
+## Three hard rules
+
+- **Overfamiliarity is a reason to swap, not include.** If a work is so
+  widely taught or quoted that the notes would need to warn the reader
+  against reading it on autopilot, that is a signal to pick a different work
+  (see `docs/editorial-policy.md`), not a note to write around.
+- **Every anchor must be locatable in the shipped text.** Every entry in
+  `keyImages`, `whatToNotice`, and `discussionQuestions` must point at
+  something findable in the work's own `text`/`excerpt` field. At most one
+  item across all three fields may look beyond the shipped text, and it must
+  be prefixed `"Beyond this excerpt:"` so the reader knows it is not there to
+  find.
+- **Never assume the reader finished a book the app did not give them.**
+  `context` and `form` must not rely on, or spoil, anything past the given
+  `text`/`excerpt` — the reader has read exactly what well-read shipped them,
+  nothing more.
+
 ## Voice
 
 Write as a brilliant, warm tutor sitting next to the reader, not a lecturer in

@@ -7,3 +7,5 @@ Status: Phase 0 (scaffold) and Phase 1 (content schema, pipeline scripts, 17 see
 - Roadmap and work packages: [ROADMAP.md](ROADMAP.md)
 - Conventions and doc index: [CLAUDE.md](CLAUDE.md)
 - How work is delegated and how the content Routine runs: [docs/orchestration.md](docs/orchestration.md)
+- Adding text by hand (for works the Routine couldn't fetch by script): see
+  "Supplying text by hand" in [docs/editorial-policy.md](docs/editorial-policy.md).
