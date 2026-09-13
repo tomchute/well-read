@@ -3,11 +3,11 @@
 /**
  * inject-excerpt.mjs
  *
- * Copies verbatim text from a source URL into `content/works/<id>.json`.
- * Verbatim literary text must never be typed by a model in this pipeline —
- * this script is the only thing allowed to write `text`/`excerpt` fields
- * with real source text, and it does so by fetching and mechanically
- * transforming bytes, never by generating prose.
+ * Copies verbatim text from a raw GitHub or web page URL, or a local file,
+ * into `content/works/<id>.json`. Verbatim literary text must never be typed
+ * by a model in this pipeline — this script is the only thing allowed to
+ * write `text`/`excerpt` fields with real source text, and it does so by
+ * fetching and mechanically transforming bytes, never by generating prose.
  *
  * Reachable GitHub mirrors used as sources (see docs/open-source-reuse.md):
  *   - Standard Ebooks, e.g.
@@ -15,13 +15,25 @@
  *   - GITenberg (Project Gutenberg mirror), e.g.
  *     https://raw.githubusercontent.com/GITenberg/Pride-and-Prejudice_1342/master/1342.txt
  *
+ * `--url` also accepts any other https page (the publisher's own site, Poetry
+ * Foundation, poets.org, a magazine of record). This is a private, single-user
+ * app (see docs/editorial-policy.md, "Sources for in-copyright text"), so text
+ * visible on the open web may be copied by script — the model itself still
+ * never types it. A non-raw-GitHub URL is fetched with a browser-like
+ * User-Agent/Accept header and a 20s timeout, then routed by host and by the
+ * work's `type`: poetryfoundation.org, poets.org, or any `type: 'poem'` work
+ * uses `htmlPoemExtract`; everything else uses `htmlArticleExtract`. Either
+ * way the result feeds the same paragraph-based excerpt slicing as the
+ * GitHub-mirror path. Provenance (`source.name/url/retrievedDate` and an
+ * `externalLinks` entry) is recorded automatically for the fetched page.
+ *
  * Usage:
- *   node scripts/inject-excerpt.mjs --id <work-id> (--url <raw-url> | --file <path>) \
- *     [--url <raw-url> | --file <path> ...] \
+ *   node scripts/inject-excerpt.mjs --id <work-id> (--url <url> | --file <path>) \
+ *     [--url <url> | --file <path> ...] \
  *     [--mode excerpt|full] [--min 800] [--max 1500] [--start "<phrase>"] [--end "<phrase>"] \
  *     [--dir <works dir>]
  *
- * --url: fetch text from a raw GitHub URL (repeatable).
+ * --url: fetch text from a raw GitHub URL, or any other https page (repeatable).
  * --file: read text from a local file (repeatable, mutually exclusive with --url).
  *   File extension determines handling: .xhtml/.html use HTML parser; files
  *   containing *** START/END markers use Gutenberg format; otherwise plain text
@@ -41,7 +53,8 @@
  * script exits 1 and prints the validation issues instead.
  *
  * Source of truth: docs/content-schema.md, docs/editorial-policy.md
- * ("Text and excerpt rules", "Sources allowed for text").
+ * ("Text and excerpt rules", "Sources allowed for text", "Sources for
+ * in-copyright text").
  *
  * @typedef {{ excerpt: string, wordCount: number }} SlicedExcerpt
  */
@@ -425,22 +438,498 @@ export function sliceExcerpt(text, options = {}) {
   return { excerpt: included.join('\n\n'), wordCount };
 }
 
-// -------- fetching and file loading --------
+// -------- generic HTML tree parsing (pure) --------
+//
+// A small, tolerant HTML tokenizer/tree-builder used by htmlPoemExtract and
+// htmlArticleExtract. It is not a validating parser: it assumes reasonably
+// well-formed markup (as real site HTML and our fixtures are), tracks a tag
+// stack, and is forgiving of mismatches (it pops through them rather than
+// throwing). Good enough to locate elements by tag/class/data-attribute and
+// walk their children in document order.
+
+const VOID_TAGS = new Set([
+  'area',
+  'base',
+  'br',
+  'col',
+  'embed',
+  'hr',
+  'img',
+  'input',
+  'link',
+  'meta',
+  'param',
+  'source',
+  'track',
+  'wbr',
+]);
+
+const NON_CONTENT_TAGS = ['script', 'style', 'nav', 'header', 'footer', 'aside', 'noscript'];
+const NON_CONTENT_RE = new RegExp(
+  `<(${NON_CONTENT_TAGS.join('|')})\\b[^>]*>[\\s\\S]*?</\\1\\s*>`,
+  'gi'
+);
 
 /**
- * Fetch one source URL and convert it to plain text, choosing the converter
- * from the URL's extension (`.txt` -> Gutenberg/GITenberg plain text;
- * anything else -> XHTML/HTML).
+ * Remove script/style/nav/header/footer/aside/noscript elements (tag and
+ * content) entirely.
+ * @param {string} html
+ */
+function stripNonContentTags(html) {
+  return html.replace(NON_CONTENT_RE, '');
+}
+
+/**
+ * @typedef {{ tag: string, attrs: string, children: HtmlNode[] } | { tag: '#text', text: string }} HtmlNode
+ */
+
+/**
+ * Parse HTML into a tolerant element tree (tag/attrs/children), returning a
+ * `#root` node. Not a validating parser — see module note above.
+ * @param {string} html
+ * @returns {HtmlNode}
+ */
+function parseHtmlTree(html) {
+  const root = { tag: '#root', attrs: '', children: [] };
+  const stack = [root];
+  const tagRe = /<!--[\s\S]*?-->|<(\/?)([a-zA-Z][\w:-]*)\b([^>]*?)(\/)?>/g;
+  let lastIndex = 0;
+  let match;
+
+  const pushText = (text) => {
+    if (!text) return;
+    stack[stack.length - 1].children.push({ tag: '#text', text });
+  };
+
+  while ((match = tagRe.exec(html))) {
+    pushText(html.slice(lastIndex, match.index));
+    lastIndex = tagRe.lastIndex;
+
+    if (match[0].startsWith('<!--')) continue;
+
+    const [, closingSlash, rawTagName, attrs, selfClosing] = match;
+    const tagName = rawTagName.toLowerCase();
+
+    if (closingSlash === '/') {
+      for (let i = stack.length - 1; i >= 1; i--) {
+        if (stack[i].tag === tagName) {
+          stack.length = i;
+          break;
+        }
+      }
+      continue;
+    }
+
+    const node = { tag: tagName, attrs: attrs || '', children: [] };
+    stack[stack.length - 1].children.push(node);
+    if (!(VOID_TAGS.has(tagName) || selfClosing === '/')) {
+      stack.push(node);
+    }
+  }
+  pushText(html.slice(lastIndex));
+  return root;
+}
+
+/**
+ * Collect every descendant element (not text nodes) matching `predicate`, in
+ * document (preorder) order.
+ * @param {HtmlNode} root
+ * @param {(node: HtmlNode) => boolean} predicate
+ * @param {HtmlNode[]} [results]
+ */
+function findAll(root, predicate, results = []) {
+  for (const child of root.children) {
+    if (child.tag === '#text') continue;
+    if (predicate(child)) results.push(child);
+    findAll(child, predicate, results);
+  }
+  return results;
+}
+
+/**
+ * Render an element's full descendant text, decoding entities and turning
+ * `<br>` into `\n` (or a space, if `brNewline` is false).
+ * @param {HtmlNode} node
+ * @param {{ brNewline?: boolean, decode?: (s: string) => string }} [opts]
+ */
+function elementText(node, opts = {}) {
+  const { brNewline = true, decode = decodeEntities } = opts;
+  let out = '';
+  for (const child of node.children) {
+    if (child.tag === '#text') {
+      out += decode(child.text);
+    } else if (child.tag === 'br') {
+      out += brNewline ? '\n' : ' ';
+    } else {
+      out += elementText(child, opts);
+    }
+  }
+  return out;
+}
+
+/**
+ * Like `decodeEntities`, but decodes `&nbsp;` to a real non-breaking-space
+ * character instead of a plain space, so a run of them (used by publishers
+ * for indentation) survives ASCII-whitespace collapsing and is only turned
+ * into plain spaces at the very end — preserving the indentation's width.
+ * @param {string} str
+ */
+function decodePoemEntities(str) {
+  return str
+    .replace(/&#x([0-9a-f]+);/gi, (_m, hex) => String.fromCodePoint(Number.parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_m, dec) => String.fromCodePoint(Number.parseInt(dec, 10)))
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&([a-zA-Z]+);/g, (m, name) => NAMED_ENTITIES[name.toLowerCase()] ?? m);
+}
+
+// -------- htmlPoemExtract (pure) --------
+
+const SHORT_LINE_MAX_CHARS = 120;
+const MIN_SHORT_LINES = 4;
+const POEM_CLASS_OR_DATA_ATTR_RE = /class\s*=\s*(["'])[^"']*poem[^"']*\1|\bdata-[\w-]*poem[\w-]*/i;
+const POEM_CONTAINER_TAGS = new Set(['div', 'section', 'article', 'p']);
+const GENERIC_BLOCK_TAGS = new Set(['div', 'p', 'section', 'article', 'td', 'li']);
+const ATTRIBUTION_RE = /^(?:copyright|from\s|source:|credit|reprinted)/i;
+
+/** @param {HtmlNode} node */
+function isPoemContainerCandidate(node) {
+  return POEM_CONTAINER_TAGS.has(node.tag) && POEM_CLASS_OR_DATA_ATTR_RE.test(node.attrs || '');
+}
+
+/**
+ * Site-aware containers first: an element whose class or data attribute
+ * contains "poem" (covers poetryfoundation's `div.o-poem`/`[class*="PoemBody"]`/
+ * `[data-poem]` and poets.org's `.poem__body`/`[class*="poem-body"]` — all are
+ * "class or data attribute contains poem", case-insensitively). Deepest match
+ * wins if more than one is nested.
+ * @param {HtmlNode} tree
+ */
+function findSiteAwarePoemContainer(tree) {
+  const matches = findAll(tree, isPoemContainerCandidate);
+  return matches.length > 0 ? matches[matches.length - 1] : null;
+}
+
+/** A block element's short-line count via its own `<br>`-separated lines. @param {HtmlNode} node */
+function scoreByBr(node) {
+  const lines = elementText(node)
+    .split('\n')
+    .map((line) => line.replace(/\s+/g, ' ').trim());
+  return lines.filter((line) => line.length > 0 && line.length <= SHORT_LINE_MAX_CHARS).length;
+}
+
+/** A block element's short-line count via direct `<div>`/`<p>` children. @param {HtmlNode} node */
+function scoreByChildren(node) {
+  let count = 0;
+  for (const child of node.children) {
+    if (child.tag !== 'div' && child.tag !== 'p') continue;
+    const text = elementText(child).replace(/\s+/g, ' ').trim();
+    if (text.length > 0 && text.length <= SHORT_LINE_MAX_CHARS) count++;
+  }
+  return count;
+}
+
+/**
+ * Generic fallback: among candidate block elements, the one with the most
+ * short lines (>= MIN_SHORT_LINES), scored by whichever method (`<br>` lines,
+ * or short `<div>`/`<p>` children) finds more.
+ * @param {HtmlNode} tree
+ */
+function findGenericPoemContainer(tree) {
+  const candidates = findAll(tree, (node) => GENERIC_BLOCK_TAGS.has(node.tag));
+  let best = null;
+  let bestScore = MIN_SHORT_LINES - 1;
+  for (const node of candidates) {
+    const score = Math.max(scoreByBr(node), scoreByChildren(node));
+    if (score > bestScore) {
+      bestScore = score;
+      best = node;
+    }
+  }
+  return best;
+}
+
+/**
+ * Render a poem container's lines: text and `<br>` are read in document
+ * order, a `<br>` ends a line, and a `<div>`/`<p>` child always starts and
+ * ends its own line (so an empty one becomes a blank line, and two `<br>`s in
+ * a row also produce a blank line between them, i.e. a stanza break).
+ * @param {HtmlNode} node
+ * @returns {string[]}
+ */
+function renderPoemLines(node) {
+  const lines = [];
+  let current = '';
+
+  const flush = () => {
+    lines.push(current);
+    current = '';
+  };
+
+  const walk = (n) => {
+    for (const child of n.children) {
+      if (child.tag === '#text') {
+        // A text node that is pure whitespace is inter-tag markup formatting
+        // (e.g. the newline/indentation between two sibling <div> lines,
+        // already collapsed to a single space) rather than content — it must
+        // not trigger a spurious flush before the next sibling.
+        const decoded = decodePoemEntities(child.text);
+        if (decoded.trim().length > 0) {
+          current += decoded;
+        }
+      } else if (child.tag === 'br') {
+        flush();
+      } else if (child.tag === 'div' || child.tag === 'p') {
+        if (current.length > 0) flush();
+        walk(child);
+        flush();
+      } else {
+        walk(child);
+      }
+    }
+  };
+
+  walk(node);
+  if (current.length > 0) flush();
+  return lines;
+}
+
+/**
+ * Trim source-formatting whitespace from one rendered poem line while
+ * preserving `&nbsp;`-derived leading indentation: strip ASCII leading/
+ * trailing space and tabs, collapse internal runs of them, then turn the
+ * (now untouched) non-breaking spaces into plain spaces.
+ * @param {string} raw
+ */
+function finalizeLine(raw) {
+  return raw
+    .replace(/^[ \t]+/, '')
+    .replace(/[ \t]+$/, '')
+    .replace(/[ \t]{2,}/g, ' ')
+    .replace(/\u00A0/g, ' ');
+}
+
+/** @param {string[]} lines */
+function trimLeadingBlankLines(lines) {
+  let start = 0;
+  while (start < lines.length && lines[start].trim().length === 0) start++;
+  return lines.slice(start);
+}
+
+/**
+ * Drop trailing attribution/credit lines (and any blank lines around them) —
+ * a line beginning with "Copyright", "From ", "Source:", "Credit", or
+ * "Reprinted".
+ * @param {string[]} lines
+ */
+function trimTrailingAttribution(lines) {
+  let end = lines.length;
+  while (end > 0) {
+    const line = lines[end - 1].trim();
+    if (line.length === 0 || ATTRIBUTION_RE.test(line)) {
+      end--;
+      continue;
+    }
+    break;
+  }
+  return lines.slice(0, end);
+}
+
+/**
+ * Group rendered lines into stanzas (consecutive non-blank lines joined by
+ * `\n`) separated by a blank line, matching the paragraph-based text format
+ * the rest of the pipeline (sliceExcerpt et al.) expects.
+ * @param {string[]} lines
+ */
+function linesToStanzaText(lines) {
+  const stanzas = [];
+  let current = [];
+  for (const line of lines) {
+    if (line.trim().length === 0) {
+      if (current.length > 0) {
+        stanzas.push(current);
+        current = [];
+      }
+    } else {
+      current.push(line);
+    }
+  }
+  if (current.length > 0) stanzas.push(current);
+  return stanzas.map((stanza) => stanza.join('\n')).join('\n\n');
+}
+
+/**
+ * Extract a poem's text from an HTML page: strips non-content elements, then
+ * looks for a site-aware poem container (class/data-attribute containing
+ * "poem"), falling back to the generic block with the most short lines.
+ * Preserves line and stanza breaks and `&nbsp;`-derived indentation, decodes
+ * entities, and drops a trailing attribution/credit block. Throws if nothing
+ * poem-like is found.
+ * @param {string} html
  * @param {string} url
+ * @returns {string}
+ */
+export function htmlPoemExtract(html, url) {
+  const cleaned = stripNonContentTags(String(html)).replace(/[\t\r\n]+/g, ' ');
+  const tree = parseHtmlTree(cleaned);
+
+  const container = findSiteAwarePoemContainer(tree) ?? findGenericPoemContainer(tree);
+  if (!container) {
+    throw new Error(`no poem-like content found at ${url}`);
+  }
+
+  let lines = renderPoemLines(container).map(finalizeLine);
+  lines = trimLeadingBlankLines(lines);
+  lines = trimTrailingAttribution(lines);
+
+  const text = linesToStanzaText(lines);
+  if (!text.trim()) {
+    throw new Error(`no poem-like content found at ${url}`);
+  }
+  return text;
+}
+
+// -------- htmlArticleExtract (pure) --------
+
+/**
+ * Collapse an element's rendered text into one paragraph: `<br>` becomes a
+ * verse-style single newline within the paragraph, source-formatting
+ * whitespace is collapsed, and each line is trimmed.
+ * @param {HtmlNode} node
+ */
+function renderParagraphText(node) {
+  return elementText(node)
+    .split('\n')
+    .map((line) => line.replace(/[ \t]{2,}/g, ' ').trim())
+    .filter((line) => line.length > 0)
+    .join('\n');
+}
+
+/**
+ * Extract an article/essay's text from an HTML page: prefers `<article>` or
+ * `<main>`, else the element whose direct `<p>` children carry the most
+ * text; returns its paragraphs separated by a blank line. Throws if nothing
+ * article-like is found.
+ * @param {string} html
+ * @returns {string}
+ */
+export function htmlArticleExtract(html) {
+  const cleaned = stripNonContentTags(String(html)).replace(/[\t\r\n]+/g, ' ');
+  const tree = parseHtmlTree(cleaned);
+
+  let container =
+    findAll(tree, (node) => node.tag === 'article')[0] ??
+    findAll(tree, (node) => node.tag === 'main')[0];
+
+  if (!container) {
+    let best = null;
+    let bestLength = 0;
+    for (const node of findAll(tree, () => true)) {
+      const directParagraphs = node.children.filter((child) => child.tag === 'p');
+      if (directParagraphs.length === 0) continue;
+      const length = directParagraphs.reduce(
+        (sum, p) => sum + elementText(p).replace(/\s+/g, ' ').trim().length,
+        0
+      );
+      if (length > bestLength) {
+        bestLength = length;
+        best = node;
+      }
+    }
+    container = best;
+  }
+
+  if (!container) {
+    throw new Error('no article-like content found');
+  }
+
+  const paragraphs = findAll(container, (node) => node.tag === 'p')
+    .map(renderParagraphText)
+    .filter((p) => p.length > 0);
+
+  if (paragraphs.length === 0) {
+    throw new Error('no article-like content found');
+  }
+
+  return paragraphs.join('\n\n');
+}
+
+// -------- fetching and file loading --------
+
+const RAW_GITHUB_HOST = 'raw.githubusercontent.com';
+const POEM_HOSTS = new Set(['poetryfoundation.org', 'poets.org']);
+const FETCH_TIMEOUT_MS = 20000;
+const BROWSER_FETCH_HEADERS = {
+  'User-Agent':
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+  Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+};
+
+/**
+ * Lowercased hostname with a leading `www.` stripped, or `''` if `url`
+ * doesn't parse.
+ * @param {string} url
+ */
+function normalizedHostname(url) {
+  try {
+    return new URL(url).hostname.toLowerCase().replace(/^www\./, '');
+  } catch {
+    return '';
+  }
+}
+
+/**
+ * `fetch` with a hard timeout via `AbortController`.
+ * @param {string} url
+ * @param {{ headers?: Record<string, string>, timeoutMs?: number }} [opts]
+ */
+async function fetchWithTimeout(url, opts = {}) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), opts.timeoutMs ?? FETCH_TIMEOUT_MS);
+  try {
+    return await fetch(url, { headers: opts.headers, signal: controller.signal });
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+/**
+ * Fetch one source URL and convert it to plain text.
+ *
+ * `raw.githubusercontent.com` keeps the original path: a plain fetch, choosing
+ * the converter from the URL's extension (`.txt` -> Gutenberg/GITenberg plain
+ * text; anything else -> XHTML/HTML). Any other host is fetched with a
+ * browser-like User-Agent/Accept header and a 20s timeout, then routed: a
+ * poetryfoundation.org/poets.org URL, or a `workType` of `'poem'`, goes
+ * through `htmlPoemExtract`; everything else goes through `htmlArticleExtract`.
+ * @param {string} url
+ * @param {{ workType?: string }} [opts]
  * @returns {Promise<string>}
  */
-async function fetchText(url) {
-  const response = await fetch(url);
+async function fetchText(url, opts = {}) {
+  const hostname = normalizedHostname(url);
+
+  if (hostname === RAW_GITHUB_HOST) {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`fetch failed for ${url}: HTTP ${response.status}`);
+    }
+    const body = await response.text();
+    return /\.txt(?:$|[?#])/i.test(url) ? gutenbergToText(body) : xhtmlToText(body);
+  }
+
+  const response = await fetchWithTimeout(url, {
+    headers: BROWSER_FETCH_HEADERS,
+    timeoutMs: FETCH_TIMEOUT_MS,
+  });
   if (!response.ok) {
     throw new Error(`fetch failed for ${url}: HTTP ${response.status}`);
   }
   const body = await response.text();
-  return /\.txt(?:$|[?#])/i.test(url) ? gutenbergToText(body) : xhtmlToText(body);
+
+  if (POEM_HOSTS.has(hostname) || opts.workType === 'poem') {
+    return htmlPoemExtract(body, url);
+  }
+  return htmlArticleExtract(body);
 }
 
 /**
@@ -491,6 +980,26 @@ export function describeSource(url) {
   }
 
   return { hostRepo, name };
+}
+
+const FRIENDLY_WEB_SOURCE_NAMES = {
+  'poetryfoundation.org': 'Poetry Foundation',
+  'poets.org': 'Academy of American Poets',
+};
+
+/**
+ * Derive a human-readable source name and `externalLinks` `kind` for a
+ * non-raw-GitHub web page URL: a friendly name for Poetry Foundation and
+ * poets.org, otherwise the bare hostname; `kind` is `'poetry-foundation'` for
+ * poetryfoundation.org, `'other'` for every other host.
+ * @param {string} url
+ * @returns {{ name: string, kind: 'poetry-foundation' | 'other', hostname: string }}
+ */
+export function describeWebSource(url) {
+  const hostname = normalizedHostname(url);
+  const name = FRIENDLY_WEB_SOURCE_NAMES[hostname] ?? hostname;
+  const kind = hostname === 'poetryfoundation.org' ? 'poetry-foundation' : 'other';
+  return { name, kind, hostname };
 }
 
 /** @param {Date} [now] */
@@ -553,7 +1062,7 @@ export async function injectExcerpt(options) {
   const texts = [];
   if (hasUrls) {
     for (const url of urls) {
-      texts.push(await fetchText(url));
+      texts.push(await fetchText(url, { workType: /** @type {string|undefined} */ (work.type) }));
     }
   } else {
     for (const filePath of files) {
@@ -577,8 +1086,10 @@ export async function injectExcerpt(options) {
     const sliced = sliceExcerpt(fullText, { min, max, start, end });
     let sourceDesc = 'manual paste';
     if (hasUrls) {
-      const { hostRepo } = describeSource(urls[0]);
-      sourceDesc = hostRepo;
+      sourceDesc =
+        normalizedHostname(urls[0]) === RAW_GITHUB_HOST
+          ? describeSource(urls[0]).hostRepo
+          : describeWebSource(urls[0]).name;
     }
     work.excerpt = sliced.excerpt;
     work.excerptNote =
@@ -594,16 +1105,33 @@ export async function injectExcerpt(options) {
   }
 
   if (hasUrls) {
+    const firstUrl = urls[0];
     const source = /** @type {{ url?: string, name?: string, retrievedDate?: string }} */ (
       work.source ?? {}
     );
-    const { name } = describeSource(urls[0]);
-    if (!source.url || source.url !== urls[0]) {
+    const isRawGithub = normalizedHostname(firstUrl) === RAW_GITHUB_HOST;
+    const { name, kind } = isRawGithub
+      ? { ...describeSource(firstUrl), kind: null }
+      : describeWebSource(firstUrl);
+    if (!source.url || source.url !== firstUrl) {
       source.name = name;
-      source.url = urls[0];
+      source.url = firstUrl;
       source.retrievedDate = isoToday(now);
     }
     work.source = source;
+
+    if (!isRawGithub) {
+      // Non-GitHub web pages (publisher, Poetry Foundation, poets.org, ...)
+      // always need an outbound externalLinks entry for the page itself.
+      const links = Array.isArray(work.externalLinks) ? work.externalLinks.slice() : [];
+      const hasLink = links.some(
+        (link) => link && typeof link === 'object' && link.url === firstUrl
+      );
+      if (!hasLink) {
+        links.push({ kind, url: firstUrl });
+      }
+      work.externalLinks = links;
+    }
   } else {
     // Manual paste: preserve license and other existing source fields, update name/date
     const existingSource = work.source ?? {};

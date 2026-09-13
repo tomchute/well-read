@@ -4,7 +4,10 @@ import { join } from 'node:path';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   describeSource,
+  describeWebSource,
   gutenbergToText,
+  htmlArticleExtract,
+  htmlPoemExtract,
   injectExcerpt,
   parseArguments,
   plainTextToText,
@@ -265,6 +268,184 @@ describe('inject-excerpt: pure converters', () => {
       hostRepo: 'raw.githubusercontent.com/GITenberg/Pride-and-Prejudice_1342',
       name: 'Project Gutenberg (GITenberg mirror)',
     });
+  });
+
+  it('describeWebSource maps known poetry hosts to a friendly name and picks the externalLinks kind', () => {
+    expect(describeWebSource('https://www.poetryfoundation.org/poems/12345/a-placeholder-poem')).toEqual({
+      name: 'Poetry Foundation',
+      kind: 'poetry-foundation',
+      hostname: 'poetryfoundation.org',
+    });
+    expect(describeWebSource('https://poets.org/poem/a-placeholder-poem')).toEqual({
+      name: 'Academy of American Poets',
+      kind: 'other',
+      hostname: 'poets.org',
+    });
+    expect(describeWebSource('https://www.example-magazine.test/stories/a-placeholder-story')).toEqual({
+      name: 'example-magazine.test',
+      kind: 'other',
+      hostname: 'example-magazine.test',
+    });
+  });
+});
+
+// -------- synthetic HTML page fixtures (placeholder lines only, never real poems) --------
+
+const POETRYFOUNDATION_LIKE_HTML = `<!doctype html>
+<html><body>
+<nav>site nav, should be stripped</nav>
+<header>site header, should be stripped</header>
+<main>
+<h1>A Placeholder Poem</h1>
+<div class="o-poem">
+  <div>First placeholder line of stanza one.</div>
+  <div>Second placeholder line of stanza one.</div>
+  <div></div>
+  <div>First placeholder line of stanza two.</div>
+  <div>Copyright 2020 by A Placeholder Author. All rights reserved.</div>
+</div>
+</main>
+<footer>site footer, should be stripped</footer>
+</body></html>`;
+
+const POETS_ORG_LIKE_HTML = `<!doctype html>
+<html><body>
+<header>site header, should be stripped</header>
+<div class="poem__body">
+First poets-org placeholder line here.<br>
+Second poets-org placeholder line here.<br>
+<br>
+Third poets-org placeholder line starts stanza two.<br>
+Source: A Placeholder Page.
+</div>
+<aside>related links, should be stripped</aside>
+</body></html>`;
+
+const GENERIC_POEM_WITH_SIDEBAR_HTML = `<!doctype html>
+<html><body>
+<div class="content">
+  <div class="lines">
+    <div>First generic placeholder line here.</div>
+    <div>Second generic placeholder line here.</div>
+    <div>Third generic placeholder line here.</div>
+    <div>Fourth generic placeholder line here.</div>
+  </div>
+  <div class="sidebar">
+    <p>A long placeholder prose paragraph that runs on for quite a while so that it is much longer than one hundred twenty characters and should never be mistaken for a poem line by the generic fallback heuristic used here.</p>
+    <p>A second long placeholder prose paragraph, also well over one hundred twenty characters, continuing the sidebar content so it keeps failing the short-line test used to pick the poem block instead.</p>
+  </div>
+</div>
+</body></html>`;
+
+const NO_POEM_HTML = `<!doctype html>
+<html><body>
+<article>
+<p>A single ordinary placeholder paragraph of prose with no short lines anywhere in it, going on for a while so nothing here qualifies as a poem line under the short-line heuristic used by the generic fallback.</p>
+</article>
+</body></html>`;
+
+const ARTICLE_HTML = `<!doctype html>
+<html><body>
+<nav>site nav, should be stripped</nav>
+<article>
+<h1>A Placeholder Essay</h1>
+<p>First placeholder paragraph of the article, long enough to read as real prose content for testing purposes here.</p>
+<p>Second placeholder paragraph continuing the article body for the same testing purpose as the first one.</p>
+</article>
+<div class="sidebar"><p>Sidebar placeholder paragraph that must not appear in the extracted article text.</p></div>
+</body></html>`;
+
+describe('inject-excerpt: htmlPoemExtract (pure)', () => {
+  it('extracts a poetryfoundation-like layout: div-per-line, blank stanza div, trailing copyright dropped', () => {
+    const text = htmlPoemExtract(POETRYFOUNDATION_LIKE_HTML, 'https://www.poetryfoundation.org/poems/1');
+
+    expect(text).toBe(
+      [
+        'First placeholder line of stanza one.\nSecond placeholder line of stanza one.',
+        'First placeholder line of stanza two.',
+      ].join('\n\n')
+    );
+    expect(text).not.toContain('Copyright');
+    expect(text).not.toContain('site nav');
+    expect(text).not.toContain('site header');
+    expect(text).not.toContain('site footer');
+  });
+
+  it('extracts a poets.org-like layout: flat text with <br> lines, trailing "Source:" credit dropped', () => {
+    const text = htmlPoemExtract(POETS_ORG_LIKE_HTML, 'https://poets.org/poem/1');
+
+    const lines = text.split('\n');
+    expect(lines[0]).toBe('First poets-org placeholder line here.');
+    expect(lines[1]).toBe('Second poets-org placeholder line here.');
+    expect(text).toContain('\n\nThird poets-org placeholder line starts stanza two.');
+    expect(text).not.toContain('Source:');
+    expect(text).not.toContain('site header');
+    expect(text).not.toContain('related links');
+  });
+
+  it('generic fallback picks the block of short lines over a longer prose sidebar', () => {
+    const text = htmlPoemExtract(GENERIC_POEM_WITH_SIDEBAR_HTML, 'https://example.com/poem');
+
+    expect(text).toBe(
+      [
+        'First generic placeholder line here.',
+        'Second generic placeholder line here.',
+        'Third generic placeholder line here.',
+        'Fourth generic placeholder line here.',
+      ].join('\n')
+    );
+    expect(text).not.toContain('placeholder prose paragraph');
+  });
+
+  it('throws a clear error when nothing poem-like is found', () => {
+    expect(() => htmlPoemExtract(NO_POEM_HTML, 'https://example.com/not-a-poem')).toThrow(
+      /no poem-like content found/
+    );
+  });
+
+  it('preserves leading indentation from &nbsp; runs', () => {
+    const html =
+      '<div class="o-poem"><div>&nbsp;&nbsp;&nbsp;Indented placeholder line.</div><div>Flush placeholder line.</div></div>';
+
+    const text = htmlPoemExtract(html, 'https://poets.org/poem/2');
+
+    expect(text).toBe('   Indented placeholder line.\nFlush placeholder line.');
+  });
+});
+
+describe('inject-excerpt: htmlArticleExtract (pure)', () => {
+  it('prefers <article>, joins its paragraphs with blank lines, and excludes sidebar text', () => {
+    const text = htmlArticleExtract(ARTICLE_HTML);
+
+    expect(text).toBe(
+      [
+        'First placeholder paragraph of the article, long enough to read as real prose content for testing purposes here.',
+        'Second placeholder paragraph continuing the article body for the same testing purpose as the first one.',
+      ].join('\n\n')
+    );
+    expect(text).not.toContain('Sidebar placeholder');
+  });
+
+  it('falls back to the element whose direct <p> children carry the most text when there is no <article>/<main>', () => {
+    const html = `<html><body>
+      <div class="tiny"><p>Short.</p></div>
+      <div class="body">
+        <p>First placeholder paragraph of the fallback body content for this test case here.</p>
+        <p>Second placeholder paragraph of the fallback body content for this test case here.</p>
+      </div>
+    </body></html>`;
+
+    const text = htmlArticleExtract(html);
+
+    expect(text).toContain('First placeholder paragraph of the fallback body');
+    expect(text).toContain('Second placeholder paragraph of the fallback body');
+    expect(text).not.toContain('Short.');
+  });
+
+  it('throws a clear error when nothing article-like is found', () => {
+    expect(() => htmlArticleExtract('<html><body><div>no paragraphs here</div></body></html>')).toThrow(
+      /no article-like content found/
+    );
   });
 });
 
@@ -778,5 +959,164 @@ describe('inject-excerpt: injectExcerpt (mocked fetch, temp works dir)', () => {
     expect(onDisk.excerptNote).toMatch(/source: manual paste/);
     expect(onDisk.source.name).toBe('manual paste');
     expect(onDisk.source.retrievedDate).toBe('2026-09-13');
+  });
+
+  it('full mode via a poetryfoundation.org URL: extracts the poem, stamps provenance, and adds an externalLinks entry without dropping an existing one', async () => {
+    const poemWork = {
+      id: 'fixture-inject-web-poem-2024',
+      type: 'poem',
+      title: 'A Placeholder Web Poem',
+      author: 'Fixture Poet',
+      year: 2024,
+      era: 'contemporary',
+      form: 'poem',
+      themes: ['memory'],
+      tags: ['fixture', 'needs-text'],
+      length: { unit: 'lines', value: 4 },
+      difficulty: 2,
+      source: {
+        name: 'placeholder',
+        url: '(pending)',
+        license: 'all-rights-reserved',
+        retrievedDate: '2026-09-01',
+      },
+      textPolicy: 'pending',
+      externalLinks: [{ kind: 'other', url: 'https://www.poetryfoundation.org/search?q=placeholder' }],
+      masterNotes: {
+        context: 'Placeholder context.',
+        form: 'Placeholder form discussion.',
+        keyImages: ['Placeholder key image one.', 'Placeholder key image two.'],
+        whatToNotice: ['Placeholder thing to notice.'],
+        discussionQuestions: [
+          'Placeholder question one?',
+          'Placeholder question two?',
+          'Placeholder question three?',
+        ],
+        furtherReading: ['Placeholder reference.'],
+      },
+      pipeline: {
+        batchId: 'test-batch',
+        dateAdded: '2026-09-01',
+        curatedBy: 'test',
+        schemaVersion: 1,
+      },
+    };
+    await writeWork(poemWork);
+
+    fetchSpy = vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      new Response(
+        `<html><body><div class="o-poem">
+          <div>First placeholder line of stanza one.</div>
+          <div>Second placeholder line of stanza one.</div>
+          <div></div>
+          <div>First placeholder line of stanza two.</div>
+          <div>Copyright 2024 by Fixture Poet.</div>
+        </div></body></html>`,
+        { status: 200 }
+      )
+    );
+
+    const url = 'https://www.poetryfoundation.org/poems/999/a-placeholder-poem';
+    const result = await injectExcerpt({
+      id: poemWork.id,
+      urls: [url],
+      dir,
+      mode: 'full',
+      now: new Date('2026-09-13T00:00:00Z'),
+    });
+
+    expect(result.mode).toBe('full');
+
+    // The browser-like fetch path was used (headers + an abort signal), not a bare fetch.
+    expect(fetchSpy).toHaveBeenCalledWith(
+      url,
+      expect.objectContaining({
+        headers: expect.objectContaining({ 'User-Agent': expect.any(String), Accept: expect.any(String) }),
+        signal: expect.any(AbortSignal),
+      })
+    );
+
+    const onDisk = JSON.parse(await readFile(join(dir, `${poemWork.id}.json`), 'utf8'));
+    expect(onDisk.textPolicy).toBe('full');
+    expect(onDisk.tags).not.toContain('needs-text');
+    expect(onDisk.text).toBe(
+      'First placeholder line of stanza one.\nSecond placeholder line of stanza one.\n\nFirst placeholder line of stanza two.'
+    );
+    expect(onDisk.text).not.toContain('Copyright');
+
+    expect(onDisk.source).toEqual({
+      name: 'Poetry Foundation',
+      url,
+      license: 'all-rights-reserved',
+      retrievedDate: '2026-09-13',
+    });
+
+    // The pre-existing externalLinks entry survives, and the fetched page is added.
+    expect(onDisk.externalLinks).toEqual([
+      { kind: 'other', url: 'https://www.poetryfoundation.org/search?q=placeholder' },
+      { kind: 'poetry-foundation', url },
+    ]);
+  });
+
+  it('excerpt mode via a generic publisher URL: uses htmlArticleExtract, names the source by hostname, and adds an "other" externalLinks entry', async () => {
+    const work = makeExcerptWork();
+    await writeWork(work);
+
+    const bigParagraphs = Array.from({ length: 6 }, (_, i) =>
+      `<p>${placeholderParagraph(`para${i}`, 300)}</p>`
+    ).join('');
+    fetchSpy = vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      new Response(
+        `<html><body><nav>skip</nav><article>${bigParagraphs}</article><div class="sidebar"><p>Sidebar text that must not appear.</p></div></body></html>`,
+        { status: 200 }
+      )
+    );
+
+    const url = 'https://www.example-magazine.test/stories/a-placeholder-story';
+    const result = await injectExcerpt({
+      id: work.id as string,
+      urls: [url],
+      dir,
+      min: 800,
+      max: 1500,
+      now: new Date('2026-09-13T00:00:00Z'),
+    });
+
+    expect(result.mode).toBe('excerpt');
+
+    const onDisk = JSON.parse(await readFile(join(dir, `${work.id}.json`), 'utf8'));
+    expect(onDisk.excerpt).toContain('para0-word');
+    expect(onDisk.excerpt).not.toContain('Sidebar text');
+    expect(onDisk.excerptNote).toContain('source: example-magazine.test');
+
+    expect(onDisk.source).toEqual({
+      name: 'example-magazine.test',
+      url,
+      license: 'public-domain', // untouched
+      retrievedDate: '2026-09-13',
+    });
+
+    // The work's existing externalLinks entry is kept, and the fetched page is added as "other".
+    expect(onDisk.externalLinks).toEqual([
+      { kind: 'other', url: 'https://example.com/read' },
+      { kind: 'other', url },
+    ]);
+  });
+
+  it('does not duplicate an externalLinks entry that already points at the fetched URL', async () => {
+    const url = 'https://poets.org/poem/a-placeholder-poem';
+    const work = makeExcerptWork({ externalLinks: [{ kind: 'other', url }] });
+    await writeWork(work);
+
+    fetchSpy = vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      new Response(`<div class="poem__body">${placeholderParagraph('line', 900)}</div>`, {
+        status: 200,
+      })
+    );
+
+    await injectExcerpt({ id: work.id as string, urls: [url], dir, min: 1, max: 5000 });
+
+    const onDisk = JSON.parse(await readFile(join(dir, `${work.id}.json`), 'utf8'));
+    expect(onDisk.externalLinks).toEqual([{ kind: 'other', url }]);
   });
 });
