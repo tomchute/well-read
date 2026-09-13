@@ -72,7 +72,6 @@ function makeExcerptWork(overrides: Record<string, unknown> = {}) {
     difficulty: 2,
     source: {
       name: 'Placeholder Source',
-      url: '',
       license: 'public-domain',
       retrievedDate: '2026-09-01',
     },
@@ -104,8 +103,9 @@ function makeExcerptWork(overrides: Record<string, unknown> = {}) {
 
 /** A minimal, schema-valid short_story `Work` fixture, textPolicy 'full'. */
 function makeFullWork(overrides: Record<string, unknown> = {}) {
+  const baseWork = makeExcerptWork(overrides);
   return {
-    ...makeExcerptWork(overrides),
+    ...baseWork,
     id: 'fixture-inject-full-work-2020',
     textPolicy: 'full',
     text: 'TODO placeholder full text.',

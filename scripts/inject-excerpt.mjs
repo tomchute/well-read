@@ -488,25 +488,37 @@ export async function injectExcerpt(options) {
     work.tags = work.tags.filter((tag) => tag !== 'needs-text');
   }
 
-  const source = /** @type {{ url?: string, name?: string, retrievedDate?: string }} */ (
-    work.source ?? {}
-  );
   if (hasUrls) {
+    const source = /** @type {{ url?: string, name?: string, retrievedDate?: string }} */ (
+      work.source ?? {}
+    );
     const { name } = describeSource(urls[0]);
     if (!source.url || source.url !== urls[0]) {
       source.name = name;
       source.url = urls[0];
       source.retrievedDate = isoToday(now);
     }
+    work.source = source;
   } else {
-    // Manual paste: set name and retrievedDate, preserve existing URL only if non-empty
+    // Manual paste: preserve license and other existing source fields, update name/date
+    const existingSource = work.source ?? {};
+    const source =
+      /** @type {{ url?: string, name?: string, retrievedDate?: string, license?: string }} */
+      ({});
+    // Preserve license if it exists
+    if (existingSource.license) {
+      source.license = existingSource.license;
+    }
+    // Preserve url only if it's non-empty; otherwise use a placeholder
+    if (existingSource.url && existingSource.url.length > 0) {
+      source.url = existingSource.url;
+    } else {
+      source.url = '(manual paste)';
+    }
     source.name = 'manual paste';
     source.retrievedDate = isoToday(now);
-    if (!source.url) {
-      delete source.url;
-    }
+    work.source = source;
   }
-  work.source = source;
 
   const result = WorkSchema.safeParse(work);
   if (!result.success) {
