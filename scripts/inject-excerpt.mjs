@@ -402,7 +402,10 @@ export async function injectExcerpt(options) {
     const sliced = sliceExcerpt(fullText, { min, max, start, end });
     const { hostRepo } = describeSource(urls[0]);
     work.excerpt = sliced.excerpt;
-    work.excerptNote = `Opening ${sliced.wordCount} words of ${totalWords} (source: ${hostRepo})`;
+    work.excerptNote =
+      sliced.wordCount === totalWords
+        ? `Opening ${sliced.wordCount} words: the complete first section as published (source: ${hostRepo})`
+        : `Opening ${sliced.wordCount} words of the work, ending at a paragraph break (source: ${hostRepo})`;
     excerptWordCount = sliced.wordCount;
   }
 

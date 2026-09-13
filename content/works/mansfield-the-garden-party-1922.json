@@ -1,0 +1,81 @@
+{
+  "id": "mansfield-the-garden-party-1922",
+  "type": "short_story",
+  "title": "The Garden Party",
+  "author": "Katherine Mansfield",
+  "year": 1922,
+  "era": "early_20th_century",
+  "form": "modernist short story",
+  "themes": [
+    "death",
+    "childhood",
+    "family"
+  ],
+  "tags": [
+    "needs-link-verification",
+    "modernism",
+    "new-zealand"
+  ],
+  "length": {
+    "unit": "words",
+    "value": 5800
+  },
+  "difficulty": 3,
+  "source": {
+    "name": "Project Gutenberg (GITenberg mirror)",
+    "url": "https://raw.githubusercontent.com/GITenberg/The-Garden-Party-and-Other-Stories_1429/master/1429.txt",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "excerpt",
+  "ebookLinks": [
+    {
+      "provider": "gutenberg",
+      "format": "html",
+      "url": "https://www.gutenberg.org/ebooks/1429"
+    }
+  ],
+  "externalLinks": [
+    {
+      "kind": "other",
+      "url": "https://en.wikipedia.org/wiki/The_Garden_Party_(short_story)",
+      "label": "Background at Wikipedia"
+    }
+  ],
+  "masterNotes": {
+    "context": "Katherine Mansfield wrote \"The Garden Party\" in 1921 while living in France, already seriously ill with the tuberculosis that would kill her the following year, and it was first published in three installments in the Saturday Westminster Gazette in February 1922 before appearing that same year in the collection *The Garden Party and Other Stories*. Mansfield, born and raised in Wellington, New Zealand, drew on the house and social world of her own prosperous childhood there for the story's setting, one of several late stories in which she returned imaginatively to New Zealand after years of living in England and Europe. She is often grouped with the modernists for her interest in interior perception over plot mechanics, closer in method to Virginia Woolf, with whom she had a wary mutual respect, than to the more conventional short fiction being published in English magazines at the time.",
+    "form": "The story is told in a close, mobile third person that drifts between the Sheridan family's viewpoints, settling for most of its length on Laura, the daughter whose perception the story is most interested in testing. Mansfield builds the story less through plot event than through texture — the arrangements for the party, the household's various voices and small frictions — before introducing a piece of outside information that reorients everything that follows. The prose moves quickly between registers, comic in the household scenes, suddenly still and exact once Laura's attention shifts elsewhere, and Mansfield trusts long stretches of sensory notation to carry thematic weight without the narration commenting on it directly. The structure withholds resolution in its closing lines, ending on an unfinished sentence rather than a stated conclusion.",
+    "keyImages": [
+      "The marquee going up on the lawn in the opening pages, described with a comic precision about exactly where it should go — the story's first extended set piece.",
+      "The canna lilies arriving by the dozen, treated by Laura's mother as self-evidently necessary in a way the story quietly invites the reader to question.",
+      "Laura's impulse partway through the story, framed against her family's collective response to it.",
+      "The basket Laura carries out of the house in the story's second half, and the change in her surroundings once she leaves the garden behind."
+    ],
+    "whatToNotice": [
+      "Notice how much comic material Mansfield builds into the household scenes before the story's tone shifts — track the exact sentence where that shift happens.",
+      "Notice which characters get interior access and which are only seen from outside, and how that distribution changes over the course of the story.",
+      "Notice the sensory density of the party preparations compared to the sparer prose once Laura leaves the house.",
+      "Notice how the story handles class difference through small physical details rather than direct commentary.",
+      "Notice the story's final line and what it leaves unfinished."
+    ],
+    "discussionQuestions": [
+      "The story gives Laura's family very little interiority compared to Laura herself. What effect does that imbalance have on how you judge them?",
+      "Mansfield sets the story on the day of a party but structures much of it around an interruption to that plan. What does the interruption reveal that the party itself couldn't?",
+      "How does the story's New Zealand setting, and the class structure of that setting, shape what happens to Laura?",
+      "The final line is deliberately incomplete. What would be lost if Mansfield had finished the thought for the reader?"
+    ],
+    "furtherReading": [
+      "Mansfield's \"Miss Brill\" — a shorter, quieter story sharing her interest in a single character's shifting perception.",
+      "Virginia Woolf's *Mrs Dalloway* — a near-contemporary novel built on a similar interest in a single day and the interior life beneath a social occasion.",
+      "Claire Tomalin's biography *Katherine Mansfield: A Secret Life* — for the New Zealand background behind the story's setting."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  },
+  "excerpt": "And after all the weather was ideal. They could not have had a more perfect day for a garden-party if they had ordered it. Windless, warm, the sky without a cloud. Only the blue was veiled with a haze of light gold, as it is sometimes in early summer. The gardener had been up since dawn, mowing the lawns and sweeping them, until the grass and the dark flat rosettes where the daisy plants had been seemed to shine. As for the roses, you could not help feeling they understood that roses are the only flowers that impress people at garden-parties; the only flowers that everybody is certain of knowing. Hundreds, yes, literally hundreds, had come out in a single night; the green bushes bowed down as though they had been visited by archangels.\n\nBreakfast was not yet over before the men came to put up the marquee.\n\n\"Where do you want the marquee put, mother?\"\n\n\"My dear child, it's no use asking me. I'm determined to leave everything to you children this year. Forget I am your mother. Treat me as an honoured guest.\"\n\nBut Meg could not possibly go and supervise the men. She had washed her hair before breakfast, and she sat drinking her coffee in a green turban, with a dark wet curl stamped on each cheek. Jose, the butterfly, always came down in a silk petticoat and a kimono jacket.\n\n\"You'll have to go, Laura; you're the artistic one.\"\n\nAway Laura flew, still holding her piece of bread-and-butter. It's so delicious to have an excuse for eating out of doors, and besides, she loved having to arrange things; she always felt she could do it so much better than anybody else.\n\nFour men in their shirt-sleeves stood grouped together on the garden path. They carried staves covered with rolls of canvas, and they had big tool-bags slung on their backs. They looked impressive. Laura wished now that she had not got the bread-and-butter, but there was nowhere to put it, and she couldn't possibly throw it away. She blushed and tried to look severe and even a little bit short-sighted as she came up to them.\n\n\"Good morning,\" she said, copying her mother's voice. But that sounded so fearfully affected that she was ashamed, and stammered like a little girl, \"Oh--er--have you come--is it about the marquee?\"\n\n\"That's right, miss,\" said the tallest of the men, a lanky, freckled fellow, and he shifted his tool-bag, knocked back his straw hat and smiled down at her. \"That's about it.\"\n\nHis smile was so easy, so friendly that Laura recovered. What nice eyes he had, small, but such a dark blue! And now she looked at the others, they were smiling too. \"Cheer up, we won't bite,\" their smile seemed to say. How very nice workmen were! And what a beautiful morning! She mustn't mention the morning; she must be business-like. The marquee.\n\n\"Well, what about the lily-lawn? Would that do?\"\n\nAnd she pointed to the lily-lawn with the hand that didn't hold the bread-and-butter. They turned, they stared in the direction. A little fat chap thrust out his under-lip, and the tall fellow frowned.\n\n\"I don't fancy it,\" said he. \"Not conspicuous enough. You see, with a thing like a marquee,\" and he turned to Laura in his easy way, \"you want to put it somewhere where it'll give you a bang slap in the eye, if you follow me.\"\n\nLaura's upbringing made her wonder for a moment whether it was quite respectful of a workman to talk to her of bangs slap in the eye. But she did quite follow him.\n\n\"A corner of the tennis-court,\" she suggested. \"But the band's going to be in one corner.\"\n\n\"H'm, going to have a band, are you?\" said another of the workmen. He was pale. He had a haggard look as his dark eyes scanned the tennis-court. What was he thinking?\n\n\"Only a very small band,\" said Laura gently. Perhaps he wouldn't mind so much if the band was quite small. But the tall fellow interrupted.\n\n\"Look here, miss, that's the place. Against those trees. Over there. That'll do fine.\"\n\nAgainst the karakas. Then the karaka-trees would be hidden. And they were so lovely, with their broad, gleaming leaves, and their clusters of yellow fruit. They were like trees you imagined growing on a desert island, proud, solitary, lifting their leaves and fruits to the sun in a kind of silent splendour. Must they be hidden by a marquee?\n\nThey must. Already the men had shouldered their staves and were making for the place. Only the tall fellow was left. He bent down, pinched a sprig of lavender, put his thumb and forefinger to his nose and snuffed up the smell. When Laura saw that gesture she forgot all about the karakas in her wonder at him caring for things like that--caring for the smell of lavender. How many men that she knew would have done such a thing? Oh, how extraordinarily nice workmen were, she thought. Why couldn't she have workmen for her friends rather than the silly boys she danced with and who came to Sunday night supper? She would get on much better with men like these.\n\nIt's all the fault, she decided, as the tall fellow drew something on the back of an envelope, something that was to be looped up or left to hang, of these absurd class distinctions. Well, for her part, she didn't feel them. Not a bit, not an atom... And now there came the chock-chock of wooden hammers. Some one whistled, some one sang out, \"Are you right there, matey?\" \"Matey!\" The friendliness of it, the--the--Just to prove how happy she was, just to show the tall fellow how at home she felt, and how she despised stupid conventions, Laura took a big bite of her bread-and-butter as she stared at the little drawing. She felt just like a work-girl.\n\n\"Laura, Laura, where are you? Telephone, Laura!\" a voice cried from the house.\n\n\"Coming!\" Away she skimmed, over the lawn, up the path, up the steps, across the veranda, and into the porch. In the hall her father and Laurie were brushing their hats ready to go to the office.\n\n\"I say, Laura,\" said Laurie very fast, \"you might just give a squiz at my coat before this afternoon. See if it wants pressing.\"\n\n\"I will,\" said she. Suddenly she couldn't stop herself. She ran at Laurie and gave him a small, quick squeeze. \"Oh, I do love parties, don't you?\" gasped Laura.\n\n\"Ra-ther,\" said Laurie's warm, boyish voice, and he squeezed his sister too, and gave her a gentle push. \"Dash off to the telephone, old girl.\"\n\nThe telephone. \"Yes, yes; oh yes. Kitty? Good morning, dear. Come to lunch? Do, dear. Delighted of course. It will only be a very scratch meal--just the sandwich crusts and broken meringue-shells and what's left over. Yes, isn't it a perfect morning? Your white? Oh, I certainly should. One moment--hold the line. Mother's calling.\" And Laura sat back. \"What, mother? Can't hear.\"\n\nMrs. Sheridan's voice floated down the stairs. \"Tell her to wear that sweet hat she had on last Sunday.\"\n\n\"Mother says you're to wear that sweet hat you had on last Sunday. Good. One o'clock. Bye-bye.\"\n\nLaura put back the receiver, flung her arms over her head, took a deep breath, stretched and let them fall. \"Huh,\" she sighed, and the moment after the sigh she sat up quickly. She was still, listening. All the doors in the house seemed to be open. The house was alive with soft, quick steps and running voices. The green baize door that led to the kitchen regions swung open and shut with a muffled thud. And now there came a long, chuckling absurd sound. It was the heavy piano being moved on its stiff castors. But the air! If you stopped to notice, was the air always like this? Little faint winds were playing chase, in at the tops of the windows, out at the doors. And there were two tiny spots of sun, one on the inkpot, one on a silver photograph frame, playing too. Darling little spots. Especially the one on the inkpot lid. It was quite warm. A warm little silver star. She could have kissed it.\n\nThe front door bell pealed, and there sounded the rustle of Sadie's print skirt on the stairs. A man's voice murmured; Sadie answered, careless, \"I'm sure I don't know. Wait. I'll ask Mrs Sheridan.\"\n\n\"What is it, Sadie?\" Laura came into the hall.\n\n\"It's the florist, Miss Laura.\"\n\nIt was, indeed. There, just inside the door, stood a wide, shallow tray full of pots of pink lilies. No other kind. Nothing but lilies--canna lilies, big pink flowers, wide open, radiant, almost frighteningly alive on bright crimson stems.",
+  "excerptNote": "Opening 1476 words of the work, ending at a paragraph break (source: raw.githubusercontent.com/GITenberg/The-Garden-Party-and-Other-Stories_1429)"
+}

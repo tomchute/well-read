@@ -25,7 +25,7 @@ Verification: `npm run validate:content` passes on the seed works and fails on t
 - [x] [WP-1.5](docs/work-packages/WP-1.5-fetch-standard-ebooks.md) `fetch-standard-ebooks.mjs` (OPDS)
 - [x] [WP-1.6](docs/work-packages/WP-1.6-fetch-poetrydb.md) `fetch-poetrydb.mjs`
 - [x] [WP-1.7](docs/work-packages/WP-1.7-seed-poems.md) Seed batch: ~6 poems (mixed eras, full + contemporary)
-- [ ] [WP-1.8](docs/work-packages/WP-1.8-seed-stories.md) Seed batch: ~5 short stories
+- [x] [WP-1.8](docs/work-packages/WP-1.8-seed-stories.md) Seed batch: ~5 short stories
 - [x] [WP-1.9](docs/work-packages/WP-1.9-seed-books.md) Seed batch: ~5 books
 
 ## Phase 2 — Feed UI

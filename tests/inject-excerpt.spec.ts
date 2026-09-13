@@ -331,7 +331,7 @@ describe('inject-excerpt: injectExcerpt (mocked fetch, temp works dir)', () => {
     expect(onDisk.excerpt).not.toContain('seed-word'); // old placeholder gone
     expect(onDisk.excerpt).toContain('para0-word');
     expect(onDisk.excerptNote).toMatch(
-      /^Opening \d+ words of \d+ \(source: raw\.githubusercontent\.com\/standardebooks\/some-book\)$/
+      /^Opening \d+ words (of the work, ending at a paragraph break|: the complete first section as published) \(source: raw\.githubusercontent\.com\/standardebooks\/some-book\)$/
     );
     expect(onDisk.source).toEqual({
       name: 'Standard Ebooks (GitHub mirror)',

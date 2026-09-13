@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-13T08:49:11.625Z",
-  "count": 12,
+  "generatedAt": "2026-09-13T08:53:08.670Z",
+  "count": 17,
   "shards": 1,
   "works": [
     {
@@ -28,6 +28,61 @@
       "length": {
         "unit": "lines",
         "value": 24
+      },
+      "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "chekhov-the-bet-1889",
+      "title": "The Bet",
+      "author": "Anton Chekhov",
+      "year": 1889,
+      "era": "19th_century",
+      "type": "short_story",
+      "form": "philosophical short story",
+      "themes": [
+        "solitude",
+        "time",
+        "doubt",
+        "wonder"
+      ],
+      "tags": [
+        "needs-link-verification",
+        "parable",
+        "translation",
+        "russia"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "words",
+        "value": 3400
+      },
+      "textPolicy": "excerpt",
+      "shard": 0
+    },
+    {
+      "id": "chopin-the-story-of-an-hour-1894",
+      "title": "The Story of an Hour",
+      "author": "Kate Chopin",
+      "year": 1894,
+      "era": "19th_century",
+      "type": "short_story",
+      "form": "short story",
+      "themes": [
+        "death",
+        "gender",
+        "family",
+        "power"
+      ],
+      "tags": [
+        "needs-link-verification",
+        "irony",
+        "american-realism"
+      ],
+      "difficulty": 2,
+      "length": {
+        "unit": "words",
+        "value": 1000
       },
       "textPolicy": "full",
       "shard": 0
@@ -172,6 +227,34 @@
       "shard": 0
     },
     {
+      "id": "lahiri-interpreter-of-maladies-1999",
+      "title": "Interpreter of Maladies",
+      "author": "Jhumpa Lahiri",
+      "year": 1999,
+      "era": "contemporary",
+      "type": "short_story",
+      "form": "contemporary short story",
+      "themes": [
+        "language",
+        "family",
+        "migration",
+        "desire"
+      ],
+      "tags": [
+        "needs-text",
+        "needs-link-verification",
+        "pulitzer-prize",
+        "diaspora"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "words",
+        "value": 8000
+      },
+      "textPolicy": "pending",
+      "shard": 0
+    },
+    {
       "id": "leo-tolstoy-anna-karenina-1877",
       "title": "Anna Karenina",
       "author": "Leo Tolstoy",
@@ -195,6 +278,59 @@
       "length": {
         "unit": "words",
         "value": 349000
+      },
+      "textPolicy": "excerpt",
+      "shard": 0
+    },
+    {
+      "id": "mansfield-the-garden-party-1922",
+      "title": "The Garden Party",
+      "author": "Katherine Mansfield",
+      "year": 1922,
+      "era": "early_20th_century",
+      "type": "short_story",
+      "form": "modernist short story",
+      "themes": [
+        "death",
+        "childhood",
+        "family"
+      ],
+      "tags": [
+        "needs-link-verification",
+        "modernism",
+        "new-zealand"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "words",
+        "value": 5800
+      },
+      "textPolicy": "excerpt",
+      "shard": 0
+    },
+    {
+      "id": "maupassant-the-necklace-1884",
+      "title": "The Necklace",
+      "author": "Guy de Maupassant",
+      "year": 1884,
+      "era": "19th_century",
+      "type": "short_story",
+      "form": "short story with twist ending",
+      "themes": [
+        "desire",
+        "work",
+        "time"
+      ],
+      "tags": [
+        "needs-link-verification",
+        "twist-ending",
+        "translation",
+        "paris"
+      ],
+      "difficulty": 2,
+      "length": {
+        "unit": "words",
+        "value": 3300
       },
       "textPolicy": "excerpt",
       "shard": 0
