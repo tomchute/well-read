@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { isSaved, moreLikeThis, toggleRead, toggleSaved } from '$lib/actions';
   // biome-ignore-start lint/correctness/noUnusedImports: used in template
+  import EmptyState from '$lib/components/EmptyState.svelte';
   import MasterNotes from '$lib/components/MasterNotes.svelte';
   import WorkLinks from '$lib/components/WorkLinks.svelte';
   // biome-ignore-end lint/correctness/noUnusedImports: used in template
@@ -126,9 +127,17 @@
 {#if status === 'loading'}
   <p>Loading…</p>
 {:else if status === 'not-found'}
-  <p>This work isn't in the catalog.</p>
+  <EmptyState
+    title="This work is not in the catalog"
+    body="It may have been removed or the link might be incorrect."
+    action={{ label: 'Back to feed', href: '#' }}
+  />
 {:else if status === 'error'}
-  <p role="alert">Couldn't load this work: {errorMessage}</p>
+  <EmptyState
+    title="This work is temporarily unavailable"
+    body="We couldn't load the details. Please try again."
+    action={{ label: 'Reload', onclick: () => location.reload() }}
+  />
 {:else if work}
   <article>
     <h2 class="work-title" style="view-transition-name: work-title-{work.id}">{work.title}</h2>

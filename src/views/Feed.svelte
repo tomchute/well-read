@@ -21,6 +21,8 @@
     toggleSaved,
   } from '$lib/actions';
   // biome-ignore lint/correctness/noUnusedImports: used in template
+  import EmptyState from '$lib/components/EmptyState.svelte';
+  // biome-ignore lint/correctness/noUnusedImports: used in template
   import SteeringBar from '$lib/components/SteeringBar.svelte';
   // biome-ignore lint/correctness/noUnusedImports: used in template
   import WorkCard from '$lib/components/WorkCard.svelte';
@@ -264,9 +266,18 @@
     {/each}
   </div>
 {:else if status === 'error'}
-  <p role="alert" class="feed-error">Couldn't load the feed: {errorMessage}</p>
+  <div role="alert">
+    <EmptyState
+      title="The feed is temporarily unavailable"
+      body="We couldn't load the works catalog. Please try again."
+      action={{ label: 'Reload', onclick: () => location.reload() }}
+    />
+  </div>
 {:else if page.length === 0}
-  <p>No works in the catalog yet.</p>
+  <EmptyState
+    title="The feed is empty"
+    body="No works in the catalog yet."
+  />
 {:else}
   <div class="feed-scroll" bind:this={scrollElement}>
     <div class="feed-inner" style="height: {$virtualizer.getTotalSize()}px;">
@@ -315,10 +326,6 @@
     top: 0;
     left: 0;
     width: 100%;
-  }
-
-  .feed-error {
-    color: var(--accent-story-text);
   }
 
   .feed-skeleton {

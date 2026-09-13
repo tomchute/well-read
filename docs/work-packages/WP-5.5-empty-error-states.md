@@ -17,3 +17,19 @@ Phase: 5 · Tier: haiku · Depends on: Phase 3 complete
 
 ## Out of scope
 - Retry/backoff logic beyond a manual "reload" action.
+
+## Result
+Created `src/lib/components/EmptyState.svelte`: a centered column component with small fixed-aspect engraving-style SVG ornament (sepia/hairline tokens), Fraunces headline, Newsreader body copy, and optional action (link or button). Quiet literary voice, no exclamation marks.
+
+Updated `src/views/Feed.svelte`:
+- Feed with zero works → EmptyState with title "The feed is empty"
+- Manifest fetch failure → EmptyState with title "The feed is temporarily unavailable" + Reload button
+
+Updated `src/views/Library.svelte`:
+- Empty Saved/Read/Liked tabs → EmptyState with contextual title and message
+
+Updated `src/views/Work.svelte`:
+- Work not found → EmptyState with title "This work is not in the catalog"
+- Shard fetch failure → EmptyState with title "This work is temporarily unavailable" + Reload button
+
+Verified: `npm run build`, `npm run lint`, `npm test`, `npx tsc --noEmit`, and `npx playwright test` all pass.

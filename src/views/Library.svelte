@@ -1,7 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  // biome-ignore lint/correctness/noUnusedImports: used in template
+  import EmptyState from '$lib/components/EmptyState.svelte';
   import { loadManifest, type ManifestEntry } from '$lib/data/manifest';
-  import { navigate, routeToHash } from '$lib/router.svelte';
+  import { routeToHash } from '$lib/router.svelte';
   import { reactions, read, saved } from '$lib/stores/index.svelte';
   import {
     getFilteredAndSortedEntries,
@@ -125,9 +127,10 @@
         </div>
 
         {#if filteredEntries.length === 0}
-          <div class="empty-state">
-            <p class="empty-message">{EMPTY_MESSAGES[activeTab]}</p>
-          </div>
+          <EmptyState
+            title={activeTab === 'saved' ? 'Nothing saved yet' : activeTab === 'read' ? 'Nothing marked as read yet' : 'Nothing liked yet'}
+            body={EMPTY_MESSAGES[activeTab]}
+          />
         {:else}
           <ul class="work-list">
             {#each filteredEntries as entry (entry.id)}
@@ -271,18 +274,6 @@
   .type-filter:focus-visible {
     outline: 2px solid var(--accent-poem-text);
     outline-offset: 2px;
-  }
-
-  /* Empty state */
-  .empty-state {
-    padding: var(--space-6) var(--space-4);
-    text-align: center;
-  }
-
-  .empty-message {
-    font-size: var(--text-base);
-    color: var(--text-muted);
-    margin: 0;
   }
 
   /* Work list */

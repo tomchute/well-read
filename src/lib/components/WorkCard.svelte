@@ -228,6 +228,9 @@
     <p class="specimen-number">No. {index}</p>
 
     <div class="cover-box" aria-hidden="true">
+      <!-- SVG placeholder for card cover art. When a real image is added,
+           use: <img loading="lazy" decoding="async" src="..." alt="" />
+           The fixed aspect ratio (4/3) is already set to prevent layout shift. -->
       <svg viewBox="0 0 24 24" class="cover-glyph" focusable="false">
         <path
           d="M12 3c3 3 7 4 7 9a7 7 0 0 1-14 0c0-5 4-6 7-9Z"

@@ -62,9 +62,9 @@ Verification: Lighthouse accessibility score recorded in the WP; Playwright smok
 
 - [x] [WP-5.1](docs/work-packages/WP-5.1-pwa.md) PWA manifest + offline shell
 - [ ] [WP-5.2](docs/work-packages/WP-5.2-accessibility-pass.md) Accessibility pass
-- [ ] [WP-5.3](docs/work-packages/WP-5.3-lazy-shards-images.md) Lazy shard + image loading
+- [x] [WP-5.3](docs/work-packages/WP-5.3-lazy-shards-images.md) Lazy shard + image loading
 - [x] [WP-5.4](docs/work-packages/WP-5.4-playwright-smoke.md) Playwright smoke test
-- [ ] [WP-5.5](docs/work-packages/WP-5.5-empty-error-states.md) Empty and error states
+- [x] [WP-5.5](docs/work-packages/WP-5.5-empty-error-states.md) Empty and error states
 
 ## Deferred (not planned)
 Accounts or cross-device sync, any backend, social features beyond copy-link, audio, translations, email digests, server-side send-to-Kindle.
