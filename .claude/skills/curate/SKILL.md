@@ -5,7 +5,7 @@ description: Add one validated batch of well-respected works to well-read and co
 
 ## Preconditions
 
-1. `git status --porcelain` is empty on `main`.
+1. **Live Routine only:** `git status --porcelain` is empty on `main`. Dogfood/manual runs may work on a feature branch with unrelated changes; see step 12 for staging details.
 2. `npm ci` has run (fresh `node_modules`).
 3. Read `docs/editorial-policy.md` and `docs/master-notes-style-guide.md` in full before picking any works.
 
@@ -21,7 +21,7 @@ description: Add one validated batch of well-respected works to well-read and co
 
 1. Never type or transcribe verbatim text from memory. Text enters `content/works/*.json` only through `inject-excerpt.mjs`'s `--url` or `--file`, never by hand-editing `text`/`excerpt`.
 2. One narrow exception: a public-domain poem of ≤40 lines with genuinely no fetchable source (no Standard Ebooks/GITenberg mirror, no PoetryDB entry, no web page) may be typed by the curator into a `.txt` file and injected via `--file`. Add the tag `needs-text-verification` to that work so a later batch can check it against a real source.
-3. `--start "<phrase>"` / `--end "<phrase>"`: use ≤4 words, copied exactly from the source, to avoid a near-miss on whitespace or quote-character differences.
+3. **Phrase matching:** `--start "<phrase>"` / `--end "<phrase>"` match at paragraph granularity. For verse where a whole poem is one paragraph with line breaks, `--end` must be a phrase from the NEXT item's paragraph. Use ≤4 words, copied exactly. Example: `--start "opening word"` and `--end "next stanza word"` (next paragraph), not `--end "poem closing"` (same paragraph).
 4. `--mode full` for poems (full text is required for public domain, and for contemporary poems ≤60 lines). Prose (short_story/book/essay/play) and longer contemporary poems use the default `--mode excerpt`.
 
 ## Checklist
@@ -60,7 +60,7 @@ description: Add one validated batch of well-respected works to well-read and co
 
 6. **Write master notes** for each work per `docs/master-notes-style-guide.md` — voice, length targets, and the banned moves list. No plot summary in place of reading; no invented biography.
 
-7. **Self-review each new work's notes.** Launch a `haiku` sub-agent per work (or one covering the whole batch) with this prompt:
+7. **Self-review each new work's notes.** Re-read the work in `content/works/<id>.json` and check that every `keyImages`, `whatToNotice`, and `discussionQuestions` entry is locatable in its shipped `text` or `excerpt` field. Skip this check for `pending` works (no text/excerpt); instead verify their notes use standalone reading guidance ("When you read Chapter X, notice…") with no "this excerpt" wording. For committed work on a branch, optionally delegate to a haiku sub-agent with this prompt:
    ```
    Read content/works/<id>.json. Use whichever of `text` or `excerpt` is
    present as the shipped text. For every entry in masterNotes.keyImages,
@@ -95,13 +95,13 @@ description: Add one validated batch of well-respected works to well-read and co
     ```
     All green before committing — this is the last gate before `main`.
 
-12. **Commit and push directly to `main`.**
+12. **Commit and push.**
     ```
     git add content/works/ public/data/
     git commit -m "curate: batch <YYYY-MM-DD> (<n> works)"
-    git push origin main
+    git push origin main  # (live Routine) or your branch (dogfood/manual)
     ```
-    Stage only `content/works/` and `public/data/` — nothing else should be dirty at this point. `<n>` is the number of works added (4-6). Direct-to-main is intentional: an unattended Routine's PR would sit unreviewed; `ci.yml` is the backstop that surfaces any escape.
+    Stage only `content/works/` and `public/data/`. Live Routine pushes to `main`; manual runs push to a feature branch. Direct-to-main for the Routine is intentional: an unattended PR would sit unreviewed; `ci.yml` is the backstop that surfaces any escape.
 
 ## Stop rule
 
