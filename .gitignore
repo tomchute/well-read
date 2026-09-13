@@ -2,6 +2,7 @@
 *.local
 *.log
 .DS_Store
+.playwright-mcp/
 blob-report/
 dist
 logs
