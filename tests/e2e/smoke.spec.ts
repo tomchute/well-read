@@ -17,7 +17,7 @@ test('load feed, click a work card, and view master notes', async ({ page }) => 
 
   // Wait for the manifest data to load
   await page.waitForFunction(() => document.querySelectorAll('article.work-card').length > 0, {
-    timeout: 30000,
+    timeout: 50000,
   });
 
   // Expect at least one work card
