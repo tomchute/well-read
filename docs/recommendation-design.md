@@ -24,12 +24,15 @@ Every chip action mutates `weights` (and `sessionPins` for the "more about" chip
 | Chip | Effect |
 |---|---|
 | "More like this" (on a work) | `theme[t] += 2` for each of the work's themes; `form[work.type] += 1`; `author[work.author] += 2` |
-| "More about X" (theme chip) | `theme[X] += 3`; push `{ theme: X, strength: 3, appliedCount: 0 }` onto `sessionPins` |
+| "More about X" (theme chip, off → on) | `theme[X] += 3`; push `{ theme: X, strength: 3, appliedCount: 0 }` onto `sessionPins` |
+| "More about X" (theme chip, on → off) | clears the theme: delete `theme[X]`, drop every `sessionPins` entry for X |
 | "More <form>" | `form[type] += 2`, clipped to the standard **[-10, 10]** range (mirrors "Less <form>"; no special ceiling — a boost, not a guarantee) |
 | "Less <form>" | `form[type] -= 2`, floored at **-5** (never fully excluded — a floor, not a ban) |
 | "Not interested" (on a work) | `theme[t] -= 1` for each theme, `author[work.author] -= 3` |
 | Explicit like (♥) | sets `reactions[id] = 1`; also applies "more like this" deltas |
 | Explicit dislike | sets `reactions[id] = -1`; also applies "less-like-this": `theme[t] -= 2`, `author[work.author] -= 2` |
+
+The theme chip is a toggle, not a one-way nudge: it renders `aria-pressed` from `theme[X] > 0`, and a tap on an active chip sends `clear-theme` rather than steering toward X again. Without that, repeat taps stacked `theme[X]` +3 at a time and pushed a duplicate session pin each time, and a mis-tap could only be undone by "Surprise me" wiping every steer. Clearing one theme never touches another steer.
 
 "More <form>" and "Less <form>" both key `form` by the coarse `Work.type` (`poem \| short_story \| book \| essay \| play`), never the free-text `Work.form` field — see the `weights` row above and `ChipAction` in `src/lib/scoring/types.ts`. The steering bar offers both directions per category (a paired/segmented control), active state read from the weight's sign: positive → "More" active, negative → "Less" active.
 

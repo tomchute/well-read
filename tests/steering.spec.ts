@@ -2,13 +2,14 @@
 // docs/work-packages/WP-3.3-steering-bar.md. Covers chip list construction,
 // active-state derivation, label formatting, and that the `ChipAction`s our
 // helpers build actually flow through `applyChip` (the pure scoring API
-// SteeringBar.svelte calls when its `state` prop is bound).
+// SteeringBar.svelte reports via `onchip`).
 
 import { describe, expect, it } from 'vitest';
 import {
   buildFormChips,
   buildThemeChips,
   CURATED_THEMES,
+  clearThemeChip,
   countActiveSteers,
   FORM_CATEGORIES,
   formatThemeLabel,
@@ -19,6 +20,7 @@ import {
   moreAboutThemeChip,
   moreFormChip,
   surpriseMeChip,
+  themeChipAction,
 } from '../src/lib/components/steering';
 import { applyChip } from '../src/lib/scoring/chips';
 import type { ScoringState, Weights } from '../src/lib/scoring/types';
@@ -173,6 +175,79 @@ describe('chip action builders flow through applyChip', () => {
     // The chip list built from the resulting weights now reads "active".
     const chips = buildThemeChips(state.weights, false);
     expect(chips.find((c) => c.theme === 'wonder')?.active).toBe(true);
+  });
+
+  it('clearThemeChip removes the theme weight and every session pin for it', () => {
+    const steered = applyChip(emptyState(), moreAboutThemeChip('wonder'));
+    const cleared = applyChip(steered, clearThemeChip('wonder'));
+
+    expect(cleared.weights.theme.wonder).toBeUndefined();
+    expect(cleared.sessionPins).toEqual([]);
+    expect(buildThemeChips(cleared.weights, false).find((c) => c.theme === 'wonder')?.active).toBe(
+      false
+    );
+  });
+
+  it('clearThemeChip leaves every other steer alone', () => {
+    const dirty = emptyState({
+      weights: { theme: { wonder: 3, grief: 5 }, form: { poem: 2 }, era: {}, author: { Woolf: 2 } },
+      sessionPins: [
+        { theme: 'wonder', strength: 3, appliedCount: 0 },
+        { theme: 'grief', strength: 3, appliedCount: 4 },
+      ],
+    });
+
+    const cleared = applyChip(dirty, clearThemeChip('wonder'));
+
+    expect(cleared.weights.theme).toEqual({ grief: 5 });
+    expect(cleared.weights.form).toEqual({ poem: 2 });
+    expect(cleared.weights.author).toEqual({ Woolf: 2 });
+    expect(cleared.sessionPins).toEqual([{ theme: 'grief', strength: 3, appliedCount: 4 }]);
+  });
+
+  // The reported bug: the chip renders `aria-pressed`, so a tap on an active
+  // chip has to turn the steer off. It used to send `more-about-theme` every
+  // time, stacking +3 and a duplicate pin per tap with no way back.
+  it('themeChipAction round-trips a theme on and back off', () => {
+    let state = emptyState();
+    const chipFor = (theme: string) =>
+      buildThemeChips(state.weights, false).find((c) => c.theme === theme) ?? {
+        theme,
+        label: theme,
+        active: false,
+      };
+
+    state = applyChip(state, themeChipAction(chipFor('love')));
+    expect(state.weights.theme.love).toBe(3);
+    expect(chipFor('love').active).toBe(true);
+
+    state = applyChip(state, themeChipAction(chipFor('love')));
+    expect(state.weights.theme.love).toBeUndefined();
+    expect(state.sessionPins).toEqual([]);
+    expect(chipFor('love').active).toBe(false);
+
+    // and on again, without having accumulated anything
+    state = applyChip(state, themeChipAction(chipFor('love')));
+    expect(state.weights.theme.love).toBe(3);
+    expect(state.sessionPins).toHaveLength(1);
+  });
+
+  it('repeat taps never stack weight or duplicate session pins', () => {
+    let state = emptyState();
+    const chipFor = () =>
+      buildThemeChips(state.weights, false).find((c) => c.theme === 'war') ?? {
+        theme: 'war',
+        label: 'War',
+        active: false,
+      };
+
+    for (let i = 0; i < 6; i++) {
+      state = applyChip(state, themeChipAction(chipFor()));
+    }
+
+    // six taps = on/off three times over, ending off
+    expect(state.weights.theme.war).toBeUndefined();
+    expect(state.sessionPins).toEqual([]);
   });
 
   it('lessFormChip applies the documented -2 form delta, floored at -5', () => {

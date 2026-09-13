@@ -5,33 +5,38 @@
   // ("SteeringChip"). Standalone: does not import stores, the router, or
   // App.svelte — the caller supplies the current `ScoringState` and receives
   // every chip's `ChipAction` via `onchip`.
-  import { applyChip, type ChipAction, type ScoringState, type Weights } from '$lib/scoring';
+  import type { ChipAction, ScoringState, Weights } from '$lib/scoring';
   import {
     buildFormChips,
     buildThemeChips,
     lessFormChip,
-    moreAboutThemeChip,
     moreFormChip,
     surpriseMeChip,
+    type ThemeChip,
+    themeChipAction,
   } from './steering';
 
   interface Props {
-    /** Current scoring state. Bind it (`bind:state`) to have chips apply themselves via `applyChip`. */
+    /**
+     * Current scoring state — read only, and the sole source of every chip's
+     * active/inactive display. The caller owns it: apply the action you get
+     * from `onchip` and pass the result back down.
+     */
     state?: ScoringState;
-    /** Called with every chip's `ChipAction`, regardless of whether `state` is bound. */
+    /** Called with every chip's `ChipAction`. */
     onchip?: (action: ChipAction) => void;
   }
 
   // Destructured to a differently-named local (`steeringState`, not `state`)
   // even though the public prop is still named `state` (callers still pass
-  // `state={...}`/`bind:state`) — WP-2.6 fix: a local binding literally
-  // named `state` makes every `$state(...)` rune call below ambiguous with
-  // Svelte's legacy `$store` auto-subscription syntax, which the compiler
-  // resolves in the store's favour. That crashed this component on mount
-  // with `store_invalid_shape` ("`state` is not a store with a `subscribe`
+  // `state={...}`) — WP-2.6 fix: a local binding literally named `state`
+  // makes every `$state(...)` rune call below ambiguous with Svelte's legacy
+  // `$store` auto-subscription syntax, which the compiler resolves in the
+  // store's favour. That crashed this component on mount with
+  // `store_invalid_shape` ("`state` is not a store with a `subscribe`
   // method") the instant the feed became ready — the reported blocking bug
   // (no SteeringBar, no cards past the "Feed" heading).
-  let { state: steeringState = $bindable(), onchip }: Props = $props();
+  let { state: steeringState, onchip }: Props = $props();
 
   const ZERO_WEIGHTS: Weights = { theme: {}, form: {}, era: {}, author: {} };
 
@@ -43,11 +48,14 @@
   // biome-ignore lint/correctness/noUnusedVariables: used in template
   const formChips = $derived(buildFormChips(weights));
 
+  // Report the action and nothing else. This used to also apply the action to
+  // its own copy of `state`; with a caller that handles `onchip` and passes
+  // `state` unbound (Feed.svelte — the only caller), every delta landed twice,
+  // and the local copy shadowed the real one. The chips then rendered a state
+  // the scorer never had: one "Less poems" after two "More poems" left the
+  // stored weight at +2 while both chips displayed as off.
   function dispatch(action: ChipAction) {
     onchip?.(action);
-    if (steeringState) {
-      steeringState = applyChip(steeringState, action);
-    }
   }
 
   // biome-ignore lint/correctness/noUnusedVariables: used in template
@@ -56,8 +64,8 @@
   }
 
   // biome-ignore lint/correctness/noUnusedVariables: used in template
-  function onThemeChipClick(theme: string) {
-    dispatch(moreAboutThemeChip(theme));
+  function onThemeChipClick(chip: ThemeChip) {
+    dispatch(themeChipAction(chip));
   }
 
   // biome-ignore lint/correctness/noUnusedVariables: used in template
@@ -85,7 +93,7 @@
           class="chip theme-chip"
           class:active={chip.active}
           aria-pressed={chip.active}
-          onclick={() => onThemeChipClick(chip.theme)}
+          onclick={() => onThemeChipClick(chip)}
         >
           {chip.label}
         </button>

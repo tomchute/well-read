@@ -64,6 +64,19 @@ export function applyChip(state: ScoringState, chip: ChipAction): ScoringState {
         sessionPins: [...state.sessionPins, { theme: chip.theme, strength: 3, appliedCount: 0 }],
       };
 
+    // Drops the theme's weight entry outright rather than setting it to 0, so
+    // a cleared theme leaves no trace in `weights.theme` — and drops the
+    // session pins "more about X" pushed, which would otherwise keep boosting
+    // the theme for another ~20 cards after the reader switched it off.
+    case 'clear-theme': {
+      const { [chip.theme]: _cleared, ...theme } = state.weights.theme;
+      return {
+        ...state,
+        weights: { ...state.weights, theme },
+        sessionPins: state.sessionPins.filter((pin) => pin.theme !== chip.theme),
+      };
+    }
+
     case 'more-form':
       return {
         ...state,
