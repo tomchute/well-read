@@ -5,7 +5,7 @@
 -->
 <p class="specimen-number">No. 12</p>
 
-<h2 class="title">well-read</h2>
+<h2 class="title">WellRead</h2>
 
 <section class="poem" aria-label="Sample stanza (placeholder)">
   <p>

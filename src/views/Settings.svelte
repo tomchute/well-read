@@ -255,7 +255,7 @@
   <section class="settings-section">
     <h3>About</h3>
     <p>
-      well-read is a free, open-source reading app featuring curated works from:
+      WellRead is a free, open-source reading app featuring curated works from:
     </p>
     <ul class="sources-list">
       <li><a href="https://standardebooks.org" target="_blank" rel="noopener">Standard Ebooks</a> — beautifully formatted public-domain works</li>

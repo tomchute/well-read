@@ -15,7 +15,7 @@
 // field; see docs/recommendation-design.md ("Score formula", "Chip
 // actions").
 
-import type { ChipAction, Weights } from '$lib/scoring';
+import type { ChipAction, ScoringState, Weights } from '$lib/scoring';
 import { THEME_VOCABULARY } from '$lib/types/work';
 
 /** Curated subset of the 32-term controlled vocabulary shown before "more…". */
@@ -129,4 +129,23 @@ export function lessFormChip(form: string): ChipAction {
 
 export function surpriseMeChip(): ChipAction {
   return { type: 'surprise-me' };
+}
+
+/**
+ * How many steers are currently "on", for the collapsed guide's summary
+ * ("Steer the feed · 2 active"). Mirrors what the chips themselves show as
+ * active: every theme with a positive weight or a live session pin (counted
+ * once — "more about X" sets both), plus every form category whose weight
+ * has been pushed away from zero by "more"/"less".
+ */
+export function countActiveSteers(state: Pick<ScoringState, 'weights' | 'sessionPins'>): number {
+  const activeThemes = new Set<string>();
+  for (const [theme, weight] of Object.entries(state.weights.theme)) {
+    if (weight > 0) activeThemes.add(theme);
+  }
+  for (const pin of state.sessionPins) {
+    activeThemes.add(pin.theme);
+  }
+  const activeForms = Object.values(state.weights.form).filter((weight) => weight !== 0).length;
+  return activeThemes.size + activeForms;
 }

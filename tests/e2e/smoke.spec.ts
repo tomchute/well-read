@@ -20,10 +20,26 @@ test('load feed, click a work card, and view master notes', async ({ page }) => 
     timeout: 50000,
   });
 
+  // The steering guide starts collapsed behind a "Steer the feed" toggle
+  // and opens on click
+  const guideToggle = page.locator('button.guide-toggle');
+  await expect(guideToggle).toBeVisible();
+  await expect(guideToggle).toHaveAttribute('aria-expanded', 'false');
+  await expect(page.locator('#steering-guide')).toHaveCount(0);
+  await guideToggle.click();
+  await expect(guideToggle).toHaveAttribute('aria-expanded', 'true');
+  await expect(page.locator('#steering-guide button.theme-chip').first()).toBeVisible();
+  await guideToggle.click();
+  await expect(page.locator('#steering-guide')).toHaveCount(0);
+
   // Expect at least one work card
   const workCards = page.locator('article.work-card');
   const cardCount = await workCards.count();
   expect(cardCount).toBeGreaterThanOrEqual(1);
+
+  // Every card carries a type badge and a type glyph in its cover box
+  await expect(workCards.first().locator('.badge-type')).toBeVisible();
+  await expect(workCards.first().locator('.cover-glyph path')).toHaveAttribute('d', /^M/);
 
   // Click the first work card
   const firstCardLink = workCards.first().locator('a.card-link');
@@ -45,6 +61,13 @@ test('load feed, click a work card, and view master notes', async ({ page }) => 
   await page.keyboard.press('Escape');
   const sheet = page.locator('div[role="dialog"]');
   await expect(sheet).not.toBeVisible();
+
+  // The work page's back link returns to the feed
+  const backLink = page.locator('a.back-link');
+  await expect(backLink).toHaveText(/Back to feed/);
+  await backLink.click();
+  await expect(page.locator('h2:has-text("Feed")')).toBeVisible();
+  await expect(page.locator('article.work-card').first()).toBeVisible();
 });
 
 test('navigate to settings and expect Kindle section', async ({ page }) => {

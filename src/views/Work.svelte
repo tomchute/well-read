@@ -4,10 +4,12 @@
   // biome-ignore-start lint/correctness/noUnusedImports: used in template
   import EmptyState from '$lib/components/EmptyState.svelte';
   import MasterNotes from '$lib/components/MasterNotes.svelte';
+  import { formatType } from '$lib/components/WorkCard.svelte';
   import WorkLinks from '$lib/components/WorkLinks.svelte';
+  import { accentFor, typeGlyphFor } from '$lib/components/workAccent';
   // biome-ignore-end lint/correctness/noUnusedImports: used in template
   import { loadWork } from '$lib/data/work';
-  import { navigate } from '$lib/router.svelte';
+  import { goBack, type Route, route, routeToHash } from '$lib/router.svelte';
   import { attachShortcuts } from '$lib/shortcuts';
   import { read, saved, weights } from '$lib/stores/index.svelte';
   import type { Era, Work as WorkRecord } from '$lib/types/work';
@@ -40,6 +42,11 @@
     contemporary: 'Contemporary',
   };
 
+  // Same per-type accent + glyph as the feed card (workAccent.ts), so the
+  // colour a reader learned on the card means the same thing here.
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
+  const accent = $derived(work ? accentFor(work.type) : accentFor('poem'));
+
   // biome-ignore lint/correctness/noUnusedVariables: used in template
   const isRead = $derived(work ? read.value.includes(work.id) : false);
   // biome-ignore lint/correctness/noUnusedVariables: used in template
@@ -61,6 +68,26 @@
   // biome-ignore lint/correctness/noUnusedVariables: used in template
   function formatLength(record: WorkRecord): string {
     return `${record.length.value.toLocaleString()} ${record.length.unit}`;
+  }
+
+  // Where "Back" goes: the in-app page the reader came from (feed or
+  // library) via browser history, so scroll position and the opened card's
+  // focus are restored; a deep link straight to `#/work/...` has no
+  // previous in-app route and falls back to the feed (WP-2.6 focus-restore
+  // path in Feed.svelte still applies either way).
+  const BACK_FALLBACK: Route = { name: 'feed' };
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
+  const backTarget = $derived<Route>(
+    route.previous?.name === 'library' ? { name: 'library' } : BACK_FALLBACK
+  );
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
+  const backLabel = $derived(backTarget.name === 'library' ? 'Back to library' : 'Back to feed');
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
+  const backHref = $derived(routeToHash(backTarget));
+
+  function handleBack(event?: MouseEvent): void {
+    event?.preventDefault();
+    goBack(backTarget);
   }
 
   // biome-ignore lint/correctness/noUnusedVariables: used in template
@@ -94,7 +121,7 @@
         if (notesOpen) {
           notesOpen = false;
         } else {
-          navigate({ name: 'feed' });
+          handleBack();
         }
       },
     });
@@ -124,13 +151,29 @@
   });
 </script>
 
+{#if status !== 'loading'}
+  <a class="back-link" href={backHref} onclick={handleBack}>
+    <svg viewBox="0 0 24 24" aria-hidden="true"
+      ><path
+        d="M15 5l-7 7 7 7"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      /></svg
+    >
+    <span>{backLabel}</span>
+  </a>
+{/if}
+
 {#if status === 'loading'}
   <p>Loading…</p>
 {:else if status === 'not-found'}
   <EmptyState
     title="This work is not in the catalog"
     body="It may have been removed or the link might be incorrect."
-    action={{ label: 'Back to feed', href: '#' }}
+    action={{ label: backLabel, href: backHref }}
   />
 {:else if status === 'error'}
   <EmptyState
@@ -139,11 +182,26 @@
     action={{ label: 'Reload', onclick: () => location.reload() }}
   />
 {:else if work}
-  <article>
+  <article
+    style="--card-accent: {accent.bar}; --card-accent-tint: {accent.tint}; --card-accent-text: {accent.text};"
+  >
     <h2 class="work-title" style="view-transition-name: work-title-{work.id}">{work.title}</h2>
     <p class="small-caps work-author">{work.author}</p>
 
     <ul class="badge-row">
+      <li class="badge badge-type">
+        <svg viewBox="0 0 24 24" class="badge-glyph" aria-hidden="true"
+          ><path
+            d={typeGlyphFor(work.type)}
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          /></svg
+        >
+        {formatType(work.type)}
+      </li>
       <li class="badge">{ERA_LABELS[work.era]}</li>
       <li class="badge">{work.form}</li>
       <li class="badge">Difficulty {work.difficulty}/5</li>
@@ -196,6 +254,35 @@
 {/if}
 
 <style>
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    min-height: 44px;
+    margin: 0 0 var(--space-4);
+    padding-right: var(--space-2);
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out-soft);
+  }
+
+  .back-link svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .back-link:hover {
+    color: var(--text);
+  }
+
+  .back-link:focus-visible {
+    outline: 2px solid var(--accent-poem-text);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
   .work-title {
     font-size: var(--text-2xl);
     line-height: var(--leading-2xl);
@@ -216,15 +303,28 @@
   }
 
   .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
     font-family: var(--font-ui);
     font-size: var(--text-xs);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--accent-poem-text);
-    background: var(--accent-poem-tint);
+    color: var(--card-accent-text);
+    background: var(--card-accent-tint);
     padding: 2px var(--space-2);
     border-radius: var(--radius-sm);
     white-space: nowrap;
+  }
+
+  .badge-type {
+    font-weight: 700;
+    box-shadow: inset 0 0 0 1px var(--card-accent);
+  }
+
+  .badge-glyph {
+    width: 14px;
+    height: 14px;
   }
 
   .pending {
