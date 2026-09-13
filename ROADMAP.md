@@ -51,7 +51,7 @@ Verification: scorer tests green; steering chips visibly reorder the feed; expor
 ## Phase 4 — Curation skill + Routine
 Verification: one Routine (or local `/curate`) run lands a validated batch on `main`, CI stays green, the deployed site shows the new works.
 
-- [ ] [WP-4.1](docs/work-packages/WP-4.1-curate-skill-hardening.md) Harden `.claude/skills/curate/SKILL.md` against the real scripts
+- [x] [WP-4.1](docs/work-packages/WP-4.1-curate-skill-hardening.md) Harden `.claude/skills/curate/SKILL.md` against the real scripts
 - [x] [WP-4.2](docs/work-packages/WP-4.2-report-coverage-script.md) `report-coverage.mjs`
 - [ ] [WP-4.3](docs/work-packages/WP-4.3-dogfood-batch.md) Dogfood batch + human spot-check
 - [ ] [WP-4.4](docs/work-packages/WP-4.4-configure-routine.md) Configure the scheduled Routine (orchestrator task)
