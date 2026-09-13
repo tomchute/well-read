@@ -257,7 +257,12 @@ export async function buildManifest(options = {}) {
 
   const manifest = {
     schemaVersion: SCHEMA_VERSION,
-    generatedAt: new Date().toISOString(),
+    // Deterministic: the newest dateAdded across works, so rebuilding without
+    // content changes never dirties the tree.
+    generatedAt: works.reduce((max, w) => {
+      const d = String(w.pipeline?.dateAdded ?? '');
+      return d > max ? d : max;
+    }, '1970-01-01'),
     count: works.length,
     shards: shardGroups.length,
     works: manifestEntries,
