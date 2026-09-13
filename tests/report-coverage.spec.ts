@@ -1,4 +1,4 @@
-import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
@@ -88,6 +88,7 @@ describe('report-coverage', () => {
         text: 'Tyger Tyger, burning bright...',
         excerpt: undefined,
         excerptNote: undefined,
+        ebookLinks: [{ provider: 'gutenberg', format: 'html', url: 'https://gutenberg.org/tyger' }],
         externalLinks: [{ kind: 'poetry-foundation', url: 'https://poetryfoundation.org/tyger' }],
         authorGender: 'man',
         authorRegion: 'UK',
@@ -120,6 +121,7 @@ describe('report-coverage', () => {
         type: 'book',
         form: 'novel',
         themes: ['power', 'family', 'faith'],
+        tags: ['needs-text'],
         length: { unit: 'words', value: 66000 },
         textPolicy: 'pending',
         excerpt: undefined,
@@ -203,7 +205,7 @@ describe('report-coverage', () => {
     // Write an invalid JSON file
     await writeFile(join(inputDir, 'invalid.json'), '{not valid json');
 
-    const { metrics, missingMetadata } = await aggregateCoverage(inputDir);
+    const { metrics } = await aggregateCoverage(inputDir);
 
     // Should only count the valid work
     expect(metrics.totalWorks).toBe(1);

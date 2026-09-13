@@ -13,9 +13,9 @@
  */
 
 import { readdir, readFile } from 'node:fs/promises';
-import { join, resolve, dirname } from 'node:path';
-import { fileURLToPath, pathToFileURL } from 'node:url';
+import { dirname, join, resolve } from 'node:path';
 import { argv, exit, stderr } from 'node:process';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { WorkSchema } from './lib/schema.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -83,7 +83,9 @@ export async function aggregateCoverage(inputDir) {
 
     const result = WorkSchema.safeParse(raw);
     if (!result.success) {
-      stderr.write(`[WARN] ${filePath}: failed validation (${result.error.issues.map((i) => i.message).join('; ')})\n`);
+      stderr.write(
+        `[WARN] ${filePath}: failed validation (${result.error.issues.map((i) => i.message).join('; ')})\n`
+      );
       continue;
     }
 
@@ -228,7 +230,9 @@ function formatTable(metrics, missingMetadata) {
     const pct = metrics.totalWorks ? (count / metrics.totalWorks) * 100 : 0;
     const targetPct = target * 100;
     const status = getStatus(pct / 100, target);
-    lines.push(`${era.padEnd(12)} ${count.toString().padStart(3)} (${pct.toFixed(1)}%) Target: ${targetPct.toFixed(0)}% [${status}]`);
+    lines.push(
+      `${era.padEnd(12)} ${count.toString().padStart(3)} (${pct.toFixed(1)}%) Target: ${targetPct.toFixed(0)}% [${status}]`
+    );
   }
 
   // Form distribution
@@ -238,7 +242,9 @@ function formatTable(metrics, missingMetadata) {
     const pct = metrics.totalWorks ? (count / metrics.totalWorks) * 100 : 0;
     const targetPct = target * 100;
     const status = getStatus(pct / 100, target);
-    lines.push(`${form.padEnd(12)} ${count.toString().padStart(3)} (${pct.toFixed(1)}%) Target: ${targetPct.toFixed(0)}% [${status}]`);
+    lines.push(
+      `${form.padEnd(12)} ${count.toString().padStart(3)} (${pct.toFixed(1)}%) Target: ${targetPct.toFixed(0)}% [${status}]`
+    );
   }
 
   // TextPolicy distribution
@@ -258,22 +264,37 @@ function formatTable(metrics, missingMetadata) {
 
   // Gender distribution
   lines.push('\n--- Author Gender Distribution ---');
-  const womenNonBinary = (metrics.genderDistribution.woman || 0) + (metrics.genderDistribution['non-binary'] || 0);
+  const womenNonBinary =
+    (metrics.genderDistribution.woman || 0) + (metrics.genderDistribution['non-binary'] || 0);
   const womenNonBinaryPct = metrics.totalWorks ? (womenNonBinary / metrics.totalWorks) * 100 : 0;
   const targetGenderPct = TARGETS.gender.womenAndNonBinary * 100;
   const genderStatus = getStatus(womenNonBinaryPct / 100, TARGETS.gender.womenAndNonBinary, true);
-  lines.push(`Women/Non-binary  ${womenNonBinary.toString().padStart(3)} (${womenNonBinaryPct.toFixed(1)}%) Target: >= ${targetGenderPct.toFixed(0)}% [${genderStatus}]`);
-  lines.push(`Men               ${(metrics.genderDistribution.man || 0).toString().padStart(3)} (${metrics.totalWorks ? ((metrics.genderDistribution.man / metrics.totalWorks) * 100).toFixed(1) : 0}%)`);
-  lines.push(`Unknown           ${(metrics.genderDistribution.unknown || 0).toString().padStart(3)} (${metrics.totalWorks ? ((metrics.genderDistribution.unknown / metrics.totalWorks) * 100).toFixed(1) : 0}%)`);
+  lines.push(
+    `Women/Non-binary  ${womenNonBinary.toString().padStart(3)} (${womenNonBinaryPct.toFixed(1)}%) Target: >= ${targetGenderPct.toFixed(0)}% [${genderStatus}]`
+  );
+  lines.push(
+    `Men               ${(metrics.genderDistribution.man || 0).toString().padStart(3)} (${metrics.totalWorks ? ((metrics.genderDistribution.man / metrics.totalWorks) * 100).toFixed(1) : 0}%)`
+  );
+  lines.push(
+    `Unknown           ${(metrics.genderDistribution.unknown || 0).toString().padStart(3)} (${metrics.totalWorks ? ((metrics.genderDistribution.unknown / metrics.totalWorks) * 100).toFixed(1) : 0}%)`
+  );
 
   // Region distribution
   lines.push('\n--- Author Region Distribution ---');
-  const outsideUSUKPct = metrics.totalWorks ? (metrics.regionDistribution.other / metrics.totalWorks) * 100 : 0;
+  const outsideUSUKPct = metrics.totalWorks
+    ? (metrics.regionDistribution.other / metrics.totalWorks) * 100
+    : 0;
   const targetRegionPct = TARGETS.geography.outsideUSUK * 100;
   const regionStatus = getStatus(outsideUSUKPct / 100, TARGETS.geography.outsideUSUK, true);
-  lines.push(`Outside US/UK     ${metrics.regionDistribution.other.toString().padStart(3)} (${outsideUSUKPct.toFixed(1)}%) Target: >= ${targetRegionPct.toFixed(0)}% [${regionStatus}]`);
-  lines.push(`US/UK             ${metrics.regionDistribution['US/UK'].toString().padStart(3)} (${metrics.totalWorks ? ((metrics.regionDistribution['US/UK'] / metrics.totalWorks) * 100).toFixed(1) : 0}%)`);
-  lines.push(`Unknown           ${metrics.regionDistribution.unknown.toString().padStart(3)} (${metrics.totalWorks ? ((metrics.regionDistribution.unknown / metrics.totalWorks) * 100).toFixed(1) : 0}%)`);
+  lines.push(
+    `Outside US/UK     ${metrics.regionDistribution.other.toString().padStart(3)} (${outsideUSUKPct.toFixed(1)}%) Target: >= ${targetRegionPct.toFixed(0)}% [${regionStatus}]`
+  );
+  lines.push(
+    `US/UK             ${metrics.regionDistribution['US/UK'].toString().padStart(3)} (${metrics.totalWorks ? ((metrics.regionDistribution['US/UK'] / metrics.totalWorks) * 100).toFixed(1) : 0}%)`
+  );
+  lines.push(
+    `Unknown           ${metrics.regionDistribution.unknown.toString().padStart(3)} (${metrics.totalWorks ? ((metrics.regionDistribution.unknown / metrics.totalWorks) * 100).toFixed(1) : 0}%)`
+  );
 
   // Author cap
   lines.push('\n--- Author Cap (max 3 until 150 works) ---');
@@ -283,7 +304,7 @@ function formatTable(metrics, missingMetadata) {
     .sort();
 
   if (overCap.length > 0) {
-    lines.push('Authors over cap: ' + overCap.join(', ') + ' [HIGH]');
+    lines.push(`Authors over cap: ${overCap.join(', ')} [HIGH]`);
   } else {
     lines.push('All authors within cap [OK]');
   }
@@ -297,7 +318,9 @@ function formatTable(metrics, missingMetadata) {
     current: metrics.totalWorks ? metrics.eraDistribution[era] / metrics.totalWorks : 0,
     target,
   }));
-  const lowestEra = eraPercents.reduce((a, b) => (a.current - a.target < b.current - b.target ? a : b));
+  const lowestEra = eraPercents.reduce((a, b) =>
+    a.current - a.target < b.current - b.target ? a : b
+  );
   if (lowestEra.current < lowestEra.target) {
     underTargets.push({ name: lowestEra.name, deficit: lowestEra.target - lowestEra.current });
   }
@@ -308,19 +331,27 @@ function formatTable(metrics, missingMetadata) {
     current: metrics.totalWorks ? (metrics.formDistribution[form] || 0) / metrics.totalWorks : 0,
     target,
   }));
-  const lowestForm = formPercents.reduce((a, b) => (a.current - a.target < b.current - b.target ? a : b));
+  const lowestForm = formPercents.reduce((a, b) =>
+    a.current - a.target < b.current - b.target ? a : b
+  );
   if (lowestForm.current < lowestForm.target) {
     underTargets.push({ name: lowestForm.name, deficit: lowestForm.target - lowestForm.current });
   }
 
   // Check gender
   if (womenNonBinaryPct / 100 < TARGETS.gender.womenAndNonBinary) {
-    underTargets.push({ name: 'gender: women/non-binary', deficit: TARGETS.gender.womenAndNonBinary - womenNonBinaryPct / 100 });
+    underTargets.push({
+      name: 'gender: women/non-binary',
+      deficit: TARGETS.gender.womenAndNonBinary - womenNonBinaryPct / 100,
+    });
   }
 
   // Check geography
   if (outsideUSUKPct / 100 < TARGETS.geography.outsideUSUK) {
-    underTargets.push({ name: 'geography: outside US/UK', deficit: TARGETS.geography.outsideUSUK - outsideUSUKPct / 100 });
+    underTargets.push({
+      name: 'geography: outside US/UK',
+      deficit: TARGETS.geography.outsideUSUK - outsideUSUKPct / 100,
+    });
   }
 
   // Sort by deficit and get top 2
