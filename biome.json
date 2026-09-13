@@ -38,7 +38,7 @@
       "**/*.css",
       "!**/*.svelte",
       "!public/data",
-      "!content/works"
+      "!content/works/**"
     ]
   },
   "linter": {
