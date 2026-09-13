@@ -381,7 +381,7 @@ export async function injectExcerpt(options) {
     throw new Error(`--mode must be "excerpt" or "full" (got "${mode}")`);
   }
 
-  const workPath = join(dir, `${id}.json`);
+  const workPath = join(dir ?? DEFAULT_WORKS_DIR, `${id}.json`);
   const raw = await readFile(workPath, 'utf8');
   /** @type {Record<string, unknown>} */
   const work = JSON.parse(raw);
@@ -404,6 +404,11 @@ export async function injectExcerpt(options) {
     work.excerpt = sliced.excerpt;
     work.excerptNote = `Opening ${sliced.wordCount} words of ${totalWords} (source: ${hostRepo})`;
     excerptWordCount = sliced.wordCount;
+  }
+
+  work.textPolicy = mode === 'full' ? 'full' : 'excerpt';
+  if (Array.isArray(work.tags)) {
+    work.tags = work.tags.filter((tag) => tag !== 'needs-text');
   }
 
   const { name } = describeSource(urls[0]);

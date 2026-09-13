@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-13T08:43:47.736Z",
-  "count": 7,
+  "generatedAt": "2026-09-13T08:49:11.625Z",
+  "count": 12,
   "shards": 1,
   "works": [
     {
@@ -116,6 +116,90 @@
       "shard": 0
     },
     {
+      "id": "kate-chopin-the-awakening-1899",
+      "title": "The Awakening",
+      "author": "Kate Chopin",
+      "year": 1899,
+      "era": "19th_century",
+      "type": "book",
+      "form": "novella",
+      "themes": [
+        "desire",
+        "gender",
+        "the-body",
+        "solitude",
+        "home"
+      ],
+      "tags": [
+        "american-literature",
+        "louisiana",
+        "creole-society"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "words",
+        "value": 32000
+      },
+      "textPolicy": "excerpt",
+      "shard": 0
+    },
+    {
+      "id": "kazuo-ishiguro-remains-of-the-day-1989",
+      "title": "The Remains of the Day",
+      "author": "Kazuo Ishiguro",
+      "year": 1989,
+      "era": "contemporary",
+      "type": "book",
+      "form": "novel",
+      "themes": [
+        "memory",
+        "time",
+        "work",
+        "solitude",
+        "doubt"
+      ],
+      "tags": [
+        "british-literature",
+        "booker-prize",
+        "needs-text"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "words",
+        "value": 63000
+      },
+      "textPolicy": "pending",
+      "shard": 0
+    },
+    {
+      "id": "leo-tolstoy-anna-karenina-1877",
+      "title": "Anna Karenina",
+      "author": "Leo Tolstoy",
+      "year": 1877,
+      "era": "19th_century",
+      "type": "book",
+      "form": "novel, translated from Russian by Constance Garnett",
+      "themes": [
+        "love",
+        "desire",
+        "family",
+        "gender",
+        "power"
+      ],
+      "tags": [
+        "russian-literature",
+        "translation",
+        "adultery-plot"
+      ],
+      "difficulty": 4,
+      "length": {
+        "unit": "words",
+        "value": 349000
+      },
+      "textPolicy": "excerpt",
+      "shard": 0
+    },
+    {
       "id": "millay-first-fig-1918",
       "title": "First Fig",
       "author": "Edna St. Vincent Millay",
@@ -196,6 +280,63 @@
         "value": 14
       },
       "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "selma-lagerlof-wonderful-adventures-of-nils-1906",
+      "title": "The Wonderful Adventures of Nils",
+      "author": "Selma Lagerlöf",
+      "year": 1906,
+      "era": "early_20th_century",
+      "type": "book",
+      "form": "novel, translated from Swedish by Velma Swanston Howard",
+      "themes": [
+        "nature",
+        "animals",
+        "migration",
+        "home",
+        "wonder"
+      ],
+      "tags": [
+        "swedish-literature",
+        "nobel-laureate",
+        "translation"
+      ],
+      "difficulty": 2,
+      "length": {
+        "unit": "words",
+        "value": 130000
+      },
+      "textPolicy": "excerpt",
+      "shard": 0
+    },
+    {
+      "id": "toni-morrison-beloved-1987",
+      "title": "Beloved",
+      "author": "Toni Morrison",
+      "year": 1987,
+      "era": "contemporary",
+      "type": "book",
+      "form": "novel",
+      "themes": [
+        "memory",
+        "grief",
+        "family",
+        "race",
+        "the-body"
+      ],
+      "tags": [
+        "american-literature",
+        "pulitzer-prize",
+        "african-american-literature",
+        "needs-text"
+      ],
+      "difficulty": 5,
+      "length": {
+        "unit": "words",
+        "value": 110000
+      },
+      "textPolicy": "pending",
       "shard": 0
     }
   ]

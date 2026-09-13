@@ -194,7 +194,7 @@ export const WorkSchema = WorkBaseSchema.superRefine((work, ctx) => {
   const externalLinkCount = work.externalLinks?.length ?? 0;
 
   // Rule 4: books never ship `full` — always excerpted, even public domain.
-  if (work.type === 'book' && work.textPolicy !== 'excerpt') {
+  if (work.type === 'book' && work.textPolicy === 'full') {
     ctx.addIssue({
       code: 'custom',
       path: ['textPolicy'],

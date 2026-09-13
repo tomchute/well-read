@@ -317,6 +317,286 @@
     }
   },
   {
+    "id": "kate-chopin-the-awakening-1899",
+    "type": "book",
+    "title": "The Awakening",
+    "author": "Kate Chopin",
+    "year": 1899,
+    "era": "19th_century",
+    "form": "novella",
+    "themes": [
+      "desire",
+      "gender",
+      "the-body",
+      "solitude",
+      "home"
+    ],
+    "tags": [
+      "american-literature",
+      "louisiana",
+      "creole-society"
+    ],
+    "length": {
+      "unit": "words",
+      "value": 32000
+    },
+    "difficulty": 3,
+    "source": {
+      "name": "Standard Ebooks (GitHub mirror)",
+      "url": "https://raw.githubusercontent.com/standardebooks/kate-chopin_the-awakening/master/src/epub/text/chapter-1.xhtml",
+      "license": "public-domain",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "excerpt",
+    "excerpt": "I\n\nA green and yellow parrot, which hung in a cage outside the door, kept repeating over and over:\n\n“Allez vous-en! Allez vous-en! Sapristi! That’s all right!”\n\nHe could speak a little Spanish, and also a language which nobody understood, unless it was the mockingbird that hung on the other side of the door, whistling his fluty notes out upon the breeze with maddening persistence.\n\nMr. Pontellier, unable to read his newspaper with any degree of comfort, arose with an expression and an exclamation of disgust.\n\nHe walked down the gallery and across the narrow “bridges” which connected the Lebrun cottages one with the other. He had been seated before the door of the main house. The parrot and the mockingbird were the property of Madame Lebrun, and they had the right to make all the noise they wished. Mr. Pontellier had the privilege of quitting their society when they ceased to be entertaining.\n\nHe stopped before the door of his own cottage, which was the fourth one from the main building and next to the last. Seating himself in a wicker rocker which was there, he once more applied himself to the task of reading the newspaper. The day was Sunday; the paper was a day old. The Sunday papers had not yet reached Grand Isle. He was already acquainted with the market reports, and he glanced restlessly over the editorials and bits of news which he had not had time to read before quitting New Orleans the day before.\n\nMr. Pontellier wore eyeglasses. He was a man of forty, of medium height and rather slender build; he stooped a little. His hair was brown and straight, parted on one side. His beard was neatly and closely trimmed.\n\nOnce in a while he withdrew his glance from the newspaper and looked about him. There was more noise than ever over at the house. The main building was called “the house,” to distinguish it from the cottages. The chattering and whistling birds were still at it. Two young girls, the Farival twins, were playing a duet from Zampa upon the piano. Madame Lebrun was bustling in and out, giving orders in a high key to a yard-boy whenever she got inside the house, and directions in an equally high voice to a dining-room servant whenever she got outside. She was a fresh, pretty woman, clad always in white with elbow sleeves. Her starched skirts crinkled as she came and went. Farther down, before one of the cottages, a lady in black was walking demurely up and down, telling her beads. A good many persons of the pension had gone over to the Chénière Caminada in Beaudelet’s lugger to hear mass. Some young people were out under the water oaks playing croquet. Mr. Pontellier’s two children were there⁠—sturdy little fellows of four and five. A quadroon nurse followed them about with a faraway, meditative air.\n\nMr. Pontellier finally lit a cigar and began to smoke, letting the paper drag idly from his hand. He fixed his gaze upon a white sunshade that was advancing at snail’s pace from the beach. He could see it plainly between the gaunt trunks of the water oaks and across the stretch of yellow camomile. The gulf looked far away, melting hazily into the blue of the horizon. The sunshade continued to approach slowly. Beneath its pink-lined shelter were his wife, Mrs. Pontellier, and young Robert Lebrun. When they reached the cottage, the two seated themselves with some appearance of fatigue upon the upper step of the porch, facing each other, each leaning against a supporting post.\n\n“What folly! to bathe at such an hour in such heat!” exclaimed Mr. Pontellier. He himself had taken a plunge at daylight. That was why the morning seemed long to him.\n\n“You are burnt beyond recognition,” he added, looking at his wife as one looks at a valuable piece of personal property which has suffered some damage. She held up her hands, strong, shapely hands, and surveyed them critically, drawing up her fawn sleeves above the wrists. Looking at them reminded her of her rings, which she had given to her husband before leaving for the beach. She silently reached out to him, and he, understanding, took the rings from his vest pocket and dropped them into her open palm. She slipped them upon her fingers; then clasping her knees, she looked across at Robert and began to laugh. The rings sparkled upon her fingers. He sent back an answering smile.\n\n“What is it?” asked Pontellier, looking lazily and amused from one to the other. It was some utter nonsense; some adventure out there in the water, and they both tried to relate it at once. It did not seem half so amusing when told. They realized this, and so did Mr. Pontellier. He yawned and stretched himself. Then he got up, saying he had half a mind to go over to Klein’s hotel and play a game of billiards.\n\n“Come go along, Lebrun,” he proposed to Robert. But Robert admitted quite frankly that he preferred to stay where he was and talk to Mrs. Pontellier.\n\n“Well, send him about his business when he bores you, Edna,” instructed her husband as he prepared to leave.\n\n“Here, take the umbrella,” she exclaimed, holding it out to him. He accepted the sunshade, and lifting it over his head descended the steps and walked away.\n\n“Coming back to dinner?” his wife called after him. He halted a moment and shrugged his shoulders. He felt in his vest pocket; there was a ten-dollar bill there. He did not know; perhaps he would return for the early dinner and perhaps he would not. It all depended upon the company which he found over at Klein’s and the size of “the game.” He did not say this, but she understood it, and laughed, nodding goodbye to him.\n\nBoth children wanted to follow their father when they saw him starting out. He kissed them and promised to bring them back bonbons and peanuts.",
+    "excerptNote": "Opening 1007 words of 1007 (source: raw.githubusercontent.com/standardebooks/kate-chopin_the-awakening)",
+    "ebookLinks": [
+      {
+        "provider": "standard-ebooks",
+        "format": "html",
+        "url": "https://standardebooks.org/ebooks/kate-chopin/the-awakening/text/single-page"
+      },
+      {
+        "provider": "gutenberg",
+        "format": "html",
+        "url": "https://www.gutenberg.org/ebooks/160"
+      }
+    ],
+    "externalLinks": [
+      {
+        "kind": "library",
+        "url": "https://standardebooks.org/ebooks/kate-chopin/the-awakening",
+        "label": "Read free at Standard Ebooks"
+      },
+      {
+        "kind": "bookstore",
+        "url": "https://bookshop.org/search?keywords=The%20Awakening%20Kate%20Chopin",
+        "label": "Search Bookshop.org"
+      },
+      {
+        "kind": "library",
+        "url": "https://search.worldcat.org/search?q=The%20Awakening%20Kate%20Chopin",
+        "label": "Find a library copy on WorldCat"
+      }
+    ],
+    "masterNotes": {
+      "context": "Chopin published *The Awakening* in 1899, late in a career built mostly on short fiction set among the Creole and Cajun communities of Louisiana, where she had lived as a young wife. The novel's frank treatment of a married woman's sexual and artistic self-discovery drew hostile reviews on release, and some libraries removed it from circulation; Chopin herself published almost nothing else before her death five years later. It fell out of print for decades and was effectively rediscovered in the 1960s and 70s, when feminist critics and scholars of American realism restored it to the canon, and it is now a fixture of American literature anthologies and university syllabi. The Gulf Coast resort of Grand Isle, where much of the novel opens, was a real seasonal retreat for well-off New Orleans families, and Chopin renders its heat, water, and leisure with the same close naturalist attention Guy de Maupassant, a writer she admired and translated, brought to French provincial life.",
+      "form": "Chopin writes in a close but not fully interior third person, following Edna Pontellier's perceptions while withholding easy access to her reasoning, so that the reader often understands an impulse a beat before Edna names it to herself. Short, scene-based chapters replace continuous narrative summary, each one built around a single setting or conversation rather than a stretch of elapsed time. The prose favors concrete sensory detail, especially sound and water imagery, over authorial commentary or moral framing, which was itself part of what scandalized contemporary reviewers: the novel declines to judge its protagonist.",
+      "keyImages": [
+        "Edna's early, halting attempts to swim at Grand Isle, described as much through the sensation of the water as through the act itself — the novel's clearest early image of a body learning what it wants.",
+        "The recurring sound of the sea, returned to at intervals throughout the book, described less as scenery than as something that seems to speak directly to Edna.",
+        "Adèle Ratignolle's hands at the piano and Mademoiselle Reisz's playing, set against each other as two entirely different models of what a woman's art and attention can look like.",
+        "The Pontellier house on Esplanade Street, and Edna's small, specific acts of withdrawal from its social rituals, which register as radical precisely because they are so quiet."
+      ],
+      "whatToNotice": [
+        "Notice how often Edna's feelings are introduced through physical sensation — fatigue, heat, the pull of water — before the narration supplies any interpretation of them.",
+        "Notice the contrast Chopin builds between Adèle Ratignolle and Mademoiselle Reisz in the novel's early chapters, and how each woman represents a different, incomplete answer to what Edna might become.",
+        "Pay attention to what Léonce Pontellier notices and fails to notice about his wife in the opening chapters — his attention is a measuring instrument the novel uses on Edna without her consent.",
+        "Notice how rarely the narrator explains Edna's motives in full sentences of psychological explanation, compared to how much space is given to setting and gesture.",
+        "Track the recurrence of music in the early chapters and how differently each character listens to it."
+      ],
+      "discussionQuestions": [
+        "What does Chopin's refusal to moralize about Edna's choices ask of the reader, compared to a novel that took a clearer stance?",
+        "How do Adèle Ratignolle and Mademoiselle Reisz function as two different models of womanhood that Edna is measured against, and against which she measures herself?",
+        "Why might Chopin have chosen the sea as the novel's dominant recurring image rather than a domestic or urban one?",
+        "What does the novel suggest about the relationship between artistic ambition and the domestic roles available to a woman like Edna in this setting?"
+      ],
+      "furtherReading": [
+        "Kate Chopin's short story \"The Story of an Hour\" — a much shorter treatment of a wife's inner life in a moment of sudden, unlooked-for freedom.",
+        "Gustave Flaubert's *Madame Bovary* — an earlier novel Chopin knew well, working similar territory of a woman's dissatisfaction with a respectable marriage.",
+        "Per Seyersted's biography *Kate Chopin: A Critical Biography* — the study most responsible for the novel's mid-century critical recovery."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "id": "kazuo-ishiguro-remains-of-the-day-1989",
+    "type": "book",
+    "title": "The Remains of the Day",
+    "author": "Kazuo Ishiguro",
+    "year": 1989,
+    "era": "contemporary",
+    "form": "novel",
+    "themes": [
+      "memory",
+      "time",
+      "work",
+      "solitude",
+      "doubt"
+    ],
+    "tags": [
+      "british-literature",
+      "booker-prize",
+      "needs-text"
+    ],
+    "length": {
+      "unit": "words",
+      "value": 63000
+    },
+    "difficulty": 3,
+    "source": {
+      "name": "Faber & Faber, first edition, 1989",
+      "url": "https://www.faber.co.uk/product/9780571258246-the-remains-of-the-day/",
+      "license": "all-rights-reserved",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "pending",
+    "externalLinks": [
+      {
+        "kind": "publisher",
+        "url": "https://www.faber.co.uk/product/9780571258246-the-remains-of-the-day/",
+        "label": "Publisher page (Faber & Faber)"
+      },
+      {
+        "kind": "bookstore",
+        "url": "https://bookshop.org/search?keywords=The%20Remains%20of%20the%20Day%20Ishiguro",
+        "label": "Search Bookshop.org"
+      },
+      {
+        "kind": "library",
+        "url": "https://search.worldcat.org/search?q=The%20Remains%20of%20the%20Day%20Ishiguro",
+        "label": "Find a library copy on WorldCat"
+      }
+    ],
+    "masterNotes": {
+      "context": "Ishiguro published *The Remains of the Day* in 1989, his third novel, and it won the Booker Prize that year; he received the Nobel Prize in Literature in 2017. The novel is narrated by Stevens, an English butler, in the form of a journal kept during a brief motoring trip through the West Country in 1956, a framing device that lets Ishiguro set Stevens's account of a single week against decades of service at Darlington Hall recalled in retrospect. The country-house setting and the interwar period Stevens repeatedly circles back to draw on a long English literary tradition of upstairs-downstairs fiction, which the novel uses while quietly working against its usual assumptions about whose account of events should be trusted. The book was adapted into a widely seen 1993 film, which considerably widened its readership beyond the audience for literary fiction.",
+      "form": "The novel is written entirely in Stevens's first-person voice, formal, self-monitoring, and given to abstraction exactly where feeling threatens to surface, so that the gap between what Stevens reports and what the reader infers becomes the book's primary source of meaning. The journal-entry structure lets present-tense travel observations trigger extended retrospective digressions with only light transitions, blurring 1956 and the 1920s-30s almost as freely as *Beloved* blurs its own past and present, though to very different ends. Ishiguro sustains dramatic irony throughout by keeping Stevens's professional vocabulary of \"dignity\" and \"greatness\" stable even as the events he recounts increasingly strain it.",
+      "keyImages": [
+        "Stevens's repeated, almost theoretical discussions of what makes a butler \"great,\" returned to at intervals as his private measure of a life well spent.",
+        "The now much-diminished staff at Darlington Hall under its new American owner, a small but persistent reminder of how much has already ended before the narration begins.",
+        "Miss Kenton's letter, which prompts Stevens's journey, read and reread by him for meanings he seems reluctant to state plainly.",
+        "The view from a Salisbury hillside partway through the trip, offered by a stranger as an image of English landscape's quiet, unspectacular greatness — a claim the novel lets sit uncommented on."
+      ],
+      "whatToNotice": [
+        "Notice how often Stevens explains or justifies a feeling in professional terms just after a moment that seems to call for a personal one.",
+        "Notice the vocabulary Stevens uses to define \"dignity\" and \"greatness,\" and track whether it stays consistent as the journey continues.",
+        "Pay attention to what Stevens chooses to report about his former employer, Lord Darlington, and what he declines to evaluate directly.",
+        "Notice the ordinary strangers Stevens meets on his trip, and how each conversation quietly tests a claim he has made about himself.",
+        "Track the handful of moments Stevens describes his own physical or emotional state without a professional framing, and notice how rare they are."
+      ],
+      "discussionQuestions": [
+        "What does Stevens's vocabulary of \"dignity\" and professional \"greatness\" allow him to avoid saying directly, and where does that strategy start to fail?",
+        "How does the frame of a short present-day journey change how you read the much longer stretch of remembered past it keeps interrupting?",
+        "What responsibility, if any, does the novel suggest Stevens bears for decisions made by Lord Darlington that he merely served?",
+        "How does the novel use ordinary strangers Stevens meets on the road to test or unsettle his own account of himself?"
+      ],
+      "furtherReading": [
+        "Kazuo Ishiguro's *Never Let Me Go* — another novel built on a narrator whose calm, controlled voice conceals more than it states.",
+        "P. G. Wodehouse's Jeeves stories — an earlier, comic use of the English butler figure that this novel's premise quietly answers.",
+        "Ishiguro's Nobel Prize lecture, \"My Twentieth Century Evening and Other Small Breakthroughs\" — his own account of the concerns running through his fiction."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "id": "leo-tolstoy-anna-karenina-1877",
+    "type": "book",
+    "title": "Anna Karenina",
+    "author": "Leo Tolstoy",
+    "year": 1877,
+    "era": "19th_century",
+    "form": "novel, translated from Russian by Constance Garnett",
+    "themes": [
+      "love",
+      "desire",
+      "family",
+      "gender",
+      "power"
+    ],
+    "tags": [
+      "russian-literature",
+      "translation",
+      "adultery-plot"
+    ],
+    "length": {
+      "unit": "words",
+      "value": 349000
+    },
+    "difficulty": 4,
+    "source": {
+      "name": "Standard Ebooks (GitHub mirror)",
+      "url": "https://raw.githubusercontent.com/standardebooks/leo-tolstoy_anna-karenina_constance-garnett/master/src/epub/text/chapter-1-1.xhtml",
+      "license": "public-domain",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "excerpt",
+    "excerpt": "I\n\nHappy families are all alike; every unhappy family is unhappy in its own way.\n\nEverything was in confusion in the Oblonskys’ house. The wife had discovered that the husband was carrying on an intrigue with a French girl, who had been a governess in their family, and she had announced to her husband that she could not go on living in the same house with him. This position of affairs had now lasted three days, and not only the husband and wife themselves, but all the members of their family and household, were painfully conscious of it. Every person in the house felt that there was no sense in their living together, and that the stray people brought together by chance in any inn had more in common with one another than they, the members of the family and household of the Oblonskys. The wife did not leave her own room, the husband had not been at home for three days. The children ran wild all over the house; the English governess quarreled with the housekeeper, and wrote to a friend asking her to look out for a new situation for her; the man-cook had walked off the day before just at dinner time; the kitchen-maid, and the coachman had given warning.\n\nThree days after the quarrel, Prince Stepan Arkadyevitch Oblonsky⁠—Stiva, as he was called in the fashionable world⁠—woke up at his usual hour, that is, at eight o’clock in the morning, not in his wife’s bedroom, but on the leather-covered sofa in his study. He turned over his stout, well-cared-for person on the springy sofa, as though he would sink into a long sleep again; he vigorously embraced the pillow on the other side and buried his face in it; but all at once he jumped up, sat up on the sofa, and opened his eyes.\n\n“Yes, yes, how was it now?” he thought, going over his dream. “Now, how was it? To be sure! Alabin was giving a dinner at Darmstadt; no, not Darmstadt, but something American. Yes, but then, Darmstadt was in America. Yes, Alabin was giving a dinner on glass tables, and the tables sang, Il mio tesoro⁠—not Il mio tesoro though, but something better, and there were some sort of little decanters on the table, and they were women, too,” he remembered.\n\nStepan Arkadyevitch’s eyes twinkled gaily, and he pondered with a smile. “Yes, it was nice, very nice. There was a great deal more that was delightful, only there’s no putting it into words, or even expressing it in one’s thoughts awake.” And noticing a gleam of light peeping in beside one of the serge curtains, he cheerfully dropped his feet over the edge of the sofa, and felt about with them for his slippers, a present on his last birthday, worked for him by his wife on gold-colored morocco. And, as he had done every day for the last nine years, he stretched out his hand, without getting up, towards the place where his dressing-gown always hung in his bedroom. And thereupon he suddenly remembered that he was not sleeping in his wife’s room, but in his study, and why: the smile vanished from his face, he knitted his brows.\n\n“Ah, ah, ah! Oo!⁠ ⁠…” he muttered, recalling everything that had happened. And again every detail of his quarrel with his wife was present to his imagination, all the hopelessness of his position, and worst of all, his own fault.\n\n“Yes, she won’t forgive me, and she can’t forgive me. And the most awful thing about it is that it’s all my fault⁠—all my fault, though I’m not to blame. That’s the point of the whole situation,” he reflected. “Oh, oh, oh!” he kept repeating in despair, as he remembered the acutely painful sensations caused him by this quarrel.\n\nMost unpleasant of all was the first minute when, on coming, happy and good-humored, from the theater, with a huge pear in his hand for his wife, he had not found his wife in the drawing-room, to his surprise had not found her in the study either, and saw her at last in her bedroom with the unlucky letter that revealed everything in her hand.\n\nShe, his Dolly, forever fussing and worrying over household details, and limited in her ideas, as he considered, was sitting perfectly still with the letter in her hand, looking at him with an expression of horror, despair, and indignation.\n\n“What’s this? this?” she asked, pointing to the letter.\n\nAnd at this recollection, Stepan Arkadyevitch, as is so often the case, was not so much annoyed at the fact itself as at the way in which he had met his wife’s words.\n\nThere happened to him at that instant what does happen to people when they are unexpectedly caught in something very disgraceful. He did not succeed in adapting his face to the position in which he was placed towards his wife by the discovery of his fault. Instead of being hurt, denying, defending himself, begging forgiveness, instead of remaining indifferent even⁠—anything would have been better than what he did do⁠—his face utterly involuntarily (reflex spinal action, reflected Stepan Arkadyevitch, who was fond of physiology)⁠—utterly involuntarily assumed its habitual, good-humored, and therefore idiotic smile.\n\nThis idiotic smile he could not forgive himself. Catching sight of that smile, Dolly shuddered as though at physical pain, broke out with her characteristic heat into a flood of cruel words, and rushed out of the room. Since then she had refused to see her husband.\n\n“It’s that idiotic smile that’s to blame for it all,” thought Stepan Arkadyevitch.\n\n“But what’s to be done? What’s to be done?” he said to himself in despair, and found no answer.",
+    "excerptNote": "Opening 954 words of 954 (source: raw.githubusercontent.com/standardebooks/leo-tolstoy_anna-karenina_constance-garnett)",
+    "ebookLinks": [
+      {
+        "provider": "standard-ebooks",
+        "format": "html",
+        "url": "https://standardebooks.org/ebooks/leo-tolstoy/anna-karenina/constance-garnett/text/single-page"
+      },
+      {
+        "provider": "gutenberg",
+        "format": "html",
+        "url": "https://www.gutenberg.org/ebooks/1399"
+      }
+    ],
+    "externalLinks": [
+      {
+        "kind": "library",
+        "url": "https://standardebooks.org/ebooks/leo-tolstoy/anna-karenina/constance-garnett",
+        "label": "Read free at Standard Ebooks"
+      },
+      {
+        "kind": "bookstore",
+        "url": "https://bookshop.org/search?keywords=Anna%20Karenina%20Tolstoy",
+        "label": "Search Bookshop.org"
+      },
+      {
+        "kind": "library",
+        "url": "https://search.worldcat.org/search?q=Anna%20Karenina%20Tolstoy",
+        "label": "Find a library copy on WorldCat"
+      }
+    ],
+    "masterNotes": {
+      "context": "Tolstoy serialized *Anna Karenina* in the journal *The Russian Messenger* between 1875 and 1877, publishing it as a complete novel in 1878. He wrote it in the years after finishing *War and Peace*, while his own religious and moral preoccupations were sharpening toward the crisis that would reshape his later life and writing. Constance Garnett produced this translation in the early 1900s, part of a prolific career that first made the great Russian realists broadly available to English readers; because Garnett died in 1946, her translation of the novel has itself long since entered the public domain on both sides of the Atlantic, distinct from the question of the original Russian text's own public-domain status. The novel is usually read alongside *War and Peace* as one of the two works that established Tolstoy's reputation as a novelist of the first rank, and it remains a staple of world-literature courses and Russian-literature curricula.",
+      "form": "Tolstoy alternates between two loosely connected plot strands, following Anna's household and Konstantin Levin's in turn, a structure that lets the novel compare very different answers to questions of marriage, faith, and how to live, without ever forcing the two strands into a single unified plot. The narration moves fluidly between an omniscient vantage and close access to individual characters' half-formed thoughts, an early and influential use of what would later be called free indirect style. Tolstoy's chapters are short relative to the novel's total length, each usually confined to a single scene, which gives even this very long book a scene-by-scene, almost cinematic pace rather than the density of continuous summary.",
+      "keyImages": [
+        "The bustle and disorder of the Oblonsky household in the opening chapters, introduced before either Anna or Levin appears, establishing domestic disruption as the novel's first subject.",
+        "The Moscow train station where Anna and Vronsky first encounter each other amid the ordinary business of arrivals and departures — a mundane setting made to carry disproportionate weight.",
+        "Levin's scenes of physical labor on his estate, mowing alongside his own peasants, which the novel treats with a seriousness and dignity unusual for its era's depictions of manual work.",
+        "The recurring image of trains and rail travel throughout the novel, tying together its most public settings and its characters' most private turns."
+      ],
+      "whatToNotice": [
+        "Notice how the novel's famous opening sentence about happy and unhappy families sets up a comparative structure that the rest of the book keeps testing against its two central households.",
+        "Notice how differently Tolstoy handles interiority for Anna compared with Levin — track how much direct access to Levin's reasoning the narration grants versus how much it grants Anna.",
+        "Pay attention to scenes of physical work and physical sensation (mowing, skating, horse racing) and how much moral weight the novel invests in bodily activity.",
+        "Notice how often decisive emotional moments happen in transit — on trains, at stations, in carriages — rather than in settled domestic space.",
+        "Track the novel's treatment of Moscow versus the countryside as two different moral climates rather than simply two settings."
+      ],
+      "discussionQuestions": [
+        "Why does Tolstoy structure the novel around two parallel households rather than telling a single unified story?",
+        "What does the novel's treatment of physical labor, especially in Levin's chapters, suggest about Tolstoy's developing views on how to live well?",
+        "How does free indirect style shape your sympathy for characters whose choices the novel does not otherwise endorse?",
+        "What role do public, transitional spaces like train stations play in a novel so concerned with private feeling?"
+      ],
+      "furtherReading": [
+        "Tolstoy's *War and Peace* — the earlier novel that established the scope and method *Anna Karenina* refines and compresses.",
+        "Gustave Flaubert's *Madame Bovary* — a near-contemporary European novel of marriage and adultery, often read against Tolstoy's very different treatment of similar material.",
+        "Vladimir Nabokov's lecture on Tolstoy in *Lectures on Russian Literature* — a close formal reading of Tolstoy's technique by a novelist who studied it closely."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
     "id": "millay-first-fig-1918",
     "type": "poem",
     "title": "First Fig",
@@ -536,6 +816,190 @@
       "furtherReading": [
         "\"Song\" (\"When I am dead, my dearest\") — Rossetti's other, even starker poem on being forgotten after death.",
         "*Goblin Market* (Rossetti) — for a very different register of the same poet's imagination, allegorical rather than devotional."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "id": "selma-lagerlof-wonderful-adventures-of-nils-1906",
+    "type": "book",
+    "title": "The Wonderful Adventures of Nils",
+    "author": "Selma Lagerlöf",
+    "year": 1906,
+    "era": "early_20th_century",
+    "form": "novel, translated from Swedish by Velma Swanston Howard",
+    "themes": [
+      "nature",
+      "animals",
+      "migration",
+      "home",
+      "wonder"
+    ],
+    "tags": [
+      "swedish-literature",
+      "nobel-laureate",
+      "translation"
+    ],
+    "length": {
+      "unit": "words",
+      "value": 130000
+    },
+    "difficulty": 2,
+    "source": {
+      "name": "Standard Ebooks (GitHub mirror)",
+      "url": "https://raw.githubusercontent.com/standardebooks/selma-lagerlof_the-wonderful-adventures-of-nils_velma-swanston-howard/master/src/epub/text/the-boy.xhtml",
+      "license": "public-domain",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "excerpt",
+    "excerpt": "The Boy\n\nThe Elf\n\nSunday, March twentieth.\n\nOnce there was a boy. He was⁠—let us say⁠—something like fourteen years old; long and loose-jointed and towheaded. He wasn’t good for much, that boy. His chief delight was to eat and sleep; and after that⁠—he liked best to make mischief.\n\nIt was a Sunday morning and the boy’s parents were getting ready to go to church. The boy sat on the edge of the table, in his shirt sleeves, and thought how lucky it was that both father and mother were going away, and the coast would be clear for a couple of hours. “Good! Now I can take down pop’s gun and fire off a shot, without anybody’s meddling interference,” he said to himself.\n\nBut it was almost as if father should have guessed the boy’s thoughts, for just as he was on the threshold⁠—ready to start⁠—he stopped short, and turned toward the boy. “Since you won’t come to church with mother and me,” he said, “the least you can do, is to read the service at home. Will you promise to do so?”\n\n“Yes,” said the boy, “that I can do easy enough.” And he thought, of course, that he wouldn’t read any more than he felt like reading.\n\nThe boy thought that never had he seen his mother so persistent. In a second she was over by the shelf near the fireplace, and took down Luther’s Commentary and laid it on the table, in front of the window⁠—opened at the service for the day. She also opened the New Testament, and placed it beside the Commentary. Finally, she drew up the big armchair, which was bought at the parish auction the year before, and which, as a rule, no one but father was permitted to occupy.\n\nThe boy sat thinking that his mother was giving herself altogether too much trouble with this spread; for he had no intention of reading more than a page or so. But now, for the second time, it was almost as if his father were able to see right through him. He walked up to the boy, and said in a severe tone: “Now, remember, that you are to read carefully! For when we come back, I shall question you thoroughly; and if you have skipped a single page, it will not go well with you.”\n\n“The service is fourteen and a half pages long,” said his mother, just as if she wanted to heap up the measure of his misfortune. “You’ll have to sit down and begin the reading at once, if you expect to get through with it.”\n\nWith that they departed. And as the boy stood in the doorway watching them, he thought that he had been caught in a trap. “There they go congratulating themselves, I suppose, in the belief that they’ve hit upon something so good that I’ll be forced to sit and hang over the sermon the whole time that they are away,” thought he.\n\nBut his father and mother were certainly not congratulating themselves upon anything of the sort; but, on the contrary, they were very much distressed. They were poor farmers, and their place was not much bigger than a garden-plot. When they first moved there, the place couldn’t feed more than one pig and a pair of chickens; but they were uncommonly industrious and capable folk⁠—and now they had both cows and geese. Things had turned out very well for them; and they would have gone to church that beautiful morning⁠—satisfied and happy⁠—if they hadn’t had their son to think of. Father complained that he was dull and lazy; he had not cared to learn anything at school, and he was such an all-round good-for-nothing, that he could barely be made to tend geese. Mother did not deny that this was true; but she was most distressed because he was wild and bad; cruel to animals, and ill-willed toward human beings. “May God soften his hard heart, and give him a better disposition!” said the mother, “or else he will be a misfortune, both to himself and to us.”\n\nThe boy stood for a long time and pondered whether he should read the service or not. Finally, he came to the conclusion that, this time, it was best to be obedient. He seated himself in the easy chair, and began to read. But when he had been rattling away in an undertone for a little while, this mumbling seemed to have a soothing effect upon him⁠—and he began to nod.\n\nIt was the most beautiful weather outside! It was only the twentieth of March; but the boy lived in West Vemminghög Township, down in Southern Skåne, where the spring was already in full swing. It was not as yet green, but it was fresh and budding. There was water in all the trenches, and the colt’s-foot on the edge of the ditch was in bloom. All the weeds that grew in among the stones were brown and shiny. The beech-woods in the distance seemed to swell and grow thicker with every second. The skies were high⁠—and a clear blue. The cottage door stood ajar, and the lark’s trill could be heard in the room. The hens and geese pattered about in the yard, and the cows, who felt the spring air away in their stalls, lowed their approval every now and then.\n\nThe boy read and nodded and fought against drowsiness. “No! I don’t want to fall asleep,” thought he, “for then I’ll not get through with this thing the whole forenoon.”\n\nBut⁠—somehow⁠—he fell asleep.\n\nHe did not know whether he had slept a short while, or a long while; but he was awakened by hearing a slight noise back of him.\n\nOn the windowsill, facing the boy, stood a small looking-glass; and almost the entire cottage could be seen in this. As the boy raised his head, he happened to look in the glass; and then he saw that the cover to his mother’s chest had been opened.\n\nHis mother owned a great, heavy, iron-bound oak chest, which she permitted no one but herself to open. Here she treasured all the things she had inherited from her mother, and of these she was especially careful. Here lay a couple of old-time peasant dresses, of red homespun cloth, with short bodice and plaited shirt, and a pearl-bedecked breast pin. There were starched white-linen headdresses, and heavy silver ornaments and chains. Folks don’t care to go about dressed like that in these days, and several times his mother had thought of getting rid of the old things; but somehow, she hadn’t had the heart to do it.\n\nNow the boy saw distinctly⁠—in the glass⁠—that the chest-lid was open. He could not understand how this had happened, for his mother had closed the chest before she went away. She never would have left that precious chest open when he was at home, alone.\n\nHe became low-spirited and apprehensive. He was afraid that a thief had sneaked his way into the cottage. He didn’t dare to move; but sat still and stared into the looking-glass.\n\nWhile he sat there and waited for the thief to make his appearance, he began to wonder what that dark shadow was which fell across the edge of the chest. He looked and looked⁠—and did not want to believe his eyes. But the thing, which at first seemed shadowy, became more and more clear to him; and soon he saw that it was something real. It was no less a thing than an elf who sat there⁠—astride the edge of the chest!\n\nTo be sure, the boy had heard stories about elves, but he had never dreamed that they were such tiny creatures. He was no taller than a hand’s breadth⁠—this one, who sat on the edge of the chest. He had an old, wrinkled and beardless face, and was dressed in a black frock coat, knee-breeches and a broad-brimmed black hat. He was very trim and smart, with his white laces about the throat and wristbands, his buckled shoes, and the bows on his garters. He had taken from the chest an embroidered piece, and sat and looked at the old-fashioned handiwork with such an air of veneration, that he did not observe the boy had awakened.\n\nThe boy was somewhat surprised to see the elf, but, on the other hand, he was not particularly frightened. It was impossible to be afraid of one who was so little. And since the elf was so absorbed in his own thoughts that he neither saw nor heard, the boy thought that it would be great fun to play a trick on him; to push him over into the chest and shut the lid on him, or something of that kind.",
+    "excerptNote": "Opening 1466 words of 6331 (source: raw.githubusercontent.com/standardebooks/selma-lagerlof_the-wonderful-adventures-of-nils_velma-swanston-howard)",
+    "ebookLinks": [
+      {
+        "provider": "standard-ebooks",
+        "format": "html",
+        "url": "https://standardebooks.org/ebooks/selma-lagerlof/the-wonderful-adventures-of-nils/velma-swanston-howard/text/single-page"
+      },
+      {
+        "provider": "gutenberg",
+        "format": "html",
+        "url": "https://www.gutenberg.org/ebooks/40163"
+      }
+    ],
+    "externalLinks": [
+      {
+        "kind": "library",
+        "url": "https://standardebooks.org/ebooks/selma-lagerlof/the-wonderful-adventures-of-nils/velma-swanston-howard",
+        "label": "Read free at Standard Ebooks"
+      },
+      {
+        "kind": "bookstore",
+        "url": "https://bookshop.org/search?keywords=Wonderful%20Adventures%20of%20Nils%20Lagerlof",
+        "label": "Search Bookshop.org"
+      },
+      {
+        "kind": "library",
+        "url": "https://search.worldcat.org/search?q=Wonderful%20Adventures%20of%20Nils%20Lagerlof",
+        "label": "Find a library copy on WorldCat"
+      }
+    ],
+    "masterNotes": {
+      "context": "Lagerlöf wrote *The Wonderful Adventures of Nils* on commission from the National Teachers' Association of Sweden, which wanted an engaging geography reader for schoolchildren; she answered the brief by sending a shrunken, disobedient boy flying the length of the country on the back of a farm goose, folding real regional landscape, wildlife, and folklore into a continuous adventure rather than a textbook. Published in two volumes in 1906 and 1907, it became her best-known work internationally and helped bring her the 1909 Nobel Prize in Literature, making her the first woman to receive it. Velma Swanston Howard's English translation, prepared soon after, was for decades the version through which Anglophone readers met the book. It remains a staple of Swedish childhood reading and is often the first Lagerlöf work encountered outside Scandinavia, even though her adult fiction, such as *Gösta Berling's Saga*, is closer to the concerns of her other work.",
+      "form": "The book is organized as a sequence of largely self-contained episodes strung along the geese's migration route, a structure inherited from its origin as a geography primer, so that each chapter can stand fairly independently while still advancing Nils's ongoing transformation. Lagerlöf writes in a plain, oral, fable-like register suited to a young audience, but folds in real Swedish place names, industries, and natural history rather than treating the landscape as generic fantasy backdrop. The shift in scale, a boy reduced to the size of a thumb and given a bird's-eye view of his own country, lets the narration treat familiar geography as newly strange, which is the book's central formal trick.",
+      "keyImages": [
+        "Nils's transformation into a tiny creature after mistreating a tomte, the moment that yanks the whole book out of ordinary scale and into its fable logic.",
+        "The V-formation of wild geese in flight, returned to repeatedly as the book's central image of collective movement and belonging.",
+        "The recurring bird's-eye views of named Swedish provinces and landmarks, which double as both adventure scenery and geography lesson.",
+        "Akka, the lead goose, and the flock's internal codes of loyalty and leadership, offered as a working model of community distinct from the human households Nils has left behind."
+      ],
+      "whatToNotice": [
+        "Notice how often the book pauses its adventure plot to describe real Swedish geography or industry in loving, specific detail — the geography-textbook origin never fully disappears.",
+        "Notice what Nils's small size lets him see and hear that he could not have as a full-sized boy, and how the book uses that access.",
+        "Pay attention to how animal characters like Akka are given distinct temperaments and authority rather than functioning as generic talking-animal scenery.",
+        "Notice the episodic chapter structure and consider what is gained, and what is lost, by a story built this way rather than around one continuous crisis.",
+        "Track how the book handles Nils's guilt and change of character across the episodes rather than resolving it in a single dramatic turn."
+      ],
+      "discussionQuestions": [
+        "What does Lagerlöf's choice to embed a national geography lesson inside a fantasy adventure suggest about how she thought children learn to love a place?",
+        "How does the flock's model of leadership and belonging, through Akka, compare with the human households and communities Nils encounters along the way?",
+        "What is gained by telling this story as a sequence of largely self-contained episodes rather than one continuous plot?",
+        "Does Nils's transformation back at the story's end feel earned by what has come before, or is it simply the form's expected resolution?"
+      ],
+      "furtherReading": [
+        "Lagerlöf's *Gösta Berling's Saga* — her earlier, more adult novel, closer to the folkloric romanticism that made her reputation in Sweden.",
+        "Rudyard Kipling's *The Jungle Book* — a near-contemporary use of animal society to instruct and entertain a young reader.",
+        "Lagerlöf's 1909 Nobel Prize lecture materials — useful context for how her contemporaries situated this book within her larger body of work."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "id": "toni-morrison-beloved-1987",
+    "type": "book",
+    "title": "Beloved",
+    "author": "Toni Morrison",
+    "year": 1987,
+    "era": "contemporary",
+    "form": "novel",
+    "themes": [
+      "memory",
+      "grief",
+      "family",
+      "race",
+      "the-body"
+    ],
+    "tags": [
+      "american-literature",
+      "pulitzer-prize",
+      "african-american-literature",
+      "needs-text"
+    ],
+    "length": {
+      "unit": "words",
+      "value": 110000
+    },
+    "difficulty": 5,
+    "source": {
+      "name": "Alfred A. Knopf, first edition, 1987",
+      "url": "https://www.penguinrandomhouse.com/books/149972/beloved-by-toni-morrison/",
+      "license": "all-rights-reserved",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "pending",
+    "externalLinks": [
+      {
+        "kind": "publisher",
+        "url": "https://www.penguinrandomhouse.com/books/149972/beloved-by-toni-morrison/",
+        "label": "Publisher page (Penguin Random House)"
+      },
+      {
+        "kind": "bookstore",
+        "url": "https://bookshop.org/search?keywords=Beloved%20Toni%20Morrison",
+        "label": "Search Bookshop.org"
+      },
+      {
+        "kind": "library",
+        "url": "https://search.worldcat.org/search?q=Beloved%20Toni%20Morrison",
+        "label": "Find a library copy on WorldCat"
+      }
+    ],
+    "masterNotes": {
+      "context": "Morrison published *Beloved* in 1987, the first novel in what she later described as a loose trilogy continued by *Jazz* and *Paradise*. It won the Pulitzer Prize for Fiction in 1988, and Morrison went on to receive the Nobel Prize in Literature in 1993, the first Black woman to do so. The novel's starting point, publicly acknowledged by Morrison, is the historical case of Margaret Garner, an enslaved woman who in 1856 killed her own daughter rather than see her returned to slavery after a failed escape from Kentucky into Ohio; Morrison used this as a point of departure rather than a case to reconstruct, inventing the novel's characters, setting, and events freely from there. The book is set mostly in and around Cincinnati in the years following the Civil War, among formerly enslaved people for whom the war's end did not end the past's claims on the present.",
+      "form": "Morrison structures the novel non-chronologically, circling around a central act of violence that the narration approaches and retreats from repeatedly rather than disclosing in a single scene, so that the reader's understanding accumulates the way traumatic memory itself is shown to work for the characters. Point of view shifts among several characters, including extended passages of interior monologue that break from conventional syntax and punctuation, most notably in sections voicing Beloved herself. Present action and remembered past are given comparable narrative weight and are often not clearly demarcated, collapsing the distance a reader might expect between what is happening and what is being remembered.",
+      "keyImages": [
+        "The house at 124 Bluestone Road, introduced as an active, almost sentient presence rather than a passive setting, its numbering used instead of a name throughout.",
+        "Sethe's back, scarred in a pattern another character reads as a tree, an image of the body carrying legible, permanent testimony to what has been done to it.",
+        "The color white, and its recurring, unsettling appearances, tracked by Baby Suggs as a private, wordless system of meaning.",
+        "The clearing in the woods where Baby Suggs preaches self-love to the formerly enslaved community, an image of collective healing set against the novel's private, individual wounds."
+      ],
+      "whatToNotice": [
+        "Notice how long the novel withholds a full, direct account of the central act at its heart, and how it uses that delay rather than treating it as a twist.",
+        "Notice the shifts into fragmented, unpunctuated interior monologue and consider what kind of consciousness they seem to be rendering.",
+        "Pay attention to how physical scars and marks on the body are treated throughout as a kind of language the other characters have to learn to read.",
+        "Notice how present-tense domestic detail, cooking, chores, arrivals, is interrupted by memory without typographic warning, and track how you can tell the difference.",
+        "Notice the different relationships Sethe, Denver, and Paul D each have to the past, and how the novel keeps them distinct rather than treating trauma as a single shared experience."
+      ],
+      "discussionQuestions": [
+        "What is gained by Morrison's choice to withhold and circle around the novel's central act rather than presenting it early and directly?",
+        "How does the novel's treatment of the body, scars, touch, appetite, shape its argument about what slavery did and did not take from its characters?",
+        "What role does the community around 124 Bluestone Road play in both isolating and eventually reaching Sethe?",
+        "How do Denver's and Paul D's differing relationships to Sethe's past change how you read her?",
+        "What does the novel's ending suggest about whether the past it depicts can, in any sense, be put down?"
+      ],
+      "furtherReading": [
+        "Toni Morrison's *Jazz* — the loosely connected novel that continues the informal trilogy *Beloved* begins.",
+        "Toni Morrison's essay collection *Playing in the Dark* — her own critical writing on race and the American literary imagination, useful context for her fiction's concerns.",
+        "William Faulkner's *Absalom, Absalom!* — an earlier American novel Morrison studied closely, built on a similarly circling, retrospective narrative method."
       ]
     },
     "pipeline": {

@@ -26,7 +26,7 @@ Verification: `npm run validate:content` passes on the seed works and fails on t
 - [x] [WP-1.6](docs/work-packages/WP-1.6-fetch-poetrydb.md) `fetch-poetrydb.mjs`
 - [x] [WP-1.7](docs/work-packages/WP-1.7-seed-poems.md) Seed batch: ~6 poems (mixed eras, full + contemporary)
 - [ ] [WP-1.8](docs/work-packages/WP-1.8-seed-stories.md) Seed batch: ~5 short stories
-- [ ] [WP-1.9](docs/work-packages/WP-1.9-seed-books.md) Seed batch: ~5 books
+- [x] [WP-1.9](docs/work-packages/WP-1.9-seed-books.md) Seed batch: ~5 books
 
 ## Phase 2 — Feed UI
 Verification: seed works render as cards; detail view shows all master-notes sections; `full` and `excerpt` works render their link types correctly; the app looks like `docs/design-system.md`.
