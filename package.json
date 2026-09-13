@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run",
+    "test:e2e": "playwright test",
     "lint": "biome check .",
     "validate:content": "node scripts/validate-content.mjs",
     "build:manifest": "node scripts/build-manifest.mjs",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.13",
+    "@playwright/test": "^1.63.0",
     "@sveltejs/vite-plugin-svelte": "^7.3.0",
     "@tsconfig/svelte": "^5.0.8",
     "@types/dompurify": "^3.0.5",

@@ -9,6 +9,7 @@ export { createSeededRng, defaultRng, jitter } from './rng';
 export { pinBoost, recencyPenalty, scoreWork } from './score';
 export type {
   ChipAction,
+  ChipWork,
   ManifestEntry,
   Reactions,
   Read,

@@ -87,6 +87,10 @@
     entry: ManifestEntry;
     /** 1-based position in the current feed order — shown as the specimen number. */
     index: number;
+    /** Whether this work carries an explicit like (`reactions[id] === 1`) — shows the like button pressed. */
+    liked?: boolean;
+    /** Whether this work is in the saved list — shows the save button pressed. */
+    saved?: boolean;
     onLike?: (entry: ManifestEntry) => void;
     onDislike?: (entry: ManifestEntry) => void;
     onSave?: (entry: ManifestEntry) => void;
@@ -95,8 +99,16 @@
 
   const noop = () => {};
 
-  let { entry, index, onLike = noop, onDislike = noop, onSave = noop, onMoreLikeThis = noop }: Props =
-    $props();
+  let {
+    entry,
+    index,
+    liked = false,
+    saved = false,
+    onLike = noop,
+    onDislike = noop,
+    onSave = noop,
+    onMoreLikeThis = noop,
+  }: Props = $props();
 
   type LoadStatus = 'loading' | 'ready' | 'error';
 
@@ -222,7 +234,14 @@
       </div>
 
       <div class="actions">
-        <button type="button" class="action" onclick={handleLike} aria-label="Like">
+        <button
+          type="button"
+          class="action"
+          class:pressed={liked}
+          aria-pressed={liked}
+          onclick={handleLike}
+          aria-label="Like"
+        >
           <svg viewBox="0 0 24 24" aria-hidden="true"
             ><path
               d="M12 20s-7-4.4-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 5c-2.5 4.6-9.5 9-9.5 9Z"
@@ -243,7 +262,14 @@
             /></svg
           >
         </button>
-        <button type="button" class="action" onclick={handleSave} aria-label="Save">
+        <button
+          type="button"
+          class="action"
+          class:pressed={saved}
+          aria-pressed={saved}
+          onclick={handleSave}
+          aria-label="Save"
+        >
           <svg viewBox="0 0 24 24" aria-hidden="true"
             ><path
               d="M6 3.5h12a.5.5 0 0 1 .5.5v16.2a.5.5 0 0 1-.77.42L12 16.8l-5.73 3.82a.5.5 0 0 1-.77-.42V4a.5.5 0 0 1 .5-.5Z"
@@ -499,6 +525,11 @@
 
   .action:active {
     background: var(--surface-pressed);
+  }
+
+  .action.pressed {
+    background: var(--card-accent-tint);
+    color: var(--card-accent-text);
   }
 
   .action.wide {

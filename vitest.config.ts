@@ -4,5 +4,6 @@ import viteConfig from './vite.config.ts';
 export default mergeConfig(viteConfig, {
   test: {
     include: ['tests/**/*.spec.{ts,mjs}', 'src/**/*.spec.ts'],
+    exclude: ['tests/e2e/**'],
   },
 });

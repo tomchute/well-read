@@ -1,11 +1,14 @@
 <script lang="ts">
   import { createVirtualizer } from '@tanstack/svelte-virtual';
   import { onMount } from 'svelte';
+  import { isLiked, isSaved, likeWork, markSeen, moreLikeThis, dislikeWork, toggleSaved } from '$lib/actions';
+  // biome-ignore lint/correctness/noUnusedImports: used in template
+  import SteeringBar from '$lib/components/SteeringBar.svelte';
   // biome-ignore lint/correctness/noUnusedImports: used in template
   import WorkCard from '$lib/components/WorkCard.svelte';
   import { loadManifest, type ManifestEntry } from '$lib/data/manifest';
-  import { buildPage, defaultRng, type ScoringState } from '$lib/scoring';
-  import { reactions, read, seen, sessionPins, weights } from '$lib/stores/index.svelte';
+  import { applyChip, buildPage, defaultRng, type ChipAction, type ScoringState } from '$lib/scoring';
+  import { reactions, read, saved, seen, sessionPins, weights } from '$lib/stores/index.svelte';
 
   type Status = 'loading' | 'error' | 'ready';
 
@@ -14,6 +17,12 @@
   // biome-ignore lint/correctness/noUnusedVariables: used in template
   let errorMessage = $state('');
   let scrollElement = $state<HTMLDivElement | undefined>(undefined);
+
+  // The feed's current, stable order. Rebuilt explicitly (mount, a steering
+  // chip, "surprise me") rather than derived live from `weights`/`seen` —
+  // see `rebuildPage` — so passive reading (scrolling, marking a card seen)
+  // never reorders the page under the reader's finger.
+  let page = $state<ManifestEntry[]>([]);
 
   // Fixed card height (+ the gap below it) so the virtualiser never has to
   // measure the DOM: WorkCard reserves its own teaser space, so every card
@@ -24,26 +33,12 @@
   const ROW_GAP = 16;
   const ROW_HEIGHT = CARD_HEIGHT + ROW_GAP;
 
-  onMount(async () => {
-    try {
-      const manifest = await loadManifest();
-      entries = manifest.works;
-      status = 'ready';
-    } catch (error) {
-      errorMessage = error instanceof Error ? error.message : 'Something went wrong.';
-      status = 'error';
+  /** Rebuilds `page` from the current persisted scoring state — the only place `buildPage` is called. */
+  function rebuildPage(): void {
+    if (status !== 'ready' || entries.length === 0) {
+      page = entries;
+      return;
     }
-  });
-
-  // Full scoring (steering chips, live weight updates) is wired in WP-3.3.
-  // For now this still runs every manifest entry through the real
-  // `buildPage` walk — using whatever `weights`/`seen`/`reactions`/
-  // `sessionPins`/`read` are already persisted, which is all-zero/empty
-  // until a later WP writes to them — rather than raw manifest order, since
-  // the persisted-state runes it needs already exist and reading them here
-  // is a one-line, non-reactive-surprise wire-up.
-  const orderedEntries = $derived.by((): ManifestEntry[] => {
-    if (status !== 'ready' || entries.length === 0) return entries;
     const state: ScoringState = {
       weights: weights.value,
       seen: seen.value,
@@ -51,8 +46,56 @@
       sessionPins: sessionPins.value,
       read: read.value,
     };
-    return buildPage(entries, state, entries.length, new Date(), defaultRng);
+    page = buildPage(entries, state, entries.length, new Date(), defaultRng);
+  }
+
+  onMount(async () => {
+    try {
+      const manifest = await loadManifest();
+      entries = manifest.works;
+      status = 'ready';
+      rebuildPage();
+    } catch (error) {
+      errorMessage = error instanceof Error ? error.message : 'Something went wrong.';
+      status = 'error';
+    }
   });
+
+  // Snapshot passed to SteeringBar purely for its chip active/inactive
+  // display — reading it here does not itself trigger a rebuild; only
+  // `handleChip` (which every SteeringBar interaction goes through) does.
+  const scoringSnapshot = $derived<ScoringState>({
+    weights: weights.value,
+    seen: seen.value,
+    reactions: reactions.value,
+    sessionPins: sessionPins.value,
+    read: read.value,
+  });
+
+  /** Every steering-bar interaction (a theme/form chip or "surprise me") lands here. */
+  function handleChip(action: ChipAction) {
+    const next = applyChip(scoringSnapshot, action);
+    weights.set(next.weights);
+    sessionPins.set(next.sessionPins);
+    rebuildPage();
+  }
+
+  function handleLike(entry: ManifestEntry) {
+    likeWork({ weights, reactions }, entry);
+  }
+
+  function handleDislike(entry: ManifestEntry) {
+    dislikeWork({ weights, reactions }, entry);
+  }
+
+  function handleSave(entry: ManifestEntry) {
+    toggleSaved(saved, entry.id);
+  }
+
+  function handleMoreLikeThis(entry: ManifestEntry) {
+    moreLikeThis({ weights }, entry);
+    rebuildPage();
+  }
 
   const virtualizer = createVirtualizer<HTMLDivElement, HTMLDivElement>({
     count: 0,
@@ -63,15 +106,29 @@
 
   $effect(() => {
     $virtualizer.setOptions({
-      count: orderedEntries.length,
+      count: page.length,
       getScrollElement: () => scrollElement ?? null,
       estimateSize: () => ROW_HEIGHT,
       overscan: 6,
     });
   });
+
+  // Records first-seen for every card the virtualiser currently renders
+  // (visible plus its overscan margin) — a no-op for ids already in `seen`.
+  // This never touches `page`, so it cannot reorder the feed mid-scroll.
+  $effect(() => {
+    for (const item of $virtualizer.getVirtualItems()) {
+      const entry = page[item.index];
+      if (entry) markSeen(seen, entry.id);
+    }
+  });
 </script>
 
 <h2>Feed</h2>
+
+{#if status === 'ready'}
+  <SteeringBar state={scoringSnapshot} onchip={handleChip} />
+{/if}
 
 {#if status === 'loading'}
   <div class="feed-skeleton" aria-hidden="true" aria-label="Loading works">
@@ -81,19 +138,28 @@
   </div>
 {:else if status === 'error'}
   <p role="alert" class="feed-error">Couldn't load the feed: {errorMessage}</p>
-{:else if orderedEntries.length === 0}
+{:else if page.length === 0}
   <p>No works in the catalog yet.</p>
 {:else}
   <div class="feed-scroll" bind:this={scrollElement}>
     <div class="feed-inner" style="height: {$virtualizer.getTotalSize()}px;">
-      {#each $virtualizer.getVirtualItems() as virtualRow (orderedEntries[virtualRow.index]?.id ?? virtualRow.key)}
-        {@const item = orderedEntries[virtualRow.index]}
+      {#each $virtualizer.getVirtualItems() as virtualRow (page[virtualRow.index]?.id ?? virtualRow.key)}
+        {@const item = page[virtualRow.index]}
         {#if item}
           <div
             class="virtual-row"
             style="height: {CARD_HEIGHT}px; transform: translateY({virtualRow.start}px);"
           >
-            <WorkCard entry={item} index={virtualRow.index + 1} />
+            <WorkCard
+              entry={item}
+              index={virtualRow.index + 1}
+              liked={isLiked(reactions.value, item.id)}
+              saved={isSaved(saved.value, item.id)}
+              onLike={handleLike}
+              onDislike={handleDislike}
+              onSave={handleSave}
+              onMoreLikeThis={handleMoreLikeThis}
+            />
           </div>
         {/if}
       {/each}

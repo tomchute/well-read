@@ -2,7 +2,7 @@
 // ("Chip actions", "Normalisation", "Surprise me reset"). Pure: returns a
 // new `ScoringState`, never mutates `state` or its nested records.
 
-import type { ChipAction, ManifestEntry, ScoringState, Weights } from './types';
+import type { ChipAction, ChipWork, ScoringState, Weights } from './types';
 import { clip, withAuthorDelta, withFormDelta, withThemeDelta } from './weights';
 
 const LESS_FORM_FLOOR = -5;
@@ -16,7 +16,7 @@ const DECAY_SNAP_THRESHOLD = 0.01;
  * free-text `work.form` sub-genre field — see
  * docs/recommendation-design.md ("Score formula", "Chip actions").
  */
-function applyMoreLikeThis(weights: Weights, work: ManifestEntry): Weights {
+function applyMoreLikeThis(weights: Weights, work: ChipWork): Weights {
   let next = weights;
   for (const theme of work.themes) {
     next = withThemeDelta(next, theme, 2);
@@ -27,7 +27,7 @@ function applyMoreLikeThis(weights: Weights, work: ManifestEntry): Weights {
 }
 
 /** "Not interested": `theme[t] -= 1` for each theme, `author -= 3`. */
-function applyNotInterested(weights: Weights, work: ManifestEntry): Weights {
+function applyNotInterested(weights: Weights, work: ChipWork): Weights {
   let next = weights;
   for (const theme of work.themes) {
     next = withThemeDelta(next, theme, -1);
@@ -37,7 +37,7 @@ function applyNotInterested(weights: Weights, work: ManifestEntry): Weights {
 }
 
 /** Explicit dislike's "less-like-this" deltas: `theme[t] -= 2`, `author -= 2`. */
-function applyLessLikeThis(weights: Weights, work: ManifestEntry): Weights {
+function applyLessLikeThis(weights: Weights, work: ChipWork): Weights {
   let next = weights;
   for (const theme of work.themes) {
     next = withThemeDelta(next, theme, -2);
