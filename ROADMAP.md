@@ -46,7 +46,7 @@ Verification: scorer tests green; steering chips visibly reorder the feed; expor
 - [ ] [WP-3.3](docs/work-packages/WP-3.3-steering-bar.md) Steering bar wired to scorer
 - [ ] [WP-3.4](docs/work-packages/WP-3.4-library-views.md) Library: Saved / Read / Liked
 - [ ] [WP-3.5](docs/work-packages/WP-3.5-onboarding-quiz.md) First-run taste quiz
-- [ ] [WP-3.6](docs/work-packages/WP-3.6-kindle-helper-export-import.md) Kindle helper + JSON export/import
+- [x] [WP-3.6](docs/work-packages/WP-3.6-kindle-helper-export-import.md) Kindle helper + JSON export/import
 
 ## Phase 4 — Curation skill + Routine
 Verification: one Routine (or local `/curate`) run lands a validated batch on `main`, CI stays green, the deployed site shows the new works.
