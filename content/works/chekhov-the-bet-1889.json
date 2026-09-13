@@ -1,0 +1,68 @@
+{
+  "id": "chekhov-the-bet-1889",
+  "type": "short_story",
+  "title": "The Bet",
+  "author": "Anton Chekhov",
+  "year": 1889,
+  "era": "19th_century",
+  "form": "philosophical short story",
+  "themes": ["solitude", "time", "doubt", "wonder"],
+  "tags": ["needs-text", "needs-link-verification", "parable", "translation", "russia"],
+  "length": { "unit": "words", "value": 3400 },
+  "difficulty": 3,
+  "source": {
+    "name": "Standard Ebooks — Anton Chekhov: Short Fiction (trans. Constance Garnett)",
+    "url": "https://standardebooks.org/ebooks/anton-chekhov/short-fiction/constance-garnett",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "pending",
+  "ebookLinks": [
+    {
+      "provider": "standard-ebooks",
+      "format": "epub",
+      "url": "https://standardebooks.org/ebooks/anton-chekhov/short-fiction/constance-garnett/downloads/anton-chekhov_short-fiction_constance-garnett.epub"
+    }
+  ],
+  "externalLinks": [
+    {
+      "kind": "other",
+      "url": "https://en.wikipedia.org/wiki/The_Bet_(short_story)",
+      "label": "Background at Wikipedia"
+    }
+  ],
+  "masterNotes": {
+    "context": "Chekhov wrote \"The Bet\" in 1889, early in a career that would make him the most influential short-story writer of his generation, at a point when he was still writing quickly for periodicals and had not yet stepped back from his medical practice. The premise is a wager struck at a dinner party: a banker and a young lawyer argue over which is crueler, a life sentence or execution, and the argument hardens into an actual bet, with the lawyer volunteering to spend fifteen years in solitary confinement to prove his point. Chekhov returned constantly, across his career, to isolation, self-deception, and the gap between what people believe about themselves and what circumstance eventually reveals. Here he uses an almost fable-like premise less as a thought experiment than as a pressure chamber for testing two men against a single, artificial constraint over a very long stretch of time.",
+    "form": "The story is told in brisk omniscient third person, compressing fifteen years into a few pages by cutting between the banker's present-tense anxiety on the final night and quick summaries of what filtered out of the lawyer's confinement year by year, glimpsed mostly through the books he requests. Chekhov gives almost no direct access to the lawyer's interior life during the wager itself; the reader learns what he has become only secondhand, through inference and a late document, which makes the ending depend on the reader's own interpretation rather than on being told how to feel. The structure narrows steadily toward a single scene, the banker's approach to the lodge, and the story's control of pace is an early, clear demonstration of restraint as technique.",
+    "keyImages": [
+      "The lodge in the banker's garden where the confinement takes place — an ordinary piece of domestic architecture repurposed into something closer to a cell, without ever losing its ordinariness.",
+      "The fifteen years reduced to a list of what the lawyer reads, request by request, so that a mind's changes are tracked entirely through its shifting appetite for books.",
+      "The banker's own fifteen years of increasingly reckless decisions outside the lodge, running in uneasy parallel to the stillness inside it.",
+      "The final approach to the lodge on the last night, staged with a hush the story has been building toward since its opening page."
+    ],
+    "whatToNotice": [
+      "Notice how little direct dialogue the lawyer gets after the opening argument — his presence in the story is almost entirely mediated through what he reads and writes.",
+      "Notice the uneven pace at which years pass in the prose; some spans get a sentence, others a paragraph, tracking what the banker, and the reader, can bear to dwell on.",
+      "Notice how the opening dinner-party argument sets up two abstract positions before either man has been individually tested by anything.",
+      "Notice how sparingly Chekhov updates the physical description of the lodge over fifteen years — most of the change happens off the page.",
+      "Notice where the narration shifts from the banker's point of view toward something closer to a reported document near the close, and what that shift does to the story's authority."
+    ],
+    "discussionQuestions": [
+      "The bet is framed as a debate about capital punishment, but the story becomes about something else entirely. What does it end up being about?",
+      "Why might Chekhov choose to keep the reader almost entirely outside the lawyer's confinement rather than narrating it directly?",
+      "The banker changes as much as the lawyer does over the fifteen years, in the opposite direction. What does the story gain by tracking both men?",
+      "What does the story imply about the relationship between isolation and self-knowledge — is the lawyer's transformation a gain, a loss, or something the story refuses to rank?"
+    ],
+    "furtherReading": [
+      "Chekhov's *Ward No. 6* — a longer, darker treatment of confinement and the porous line between keeper and kept.",
+      "Fyodor Dostoevsky's *Notes from Underground* — an earlier Russian treatment of isolation chosen rather than imposed, useful for comparison of tone and conclusion.",
+      "The other stories in the same Standard Ebooks Constance Garnett collection, for tracing how Chekhov's method changed across a decade of story writing."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}
