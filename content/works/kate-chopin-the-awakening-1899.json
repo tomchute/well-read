@@ -1,0 +1,86 @@
+{
+  "id": "kate-chopin-the-awakening-1899",
+  "type": "book",
+  "title": "The Awakening",
+  "author": "Kate Chopin",
+  "year": 1899,
+  "era": "19th_century",
+  "form": "novella",
+  "themes": ["desire", "gender", "the-body", "solitude", "home"],
+  "tags": ["american-literature", "louisiana", "creole-society", "needs-text"],
+  "length": {
+    "unit": "words",
+    "value": 32000
+  },
+  "difficulty": 3,
+  "source": {
+    "name": "Standard Ebooks — Kate Chopin: The Awakening",
+    "url": "https://standardebooks.org/ebooks/kate-chopin/the-awakening",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "pending",
+  "ebookLinks": [
+    {
+      "provider": "standard-ebooks",
+      "format": "html",
+      "url": "https://standardebooks.org/ebooks/kate-chopin/the-awakening/text/single-page"
+    },
+    {
+      "provider": "gutenberg",
+      "format": "html",
+      "url": "https://www.gutenberg.org/ebooks/160"
+    }
+  ],
+  "externalLinks": [
+    {
+      "kind": "library",
+      "url": "https://standardebooks.org/ebooks/kate-chopin/the-awakening",
+      "label": "Read free at Standard Ebooks"
+    },
+    {
+      "kind": "bookstore",
+      "url": "https://bookshop.org/search?keywords=The%20Awakening%20Kate%20Chopin",
+      "label": "Search Bookshop.org"
+    },
+    {
+      "kind": "library",
+      "url": "https://search.worldcat.org/search?q=The%20Awakening%20Kate%20Chopin",
+      "label": "Find a library copy on WorldCat"
+    }
+  ],
+  "masterNotes": {
+    "context": "Chopin published *The Awakening* in 1899, late in a career built mostly on short fiction set among the Creole and Cajun communities of Louisiana, where she had lived as a young wife. The novel's frank treatment of a married woman's sexual and artistic self-discovery drew hostile reviews on release, and some libraries removed it from circulation; Chopin herself published almost nothing else before her death five years later. It fell out of print for decades and was effectively rediscovered in the 1960s and 70s, when feminist critics and scholars of American realism restored it to the canon, and it is now a fixture of American literature anthologies and university syllabi. The Gulf Coast resort of Grand Isle, where much of the novel opens, was a real seasonal retreat for well-off New Orleans families, and Chopin renders its heat, water, and leisure with the same close naturalist attention Guy de Maupassant, a writer she admired and translated, brought to French provincial life.",
+    "form": "Chopin writes in a close but not fully interior third person, following Edna Pontellier's perceptions while withholding easy access to her reasoning, so that the reader often understands an impulse a beat before Edna names it to herself. Short, scene-based chapters replace continuous narrative summary, each one built around a single setting or conversation rather than a stretch of elapsed time. The prose favors concrete sensory detail, especially sound and water imagery, over authorial commentary or moral framing, which was itself part of what scandalized contemporary reviewers: the novel declines to judge its protagonist.",
+    "keyImages": [
+      "Edna's early, halting attempts to swim at Grand Isle, described as much through the sensation of the water as through the act itself — the novel's clearest early image of a body learning what it wants.",
+      "The recurring sound of the sea, returned to at intervals throughout the book, described less as scenery than as something that seems to speak directly to Edna.",
+      "Adèle Ratignolle's hands at the piano and Mademoiselle Reisz's playing, set against each other as two entirely different models of what a woman's art and attention can look like.",
+      "The Pontellier house on Esplanade Street, and Edna's small, specific acts of withdrawal from its social rituals, which register as radical precisely because they are so quiet."
+    ],
+    "whatToNotice": [
+      "Notice how often Edna's feelings are introduced through physical sensation — fatigue, heat, the pull of water — before the narration supplies any interpretation of them.",
+      "Notice the contrast Chopin builds between Adèle Ratignolle and Mademoiselle Reisz in the novel's early chapters, and how each woman represents a different, incomplete answer to what Edna might become.",
+      "Pay attention to what Léonce Pontellier notices and fails to notice about his wife in the opening chapters — his attention is a measuring instrument the novel uses on Edna without her consent.",
+      "Notice how rarely the narrator explains Edna's motives in full sentences of psychological explanation, compared to how much space is given to setting and gesture.",
+      "Track the recurrence of music in the early chapters and how differently each character listens to it."
+    ],
+    "discussionQuestions": [
+      "What does Chopin's refusal to moralize about Edna's choices ask of the reader, compared to a novel that took a clearer stance?",
+      "How do Adèle Ratignolle and Mademoiselle Reisz function as two different models of womanhood that Edna is measured against, and against which she measures herself?",
+      "Why might Chopin have chosen the sea as the novel's dominant recurring image rather than a domestic or urban one?",
+      "What does the novel suggest about the relationship between artistic ambition and the domestic roles available to a woman like Edna in this setting?"
+    ],
+    "furtherReading": [
+      "Kate Chopin's short story \"The Story of an Hour\" — a much shorter treatment of a wife's inner life in a moment of sudden, unlooked-for freedom.",
+      "Gustave Flaubert's *Madame Bovary* — an earlier novel Chopin knew well, working similar territory of a woman's dissatisfaction with a respectable marriage.",
+      "Per Seyersted's biography *Kate Chopin: A Critical Biography* — the study most responsible for the novel's mid-century critical recovery."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}

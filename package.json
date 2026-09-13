@@ -10,7 +10,8 @@
     "test": "vitest run",
     "lint": "biome check .",
     "validate:content": "node scripts/validate-content.mjs",
-    "build:manifest": "node scripts/build-manifest.mjs"
+    "build:manifest": "node scripts/build-manifest.mjs",
+    "inject:excerpt": "node scripts/inject-excerpt.mjs"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.13",

@@ -33,6 +33,13 @@ Consumed live or via thin fetch scripts in `scripts/fetch-*.mjs` — never mirro
 | PoetryDB | `https://poetrydb.org` | public-domain poem text and metadata lookup |
 | Open Library | `https://openlibrary.org/developers/api` | book metadata and covers |
 
+**GitHub mirrors for text injection** (`scripts/inject-excerpt.mjs`): `gutenberg.org`, `standardebooks.org`, and `poetrydb.org` are blocked in the curation Routine's environment, but `raw.githubusercontent.com` is reachable, and both catalogs publish their source text there:
+
+- Standard Ebooks mirrors every book's clean CC0 XHTML on GitHub, e.g. `https://raw.githubusercontent.com/standardebooks/<author>_<title>/master/src/epub/text/chapter-1.xhtml`.
+- GITenberg mirrors every Project Gutenberg text as plain `.txt`, e.g. `https://raw.githubusercontent.com/GITenberg/<Title>_<id>/master/<id>.txt`.
+
+`node scripts/inject-excerpt.mjs --id <work-id> --url <raw-url> [--url <raw-url> ...] [--mode excerpt|full] [--min N] [--max N] [--start "<phrase>"] [--end "<phrase>"] [--dir <works dir>]` fetches one or more of these raw URLs, mechanically converts them to plain text (XHTML tag-stripping or Gutenberg header/footer stripping), and writes the result into `content/works/<id>.json`'s `excerpt`/`excerptNote` or `text` field, validating against `WorkSchema` before writing. This is the only place verbatim literary text enters the repo — it is always copied by this script from a source file, never typed by the curation model.
+
 Illustration sources (card art, empty states — all public domain / CC0, never AI-generated or stock photo):
 
 - Biodiversity Heritage Library

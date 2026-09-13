@@ -439,7 +439,9 @@ async function main() {
   try {
     const result = await injectExcerpt(opts);
     if (result.mode === 'full') {
-      console.log(`[inject-excerpt] wrote full text (${result.totalWords} words) to ${result.workPath}`);
+      console.log(
+        `[inject-excerpt] wrote full text (${result.totalWords} words) to ${result.workPath}`
+      );
     } else {
       console.log(
         `[inject-excerpt] wrote excerpt (${result.excerptWordCount} of ${result.totalWords} words) to ${result.workPath}`

@@ -29,6 +29,7 @@ npm run lint             # biome check
 npm run validate:content # zod + editorial gates over content/works/*.json
 npm run build:manifest   # content/works -> public/data/manifest.json + shards
 npm run report:coverage  # era/form/theme/geography/gender counts
+npm run inject:excerpt   # copy verbatim text from a raw GitHub URL into a work's excerpt/text
 ```
 
 ## Conventions

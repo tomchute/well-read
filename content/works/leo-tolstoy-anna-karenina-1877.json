@@ -1,0 +1,86 @@
+{
+  "id": "leo-tolstoy-anna-karenina-1877",
+  "type": "book",
+  "title": "Anna Karenina",
+  "author": "Leo Tolstoy",
+  "year": 1877,
+  "era": "19th_century",
+  "form": "novel, translated from Russian by Constance Garnett",
+  "themes": ["love", "desire", "family", "gender", "power"],
+  "tags": ["russian-literature", "translation", "adultery-plot", "needs-text"],
+  "length": {
+    "unit": "words",
+    "value": 349000
+  },
+  "difficulty": 4,
+  "source": {
+    "name": "Standard Ebooks — Leo Tolstoy: Anna Karenina, translated by Constance Garnett",
+    "url": "https://standardebooks.org/ebooks/leo-tolstoy/anna-karenina/constance-garnett",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "pending",
+  "ebookLinks": [
+    {
+      "provider": "standard-ebooks",
+      "format": "html",
+      "url": "https://standardebooks.org/ebooks/leo-tolstoy/anna-karenina/constance-garnett/text/single-page"
+    },
+    {
+      "provider": "gutenberg",
+      "format": "html",
+      "url": "https://www.gutenberg.org/ebooks/1399"
+    }
+  ],
+  "externalLinks": [
+    {
+      "kind": "library",
+      "url": "https://standardebooks.org/ebooks/leo-tolstoy/anna-karenina/constance-garnett",
+      "label": "Read free at Standard Ebooks"
+    },
+    {
+      "kind": "bookstore",
+      "url": "https://bookshop.org/search?keywords=Anna%20Karenina%20Tolstoy",
+      "label": "Search Bookshop.org"
+    },
+    {
+      "kind": "library",
+      "url": "https://search.worldcat.org/search?q=Anna%20Karenina%20Tolstoy",
+      "label": "Find a library copy on WorldCat"
+    }
+  ],
+  "masterNotes": {
+    "context": "Tolstoy serialized *Anna Karenina* in the journal *The Russian Messenger* between 1875 and 1877, publishing it as a complete novel in 1878. He wrote it in the years after finishing *War and Peace*, while his own religious and moral preoccupations were sharpening toward the crisis that would reshape his later life and writing. Constance Garnett produced this translation in the early 1900s, part of a prolific career that first made the great Russian realists broadly available to English readers; because Garnett died in 1946, her translation of the novel has itself long since entered the public domain on both sides of the Atlantic, distinct from the question of the original Russian text's own public-domain status. The novel is usually read alongside *War and Peace* as one of the two works that established Tolstoy's reputation as a novelist of the first rank, and it remains a staple of world-literature courses and Russian-literature curricula.",
+    "form": "Tolstoy alternates between two loosely connected plot strands, following Anna's household and Konstantin Levin's in turn, a structure that lets the novel compare very different answers to questions of marriage, faith, and how to live, without ever forcing the two strands into a single unified plot. The narration moves fluidly between an omniscient vantage and close access to individual characters' half-formed thoughts, an early and influential use of what would later be called free indirect style. Tolstoy's chapters are short relative to the novel's total length, each usually confined to a single scene, which gives even this very long book a scene-by-scene, almost cinematic pace rather than the density of continuous summary.",
+    "keyImages": [
+      "The bustle and disorder of the Oblonsky household in the opening chapters, introduced before either Anna or Levin appears, establishing domestic disruption as the novel's first subject.",
+      "The Moscow train station where Anna and Vronsky first encounter each other amid the ordinary business of arrivals and departures — a mundane setting made to carry disproportionate weight.",
+      "Levin's scenes of physical labor on his estate, mowing alongside his own peasants, which the novel treats with a seriousness and dignity unusual for its era's depictions of manual work.",
+      "The recurring image of trains and rail travel throughout the novel, tying together its most public settings and its characters' most private turns."
+    ],
+    "whatToNotice": [
+      "Notice how the novel's famous opening sentence about happy and unhappy families sets up a comparative structure that the rest of the book keeps testing against its two central households.",
+      "Notice how differently Tolstoy handles interiority for Anna compared with Levin — track how much direct access to Levin's reasoning the narration grants versus how much it grants Anna.",
+      "Pay attention to scenes of physical work and physical sensation (mowing, skating, horse racing) and how much moral weight the novel invests in bodily activity.",
+      "Notice how often decisive emotional moments happen in transit — on trains, at stations, in carriages — rather than in settled domestic space.",
+      "Track the novel's treatment of Moscow versus the countryside as two different moral climates rather than simply two settings."
+    ],
+    "discussionQuestions": [
+      "Why does Tolstoy structure the novel around two parallel households rather than telling a single unified story?",
+      "What does the novel's treatment of physical labor, especially in Levin's chapters, suggest about Tolstoy's developing views on how to live well?",
+      "How does free indirect style shape your sympathy for characters whose choices the novel does not otherwise endorse?",
+      "What role do public, transitional spaces like train stations play in a novel so concerned with private feeling?"
+    ],
+    "furtherReading": [
+      "Tolstoy's *War and Peace* — the earlier novel that established the scope and method *Anna Karenina* refines and compresses.",
+      "Gustave Flaubert's *Madame Bovary* — a near-contemporary European novel of marriage and adultery, often read against Tolstoy's very different treatment of similar material.",
+      "Vladimir Nabokov's lecture on Tolstoy in *Lectures on Russian Literature* — a close formal reading of Tolstoy's technique by a novelist who studied it closely."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "id": "selma-lagerlof-wonderful-adventures-of-nils-1906",
+  "type": "book",
+  "title": "The Wonderful Adventures of Nils",
+  "author": "Selma Lagerlöf",
+  "year": 1906,
+  "era": "early_20th_century",
+  "form": "novel, translated from Swedish by Velma Swanston Howard",
+  "themes": ["nature", "animals", "migration", "home", "wonder"],
+  "tags": ["swedish-literature", "nobel-laureate", "translation", "needs-text"],
+  "length": {
+    "unit": "words",
+    "value": 130000
+  },
+  "difficulty": 2,
+  "source": {
+    "name": "Standard Ebooks — Selma Lagerlöf: The Wonderful Adventures of Nils, translated by Velma Swanston Howard",
+    "url": "https://standardebooks.org/ebooks/selma-lagerlof/the-wonderful-adventures-of-nils/velma-swanston-howard",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "pending",
+  "ebookLinks": [
+    {
+      "provider": "standard-ebooks",
+      "format": "html",
+      "url": "https://standardebooks.org/ebooks/selma-lagerlof/the-wonderful-adventures-of-nils/velma-swanston-howard/text/single-page"
+    },
+    {
+      "provider": "gutenberg",
+      "format": "html",
+      "url": "https://www.gutenberg.org/ebooks/40163"
+    }
+  ],
+  "externalLinks": [
+    {
+      "kind": "library",
+      "url": "https://standardebooks.org/ebooks/selma-lagerlof/the-wonderful-adventures-of-nils/velma-swanston-howard",
+      "label": "Read free at Standard Ebooks"
+    },
+    {
+      "kind": "bookstore",
+      "url": "https://bookshop.org/search?keywords=Wonderful%20Adventures%20of%20Nils%20Lagerlof",
+      "label": "Search Bookshop.org"
+    },
+    {
+      "kind": "library",
+      "url": "https://search.worldcat.org/search?q=Wonderful%20Adventures%20of%20Nils%20Lagerlof",
+      "label": "Find a library copy on WorldCat"
+    }
+  ],
+  "masterNotes": {
+    "context": "Lagerlöf wrote *The Wonderful Adventures of Nils* on commission from the National Teachers' Association of Sweden, which wanted an engaging geography reader for schoolchildren; she answered the brief by sending a shrunken, disobedient boy flying the length of the country on the back of a farm goose, folding real regional landscape, wildlife, and folklore into a continuous adventure rather than a textbook. Published in two volumes in 1906 and 1907, it became her best-known work internationally and helped bring her the 1909 Nobel Prize in Literature, making her the first woman to receive it. Velma Swanston Howard's English translation, prepared soon after, was for decades the version through which Anglophone readers met the book. It remains a staple of Swedish childhood reading and is often the first Lagerlöf work encountered outside Scandinavia, even though her adult fiction, such as *Gösta Berling's Saga*, is closer to the concerns of her other work.",
+    "form": "The book is organized as a sequence of largely self-contained episodes strung along the geese's migration route, a structure inherited from its origin as a geography primer, so that each chapter can stand fairly independently while still advancing Nils's ongoing transformation. Lagerlöf writes in a plain, oral, fable-like register suited to a young audience, but folds in real Swedish place names, industries, and natural history rather than treating the landscape as generic fantasy backdrop. The shift in scale, a boy reduced to the size of a thumb and given a bird's-eye view of his own country, lets the narration treat familiar geography as newly strange, which is the book's central formal trick.",
+    "keyImages": [
+      "Nils's transformation into a tiny creature after mistreating a tomte, the moment that yanks the whole book out of ordinary scale and into its fable logic.",
+      "The V-formation of wild geese in flight, returned to repeatedly as the book's central image of collective movement and belonging.",
+      "The recurring bird's-eye views of named Swedish provinces and landmarks, which double as both adventure scenery and geography lesson.",
+      "Akka, the lead goose, and the flock's internal codes of loyalty and leadership, offered as a working model of community distinct from the human households Nils has left behind."
+    ],
+    "whatToNotice": [
+      "Notice how often the book pauses its adventure plot to describe real Swedish geography or industry in loving, specific detail — the geography-textbook origin never fully disappears.",
+      "Notice what Nils's small size lets him see and hear that he could not have as a full-sized boy, and how the book uses that access.",
+      "Pay attention to how animal characters like Akka are given distinct temperaments and authority rather than functioning as generic talking-animal scenery.",
+      "Notice the episodic chapter structure and consider what is gained, and what is lost, by a story built this way rather than around one continuous crisis.",
+      "Track how the book handles Nils's guilt and change of character across the episodes rather than resolving it in a single dramatic turn."
+    ],
+    "discussionQuestions": [
+      "What does Lagerlöf's choice to embed a national geography lesson inside a fantasy adventure suggest about how she thought children learn to love a place?",
+      "How does the flock's model of leadership and belonging, through Akka, compare with the human households and communities Nils encounters along the way?",
+      "What is gained by telling this story as a sequence of largely self-contained episodes rather than one continuous plot?",
+      "Does Nils's transformation back at the story's end feel earned by what has come before, or is it simply the form's expected resolution?"
+    ],
+    "furtherReading": [
+      "Lagerlöf's *Gösta Berling's Saga* — her earlier, more adult novel, closer to the folkloric romanticism that made her reputation in Sweden.",
+      "Rudyard Kipling's *The Jungle Book* — a near-contemporary use of animal society to instruct and entertain a young reader.",
+      "Lagerlöf's 1909 Nobel Prize lecture materials — useful context for how her contemporaries situated this book within her larger body of work."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}

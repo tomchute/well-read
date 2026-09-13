@@ -126,7 +126,9 @@ describe('inject-excerpt: pure converters', () => {
 
     expect(result).toContain('Chapter I'); // <h2> inside body is kept
     expect(result).toContain('It is a placeholder truth');
-    expect(result).toContain('Second paragraph with extra spacing and an & entity, an — dash, and a ’quote’.');
+    expect(result).toContain(
+      'Second paragraph with extra spacing and an & entity, an — dash, and a ’quote’.'
+    );
 
     const paragraphs = result.split('\n\n');
     const versePara = paragraphs.find((p) => p.includes('quick brown fox'));
@@ -161,7 +163,9 @@ describe('inject-excerpt: pure converters', () => {
     });
 
     expect(
-      describeSource('https://raw.githubusercontent.com/GITenberg/Pride-and-Prejudice_1342/master/1342.txt')
+      describeSource(
+        'https://raw.githubusercontent.com/GITenberg/Pride-and-Prejudice_1342/master/1342.txt'
+      )
     ).toEqual({
       hostRepo: 'raw.githubusercontent.com/GITenberg/Pride-and-Prejudice_1342',
       name: 'Project Gutenberg (GITenberg mirror)',
@@ -293,16 +297,20 @@ describe('inject-excerpt: injectExcerpt (mocked fetch, temp works dir)', () => {
     const work = makeExcerptWork();
     await writeWork(work);
 
-    const bigParagraphs = Array.from({ length: 6 }, (_, i) => placeholderParagraph(`para${i}`, 300));
-    fetchSpy = vi
-      .spyOn(globalThis, 'fetch')
-      .mockResolvedValue(
-        new Response(`<html><body>${bigParagraphs.map((p) => `<p>${p}</p>`).join('')}</body></html>`, {
+    const bigParagraphs = Array.from({ length: 6 }, (_, i) =>
+      placeholderParagraph(`para${i}`, 300)
+    );
+    fetchSpy = vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      new Response(
+        `<html><body>${bigParagraphs.map((p) => `<p>${p}</p>`).join('')}</body></html>`,
+        {
           status: 200,
-        })
-      );
+        }
+      )
+    );
 
-    const url = 'https://raw.githubusercontent.com/standardebooks/some-book/master/src/epub/text/chapter-1.xhtml';
+    const url =
+      'https://raw.githubusercontent.com/standardebooks/some-book/master/src/epub/text/chapter-1.xhtml';
     const result = await injectExcerpt({
       id: 'fixture-inject-excerpt-work-2020',
       urls: [url],
@@ -316,7 +324,9 @@ describe('inject-excerpt: injectExcerpt (mocked fetch, temp works dir)', () => {
     expect(result.excerptWordCount).toBeGreaterThanOrEqual(800);
     expect(result.excerptWordCount).toBeLessThanOrEqual(1500);
 
-    const onDisk = JSON.parse(await readFile(join(dir, 'fixture-inject-excerpt-work-2020.json'), 'utf8'));
+    const onDisk = JSON.parse(
+      await readFile(join(dir, 'fixture-inject-excerpt-work-2020.json'), 'utf8')
+    );
 
     expect(onDisk.excerpt).not.toContain('seed-word'); // old placeholder gone
     expect(onDisk.excerpt).toContain('para0-word');
@@ -339,7 +349,8 @@ describe('inject-excerpt: injectExcerpt (mocked fetch, temp works dir)', () => {
   });
 
   it('does not re-stamp source when source.url already matches the fetched URL', async () => {
-    const url = 'https://raw.githubusercontent.com/standardebooks/some-book/master/src/epub/text/chapter-1.xhtml';
+    const url =
+      'https://raw.githubusercontent.com/standardebooks/some-book/master/src/epub/text/chapter-1.xhtml';
     const work = makeExcerptWork({
       source: {
         name: 'Already Set',
@@ -352,7 +363,9 @@ describe('inject-excerpt: injectExcerpt (mocked fetch, temp works dir)', () => {
 
     fetchSpy = vi
       .spyOn(globalThis, 'fetch')
-      .mockResolvedValue(new Response(`<p>${placeholderParagraph('body', 900)}</p>`, { status: 200 }));
+      .mockResolvedValue(
+        new Response(`<p>${placeholderParagraph('body', 900)}</p>`, { status: 200 })
+      );
 
     await injectExcerpt({ id: work.id as string, urls: [url], dir, min: 500, max: 1500 });
 
@@ -401,7 +414,9 @@ describe('inject-excerpt: injectExcerpt (mocked fetch, temp works dir)', () => {
     // Too short to clear the 500-word prose excerpt floor.
     fetchSpy = vi
       .spyOn(globalThis, 'fetch')
-      .mockResolvedValue(new Response('<p>Only a few placeholder words here.</p>', { status: 200 }));
+      .mockResolvedValue(
+        new Response('<p>Only a few placeholder words here.</p>', { status: 200 })
+      );
 
     await expect(
       injectExcerpt({
@@ -423,7 +438,12 @@ describe('inject-excerpt: injectExcerpt (mocked fetch, temp works dir)', () => {
     fetchSpy = vi.spyOn(globalThis, 'fetch');
 
     await expect(
-      injectExcerpt({ id: work.id as string, urls: ['https://example.com/x.xhtml'], dir, mode: 'bogus' })
+      injectExcerpt({
+        id: work.id as string,
+        urls: ['https://example.com/x.xhtml'],
+        dir,
+        mode: 'bogus',
+      })
     ).rejects.toThrow(/--mode must be/);
     expect(fetchSpy).not.toHaveBeenCalled();
   });
