@@ -49,6 +49,10 @@ export interface ScoringState {
 export type ChipAction =
   | { type: 'more-like-this'; work: ChipWork }
   | { type: 'more-about-theme'; theme: string }
+  // The "off" half of the theme chip: undoes `more-about-theme` for one theme
+  // without touching any other steer (`surprise-me` is the clear-everything
+  // reset). See docs/recommendation-design.md ("Chip actions").
+  | { type: 'clear-theme'; theme: string }
   | { type: 'more-form'; form: string }
   | { type: 'less-form'; form: string }
   | { type: 'not-interested'; work: ChipWork }

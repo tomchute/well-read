@@ -119,6 +119,22 @@ export function moreAboutThemeChip(theme: string): ChipAction {
   return { type: 'more-about-theme', theme };
 }
 
+/** The theme chip's "off" action — see `themeChipAction` for which one a tap sends. */
+export function clearThemeChip(theme: string): ChipAction {
+  return { type: 'clear-theme', theme };
+}
+
+/**
+ * Which action a tap on a theme chip sends. The chip is a toggle (it renders
+ * `aria-pressed`), so a tap on an active chip has to clear that theme rather
+ * than steer toward it again: repeat taps used to stack `theme[X]` +3 at a
+ * time and push a duplicate session pin each time, with no way back short of
+ * "Surprise me" wiping every steer.
+ */
+export function themeChipAction(chip: Pick<ThemeChip, 'theme' | 'active'>): ChipAction {
+  return chip.active ? clearThemeChip(chip.theme) : moreAboutThemeChip(chip.theme);
+}
+
 export function moreFormChip(form: string): ChipAction {
   return { type: 'more-form', form };
 }
