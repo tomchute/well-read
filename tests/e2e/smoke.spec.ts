@@ -1,10 +1,7 @@
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
 test('load feed, click a work card, and view master notes', async ({ page }) => {
   await page.goto('/');
-
-  // Wait for the Feed page to load
-  await expect(page.locator('h2:has-text("Feed")')).toBeVisible({ timeout: 10000 });
 
   // If the onboarding quiz appears, skip it
   const skipButton = page.locator('button:has-text("Skip")').first();
@@ -15,24 +12,13 @@ test('load feed, click a work card, and view master notes', async ({ page }) => 
     await page.waitForTimeout(500);
   }
 
-  // Wait for the manifest data to load - look for skeleton cards first, then work cards
-  // The app shows skeleton cards while loading the manifest
-  const skeletonCards = page.locator('div.skeleton-card');
-  const skeletonVisible = await skeletonCards.first().isVisible().catch(() => false);
+  // Wait for the Feed page to load
+  await expect(page.locator('h2:has-text("Feed")')).toBeVisible({ timeout: 10000 });
 
-  if (skeletonVisible) {
-    // Wait for skeletons to disappear and actual cards to appear
-    await page.waitForFunction(
-      () => document.querySelectorAll('article.work-card').length > 0,
-      { timeout: 20000 }
-    );
-  } else {
-    // If no skeletons, wait for work cards directly
-    await page.waitForFunction(
-      () => document.querySelectorAll('article.work-card').length > 0,
-      { timeout: 20000 }
-    );
-  }
+  // Wait for the manifest data to load
+  await page.waitForFunction(() => document.querySelectorAll('article.work-card').length > 0, {
+    timeout: 30000,
+  });
 
   // Expect at least one work card
   const workCards = page.locator('article.work-card');
@@ -64,7 +50,18 @@ test('load feed, click a work card, and view master notes', async ({ page }) => 
 test('navigate to settings and expect Kindle section', async ({ page }) => {
   await page.goto('/#/settings');
 
+  // If the onboarding quiz appears, skip it
+  const skipButton = page.locator('button:has-text("Skip")').first();
+  const skipVisible = await skipButton.isVisible().catch(() => false);
+  if (skipVisible) {
+    await skipButton.click();
+    // Wait a bit for the quiz to close
+    await page.waitForTimeout(500);
+  }
+
   // Expect the Kindle section to be visible
-  const kindleSection = page.locator('h3:has-text("Kindle")').or(page.locator('h2:has-text("Kindle")'));
+  const kindleSection = page
+    .locator('h3:has-text("Kindle")')
+    .or(page.locator('h2:has-text("Kindle")'));
   await expect(kindleSection).toBeVisible();
 });

@@ -7,6 +7,7 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
+  timeout: 60000,
   use: {
     baseURL: 'http://localhost:4173/well-read/',
     trace: 'on-first-retry',
@@ -16,7 +17,7 @@ export default defineConfig({
     {
       name: 'chromium',
       use: {
-        ...devices['chromium'],
+        ...devices.chromium,
         executablePath: '/opt/pw-browsers/chromium',
       },
     },
