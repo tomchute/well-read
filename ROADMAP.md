@@ -54,7 +54,7 @@ Verification: one Routine (or local `/curate`) run lands a validated batch on `m
 - [x] [WP-4.1](docs/work-packages/WP-4.1-curate-skill-hardening.md) Harden `.claude/skills/curate/SKILL.md` against the real scripts
 - [x] [WP-4.2](docs/work-packages/WP-4.2-report-coverage-script.md) `report-coverage.mjs`
 - [x] [WP-4.3](docs/work-packages/WP-4.3-dogfood-batch.md) Dogfood batch + human spot-check
-- [ ] [WP-4.4](docs/work-packages/WP-4.4-configure-routine.md) Configure the scheduled Routine (orchestrator task)
+- [x] [WP-4.4](docs/work-packages/WP-4.4-configure-routine.md) Configure the scheduled Routine (orchestrator task)
 - [x] [WP-4.5](docs/work-packages/WP-4.5-flag-correction-issue-template.md) "Flag a correction / takedown" issue template
 
 ## Phase 5 — Polish

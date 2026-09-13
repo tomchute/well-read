@@ -2,7 +2,7 @@
 
 A free-to-run, single-user "Instagram for literature": a scrollable feed of well-respected poems, short stories, and books with steerable recommendations, guided master notes on every work, and epub links for Kindle. Static Svelte app on GitHub Pages; content is added in batches by a scheduled Claude Code Routine.
 
-Status: Phases 0–5 complete on the feature branch (30 works, 11 awaiting text). Remaining: merge to main and configure the curation Routine (WP-4.4).
+Status: all 36 work packages complete. Weekly curation Routine configured (Mondays 07:00 UTC). Deploys to GitHub Pages on every push to main.
 
 - Roadmap and work packages: [ROADMAP.md](ROADMAP.md)
 - Conventions and doc index: [CLAUDE.md](CLAUDE.md)
