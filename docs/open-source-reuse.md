@@ -10,7 +10,7 @@ Rule: **consume, don't reinvent.** Prefer an existing library over hand-rolling;
 | Feed virtualization | `@tanstack/svelte-virtual` | scrolling hundreds of cards without layout jank or hand-rolled windowing math | card components | `npm install @tanstack/svelte-virtual` |
 | Master notes rendering | `marked` | small, fast Markdown → HTML for notes authored as Markdown strings | none | `npm install marked` |
 | Sanitizing rendered notes | `dompurify` | notes are unattended-Routine-authored; sanitize before injecting HTML | none | `npm install dompurify` |
-| Client-side search/filter | `minisearch` | small (no deps), fast full-text search over the manifest index in-browser | none | `npm install minisearch` |
+| Client-side search/filter | `minisearch` (planned, not yet installed) | small (no deps), fast full-text search over the manifest index in-browser; add when a search UI is built | none | `npm install minisearch` |
 | Design tokens | `open-props` | consistent spacing/color/motion scale to build our palette on top of, instead of inventing a token system | the palette + component styles | `npm install open-props` |
 | PWA (Phase 5) | `vite-plugin-pwa` | offline shell + manifest without hand-writing a service worker | none | `npm install -D vite-plugin-pwa` |
 | Tests | `vitest` | fast, Vite-native test runner for scoring logic and components | tests | `npm install -D vitest` |
