@@ -6,7 +6,7 @@ Phase: 0 · Tier: sonnet · Depends on: none
 - `CLAUDE.md` (command names — must match exactly)
 
 ## Scope
-- Scaffold with `npm create vite@latest . -- --template svelte-ts`, then upgrade to Svelte 5.
+- Scaffold with `npm create vite@latest . -- --template svelte-ts`, then upgrade to Svelte 5 (current `create-vite` already emits Svelte 5; scaffold into a temp dir and copy in, since the repo is non-empty).
 - Set `base: '/well-read/'` in `vite.config.ts`.
 - Add npm scripts named exactly as in `CLAUDE.md`: `dev`, `build`, `preview` (leave `test`, `lint`, `validate:content`, `build:manifest`, `report:coverage` for the WPs that implement them — do not stub scripts you don't implement).
 - Create the folder skeleton from `docs/architecture.md`'s "Folder layout" (`content/works/`, `scripts/`, `public/data/`, `src/lib/types|stores|scoring|components/`, `src/views/`, `tests/`) with `.gitkeep` where empty.
