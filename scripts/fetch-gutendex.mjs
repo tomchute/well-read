@@ -14,7 +14,7 @@
  * @typedef {{title: string, author: string|null, year: number|null, gutenbergId: number, subjects: string[], epubUrl: string|null, htmlUrl: string|null, sourceUrl: string}} Candidate
  */
 
-import { argv } from 'process';
+import { argv } from 'node:process';
 
 const BASE_URL = 'https://gutendex.com/books';
 
@@ -82,9 +82,7 @@ function extractCandidate(result) {
   try {
     // Required fields
     if (!result.id || !result.title) {
-      console.error(
-        `[WARN] Skipping record: missing id or title in Gutendex result`
-      );
+      console.error(`[WARN] Skipping record: missing id or title in Gutendex result`);
       return null;
     }
 

@@ -18,12 +18,12 @@ Verification: `npm run dev` boots, `npm run build` passes, a push to `main` depl
 ## Phase 1 — Content schema + seed batch
 Verification: `npm run validate:content` passes on the seed works and fails on the bad fixtures; `npm run build:manifest` emits `public/data/manifest.json` + shards.
 
-- [ ] [WP-1.1](docs/work-packages/WP-1.1-zod-schema-and-types.md) zod schema + TS types for `Work`
+- [x] [WP-1.1](docs/work-packages/WP-1.1-zod-schema-and-types.md) zod schema + TS types for `Work`
 - [ ] [WP-1.2](docs/work-packages/WP-1.2-validate-content-script.md) `validate-content.mjs` with good/bad fixtures
 - [ ] [WP-1.3](docs/work-packages/WP-1.3-build-manifest-script.md) `build-manifest.mjs` with sharding + dedupe warnings
-- [ ] [WP-1.4](docs/work-packages/WP-1.4-fetch-gutendex.md) `fetch-gutendex.mjs`
-- [ ] [WP-1.5](docs/work-packages/WP-1.5-fetch-standard-ebooks.md) `fetch-standard-ebooks.mjs` (OPDS)
-- [ ] [WP-1.6](docs/work-packages/WP-1.6-fetch-poetrydb.md) `fetch-poetrydb.mjs`
+- [x] [WP-1.4](docs/work-packages/WP-1.4-fetch-gutendex.md) `fetch-gutendex.mjs`
+- [x] [WP-1.5](docs/work-packages/WP-1.5-fetch-standard-ebooks.md) `fetch-standard-ebooks.mjs` (OPDS)
+- [x] [WP-1.6](docs/work-packages/WP-1.6-fetch-poetrydb.md) `fetch-poetrydb.mjs`
 - [ ] [WP-1.7](docs/work-packages/WP-1.7-seed-poems.md) Seed batch: ~6 poems (mixed eras, full + contemporary)
 - [ ] [WP-1.8](docs/work-packages/WP-1.8-seed-stories.md) Seed batch: ~5 short stories
 - [ ] [WP-1.9](docs/work-packages/WP-1.9-seed-books.md) Seed batch: ~5 books

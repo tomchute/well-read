@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 // Mock fetch globally
 global.fetch = vi.fn();
@@ -92,12 +92,14 @@ describe('fetch-standard-ebooks', () => {
     const entries = MOCK_OPDS_FEED.match(/<entry[^>]*>.*?<\/entry>/gs) || [];
     const firstEntry = entries[0];
 
-    const linkRegex = /<link[^>]*href="([^"]*)"[^>]*(?:type="([^"]*)")?/g;
+    const linkTagRegex = /<link\b[^>]*\/?>/g;
     const links = [];
-    let match;
-    while ((match = linkRegex.exec(firstEntry)) !== null) {
-      if (match[2] && match[2].includes('epub')) {
-        links.push(match[1]);
+    for (const tagMatch of firstEntry.matchAll(linkTagRegex)) {
+      const linkTag = tagMatch[0];
+      const hrefMatch = linkTag.match(/href="([^"]*)"/);
+      const typeMatch = linkTag.match(/type="([^"]*)"/);
+      if (hrefMatch && typeMatch?.[1].includes('epub')) {
+        links.push(hrefMatch[1]);
       }
     }
 
@@ -136,9 +138,8 @@ describe('fetch-standard-ebooks', () => {
 
     const categoryRegex = /<category[^>]*term="([^"]*)"[^>]*>/g;
     const subjects = [];
-    let match;
-    while ((match = categoryRegex.exec(firstEntry)) !== null) {
-      subjects.push(match[1]);
+    for (const m of firstEntry.matchAll(categoryRegex)) {
+      subjects.push(m[1]);
     }
 
     expect(subjects).toEqual(['Fiction', 'Horror']);

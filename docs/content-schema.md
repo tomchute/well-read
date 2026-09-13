@@ -165,7 +165,7 @@ Public-domain poem, shown in full. Links are Standard Ebooks/Gutenberg-style pla
   "year": 1863,
   "era": "19th_century",
   "form": "lyric poem, ballad meter",
-  "themes": ["mortality", "time", "nature", "the sublime"],
+  "themes": ["mortality", "time", "nature", "wonder"],
   "tags": ["carriage", "afterlife", "personification"],
   "length": { "unit": "lines", "value": 24 },
   "difficulty": 2,

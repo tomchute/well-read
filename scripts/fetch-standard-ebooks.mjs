@@ -69,13 +69,16 @@ function extractAuthor(entryXml) {
  */
 function extractLinks(entryXml) {
   const links = {};
-  const linkRegex = /<link[^>]*href="([^"]*)"[^>]*(?:rel="([^"]*)")?[^>]*(?:type="([^"]*)")?/g;
-  let match;
+  const linkTagRegex = /<link\b[^>]*\/?>/g;
 
-  while ((match = linkRegex.exec(entryXml)) !== null) {
-    const href = match[1];
-    const rel = match[2] || '';
-    const type = match[3] || '';
+  for (const tagMatch of entryXml.matchAll(linkTagRegex)) {
+    const linkTag = tagMatch[0];
+    const hrefMatch = linkTag.match(/href="([^"]*)"/);
+    if (!hrefMatch) continue;
+
+    const href = hrefMatch[1];
+    const rel = linkTag.match(/rel="([^"]*)"/)?.[1] || '';
+    const type = linkTag.match(/type="([^"]*)"/)?.[1] || '';
 
     // Main page (alternate)
     if (rel === 'alternate' && !links.pageUrl) {
@@ -182,9 +185,7 @@ async function main() {
     // Fetch feed
     const response = await fetch(url);
     if (!response.ok) {
-      throw new Error(
-        `Failed to fetch OPDS feed: HTTP ${response.status} ${response.statusText}`,
-      );
+      throw new Error(`Failed to fetch OPDS feed: HTTP ${response.status} ${response.statusText}`);
     }
 
     const xml = await response.text();
