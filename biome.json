@@ -16,7 +16,8 @@
       "**/*.json",
       "**/*.jsonc",
       "**/*.css",
-      "**/*.svelte"
+      "**/*.svelte",
+      "!public/data"
     ]
   },
   "formatter": {
@@ -35,7 +36,8 @@
       "**/*.json",
       "**/*.jsonc",
       "**/*.css",
-      "!**/*.svelte"
+      "!**/*.svelte",
+      "!public/data"
     ]
   },
   "linter": {
