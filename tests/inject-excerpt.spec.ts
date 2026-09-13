@@ -271,7 +271,9 @@ describe('inject-excerpt: pure converters', () => {
   });
 
   it('describeWebSource maps known poetry hosts to a friendly name and picks the externalLinks kind', () => {
-    expect(describeWebSource('https://www.poetryfoundation.org/poems/12345/a-placeholder-poem')).toEqual({
+    expect(
+      describeWebSource('https://www.poetryfoundation.org/poems/12345/a-placeholder-poem')
+    ).toEqual({
       name: 'Poetry Foundation',
       kind: 'poetry-foundation',
       hostname: 'poetryfoundation.org',
@@ -281,7 +283,9 @@ describe('inject-excerpt: pure converters', () => {
       kind: 'other',
       hostname: 'poets.org',
     });
-    expect(describeWebSource('https://www.example-magazine.test/stories/a-placeholder-story')).toEqual({
+    expect(
+      describeWebSource('https://www.example-magazine.test/stories/a-placeholder-story')
+    ).toEqual({
       name: 'example-magazine.test',
       kind: 'other',
       hostname: 'example-magazine.test',
@@ -357,7 +361,10 @@ const ARTICLE_HTML = `<!doctype html>
 
 describe('inject-excerpt: htmlPoemExtract (pure)', () => {
   it('extracts a poetryfoundation-like layout: div-per-line, blank stanza div, trailing copyright dropped', () => {
-    const text = htmlPoemExtract(POETRYFOUNDATION_LIKE_HTML, 'https://www.poetryfoundation.org/poems/1');
+    const text = htmlPoemExtract(
+      POETRYFOUNDATION_LIKE_HTML,
+      'https://www.poetryfoundation.org/poems/1'
+    );
 
     expect(text).toBe(
       [
@@ -443,9 +450,9 @@ describe('inject-excerpt: htmlArticleExtract (pure)', () => {
   });
 
   it('throws a clear error when nothing article-like is found', () => {
-    expect(() => htmlArticleExtract('<html><body><div>no paragraphs here</div></body></html>')).toThrow(
-      /no article-like content found/
-    );
+    expect(() =>
+      htmlArticleExtract('<html><body><div>no paragraphs here</div></body></html>')
+    ).toThrow(/no article-like content found/);
   });
 });
 
@@ -981,7 +988,9 @@ describe('inject-excerpt: injectExcerpt (mocked fetch, temp works dir)', () => {
         retrievedDate: '2026-09-01',
       },
       textPolicy: 'pending',
-      externalLinks: [{ kind: 'other', url: 'https://www.poetryfoundation.org/search?q=placeholder' }],
+      externalLinks: [
+        { kind: 'other', url: 'https://www.poetryfoundation.org/search?q=placeholder' },
+      ],
       masterNotes: {
         context: 'Placeholder context.',
         form: 'Placeholder form discussion.',
@@ -1031,7 +1040,10 @@ describe('inject-excerpt: injectExcerpt (mocked fetch, temp works dir)', () => {
     expect(fetchSpy).toHaveBeenCalledWith(
       url,
       expect.objectContaining({
-        headers: expect.objectContaining({ 'User-Agent': expect.any(String), Accept: expect.any(String) }),
+        headers: expect.objectContaining({
+          'User-Agent': expect.any(String),
+          Accept: expect.any(String),
+        }),
         signal: expect.any(AbortSignal),
       })
     );
@@ -1062,15 +1074,18 @@ describe('inject-excerpt: injectExcerpt (mocked fetch, temp works dir)', () => {
     const work = makeExcerptWork();
     await writeWork(work);
 
-    const bigParagraphs = Array.from({ length: 6 }, (_, i) =>
-      `<p>${placeholderParagraph(`para${i}`, 300)}</p>`
+    const bigParagraphs = Array.from(
+      { length: 6 },
+      (_, i) => `<p>${placeholderParagraph(`para${i}`, 300)}</p>`
     ).join('');
-    fetchSpy = vi.spyOn(globalThis, 'fetch').mockResolvedValue(
-      new Response(
-        `<html><body><nav>skip</nav><article>${bigParagraphs}</article><div class="sidebar"><p>Sidebar text that must not appear.</p></div></body></html>`,
-        { status: 200 }
-      )
-    );
+    fetchSpy = vi
+      .spyOn(globalThis, 'fetch')
+      .mockResolvedValue(
+        new Response(
+          `<html><body><nav>skip</nav><article>${bigParagraphs}</article><div class="sidebar"><p>Sidebar text that must not appear.</p></div></body></html>`,
+          { status: 200 }
+        )
+      );
 
     const url = 'https://www.example-magazine.test/stories/a-placeholder-story';
     const result = await injectExcerpt({

@@ -56,6 +56,10 @@ Open the well-read repo on main. Run the .claude/skills/curate skill exactly as 
 
 Why direct to `main`: an unattended Routine's pull request would sit unreviewed and defeat the point. `validate:content` and `npm test` gate the commit locally, and the CI workflow is the backstop that makes any escape visible. If a review buffer is ever wanted, point the Routine at a branch with auto-merge on green; nothing in the skill changes.
 
+### Network requirement
+
+Step 4 of the curate skill fetches contemporary-work text with `scripts/inject-excerpt.mjs --url`, which needs outbound HTTPS access to `raw.githubusercontent.com` plus `poetryfoundation.org`, `poets.org`, and the publisher/magazine hosts a batch links to. In the Claude Code cloud environment this is the environment's network policy — allowlist those hosts, or set it unrestricted, before running the Routine there. Otherwise run injection locally, or paste text into a file and use `--file` (see "Supplying text by hand", `docs/editorial-policy.md`).
+
 ## Git rules
 
 - Feature WPs: branch from `main`, merge when the WP's acceptance passes.

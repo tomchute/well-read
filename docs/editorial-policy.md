@@ -171,6 +171,27 @@ own `text`/`excerpt` field, not from memory of the work.
   and retrieval date in the work's `source` field. Never transcribe from an
   unauthorized reposting.
 
+## Sources for in-copyright text
+
+well-read is for private use only, never republished or shared publicly — see
+"Purpose and posture" above. On that basis, in-copyright text visible on the
+open web may be copied by script from the publisher's own site, Poetry
+Foundation, or poets.org, using `npm run inject:excerpt -- --url <page>` (see
+`scripts/inject-excerpt.mjs`, `htmlPoemExtract`/`htmlArticleExtract`). This is
+an owner judgement call for a single-user app, not a legal opinion; a model
+must still never type verbatim text from memory — the script always fetches
+and mechanically extracts it.
+
+Given this, `textPolicy: pending` is now reserved for a work whose page is not
+reachable at all (no publisher, Poetry Foundation, or poets.org page exists or
+can be found) — not merely for "the Routine's environment couldn't fetch it
+today." When the environment itself can't reach the network (see "Network
+requirement" in `docs/architecture.md`/`docs/orchestration.md`), leave the
+work `pending`, tag it `needs-text`, and list the page URL in the batch report
+so a later run (or a human, via `--file`) can inject it.
+
+The takedown path is unchanged: see "Purpose and posture" above.
+
 ## Supplying text by hand
 
 For a work the Routine cannot fetch by script (no reachable raw-text URL —

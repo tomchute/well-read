@@ -52,6 +52,18 @@ Vite is configured with `base: '/well-read/'`. Every data fetch in the app uses 
 | `deploy.yml` | push to `main` | build, `actions/upload-pages-artifact`, `actions/deploy-pages` |
 | `ci.yml` | every push | `npm run lint`, `npm test`, `npm run validate:content` |
 
+## Network requirement
+
+`scripts/inject-excerpt.mjs --url` needs outbound HTTPS access to
+`raw.githubusercontent.com` (public-domain sources) plus
+`poetryfoundation.org`, `poets.org`, and whatever publisher/magazine hosts a
+batch's contemporary works link to. In the Claude Code cloud environment this
+is the environment's network policy — allowlist those hosts, or set the
+policy unrestricted. Where that isn't possible, either run the injection
+locally (`npm run inject:excerpt -- ...`) or paste the text into a file and
+use `--file` instead (see "Supplying text by hand",
+`docs/editorial-policy.md`).
+
 ## Routine commit flow
 
 The scheduled Curation Routine runs `.claude/skills/curate/SKILL.md` in a fresh session: source candidates, write `content/works/*.json`, run `validate:content` → `build:manifest` → `npm test`, then commit directly to `main` as `curate: batch <date> (<n> works)` and push. `ci.yml` is the backstop since the commit is unreviewed. On repeated validation failure the Routine stops and leaves the tree uncommitted rather than force a bad batch through.

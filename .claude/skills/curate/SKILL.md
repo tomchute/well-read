@@ -41,14 +41,26 @@ description: Add one validated batch of well-respected works to well-read and co
    and record the source in `source`. For public-domain text, run
    `npm run inject:excerpt -- --id <id> --url <raw github url>` (Standard
    Ebooks or GITenberg on GitHub) to copy the verbatim text by script — never
-   type or transcribe it from memory. For text that has no fetchable raw-text
-   URL (a human-supplied paste, a print-only source), use the `--file` route
-   instead — see "Supplying text by hand" in `docs/editorial-policy.md`. Mark
-   contemporary prose `pending` with tag `needs-text` (no `text`/`excerpt` yet;
-   full metadata, master notes, and links still required) since it cannot be
-   sourced by script and must not be typed from memory. Contemporary short
-   poems remain `full` only if the text can be copied from a source file;
-   otherwise mark them `pending` too.
+   type or transcribe it from memory.
+
+   For a contemporary work, find its page (the publisher's own site, Poetry
+   Foundation, or poets.org) and run the same script directly against that
+   page — per "Sources for in-copyright text" in `docs/editorial-policy.md`,
+   text visible on the open web may be copied by script for this private,
+   single-user app:
+   ```
+   npm run inject:excerpt -- --id <id> --url <page> --mode full      # poems, ≤60 lines
+   npm run inject:excerpt -- --id <id> --url <page> --mode excerpt   # prose, or poems >60 lines
+   ```
+   The script routes the page through `htmlPoemExtract` (poetryfoundation.org,
+   poets.org, or any `type: 'poem'` work) or `htmlArticleExtract` (everything
+   else) automatically. If the host is unreachable from this environment (see
+   "Network requirement" in `docs/architecture.md`), leave the work `pending`
+   with tag `needs-text` and list the page URL in the batch report instead —
+   do not type or transcribe the text from memory as a substitute. For text
+   with no fetchable page at all (a human-supplied paste, a print-only
+   source), use the `--file` route instead — see "Supplying text by hand" in
+   `docs/editorial-policy.md`.
 
 5. **Assemble the batch**: 4–6 works total, mixing:
    - at least 2 poems

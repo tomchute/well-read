@@ -494,14 +494,13 @@ function parseHtmlTree(html) {
   const stack = [root];
   const tagRe = /<!--[\s\S]*?-->|<(\/?)([a-zA-Z][\w:-]*)\b([^>]*?)(\/)?>/g;
   let lastIndex = 0;
-  let match;
 
   const pushText = (text) => {
     if (!text) return;
     stack[stack.length - 1].children.push({ tag: '#text', text });
   };
 
-  while ((match = tagRe.exec(html))) {
+  for (let match = tagRe.exec(html); match !== null; match = tagRe.exec(html)) {
     pushText(html.slice(lastIndex, match.index));
     lastIndex = tagRe.lastIndex;
 
