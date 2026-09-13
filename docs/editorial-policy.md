@@ -116,6 +116,13 @@ anything more specific — a place name, a form like "sonnet", a movement).
 - **Always at least one outbound link** on every work — `ebookLinks` for public
   domain, `externalLinks` (publisher page, Poetry Foundation, Bookshop.org,
   WorldCat, or Libby) for everything else.
+- Verbatim text is always copied by script from a source file (Standard
+  Ebooks or GITenberg on GitHub, for public domain), never typed from a
+  model's memory. When no source is reachable, the work is added as
+  `textPolicy: pending` with the `needs-text` tag, and the excerpt is added
+  later by a human paste or a future source.
+- Seed and Routine batches may include `pending` contemporary prose rather
+  than skipping contemporary works altogether.
 
 ## Quality gates for master notes
 

@@ -1,0 +1,65 @@
+{
+  "id": "rossetti-remember-1849",
+  "type": "poem",
+  "title": "Remember",
+  "author": "Christina Rossetti",
+  "year": 1849,
+  "era": "19th_century",
+  "form": "Petrarchan sonnet",
+  "themes": ["love", "death", "memory", "grief"],
+  "tags": ["sonnet", "volta", "pre-raphaelite-circle", "needs-link-verification"],
+  "length": { "unit": "lines", "value": 14 },
+  "difficulty": 2,
+  "source": {
+    "name": "Christina Rossetti, Goblin Market and Other Poems (1862)",
+    "url": "https://www.gutenberg.org/ebooks/search/?query=Christina+Rossetti+Goblin+Market+and+Other+Poems",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "full",
+  "text": "Remember me when I am gone away,\n   Gone far away into the silent land;\n   When you can no more hold me by the hand,\nNor I half turn to go yet turning stay.\nRemember me when no more day by day\n   You tell me of our future that you plann'd:\n   Only remember me; you understand\nIt will be late to counsel then or pray.\nYet if you should forget me for a while\n   And afterwards remember, do not grieve:\n   For if the darkness and corruption leave\nA vestige of the thoughts that once I had,\n   Better by far you should forget and smile\n   Than that you should remember and be sad.",
+  "ebookLinks": [
+    {
+      "provider": "gutenberg",
+      "format": "html",
+      "url": "https://www.gutenberg.org/ebooks/search/?query=Christina+Rossetti+Goblin+Market+and+Other+Poems"
+    }
+  ],
+  "externalLinks": [
+    {
+      "kind": "poetry-foundation",
+      "url": "https://www.poetryfoundation.org/search?q=Remember+Christina+Rossetti",
+      "label": "Search Poetry Foundation for this poem"
+    }
+  ],
+  "masterNotes": {
+    "context": "Rossetti wrote \"Remember\" around 1849, when she was still a teenager, though it wasn't published until 1862 in her first major collection, *Goblin Market and Other Poems*. She was part of the Pre-Raphaelite circle through her brother Dante Gabriel Rossetti, but her own poetry is generally plainer and more devotional in temper than the movement's visual lushness. She never married, and a recurring subject across her work is renunciation — of love, of desire, of claims on another person — treated not as bitterness but as a kind of discipline. \"Remember\" imagines the speaker's own death and instructs a survivor on how to grieve, a fairly common Victorian poetic occasion, but the poem's turn in its final six lines, releasing the beloved from the very request it just made, is Rossetti's own.",
+    "form": "The poem is a Petrarchan sonnet, split at the volta between octave and sestet exactly where its argument turns. The octave insists, three times, on the imperative \"Remember,\" building an almost desperate repetition, before the sestet reverses course entirely: better to forget and smile than to remember and grieve. The rhyme scheme (abba abba cdd ece) is fairly conventional Petrarchan form, but the poem uses its meter's regularity to make the reversal land harder — nothing in the sound changes, only the argument does, so the shift feels like a decision rather than a collapse.",
+    "keyImages": [
+      "\"The silent land\" — death rendered as a place rather than an ending, something the beloved is being sent toward rather than simply losing.",
+      "\"Yet if you should forget me for a while / And afterwards remember\" — the poem imagining its own request being ignored, and forgiving that in advance.",
+      "The closing antithesis, \"forget and smile\" against \"remember and be sad\" — the entire poem's argument compressed into one line."
+    ],
+    "whatToNotice": [
+      "Count how many times \"remember\" appears in the octave before the sestet begins undoing the request.",
+      "Notice the poem never says how or when the speaker dies — only that the day will come.",
+      "Notice the sestet doesn't simply soften the request, it reverses it: better to be forgotten happily than remembered sadly.",
+      "Notice how little the poem's music changes at the volta — the reversal is entirely in the argument, not the sound."
+    ],
+    "discussionQuestions": [
+      "Why might Rossetti have the speaker undo her own request rather than simply asking to be remembered?",
+      "What does the poem suggest about the relationship between love and self-effacement?",
+      "Is the sestet's offer to be forgotten a genuine release, or another, subtler way of asking to be remembered?"
+    ],
+    "furtherReading": [
+      "\"Song\" (\"When I am dead, my dearest\") — Rossetti's other, even starker poem on being forgotten after death.",
+      "*Goblin Market* (Rossetti) — for a very different register of the same poet's imagination, allegorical rather than devotional."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}

@@ -19,7 +19,7 @@ type Era =
   | 'mid_20th_century'     // 1946–1980
   | 'contemporary';        // 1981–present
 
-type TextPolicy = 'full' | 'excerpt'; // whether the app ships the whole work or a bounded excerpt
+type TextPolicy = 'full' | 'excerpt' | 'pending'; // whether the app ships the whole work, a bounded excerpt, or notes+links with the text to follow later
 
 type EbookProvider = 'standard-ebooks' | 'gutenberg' | 'open-library';
 type EbookFormat = 'epub' | 'pdf' | 'mobi' | 'html';
@@ -98,7 +98,7 @@ interface Work {
   source: SourceInfo;
   textPolicy: TextPolicy;
   text?: string;          // full text; present only when textPolicy === 'full'
-  excerpt?: string;       // excerpted text; present only when textPolicy === 'excerpt'
+  excerpt?: string;       // excerpted text; present only when textPolicy === 'excerpt'; absent when 'pending'
   excerptNote?: string;   // required with excerpt: states the boundary, e.g. "opening 1,240 of 5,400 words"
   ebookLinks?: EbookLink[];     // download links; required (≥1) for full public-domain works
   externalLinks?: ExternalLink[]; // outbound links; required (≥1) for excerpts and non-public-domain fulls
@@ -116,23 +116,24 @@ Enforced by `scripts/validate-content.mjs` (zod) — a work fails the batch if a
 
 1. **`textPolicy: 'full'`** ⇒ `text` is set, and either `ebookLinks` has ≥1 entry (when `source.license` is public-domain-ish: `public-domain` or `cc0`) or `externalLinks` has ≥1 entry (otherwise).
 2. **`textPolicy: 'excerpt'`** ⇒ `excerpt` and `excerptNote` are both set, `externalLinks` has ≥1 entry, and `text` is **not** set.
-3. **Excerpt boundary rules** (private use, quality first, not tight maximums):
+3. **`textPolicy: 'pending'`** ⇒ neither `text` nor `excerpt` is set, `externalLinks` has ≥1 entry, and `tags` includes `needs-text`. Used for contemporary (in-copyright) prose that cannot be sourced by script and must never be typed from a model's memory: the work enters the catalogue with full metadata, master notes, and links, and gets its text later via a human paste or a future source.
+4. **Excerpt boundary rules** (private use, quality first, not tight maximums):
    - Contemporary poems ≤60 lines are shown in full (`textPolicy: 'full'` with `externalLinks`, not `ebookLinks`); longer poems are excerpted to the strongest continuous 40–60 lines.
    - Short stories and books are excerpted to 800–1,500 words or the complete first section/chapter, ending at a natural break.
    - `excerptNote` must state the boundary (e.g. "opening 1,240 of 5,400 words").
    - Validation enforces **minimums only**: poem excerpts ≥8 lines, prose excerpts ≥500 words.
-4. **`type: 'book'`** always uses `textPolicy: 'excerpt'` plus links, even when the source is public domain — whole novels are never shipped in shards.
-5. **`themes`** must be a subset of the controlled vocabulary defined in `docs/editorial-policy.md`.
-6. **`masterNotes.keyImages`** has ≥2 entries.
-7. **`masterNotes.discussionQuestions`** has ≥3 entries.
-8. **`id`** is unique across `content/works/` and kebab-case.
-9. **`pipeline.schemaVersion`** equals `1`.
+5. **`type: 'book'`** always uses `textPolicy: 'excerpt'` plus links, even when the source is public domain — whole novels are never shipped in shards.
+6. **`themes`** must be a subset of the controlled vocabulary defined in `docs/editorial-policy.md`.
+7. **`masterNotes.keyImages`** has ≥2 entries.
+8. **`masterNotes.discussionQuestions`** has ≥3 entries.
+9. **`id`** is unique across `content/works/` and kebab-case.
+10. **`pipeline.schemaVersion`** equals `1`.
 
 A documented takedown path exists for rights concerns (see `docs/editorial-policy.md`); validation is structural only and does not judge editorial quality.
 
 ## Manifest index shape
 
-`public/data/manifest.json` is an object `{ schemaVersion, generatedAt, count, shards, works }` where `works` is an array of entries containing only the text-free subset of `Work`, plus which shard holds the full record:
+`public/data/manifest.json` is an object `{ schemaVersion, generatedAt, count, shards, works }` where `works` is an array of entries containing only the text-free subset of `Work`, plus which shard holds the full record. Each entry carries `textPolicy` so the UI can distinguish a `pending` work — rendered as "notes + links, text coming" — from a `full` or `excerpt` one without loading its shard:
 
 ```ts
 interface ManifestEntry {

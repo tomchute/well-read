@@ -1,0 +1,70 @@
+{
+  "id": "dickinson-im-nobody-who-are-you-1861",
+  "type": "poem",
+  "title": "I'm Nobody! Who are you?",
+  "author": "Emily Dickinson",
+  "year": 1861,
+  "era": "19th_century",
+  "form": "lyric poem, common meter",
+  "themes": ["solitude", "humor", "language"],
+  "tags": ["fascicle", "anonymity", "irony", "needs-link-verification"],
+  "length": { "unit": "lines", "value": 8 },
+  "difficulty": 2,
+  "source": {
+    "name": "Standard Ebooks — Emily Dickinson: Poems",
+    "url": "https://standardebooks.org/ebooks/emily-dickinson/poems",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "full",
+  "text": "I'm Nobody! Who are you?\nAre you – Nobody – too?\nThen there's a pair of us!\nDon't tell! they'd advertise – you know!\n\nHow dreary – to be – Somebody!\nHow public – like a Frog –\nTo tell one's name – the livelong June –\nTo an admiring Bog!",
+  "ebookLinks": [
+    {
+      "provider": "standard-ebooks",
+      "format": "epub",
+      "url": "https://standardebooks.org/ebooks/emily-dickinson/poems/downloads/emily-dickinson_poems.epub"
+    },
+    {
+      "provider": "gutenberg",
+      "format": "pdf",
+      "url": "https://www.gutenberg.org/ebooks/12242"
+    }
+  ],
+  "externalLinks": [
+    {
+      "kind": "poetry-foundation",
+      "url": "https://www.poetryfoundation.org/search?q=Im+Nobody+Who+are+you+Emily+Dickinson",
+      "label": "Search Poetry Foundation for this poem"
+    }
+  ],
+  "masterNotes": {
+    "context": "Dickinson wrote this poem around 1861, in the same extraordinarily productive early-1860s stretch that produced most of her best-known work, though almost none of it was published in her lifetime — she kept the poems hand-sewn into small booklets, called fascicles, discovered only after her death in 1886. She lived quietly in Amherst, Massachusetts, seeing few visitors in her later years, and \"nobody\" and \"somebody\" recur across her poems as a private vocabulary for social visibility and its costs. This poem's tone is playful rather than mournful, closer to a shared joke between the speaker and an imagined reader than a complaint. It has become one of her most quoted poems, often stripped of context and treated as a simple defense of introversion, though its second stanza is considerably sharper than that reading allows.",
+    "form": "The poem is built as a conspiratorial address — \"Are you – Nobody – too?\" — that recruits the reader as a co-conspirator within four lines, before the second stanza turns from intimacy to mockery. Dickinson's dashes do their usual work of controlling breath and emphasis rather than following grammatical rules, isolating \"Nobody\" and \"Somebody\" almost as proper nouns. The extended metaphor in the second stanza — a frog announcing itself to a bog all summer — lands as satire of self-importance, and the shift from the private \"us\" of the first stanza to the public spectacle of the second is where the poem's real argument lives.",
+    "keyImages": [
+      "The pairing \"Then there's a pair of us!\" — instant, almost giddy solidarity built from shared anonymity.",
+      "The frog \"telling one's name\" to \"an admiring Bog\" all \"the livelong June\" — self-announcement recast as absurd noise nobody needed.",
+      "The capitalized \"Nobody\" and \"Somebody\" — Dickinson treats social status as if it were a formal title one could hold."
+    ],
+    "whatToNotice": [
+      "Notice how quickly the poem moves from private confidence (\"Don't tell!\") to public satire (the frog) across just two stanzas.",
+      "Notice that \"Nobody\" is capitalized throughout, turning an absence of status into its own kind of identity.",
+      "Count the dashes in the first stanza and see where they fall relative to the line's grammar — they rarely land where a comma would.",
+      "Notice the exclamation points: the poem's two strongest feelings, secrecy and disdain, both get one."
+    ],
+    "discussionQuestions": [
+      "Is the speaker's claim to \"Nobody\" status entirely sincere, or is there some pride hiding inside the modesty?",
+      "What is the effect of comparing public self-announcement to a frog's croaking rather than to another person?",
+      "Why might Dickinson end on mockery of \"Somebody\" rather than on the earlier warmth of \"there's a pair of us\"?"
+    ],
+    "furtherReading": [
+      "\"Because I could not stop for Death\" (Dickinson) — for the same dash-driven meter turned toward a much graver subject.",
+      "Helen Vendler, *Dickinson: Selected Poems and Commentaries* — includes a close reading of this poem's shift in tone between stanzas."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}

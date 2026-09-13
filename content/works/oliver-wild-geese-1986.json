@@ -1,0 +1,63 @@
+{
+  "id": "oliver-wild-geese-1986",
+  "type": "poem",
+  "title": "Wild Geese",
+  "author": "Mary Oliver",
+  "year": 1986,
+  "era": "contemporary",
+  "form": "free verse",
+  "themes": ["nature", "solitude", "wonder", "home"],
+  "tags": ["direct-address", "provincetown", "needs-text-verification", "needs-link-verification"],
+  "length": { "unit": "lines", "value": 18 },
+  "difficulty": 2,
+  "source": {
+    "name": "Mary Oliver, Dream Work (Atlantic Monthly Press, 1986)",
+    "url": "https://www.poetryfoundation.org/search?q=Wild+Geese+Mary+Oliver",
+    "license": "all-rights-reserved",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "full",
+  "text": "You do not have to be good.\nYou do not have to walk on your knees\nfor a hundred miles through the desert repenting.\nYou only have to let the soft animal of your body\nlove what it loves.\nTell me about despair, yours, and I will tell you mine.\nMeanwhile the world goes on.\nMeanwhile the sun and the clear pebbles of the rain\nare moving across the landscapes,\nover the prairies and the deep trees,\nthe mountains and the rivers.\nMeanwhile the wild geese, high in the clean blue air,\nare heading home again.\nWhoever you are, no matter how lonely,\nthe world offers itself to your imagination,\ncalls to you like the wild geese, harsh and exciting—\nover and over announcing your place\nin the family of things.",
+  "externalLinks": [
+    {
+      "kind": "poetry-foundation",
+      "url": "https://www.poetryfoundation.org/search?q=Wild+Geese+Mary+Oliver",
+      "label": "Search Poetry Foundation for this poem"
+    },
+    {
+      "kind": "publisher",
+      "url": "https://groveatlantic.com/?s=Mary+Oliver+Dream+Work",
+      "label": "Search Grove Atlantic for this collection"
+    }
+  ],
+  "masterNotes": {
+    "context": "Oliver published \"Wild Geese\" in *Dream Work* (1986), by which point she had already spent decades writing quietly about the natural world around her home in Provincetown, Massachusetts, largely outside the literary mainstream of her contemporaries. She went on to win the Pulitzer Prize in 1984 (for *American Primitive*) and the National Book Award in 1992, but her poems remained deliberately plain in diction, resistant to the difficulty many of her peers prized. \"Wild Geese\" opens by directly addressing a reader carrying guilt or self-judgment, then pivots outward to the natural world as a counter-argument to that guilt. It has become one of the most widely shared and quoted poems in English, sometimes to the point of overfamiliarity, which can make it hard to read the poem itself rather than its reputation.",
+    "form": "The poem moves in a single unbroken argument built from short declarative sentences and a repeated \"Meanwhile,\" a word that does a great deal of structural work — each repetition shifts attention further from the human guilt of the opening lines toward the indifferent, ongoing motion of geese, rain, and mountains. The poem never rhymes and rarely varies its line lengths dramatically; its persuasive power comes from accumulation rather than any single striking image. The final image — the geese \"announcing your place / in the family of things\" — arrives only after the poem has spent its whole length earning the right to make that claim.",
+    "keyImages": [
+      "The repeated word \"Meanwhile,\" returning to redirect attention from human self-judgment to the ongoing natural world.",
+      "The wild geese \"heading home again,\" offered as an image of belonging that requires no explanation or effort.",
+      "The closing phrase \"the family of things\" — extending kinship past the human world entirely."
+    ],
+    "whatToNotice": [
+      "Notice the poem opens with two flat negations (\"You do not have to...\") before offering anything in their place.",
+      "Track each appearance of \"Meanwhile\" and notice how far the poem's attention has traveled by the last one.",
+      "Notice the poem addresses \"you\" throughout — this is a poem of direct instruction, not description.",
+      "Notice that \"the family of things\" arrives only in the poem's final line, after everything else has built toward it."
+    ],
+    "discussionQuestions": [
+      "What is the effect of opening the poem with what the reader does not have to do, rather than what they should do?",
+      "How does repeating \"Meanwhile\" change the reader's sense of scale between the personal and the natural?",
+      "Does closing on \"the family of things\" resolve the guilt introduced in the first lines, or simply set it aside?"
+    ],
+    "furtherReading": [
+      "\"The Summer Day\" (Oliver) — for the same directly instructive address, ending in the well-known question about \"your one wild and precious life.\"",
+      "*American Primitive* (Oliver) — the Pulitzer-winning collection that established her plain-spoken attention to the natural world."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}

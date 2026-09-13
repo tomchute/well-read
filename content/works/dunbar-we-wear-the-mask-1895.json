@@ -1,0 +1,65 @@
+{
+  "id": "dunbar-we-wear-the-mask-1895",
+  "type": "poem",
+  "title": "We Wear the Mask",
+  "author": "Paul Laurence Dunbar",
+  "year": 1895,
+  "era": "19th_century",
+  "form": "rondeau",
+  "themes": ["race", "grief", "power", "solitude"],
+  "tags": ["rondeau", "jim-crow-era", "concealment", "needs-link-verification"],
+  "length": { "unit": "lines", "value": 15 },
+  "difficulty": 3,
+  "source": {
+    "name": "Paul Laurence Dunbar, Majors and Minors (1895)",
+    "url": "https://www.gutenberg.org/ebooks/search/?query=Paul+Laurence+Dunbar+Majors+and+Minors",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "full",
+  "text": "We wear the mask that grins and lies,\nIt hides our cheeks and shades our eyes,—\nThis debt we pay to human guile;\nWith torn and bleeding hearts we smile,\nAnd mouth with myriad subtleties.\n\nWhy should the world be over-wise,\nIn counting all our tears and sighs?\nNay, let them only see us, while\n      We wear the mask.\n\nWe smile, but, O great Christ, our cries\nTo thee from tortured souls arise.\nWe sing, but oh the clay is vile\nBeneath our feet, and long the mile;\nBut let the world dream otherwise,\n      We wear the mask!",
+  "ebookLinks": [
+    {
+      "provider": "gutenberg",
+      "format": "html",
+      "url": "https://www.gutenberg.org/ebooks/search/?query=Paul+Laurence+Dunbar+Majors+and+Minors"
+    }
+  ],
+  "externalLinks": [
+    {
+      "kind": "poetry-foundation",
+      "url": "https://www.poetryfoundation.org/search?q=We+Wear+the+Mask+Paul+Laurence+Dunbar",
+      "label": "Search Poetry Foundation for this poem"
+    }
+  ],
+  "masterNotes": {
+    "context": "Dunbar published \"We Wear the Mask\" in 1895, in the collection *Majors and Minors*, three decades after the end of slavery and squarely within the era of Jim Crow segregation and the rollback of Reconstruction-era rights. He was the first African American poet to achieve a major national literary reputation, praised by William Dean Howells, though Howells's introduction to Dunbar's next book pushed him toward dialect poems at the expense of the formal, standard-English verse this poem represents — a tension Dunbar resented throughout his career. \"We Wear the Mask\" is written in that formal register, a rondeau borrowed from French verse tradition, and it speaks in a collective \"we\" rather than through a single character. It remains one of the most frequently taught and anthologized poems about the psychological cost of concealment under oppression.",
+    "form": "The poem is a rondeau, a French form built on a refrain — \"We wear the mask\" — that closes each stanza and returns, slightly altered, as the poem's final words. That formal borrowing matters: Dunbar shows complete command of a demanding European verse form while writing about a mask forced onto Black Americans by a white audience unwilling to see past it. The poem's central irony sits in its own performance — a poem about hidden suffering that is itself formally poised and controlled, never breaking into the \"torn and bleeding\" register it describes. The direct address to \"great Christ\" in the final stanza is the poem's one break from its outward composure, a private cry the mask is explicitly not meant to show.",
+    "keyImages": [
+      "\"The mask that grins and lies\" — a face deliberately built to perform an emotion it does not feel.",
+      "\"With torn and bleeding hearts we smile\" — the poem's central juxtaposition, agony and pleasant expression forced into the same line.",
+      "\"O great Christ, our cries / To thee from tortured souls arise\" — the one moment the mask is explicitly dropped, and only toward heaven, not toward the world."
+    ],
+    "whatToNotice": [
+      "Notice the poem is spoken in \"we,\" never \"I\" — the mask belongs to a whole community, not a single speaker.",
+      "Notice how formally controlled the poem's own language is, even while describing torn hearts and tortured souls.",
+      "Notice where the refrain \"We wear the mask\" falls in each stanza, and how its meaning shifts by the final exclamation point.",
+      "Notice that the poem never shows us what is underneath the mask directly — only that something is."
+    ],
+    "discussionQuestions": [
+      "What does it mean that the poem's one moment of unmasked feeling is addressed to Christ rather than to the reader?",
+      "Why might Dunbar have chosen a tightly formal French verse structure to write about concealment and pain?",
+      "Does the collective \"we\" make the poem's argument more powerful, or does it flatten individual experience?"
+    ],
+    "furtherReading": [
+      "Dunbar's dialect poems (e.g. \"When Malindy Sings\") — for the contrasting register Dunbar was pushed toward and sometimes resisted.",
+      "Paul Laurence Dunbar, *Lyrics of Lowly Life* — the 1896 collection that made this poem widely known."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}

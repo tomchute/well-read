@@ -64,7 +64,7 @@ export const EraSchema = z.enum([
   'contemporary',
 ]);
 
-export const TextPolicySchema = z.enum(['full', 'excerpt']);
+export const TextPolicySchema = z.enum(['full', 'excerpt', 'pending']);
 
 export const EbookProviderSchema = z.enum(['standard-ebooks', 'gutenberg', 'open-library']);
 
@@ -298,6 +298,38 @@ export const WorkSchema = WorkBaseSchema.superRefine((work, ctx) => {
           });
         }
       }
+    }
+  }
+
+  if (work.textPolicy === 'pending') {
+    // Rule (pending): no text, no excerpt, externalLinks >= 1, tags includes 'needs-text'.
+    if (work.text) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['text'],
+        message: "textPolicy 'pending' must not set `text`",
+      });
+    }
+    if (work.excerpt) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['excerpt'],
+        message: "textPolicy 'pending' must not set `excerpt`",
+      });
+    }
+    if (externalLinkCount < 1) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['externalLinks'],
+        message: "textPolicy 'pending' requires at least 1 externalLinks entry",
+      });
+    }
+    if (!work.tags.includes('needs-text')) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['tags'],
+        message: "textPolicy 'pending' requires `tags` to include \"needs-text\"",
+      });
     }
   }
 
