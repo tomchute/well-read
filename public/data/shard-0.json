@@ -1,0 +1,548 @@
+[
+  {
+    "id": "blake-the-tyger-1794",
+    "type": "poem",
+    "title": "The Tyger",
+    "author": "William Blake",
+    "year": 1794,
+    "era": "18th_century",
+    "form": "lyric poem, Songs of Experience",
+    "themes": [
+      "nature",
+      "animals",
+      "wonder",
+      "power"
+    ],
+    "tags": [
+      "songs-of-experience",
+      "creation",
+      "symmetry",
+      "needs-link-verification"
+    ],
+    "length": {
+      "unit": "lines",
+      "value": 24
+    },
+    "difficulty": 3,
+    "source": {
+      "name": "William Blake, Songs of Innocence and of Experience (1794)",
+      "url": "https://www.gutenberg.org/ebooks/search/?query=William+Blake+Songs+of+Innocence+and+of+Experience",
+      "license": "public-domain",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "full",
+    "text": "Tyger Tyger, burning bright,\nIn the forests of the night;\nWhat immortal hand or eye,\nCould frame thy fearful symmetry?\n\nIn what distant deeps or skies,\nBurnt the fire of thine eyes?\nOn what wings dare he aspire?\nWhat the hand, dare seize the fire?\n\nAnd what shoulder, & what art,\nCould twist the sinews of thy heart?\nAnd when thy heart began to beat,\nWhat dread hand? & what dread feet?\n\nWhat the hammer? what the chain,\nIn what furnace was thy brain?\nWhat the anvil? what dread grasp,\nDare its deadly terrors clasp?\n\nWhen the stars threw down their spears\nAnd water'd heaven with their tears:\nDid he smile his work to see?\nDid he who made the Lamb make thee?\n\nTyger Tyger burning bright,\nIn the forests of the night:\nWhat immortal hand or eye,\nDare frame thy fearful symmetry?",
+    "ebookLinks": [
+      {
+        "provider": "gutenberg",
+        "format": "html",
+        "url": "https://www.gutenberg.org/ebooks/search/?query=William+Blake+Songs+of+Innocence+and+of+Experience"
+      }
+    ],
+    "externalLinks": [
+      {
+        "kind": "poetry-foundation",
+        "url": "https://www.poetryfoundation.org/search?q=The+Tyger+William+Blake",
+        "label": "Search Poetry Foundation for this poem"
+      }
+    ],
+    "masterNotes": {
+      "context": "Blake wrote \"The Tyger\" for Songs of Experience (1794), the companion volume to his earlier Songs of Innocence (1789); the two were eventually issued together as Songs of Innocence and of Experience, Shewing the Two Contrary States of the Human Soul. Blake was a printmaker as well as a poet, and he etched, hand-colored, and self-published both books rather than working through a conventional printer — the poem's original page carries his own illustration of the tiger. \"The Tyger\" answers, almost as a direct rebuttal, \"The Lamb\" from the earlier volume, in which a child asks a lamb who made it and answers confidently: God, who is also a lamb. Here the same question is asked of something fearsome, and the poem never supplies Blake's earlier easy answer. It has become one of the most anthologized poems in English, largely because it refuses to resolve its own central question.",
+      "form": "Every stanza but the last is built entirely from questions, and Blake never answers a single one directly — the poem interrogates the tiger's maker rather than describing the tiger itself. The insistent trochaic rhythm (\"TY-ger TY-ger\") gives the poem a hammering, forge-like beat that matches its central conceit of the creator as blacksmith, working with hammer, chain, furnace, and anvil. The rhymed couplets tighten the pressure stanza by stanza, and the final stanza almost exactly repeats the first — except \"Could frame\" becomes \"Dare frame,\" a single-word change that quietly shifts the whole poem from wonder toward something closer to accusation.",
+      "keyImages": [
+        "\"The forests of the night\" — the tiger appears already inside a landscape charged with mystery and menace rather than lit by daylight.",
+        "The forge imagery of \"the hammer,\" \"the chain,\" \"the anvil,\" and \"the furnace\" — the creator recast as a blacksmith laboring over something dangerous rather than a gentle craftsman.",
+        "\"When the stars threw down their spears / And water'd heaven with their tears\" — a cosmic image of surrender or grief whose exact meaning the poem never explains.",
+        "The final line's single altered word, \"Dare frame\" replacing \"Could frame\" — the same question returning with its emotional register changed."
+      ],
+      "whatToNotice": [
+        "Notice that almost every line in the poem is a question, and count how many actually get answered.",
+        "Notice the forge vocabulary arriving in the third and fourth stanzas — hammer, chain, furnace, anvil — and what kind of maker that implies.",
+        "In the fifth stanza, notice the poem widens suddenly from the tiger's body to \"the stars\" and \"heaven,\" without explanation.",
+        "Compare the first and last stanzas line by line; notice exactly which word changes.",
+        "Notice the poem never once describes the tiger's stripes, size, or behavior — only the terror and awe of imagining who could have made it."
+      ],
+      "discussionQuestions": [
+        "What does it mean that Blake asks whether the same god made both \"the Lamb\" and the tiger, without answering?",
+        "Why might Blake choose a hammering, sing-song rhythm for a poem about something as frightening as a tiger?",
+        "Does the shift from \"Could frame\" to \"Dare frame\" change your sense of who is doing the daring — the maker, or the reader questioning the maker?",
+        "What is gained by describing the tiger entirely through the reaction it provokes, rather than through direct physical description?"
+      ],
+      "furtherReading": [
+        "\"The Lamb\" (Blake, *Songs of Innocence*) — the poem \"The Tyger\" is answering, asking the same question of a gentler creature.",
+        "*Songs of Innocence and of Experience* (full volume) — for the \"two contrary states\" frame Blake built the poem within.",
+        "Northrop Frye, *Fearful Symmetry: A Study of William Blake* — a foundational critical study that takes its title directly from this poem."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "id": "clifton-wont-you-celebrate-with-me-1993",
+    "type": "poem",
+    "title": "won't you celebrate with me",
+    "author": "Lucille Clifton",
+    "year": 1993,
+    "era": "contemporary",
+    "form": "free verse",
+    "themes": [
+      "race",
+      "gender",
+      "mortality",
+      "the-body"
+    ],
+    "tags": [
+      "lowercase-style",
+      "book-of-light",
+      "needs-text",
+      "needs-link-verification"
+    ],
+    "length": {
+      "unit": "lines",
+      "value": 14
+    },
+    "difficulty": 3,
+    "source": {
+      "name": "Lucille Clifton, The Book of Light (Copper Canyon Press, 1993)",
+      "url": "https://www.poetryfoundation.org/search?q=won%27t+you+celebrate+with+me+Lucille+Clifton",
+      "license": "all-rights-reserved",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "pending",
+    "externalLinks": [
+      {
+        "kind": "poetry-foundation",
+        "url": "https://www.poetryfoundation.org/search?q=won%27t+you+celebrate+with+me+Lucille+Clifton",
+        "label": "Search Poetry Foundation for this poem"
+      },
+      {
+        "kind": "publisher",
+        "url": "https://www.coppercanyonpress.org/?s=Lucille+Clifton+Book+of+Light",
+        "label": "Search Copper Canyon Press for this collection"
+      }
+    ],
+    "masterNotes": {
+      "context": "Clifton published \"won't you celebrate with me\" in *The Book of Light* (1993), well into a career that had already produced more than a dozen collections and two National Book Award nominations before she won the award outright in 2000. She grew up in Depew, New York, the descendant of a family who had preserved an oral history reaching back to an enslaved ancestor, and Clifton wrote often, though rarely directly, out of that inheritance. Her poems are almost never capitalized and use minimal punctuation, a signature style she maintained across four decades. This poem addresses the reader directly, asking for celebration rather than sympathy, and it has become one of her most frequently taught poems, especially for how plainly it names the specific conditions — race, gender, lack of precedent — that shaped the life it describes.",
+      "form": "The poem is built as unrhymed, unpunctuated free verse, with even the personal pronoun \"i\" kept lowercase — Clifton refuses grammatical convention its usual deference throughout her work. A central image compresses the poem's argument about self-invention into a handful of words, comparing the space the speaker has made a life in to a bridge between two very different registers, the exalted and the ordinary. The poem builds toward its ending through direct address and accumulating clauses rather than metaphor, and its final short statement lands harder for arriving without any rhetorical flourish to cushion it.",
+      "keyImages": [
+        "The poem naming its own starting conditions — birth into a hostile environment, and both a racial and gender identity that offered no ready model — without complaint or elaboration.",
+        "The central bridge image, self-invention pictured as a precarious position between the exalted and the ordinary.",
+        "A closing gesture of self-sufficiency, one hand holding the other, pictured as a literal, almost defiant, physical act."
+      ],
+      "whatToNotice": [
+        "Notice the lowercase style throughout — even the poem's one first-person pronoun refuses standard capitalization.",
+        "Notice the poem is framed as an invitation to celebrate, rather than as a statement seeking sympathy.",
+        "Notice how flatly the final statement is delivered — no exclamation, just plain assertion.",
+        "Notice that place names and proper nouns are also kept lowercase, treated as conditions rather than as specific, capitalized places."
+      ],
+      "discussionQuestions": [
+        "What is the effect of framing survival as something to celebrate rather than simply endure?",
+        "Why might Clifton refuse capitalization throughout, including on the first-person pronoun?",
+        "What does the bridge image suggest about how the speaker understands her own life?"
+      ],
+      "furtherReading": [
+        "\"homage to my hips\" (Clifton) — for the same unapologetic, plainspoken celebration of self in a different register.",
+        "*Blessing the Boats: New and Selected Poems* (Clifton) — the National Book Award–winning collection spanning her career."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "id": "dickinson-im-nobody-who-are-you-1861",
+    "type": "poem",
+    "title": "I'm Nobody! Who are you?",
+    "author": "Emily Dickinson",
+    "year": 1861,
+    "era": "19th_century",
+    "form": "lyric poem, common meter",
+    "themes": [
+      "solitude",
+      "humor",
+      "language"
+    ],
+    "tags": [
+      "fascicle",
+      "anonymity",
+      "irony",
+      "needs-link-verification"
+    ],
+    "length": {
+      "unit": "lines",
+      "value": 8
+    },
+    "difficulty": 2,
+    "source": {
+      "name": "Standard Ebooks — Emily Dickinson: Poems",
+      "url": "https://standardebooks.org/ebooks/emily-dickinson/poems",
+      "license": "public-domain",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "full",
+    "text": "I'm Nobody! Who are you?\nAre you – Nobody – too?\nThen there's a pair of us!\nDon't tell! they'd advertise – you know!\n\nHow dreary – to be – Somebody!\nHow public – like a Frog –\nTo tell one's name – the livelong June –\nTo an admiring Bog!",
+    "ebookLinks": [
+      {
+        "provider": "standard-ebooks",
+        "format": "epub",
+        "url": "https://standardebooks.org/ebooks/emily-dickinson/poems/downloads/emily-dickinson_poems.epub"
+      },
+      {
+        "provider": "gutenberg",
+        "format": "pdf",
+        "url": "https://www.gutenberg.org/ebooks/12242"
+      }
+    ],
+    "externalLinks": [
+      {
+        "kind": "poetry-foundation",
+        "url": "https://www.poetryfoundation.org/search?q=Im+Nobody+Who+are+you+Emily+Dickinson",
+        "label": "Search Poetry Foundation for this poem"
+      }
+    ],
+    "masterNotes": {
+      "context": "Dickinson wrote this poem around 1861, in the same extraordinarily productive early-1860s stretch that produced most of her best-known work, though almost none of it was published in her lifetime — she kept the poems hand-sewn into small booklets, called fascicles, discovered only after her death in 1886. She lived quietly in Amherst, Massachusetts, seeing few visitors in her later years, and \"nobody\" and \"somebody\" recur across her poems as a private vocabulary for social visibility and its costs. This poem's tone is playful rather than mournful, closer to a shared joke between the speaker and an imagined reader than a complaint. It has become one of her most quoted poems, often stripped of context and treated as a simple defense of introversion, though its second stanza is considerably sharper than that reading allows.",
+      "form": "The poem is built as a conspiratorial address — \"Are you – Nobody – too?\" — that recruits the reader as a co-conspirator within four lines, before the second stanza turns from intimacy to mockery. Dickinson's dashes do their usual work of controlling breath and emphasis rather than following grammatical rules, isolating \"Nobody\" and \"Somebody\" almost as proper nouns. The extended metaphor in the second stanza — a frog announcing itself to a bog all summer — lands as satire of self-importance, and the shift from the private \"us\" of the first stanza to the public spectacle of the second is where the poem's real argument lives.",
+      "keyImages": [
+        "The pairing \"Then there's a pair of us!\" — instant, almost giddy solidarity built from shared anonymity.",
+        "The frog \"telling one's name\" to \"an admiring Bog\" all \"the livelong June\" — self-announcement recast as absurd noise nobody needed.",
+        "The capitalized \"Nobody\" and \"Somebody\" — Dickinson treats social status as if it were a formal title one could hold."
+      ],
+      "whatToNotice": [
+        "Notice how quickly the poem moves from private confidence (\"Don't tell!\") to public satire (the frog) across just two stanzas.",
+        "Notice that \"Nobody\" is capitalized throughout, turning an absence of status into its own kind of identity.",
+        "Count the dashes in the first stanza and see where they fall relative to the line's grammar — they rarely land where a comma would.",
+        "Notice the exclamation points: the poem's two strongest feelings, secrecy and disdain, both get one."
+      ],
+      "discussionQuestions": [
+        "Is the speaker's claim to \"Nobody\" status entirely sincere, or is there some pride hiding inside the modesty?",
+        "What is the effect of comparing public self-announcement to a frog's croaking rather than to another person?",
+        "Why might Dickinson end on mockery of \"Somebody\" rather than on the earlier warmth of \"there's a pair of us\"?"
+      ],
+      "furtherReading": [
+        "\"Because I could not stop for Death\" (Dickinson) — for the same dash-driven meter turned toward a much graver subject.",
+        "Helen Vendler, *Dickinson: Selected Poems and Commentaries* — includes a close reading of this poem's shift in tone between stanzas."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "id": "dunbar-we-wear-the-mask-1895",
+    "type": "poem",
+    "title": "We Wear the Mask",
+    "author": "Paul Laurence Dunbar",
+    "year": 1895,
+    "era": "19th_century",
+    "form": "rondeau",
+    "themes": [
+      "race",
+      "grief",
+      "power",
+      "solitude"
+    ],
+    "tags": [
+      "rondeau",
+      "jim-crow-era",
+      "concealment",
+      "needs-link-verification"
+    ],
+    "length": {
+      "unit": "lines",
+      "value": 15
+    },
+    "difficulty": 3,
+    "source": {
+      "name": "Paul Laurence Dunbar, Majors and Minors (1895)",
+      "url": "https://www.gutenberg.org/ebooks/search/?query=Paul+Laurence+Dunbar+Majors+and+Minors",
+      "license": "public-domain",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "full",
+    "text": "We wear the mask that grins and lies,\nIt hides our cheeks and shades our eyes,—\nThis debt we pay to human guile;\nWith torn and bleeding hearts we smile,\nAnd mouth with myriad subtleties.\n\nWhy should the world be over-wise,\nIn counting all our tears and sighs?\nNay, let them only see us, while\n      We wear the mask.\n\nWe smile, but, O great Christ, our cries\nTo thee from tortured souls arise.\nWe sing, but oh the clay is vile\nBeneath our feet, and long the mile;\nBut let the world dream otherwise,\n      We wear the mask!",
+    "ebookLinks": [
+      {
+        "provider": "gutenberg",
+        "format": "html",
+        "url": "https://www.gutenberg.org/ebooks/search/?query=Paul+Laurence+Dunbar+Majors+and+Minors"
+      }
+    ],
+    "externalLinks": [
+      {
+        "kind": "poetry-foundation",
+        "url": "https://www.poetryfoundation.org/search?q=We+Wear+the+Mask+Paul+Laurence+Dunbar",
+        "label": "Search Poetry Foundation for this poem"
+      }
+    ],
+    "masterNotes": {
+      "context": "Dunbar published \"We Wear the Mask\" in 1895, in the collection *Majors and Minors*, three decades after the end of slavery and squarely within the era of Jim Crow segregation and the rollback of Reconstruction-era rights. He was the first African American poet to achieve a major national literary reputation, praised by William Dean Howells, though Howells's introduction to Dunbar's next book pushed him toward dialect poems at the expense of the formal, standard-English verse this poem represents — a tension Dunbar resented throughout his career. \"We Wear the Mask\" is written in that formal register, a rondeau borrowed from French verse tradition, and it speaks in a collective \"we\" rather than through a single character. It remains one of the most frequently taught and anthologized poems about the psychological cost of concealment under oppression.",
+      "form": "The poem is a rondeau, a French form built on a refrain — \"We wear the mask\" — that closes each stanza and returns, slightly altered, as the poem's final words. That formal borrowing matters: Dunbar shows complete command of a demanding European verse form while writing about a mask forced onto Black Americans by a white audience unwilling to see past it. The poem's central irony sits in its own performance — a poem about hidden suffering that is itself formally poised and controlled, never breaking into the \"torn and bleeding\" register it describes. The direct address to \"great Christ\" in the final stanza is the poem's one break from its outward composure, a private cry the mask is explicitly not meant to show.",
+      "keyImages": [
+        "\"The mask that grins and lies\" — a face deliberately built to perform an emotion it does not feel.",
+        "\"With torn and bleeding hearts we smile\" — the poem's central juxtaposition, agony and pleasant expression forced into the same line.",
+        "\"O great Christ, our cries / To thee from tortured souls arise\" — the one moment the mask is explicitly dropped, and only toward heaven, not toward the world."
+      ],
+      "whatToNotice": [
+        "Notice the poem is spoken in \"we,\" never \"I\" — the mask belongs to a whole community, not a single speaker.",
+        "Notice how formally controlled the poem's own language is, even while describing torn hearts and tortured souls.",
+        "Notice where the refrain \"We wear the mask\" falls in each stanza, and how its meaning shifts by the final exclamation point.",
+        "Notice that the poem never shows us what is underneath the mask directly — only that something is."
+      ],
+      "discussionQuestions": [
+        "What does it mean that the poem's one moment of unmasked feeling is addressed to Christ rather than to the reader?",
+        "Why might Dunbar have chosen a tightly formal French verse structure to write about concealment and pain?",
+        "Does the collective \"we\" make the poem's argument more powerful, or does it flatten individual experience?"
+      ],
+      "furtherReading": [
+        "Dunbar's dialect poems (e.g. \"When Malindy Sings\") — for the contrasting register Dunbar was pushed toward and sometimes resisted.",
+        "Paul Laurence Dunbar, *Lyrics of Lowly Life* — the 1896 collection that made this poem widely known."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "id": "millay-first-fig-1918",
+    "type": "poem",
+    "title": "First Fig",
+    "author": "Edna St. Vincent Millay",
+    "year": 1918,
+    "era": "early_20th_century",
+    "form": "epigrammatic quatrain",
+    "themes": [
+      "mortality",
+      "time",
+      "humor"
+    ],
+    "tags": [
+      "greenwich-village",
+      "epigram",
+      "new-woman",
+      "needs-link-verification"
+    ],
+    "length": {
+      "unit": "lines",
+      "value": 4
+    },
+    "difficulty": 1,
+    "source": {
+      "name": "Edna St. Vincent Millay, A Few Figs from Thistles (1920)",
+      "url": "https://www.gutenberg.org/ebooks/search/?query=Edna+St+Vincent+Millay+A+Few+Figs+from+Thistles",
+      "license": "public-domain",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "full",
+    "text": "My candle burns at both ends;\n   It will not last the night;\nBut ah, my foes, and oh, my friends—\n   It gives a lovely light!",
+    "ebookLinks": [
+      {
+        "provider": "gutenberg",
+        "format": "html",
+        "url": "https://www.gutenberg.org/ebooks/search/?query=Edna+St+Vincent+Millay+A+Few+Figs+from+Thistles"
+      }
+    ],
+    "externalLinks": [
+      {
+        "kind": "poetry-foundation",
+        "url": "https://www.poetryfoundation.org/search?q=First+Fig+Edna+St+Vincent+Millay",
+        "label": "Search Poetry Foundation for this poem"
+      }
+    ],
+    "masterNotes": {
+      "context": "Millay published \"First Fig\" in *Poetry* magazine in 1918 and again in her 1920 collection *A Few Figs from Thistles*, a book built deliberately from short, epigrammatic poems rather than her longer, more traditionally lyric work. She had just left Vassar College and moved to New York's Greenwich Village, where she became one of the era's most visible symbols of the \"New Woman\" — financially independent, sexually frank, unapologetic about pleasure. The book scandalized some early reviewers precisely because its speaker treats a short, burning life as a boast rather than a warning. Millay went on to win the Pulitzer Prize for Poetry in 1923, becoming the third woman to receive it, and \"First Fig\" remains her single most quoted quatrain.",
+      "form": "Four lines, a single extended metaphor, and a defiant tone are doing all of the poem's work. The candle burning \"at both ends\" was already a known figure for a reckless, short life; Millay's contribution is the tone she gives it — not regret but pride, delivered straight to an audience she splits into \"foes\" and \"friends\" as if daring either to disapprove. The exclamation point on the final line carries the whole poem's argument: the light is worth the shortened night. Millay compresses an entire attitude toward mortality into a form usually reserved for greeting-card sentiment, and undercuts the sentimentality by refusing any hint of apology.",
+      "keyImages": [
+        "The candle \"burning at both ends\" — the poem's whole argument compressed into a single image of accelerated, deliberate consumption.",
+        "The direct address split between \"my foes\" and \"my friends\" — the speaker imagining, and dismissing in advance, two different kinds of disapproval."
+      ],
+      "whatToNotice": [
+        "Notice the poem never claims the short life is a mistake — the tone is pride, not warning.",
+        "Notice that \"foes\" and \"friends\" are addressed identically; the speaker doesn't perform more vulnerability for one than the other.",
+        "Notice how much weight the single exclamation point at the end is asked to carry.",
+        "Notice the poem's total absence of regret language — no \"but,\" no \"if only.\""
+      ],
+      "discussionQuestions": [
+        "What does it change that the poem treats a self-consuming life as something to boast about rather than confess?",
+        "Why might Millay address both \"foes\" and \"friends\" in the same breath, rather than singling out one audience?",
+        "Does the poem's brevity work with or against its argument about living intensely and briefly?"
+      ],
+      "furtherReading": [
+        "\"Second Fig\" (Millay) — the companion quatrain in the same sequence, arguing nearly the opposite case.",
+        "Nancy Milford, *Savage Beauty: The Life of Edna St. Vincent Millay* — a biography covering the Greenwich Village years this poem comes out of."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "id": "oliver-wild-geese-1986",
+    "type": "poem",
+    "title": "Wild Geese",
+    "author": "Mary Oliver",
+    "year": 1986,
+    "era": "contemporary",
+    "form": "free verse",
+    "themes": [
+      "nature",
+      "solitude",
+      "wonder",
+      "home"
+    ],
+    "tags": [
+      "direct-address",
+      "provincetown",
+      "needs-text",
+      "needs-link-verification"
+    ],
+    "length": {
+      "unit": "lines",
+      "value": 18
+    },
+    "difficulty": 2,
+    "source": {
+      "name": "Mary Oliver, Dream Work (Atlantic Monthly Press, 1986)",
+      "url": "https://www.poetryfoundation.org/search?q=Wild+Geese+Mary+Oliver",
+      "license": "all-rights-reserved",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "pending",
+    "externalLinks": [
+      {
+        "kind": "poetry-foundation",
+        "url": "https://www.poetryfoundation.org/search?q=Wild+Geese+Mary+Oliver",
+        "label": "Search Poetry Foundation for this poem"
+      },
+      {
+        "kind": "publisher",
+        "url": "https://groveatlantic.com/?s=Mary+Oliver+Dream+Work",
+        "label": "Search Grove Atlantic for this collection"
+      }
+    ],
+    "masterNotes": {
+      "context": "Oliver published \"Wild Geese\" in *Dream Work* (1986), by which point she had already spent decades writing quietly about the natural world around her home in Provincetown, Massachusetts, largely outside the literary mainstream of her contemporaries. She went on to win the Pulitzer Prize in 1984 (for *American Primitive*) and the National Book Award in 1992, but her poems remained deliberately plain in diction, resistant to the difficulty many of her peers prized. \"Wild Geese\" opens by directly addressing a reader carrying guilt or self-judgment, then pivots outward to the natural world as a counter-argument to that guilt. It has become one of the most widely shared and quoted poems in English, sometimes to the point of overfamiliarity, which can make it hard to read the poem itself rather than its reputation.",
+      "form": "The poem moves in a single unbroken argument built from short declarative sentences and a repeated \"Meanwhile,\" a word that does a great deal of structural work — each repetition shifts attention further from the human guilt of the opening lines toward the indifferent, ongoing motion of geese, rain, and mountains. The poem never rhymes and rarely varies its line lengths dramatically; its persuasive power comes from accumulation rather than any single striking image. The final image — the geese \"announcing your place / in the family of things\" — arrives only after the poem has spent its whole length earning the right to make that claim.",
+      "keyImages": [
+        "The repeated word \"Meanwhile,\" returning to redirect attention from human self-judgment to the ongoing natural world.",
+        "The wild geese \"heading home again,\" offered as an image of belonging that requires no explanation or effort.",
+        "The closing phrase \"the family of things\" — extending kinship past the human world entirely."
+      ],
+      "whatToNotice": [
+        "Notice the poem opens with two flat negations (\"You do not have to...\") before offering anything in their place.",
+        "Track each appearance of \"Meanwhile\" and notice how far the poem's attention has traveled by the last one.",
+        "Notice the poem addresses \"you\" throughout — this is a poem of direct instruction, not description.",
+        "Notice that \"the family of things\" arrives only in the poem's final line, after everything else has built toward it."
+      ],
+      "discussionQuestions": [
+        "What is the effect of opening the poem with what the reader does not have to do, rather than what they should do?",
+        "How does repeating \"Meanwhile\" change the reader's sense of scale between the personal and the natural?",
+        "Does closing on \"the family of things\" resolve the guilt introduced in the first lines, or simply set it aside?"
+      ],
+      "furtherReading": [
+        "\"The Summer Day\" (Oliver) — for the same directly instructive address, ending in the well-known question about \"your one wild and precious life.\"",
+        "*American Primitive* (Oliver) — the Pulitzer-winning collection that established her plain-spoken attention to the natural world."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "id": "rossetti-remember-1849",
+    "type": "poem",
+    "title": "Remember",
+    "author": "Christina Rossetti",
+    "year": 1849,
+    "era": "19th_century",
+    "form": "Petrarchan sonnet",
+    "themes": [
+      "love",
+      "death",
+      "memory",
+      "grief"
+    ],
+    "tags": [
+      "sonnet",
+      "volta",
+      "pre-raphaelite-circle",
+      "needs-link-verification"
+    ],
+    "length": {
+      "unit": "lines",
+      "value": 14
+    },
+    "difficulty": 2,
+    "source": {
+      "name": "Christina Rossetti, Goblin Market and Other Poems (1862)",
+      "url": "https://www.gutenberg.org/ebooks/search/?query=Christina+Rossetti+Goblin+Market+and+Other+Poems",
+      "license": "public-domain",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "full",
+    "text": "Remember me when I am gone away,\n   Gone far away into the silent land;\n   When you can no more hold me by the hand,\nNor I half turn to go yet turning stay.\nRemember me when no more day by day\n   You tell me of our future that you plann'd:\n   Only remember me; you understand\nIt will be late to counsel then or pray.\nYet if you should forget me for a while\n   And afterwards remember, do not grieve:\n   For if the darkness and corruption leave\nA vestige of the thoughts that once I had,\n   Better by far you should forget and smile\n   Than that you should remember and be sad.",
+    "ebookLinks": [
+      {
+        "provider": "gutenberg",
+        "format": "html",
+        "url": "https://www.gutenberg.org/ebooks/search/?query=Christina+Rossetti+Goblin+Market+and+Other+Poems"
+      }
+    ],
+    "externalLinks": [
+      {
+        "kind": "poetry-foundation",
+        "url": "https://www.poetryfoundation.org/search?q=Remember+Christina+Rossetti",
+        "label": "Search Poetry Foundation for this poem"
+      }
+    ],
+    "masterNotes": {
+      "context": "Rossetti wrote \"Remember\" around 1849, when she was still a teenager, though it wasn't published until 1862 in her first major collection, *Goblin Market and Other Poems*. She was part of the Pre-Raphaelite circle through her brother Dante Gabriel Rossetti, but her own poetry is generally plainer and more devotional in temper than the movement's visual lushness. She never married, and a recurring subject across her work is renunciation — of love, of desire, of claims on another person — treated not as bitterness but as a kind of discipline. \"Remember\" imagines the speaker's own death and instructs a survivor on how to grieve, a fairly common Victorian poetic occasion, but the poem's turn in its final six lines, releasing the beloved from the very request it just made, is Rossetti's own.",
+      "form": "The poem is a Petrarchan sonnet, split at the volta between octave and sestet exactly where its argument turns. The octave insists, three times, on the imperative \"Remember,\" building an almost desperate repetition, before the sestet reverses course entirely: better to forget and smile than to remember and grieve. The rhyme scheme (abba abba cdd ece) is fairly conventional Petrarchan form, but the poem uses its meter's regularity to make the reversal land harder — nothing in the sound changes, only the argument does, so the shift feels like a decision rather than a collapse.",
+      "keyImages": [
+        "\"The silent land\" — death rendered as a place rather than an ending, something the beloved is being sent toward rather than simply losing.",
+        "\"Yet if you should forget me for a while / And afterwards remember\" — the poem imagining its own request being ignored, and forgiving that in advance.",
+        "The closing antithesis, \"forget and smile\" against \"remember and be sad\" — the entire poem's argument compressed into one line."
+      ],
+      "whatToNotice": [
+        "Count how many times \"remember\" appears in the octave before the sestet begins undoing the request.",
+        "Notice the poem never says how or when the speaker dies — only that the day will come.",
+        "Notice the sestet doesn't simply soften the request, it reverses it: better to be forgotten happily than remembered sadly.",
+        "Notice how little the poem's music changes at the volta — the reversal is entirely in the argument, not the sound."
+      ],
+      "discussionQuestions": [
+        "Why might Rossetti have the speaker undo her own request rather than simply asking to be remembered?",
+        "What does the poem suggest about the relationship between love and self-effacement?",
+        "Is the sestet's offer to be forgotten a genuine release, or another, subtler way of asking to be remembered?"
+      ],
+      "furtherReading": [
+        "\"Song\" (\"When I am dead, my dearest\") — Rossetti's other, even starker poem on being forgotten after death.",
+        "*Goblin Market* (Rossetti) — for a very different register of the same poet's imagination, allegorical rather than devotional."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  }
+]

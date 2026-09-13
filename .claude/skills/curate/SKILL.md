@@ -37,9 +37,15 @@ description: Add one validated batch of well-respected works to well-read and co
    result against the "well-respected" criteria in `docs/editorial-policy.md`
    before shortlisting — a script returning a text is not itself qualification.
 
-4. **Hand-pick 1–2 contemporary works** with a compliant excerpt (see excerpt
-   rules in `docs/editorial-policy.md`) and at least one outbound link each.
-   Transcribe from a reputable published source and record it in `source`.
+4. **Hand-pick 1–2 contemporary works** with at least one outbound link each,
+   and record the source in `source`. For public-domain text, run
+   `npm run inject:excerpt -- --id <id> --url <raw github url>` (Standard
+   Ebooks or GITenberg on GitHub) to copy the verbatim text by script — never
+   type or transcribe it from memory. Mark contemporary prose `pending` with
+   tag `needs-text` (no `text`/`excerpt` yet; full metadata, master notes, and
+   links still required) since it cannot be sourced by script and must not be
+   typed from memory. Contemporary short poems remain `full` only if the text
+   can be copied from a source file; otherwise mark them `pending` too.
 
 5. **Assemble the batch**: 4–6 works total, mixing:
    - at least 2 poems

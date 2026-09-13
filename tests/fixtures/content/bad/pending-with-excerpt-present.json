@@ -1,0 +1,48 @@
+{
+  "id": "pending-with-excerpt-present",
+  "type": "short_story",
+  "title": "Pending With Excerpt",
+  "author": "Fixture Author",
+  "year": 2023,
+  "era": "contemporary",
+  "form": "literary short story",
+  "themes": ["solitude"],
+  "tags": ["fixture", "needs-text"],
+  "length": {
+    "unit": "words",
+    "value": 4200
+  },
+  "difficulty": 2,
+  "source": {
+    "name": "Fixture Review",
+    "url": "https://example.org/fixtures/pending-with-excerpt",
+    "license": "all-rights-reserved",
+    "retrievedDate": "2026-09-01"
+  },
+  "textPolicy": "pending",
+  "excerpt": "This field must not be present when textPolicy is 'pending', which is exactly the gate this fixture breaks.",
+  "externalLinks": [
+    {
+      "kind": "publisher",
+      "url": "https://example.org/fixtures/pending-with-excerpt"
+    }
+  ],
+  "masterNotes": {
+    "context": "Fixture for the pending-must-not-set-excerpt gate: textPolicy is 'pending' but `excerpt` is also set.",
+    "form": "Fixture form notes.",
+    "keyImages": ["Fixture image one.", "Fixture image two."],
+    "whatToNotice": ["Fixture notice."],
+    "discussionQuestions": [
+      "Fixture question one?",
+      "Fixture question two?",
+      "Fixture question three?"
+    ],
+    "furtherReading": ["Fixture further reading."]
+  },
+  "pipeline": {
+    "batchId": "fixture-batch",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "fixture",
+    "schemaVersion": 1
+  }
+}

@@ -7,7 +7,7 @@
   "era": "contemporary",
   "form": "free verse",
   "themes": ["nature", "solitude", "wonder", "home"],
-  "tags": ["direct-address", "provincetown", "needs-text-verification", "needs-link-verification"],
+  "tags": ["direct-address", "provincetown", "needs-text", "needs-link-verification"],
   "length": { "unit": "lines", "value": 18 },
   "difficulty": 2,
   "source": {
@@ -16,8 +16,7 @@
     "license": "all-rights-reserved",
     "retrievedDate": "2026-09-13"
   },
-  "textPolicy": "full",
-  "text": "You do not have to be good.\nYou do not have to walk on your knees\nfor a hundred miles through the desert repenting.\nYou only have to let the soft animal of your body\nlove what it loves.\nTell me about despair, yours, and I will tell you mine.\nMeanwhile the world goes on.\nMeanwhile the sun and the clear pebbles of the rain\nare moving across the landscapes,\nover the prairies and the deep trees,\nthe mountains and the rivers.\nMeanwhile the wild geese, high in the clean blue air,\nare heading home again.\nWhoever you are, no matter how lonely,\nthe world offers itself to your imagination,\ncalls to you like the wild geese, harsh and exciting—\nover and over announcing your place\nin the family of things.",
+  "textPolicy": "pending",
   "externalLinks": [
     {
       "kind": "poetry-foundation",

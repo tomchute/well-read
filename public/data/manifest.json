@@ -1,7 +1,202 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-13T08:24:27.163Z",
-  "count": 0,
-  "shards": 0,
-  "works": []
+  "generatedAt": "2026-09-13T08:41:39.827Z",
+  "count": 7,
+  "shards": 1,
+  "works": [
+    {
+      "id": "blake-the-tyger-1794",
+      "title": "The Tyger",
+      "author": "William Blake",
+      "year": 1794,
+      "era": "18th_century",
+      "type": "poem",
+      "form": "lyric poem, Songs of Experience",
+      "themes": [
+        "nature",
+        "animals",
+        "wonder",
+        "power"
+      ],
+      "tags": [
+        "songs-of-experience",
+        "creation",
+        "symmetry",
+        "needs-link-verification"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "lines",
+        "value": 24
+      },
+      "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "clifton-wont-you-celebrate-with-me-1993",
+      "title": "won't you celebrate with me",
+      "author": "Lucille Clifton",
+      "year": 1993,
+      "era": "contemporary",
+      "type": "poem",
+      "form": "free verse",
+      "themes": [
+        "race",
+        "gender",
+        "mortality",
+        "the-body"
+      ],
+      "tags": [
+        "lowercase-style",
+        "book-of-light",
+        "needs-text",
+        "needs-link-verification"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "lines",
+        "value": 14
+      },
+      "textPolicy": "pending",
+      "shard": 0
+    },
+    {
+      "id": "dickinson-im-nobody-who-are-you-1861",
+      "title": "I'm Nobody! Who are you?",
+      "author": "Emily Dickinson",
+      "year": 1861,
+      "era": "19th_century",
+      "type": "poem",
+      "form": "lyric poem, common meter",
+      "themes": [
+        "solitude",
+        "humor",
+        "language"
+      ],
+      "tags": [
+        "fascicle",
+        "anonymity",
+        "irony",
+        "needs-link-verification"
+      ],
+      "difficulty": 2,
+      "length": {
+        "unit": "lines",
+        "value": 8
+      },
+      "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "dunbar-we-wear-the-mask-1895",
+      "title": "We Wear the Mask",
+      "author": "Paul Laurence Dunbar",
+      "year": 1895,
+      "era": "19th_century",
+      "type": "poem",
+      "form": "rondeau",
+      "themes": [
+        "race",
+        "grief",
+        "power",
+        "solitude"
+      ],
+      "tags": [
+        "rondeau",
+        "jim-crow-era",
+        "concealment",
+        "needs-link-verification"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "lines",
+        "value": 15
+      },
+      "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "millay-first-fig-1918",
+      "title": "First Fig",
+      "author": "Edna St. Vincent Millay",
+      "year": 1918,
+      "era": "early_20th_century",
+      "type": "poem",
+      "form": "epigrammatic quatrain",
+      "themes": [
+        "mortality",
+        "time",
+        "humor"
+      ],
+      "tags": [
+        "greenwich-village",
+        "epigram",
+        "new-woman",
+        "needs-link-verification"
+      ],
+      "difficulty": 1,
+      "length": {
+        "unit": "lines",
+        "value": 4
+      },
+      "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "oliver-wild-geese-1986",
+      "title": "Wild Geese",
+      "author": "Mary Oliver",
+      "year": 1986,
+      "era": "contemporary",
+      "type": "poem",
+      "form": "free verse",
+      "themes": [
+        "nature",
+        "solitude",
+        "wonder",
+        "home"
+      ],
+      "tags": [
+        "direct-address",
+        "provincetown",
+        "needs-text",
+        "needs-link-verification"
+      ],
+      "difficulty": 2,
+      "length": {
+        "unit": "lines",
+        "value": 18
+      },
+      "textPolicy": "pending",
+      "shard": 0
+    },
+    {
+      "id": "rossetti-remember-1849",
+      "title": "Remember",
+      "author": "Christina Rossetti",
+      "year": 1849,
+      "era": "19th_century",
+      "type": "poem",
+      "form": "Petrarchan sonnet",
+      "themes": [
+        "love",
+        "death",
+        "memory",
+        "grief"
+      ],
+      "tags": [
+        "sonnet",
+        "volta",
+        "pre-raphaelite-circle",
+        "needs-link-verification"
+      ],
+      "difficulty": 2,
+      "length": {
+        "unit": "lines",
+        "value": 14
+      },
+      "textPolicy": "full",
+      "shard": 0
+    }
+  ]
 }

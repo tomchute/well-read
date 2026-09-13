@@ -22,36 +22,38 @@ const BAD_FIXTURE_GATES: Record<string, string> = {
   'key-images-below-minimum.json': 'keyImages must have at least 2 entries',
   'discussion-questions-below-minimum.json': 'discussionQuestions must have at least 3 entries',
   'excerpt-below-word-minimum.json': 'at least 500 words',
+  'pending-with-excerpt-present.json': 'must not set `excerpt`',
 };
 
 describe('validate-content: good fixtures', () => {
   const report = validateDirectory(GOOD_DIR);
 
-  it('finds at least 5 fixtures and every one passes', () => {
-    expect(report.total).toBeGreaterThanOrEqual(5);
+  it('finds at least 6 fixtures and every one passes', () => {
+    expect(report.total).toBeGreaterThanOrEqual(6);
     expect(report.ok).toBe(true);
     for (const result of report.results) {
       expect(result.ok, `${result.file}: ${result.errors.join('; ')}`).toBe(true);
     }
   });
 
-  it('covers poem, short_story, and book, and both textPolicy values', () => {
+  it('covers poem, short_story, and book, and all three textPolicy values', () => {
     const files = report.results.map((r) => r.file).join(' ');
     // Sanity check via the fixtures we authored, not a schema re-implementation.
-    expect(report.total).toBe(5);
+    expect(report.total).toBe(6);
     expect(files).toContain('dickinson-because-i-could-not-stop-for-death-1863.json'); // poem, full
     expect(files).toContain('anon-riverlight-verses-1888.json'); // poem, excerpt
     expect(files).toContain('fixture-office-hours-2019.json'); // short_story, excerpt
     expect(files).toContain('fixture-larkspur-street-2021.json'); // book, excerpt
     expect(files).toContain('fixture-porch-light-2022.json'); // poem, full
+    expect(files).toContain('fixture-quiet-hours-2023.json'); // short_story, pending
   });
 });
 
 describe('validate-content: bad fixtures', () => {
   const report = validateDirectory(BAD_DIR);
 
-  it('finds at least 5 fixtures and every one fails', () => {
-    expect(report.total).toBeGreaterThanOrEqual(5);
+  it('finds at least 6 fixtures and every one fails', () => {
+    expect(report.total).toBeGreaterThanOrEqual(6);
     expect(report.ok).toBe(false);
     for (const result of report.results) {
       expect(result.ok, `${result.file} unexpectedly passed`).toBe(false);

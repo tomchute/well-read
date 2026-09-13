@@ -328,7 +328,7 @@ export const WorkSchema = WorkBaseSchema.superRefine((work, ctx) => {
       ctx.addIssue({
         code: 'custom',
         path: ['tags'],
-        message: "textPolicy 'pending' requires `tags` to include \"needs-text\"",
+        message: 'textPolicy \'pending\' requires `tags` to include "needs-text"',
       });
     }
   }

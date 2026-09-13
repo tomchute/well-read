@@ -1,0 +1,55 @@
+{
+  "id": "fixture-quiet-hours-2023",
+  "type": "short_story",
+  "title": "Quiet Hours",
+  "author": "Fixture Author",
+  "year": 2023,
+  "era": "contemporary",
+  "form": "literary short story",
+  "themes": ["solitude", "work"],
+  "tags": ["fixture", "needs-text"],
+  "length": {
+    "unit": "words",
+    "value": 4200
+  },
+  "difficulty": 2,
+  "source": {
+    "name": "Fixture Review",
+    "url": "https://example.org/fixtures/quiet-hours",
+    "license": "all-rights-reserved",
+    "retrievedDate": "2026-09-01"
+  },
+  "textPolicy": "pending",
+  "externalLinks": [
+    {
+      "kind": "publisher",
+      "url": "https://example.org/fixtures/quiet-hours",
+      "label": "Read at Fixture Review"
+    }
+  ],
+  "masterNotes": {
+    "context": "This fixture stands in for a contemporary short story that could not be sourced by script and was added as `pending`: full metadata and master notes now, verbatim text later by a human paste or a future source.",
+    "form": "Close third-person narration, per the publisher's description of the piece.",
+    "keyImages": [
+      "Fixture image one, described from the publisher's summary rather than the text itself.",
+      "Fixture image two, likewise drawn from secondary description."
+    ],
+    "whatToNotice": [
+      "Notice, once the text is added, how the story handles its central quiet-office setting."
+    ],
+    "discussionQuestions": [
+      "Fixture question one, to be revisited once the text is available?",
+      "Fixture question two?",
+      "Fixture question three?"
+    ],
+    "furtherReading": [
+      "Fixture note: this entry exists only to exercise validate-content.mjs and has no real further reading."
+    ]
+  },
+  "pipeline": {
+    "batchId": "fixture-batch",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "fixture",
+    "schemaVersion": 1
+  }
+}
