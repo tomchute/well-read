@@ -1,7 +1,9 @@
 <script lang="ts">
+  import MasterNotes from '$lib/components/MasterNotes.svelte';
   import WorkLinks from '$lib/components/WorkLinks.svelte';
   import { loadWork } from '$lib/data/work';
-  import type { Work as WorkRecord } from '$lib/types/work';
+  import { read } from '$lib/stores/index.svelte';
+  import type { Era, Work as WorkRecord } from '$lib/types/work';
 
   interface Props {
     id: string;
@@ -14,6 +16,44 @@
   let status = $state<Status>('loading');
   let work = $state<WorkRecord | undefined>(undefined);
   let errorMessage = $state('');
+  let notesOpen = $state(false);
+
+  const ERA_LABELS: Record<Era, string> = {
+    ancient: 'Ancient',
+    medieval: 'Medieval',
+    renaissance: 'Renaissance',
+    '18th_century': '18th century',
+    '19th_century': '19th century',
+    early_20th_century: 'Early 20th century',
+    mid_20th_century: 'Mid 20th century',
+    contemporary: 'Contemporary',
+  };
+
+  const isRead = $derived(work ? read.value.includes(work.id) : false);
+
+  // Splits shipped prose (short_story/book/essay/play `text`/`excerpt`) into
+  // paragraphs on blank lines, so it renders as real `<p>` paragraphs rather
+  // than one `white-space: pre-wrap` block — poems keep pre-wrap in `.poem`
+  // to preserve line breaks and indentation exactly as authored (see
+  // docs/design-system.md, "Poem rendering").
+  function paragraphsOf(text: string): string[] {
+    return text
+      .split(/\n\s*\n/)
+      .map((paragraph) => paragraph.trim())
+      .filter((paragraph) => paragraph.length > 0);
+  }
+
+  function formatLength(record: WorkRecord): string {
+    return `${record.length.value.toLocaleString()} ${record.length.unit}`;
+  }
+
+  function toggleRead(): void {
+    if (!work) return;
+    const currentId = work.id;
+    read.update((ids) =>
+      ids.includes(currentId) ? ids.filter((existing) => existing !== currentId) : [...ids, currentId]
+    );
+  }
 
   $effect(() => {
     const workId = id;
@@ -49,15 +89,43 @@
     <h2 class="work-title">{work.title}</h2>
     <p class="small-caps work-author">{work.author}</p>
 
+    <ul class="badge-row">
+      <li class="badge">{ERA_LABELS[work.era]}</li>
+      <li class="badge">{work.form}</li>
+      <li class="badge">Difficulty {work.difficulty}/5</li>
+      <li class="badge">{formatLength(work)}</li>
+    </ul>
+
     {#if work.textPolicy === 'pending'}
       <p class="pending">Notes and links are ready — the text is coming soon.</p>
     {:else if work.type === 'poem'}
       <div class="poem work-text">{work.text ?? work.excerpt}</div>
+      {#if work.excerptNote}
+        <p class="excerpt-note">{work.excerptNote}</p>
+      {/if}
     {:else}
-      <div class="prose work-text measure">{work.text ?? work.excerpt}</div>
+      <div class="prose work-text measure">
+        {#each paragraphsOf(work.text ?? work.excerpt ?? '') as paragraph, index (index)}
+          <p>{paragraph}</p>
+        {/each}
+      </div>
+      {#if work.excerptNote}
+        <p class="excerpt-note">{work.excerptNote}</p>
+      {/if}
     {/if}
 
+    <div class="action-row">
+      <button type="button" class="notes-button" onclick={() => (notesOpen = true)}>
+        Master notes
+      </button>
+      <button type="button" class="read-button" class:is-read={isRead} onclick={toggleRead}>
+        {isRead ? 'Read ✓' : 'Mark as read'}
+      </button>
+    </div>
+
     <WorkLinks {work} />
+
+    <MasterNotes open={notesOpen} notes={work.masterNotes} onClose={() => (notesOpen = false)} />
   </article>
 {/if}
 
@@ -72,6 +140,27 @@
     margin: 0 0 var(--space-5);
   }
 
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: 0 0 var(--space-5);
+    padding: 0;
+    list-style: none;
+  }
+
+  .badge {
+    font-family: var(--font-ui);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent-poem-text);
+    background: var(--accent-poem-tint);
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+  }
+
   .pending {
     color: var(--text-muted);
     font-style: italic;
@@ -79,11 +168,71 @@
   }
 
   .poem {
-    margin: 0 0 var(--space-6);
+    margin: 0 0 var(--space-2);
   }
 
   .prose {
-    white-space: pre-wrap;
+    margin: 0 0 var(--space-2);
+  }
+
+  .prose p {
+    margin: 0 0 var(--space-4);
+  }
+
+  .prose p:last-child {
+    margin-bottom: 0;
+  }
+
+  .excerpt-note {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
     margin: 0 0 var(--space-6);
+  }
+
+  .action-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin: 0 0 var(--space-5);
+  }
+
+  .notes-button,
+  .read-button {
+    min-height: 44px;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+      background-color var(--duration-fast) var(--ease-out-soft),
+      border-color var(--duration-fast) var(--ease-out-soft);
+  }
+
+  .notes-button {
+    border: 1px solid var(--hairline);
+    background: var(--surface-raised);
+    color: var(--text);
+  }
+
+  .notes-button:hover {
+    background: var(--surface-pressed);
+  }
+
+  .read-button {
+    border: 1px solid var(--accent-saved-text);
+    background: var(--accent-saved-tint);
+    color: var(--accent-saved-text);
+  }
+
+  .read-button:hover {
+    background: var(--surface-pressed);
+  }
+
+  .read-button.is-read {
+    border-color: var(--hairline);
+    background: transparent;
+    color: var(--text-muted);
   }
 </style>
