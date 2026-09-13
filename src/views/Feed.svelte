@@ -24,6 +24,7 @@
   import EmptyState from '$lib/components/EmptyState.svelte';
   // biome-ignore lint/correctness/noUnusedImports: used in template
   import SteeringBar from '$lib/components/SteeringBar.svelte';
+  import { countActiveSteers } from '$lib/components/steering';
   // biome-ignore lint/correctness/noUnusedImports: used in template
   import WorkCard from '$lib/components/WorkCard.svelte';
   import { loadManifest, type ManifestEntry } from '$lib/data/manifest';
@@ -55,6 +56,32 @@
   // ones the virtualiser mounts later while scrolling (WP-2.6 scope item 3).
   let hasPainted = $state(false);
 
+  // Whether the steering guide (SteeringBar) is shown above the list. Starts
+  // collapsed so the cards get the room; the reader's last choice is kept in
+  // localStorage (outside the versioned `wellread:v1:*` scoring keys — it's
+  // a UI preference, not part of the export set). Mirrors App.svelte's
+  // theme persistence: every storage call is wrapped so a blocked
+  // localStorage just means the guide starts collapsed each visit.
+  const GUIDE_STORAGE_KEY = 'wellread:steering-open';
+  let guideOpen = $state(false);
+
+  function readStoredGuideOpen(): boolean {
+    try {
+      return localStorage.getItem(GUIDE_STORAGE_KEY) === '1';
+    } catch {
+      return false;
+    }
+  }
+
+  function toggleGuide(): void {
+    guideOpen = !guideOpen;
+    try {
+      localStorage.setItem(GUIDE_STORAGE_KEY, guideOpen ? '1' : '0');
+    } catch {
+      /* localStorage unavailable (private browsing, blocked storage) — ignore */
+    }
+  }
+
   // Fixed card height (+ the gap below it) so the virtualiser never has to
   // measure the DOM: WorkCard reserves its own teaser space, so every card
   // renders at exactly this height regardless of load state. Keeping it
@@ -81,6 +108,7 @@
   }
 
   onMount(async () => {
+    guideOpen = readStoredGuideOpen();
     try {
       const manifest = await loadManifest();
       entries = manifest.works;
@@ -187,6 +215,10 @@
     read: read.value,
   });
 
+  // Shown next to the collapsed toggle so an active steer is never hidden
+  // out of sight ("Steer the feed · 2 active").
+  const activeSteers = $derived(countActiveSteers(scoringSnapshot));
+
   /** Every steering-bar interaction (a theme/form chip or "surprise me") lands here. */
   function handleChip(action: ChipAction) {
     const next = applyChip(scoringSnapshot, action);
@@ -253,10 +285,30 @@
   });
 </script>
 
+<div class="feed">
 <h2>Feed</h2>
 
 {#if status === 'ready'}
-  <SteeringBar state={scoringSnapshot} onchip={handleChip} />
+  <button
+    type="button"
+    class="guide-toggle"
+    aria-expanded={guideOpen}
+    aria-controls="steering-guide"
+    onclick={toggleGuide}
+  >
+    <svg class="guide-chevron" class:open={guideOpen} viewBox="0 0 24 24" aria-hidden="true"
+      ><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg
+    >
+    <span>Steer the feed</span>
+    {#if !guideOpen && activeSteers > 0}
+      <span class="guide-count">· {activeSteers} active</span>
+    {/if}
+  </button>
+  {#if guideOpen}
+    <div id="steering-guide" class="guide-panel">
+      <SteeringBar state={scoringSnapshot} onchip={handleChip} />
+    </div>
+  {/if}
 {/if}
 
 {#if status === 'loading'}
@@ -307,11 +359,82 @@
     </div>
   </div>
 {/if}
+</div>
 
 <style>
+  /* On the feed route App.svelte turns `.shell`/`.page` into a viewport-tall
+   * flex column (`.fill`), so this column takes whatever is left below the
+   * app header and the scroll region gets the remainder once the heading
+   * and the guide — open or collapsed — have had their say. No hard-coded
+   * offset that only fits one guide state. */
+  .feed {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feed h2 {
+    flex: 0 0 auto;
+  }
+
+  .guide-toggle {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    align-self: flex-start;
+    min-height: 44px;
+    margin: 0 0 var(--space-3);
+    padding: var(--space-2) var(--space-2) var(--space-2) 0;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .guide-toggle:hover {
+    color: var(--accent-poem-text);
+  }
+
+  .guide-toggle:focus-visible {
+    outline: 2px solid var(--accent-poem-text);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  .guide-chevron {
+    width: 18px;
+    height: 18px;
+    transition: transform var(--duration-fast) var(--ease-out-soft);
+  }
+
+  .guide-chevron.open {
+    transform: rotate(180deg);
+  }
+
+  .guide-count {
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+
+  .guide-panel {
+    flex: 0 0 auto;
+    margin-bottom: var(--space-4);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .guide-chevron {
+      transition: none;
+    }
+  }
+
   .feed-scroll {
-    height: calc(100dvh - 220px);
-    min-height: 320px;
+    flex: 1 1 auto;
+    min-height: 240px;
     overflow-y: auto;
     overscroll-behavior: contain;
   }

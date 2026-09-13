@@ -180,7 +180,7 @@
 
 <a class="skip-link" href="#main-content">Skip to content</a>
 
-<div class="shell">
+<div class="shell" class:fill={current.name === 'feed'}>
   <header class="header">
     <h1 class="app-name-heading"><a class="app-name" href="#/">well-read</a></h1>
 
@@ -209,7 +209,7 @@
     </button>
   </header>
 
-  <main class="page" id="main-content" tabindex="-1" bind:this={mainEl}>
+  <main class="page" class:fill={current.name === 'feed'} id="main-content" tabindex="-1" bind:this={mainEl}>
     {#if shouldShowOnboarding(settings.value)}
       <Onboarding onDone={focusMainAfterOnboarding} />
     {:else if current.name === 'feed'}
@@ -301,6 +301,23 @@
   .shell {
     max-width: var(--measure);
     margin: 0 auto;
+  }
+
+  /* Feed route only: a viewport-tall column so Feed.svelte's virtualised
+   * list can fill the space below the header whatever the steering guide's
+   * open/closed state (see `.feed` in Feed.svelte). Other views keep the
+   * plain document flow and window scrolling. */
+  .shell.fill {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+  }
+
+  .page.fill {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
   }
 
   .header {

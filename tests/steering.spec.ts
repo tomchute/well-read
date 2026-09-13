@@ -9,6 +9,7 @@ import {
   buildFormChips,
   buildThemeChips,
   CURATED_THEMES,
+  countActiveSteers,
   FORM_CATEGORIES,
   formatThemeLabel,
   isFormActive,
@@ -220,5 +221,34 @@ describe('chip action builders flow through applyChip', () => {
 
     const chips = buildThemeChips(state.weights, false);
     expect(chips.every((c) => c.active === false)).toBe(true);
+  });
+});
+
+describe('countActiveSteers', () => {
+  it('is 0 with zero weights and no pins', () => {
+    expect(countActiveSteers(emptyState())).toBe(0);
+  });
+
+  it('counts themes with a positive weight and forms pushed away from zero', () => {
+    const weights = zeroWeights();
+    weights.theme.love = 3;
+    weights.theme.grief = -2; // negative themes are not "steered towards"
+    weights.form.poem = 2;
+    weights.form.book = -2;
+    weights.form.essay = 0;
+    expect(countActiveSteers(emptyState({ weights }))).toBe(3);
+  });
+
+  it('counts a session-pinned theme once, even when its weight is also positive', () => {
+    const state = applyChip(emptyState(), moreAboutThemeChip('love'));
+    expect(state.sessionPins).toHaveLength(1);
+    expect(countActiveSteers(state)).toBe(1);
+  });
+
+  it('drops back to 0 after "surprise me"', () => {
+    let state = applyChip(emptyState(), moreAboutThemeChip('love'));
+    state = applyChip(state, moreFormChip('poem'));
+    expect(countActiveSteers(state)).toBe(2);
+    expect(countActiveSteers(applyChip(state, surpriseMeChip()))).toBe(0);
   });
 });
