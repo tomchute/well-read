@@ -1,5 +1,11 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { route } from '$lib/router.svelte';
+  import Feed from './views/Feed.svelte';
+  import Library from './views/Library.svelte';
+  import Settings from './views/Settings.svelte';
+  import Styleguide from './views/Styleguide.svelte';
+  import Work from './views/Work.svelte';
 
   type Theme = 'light' | 'dark';
   const STORAGE_KEY = 'well-read-theme';
@@ -39,66 +45,107 @@
       theme = window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
   });
+
+  const current = $derived(route.current);
+
+  function isActive(name: 'feed' | 'library' | 'settings'): boolean {
+    return current.name === name;
+  }
 </script>
 
-<main class="page">
-  <p class="specimen-number">No. 12</p>
+<div class="shell">
+  <header class="header">
+    <a class="app-name" href="#/">well-read</a>
 
-  <h1 class="title">well-read</h1>
+    <nav class="nav" aria-label="Primary">
+      <a href="#/" class:active={isActive('feed')} aria-current={isActive('feed') ? 'page' : undefined}>
+        Feed
+      </a>
+      <a
+        href="#/library"
+        class:active={isActive('library')}
+        aria-current={isActive('library') ? 'page' : undefined}
+      >
+        Library
+      </a>
+      <a
+        href="#/settings"
+        class:active={isActive('settings')}
+        aria-current={isActive('settings') ? 'page' : undefined}
+      >
+        Settings
+      </a>
+    </nav>
 
-  <section class="poem" aria-label="Sample stanza (placeholder)">
-    <p>
-      The lantern swings above the door,
-         its light a coin flipped twice —
-      heads for morning, tails for more,
-         and something small and wise.
-    </p>
-  </section>
+    <button type="button" class="theme-toggle" onclick={toggleTheme}>
+      {theme === 'light' ? 'Switch to dark' : 'Switch to light'}
+    </button>
+  </header>
 
-  <p class="small-caps author">A Placeholder Author</p>
-
-  <p class="prose">
-    This paragraph exists only to prove that Newsreader is loading as the body
-    typeface: generous line-height, a measured column width, and real text
-    rendering rather than a system-font stand-in. Once the fonts finish
-    loading there should be no visible reflow into a fallback face — Georgia
-    stands in only for the instant before the self-hosted woff2 file paints.
-  </p>
-
-  <button type="button" class="theme-toggle" onclick={toggleTheme}>
-    {theme === 'light' ? 'Switch to dark' : 'Switch to light'}
-  </button>
-</main>
+  <main class="page">
+    {#if current.name === 'feed'}
+      <Feed />
+    {:else if current.name === 'work'}
+      <Work id={current.id} />
+    {:else if current.name === 'library'}
+      <Library />
+    {:else if current.name === 'settings'}
+      <Settings />
+    {:else if current.name === 'styleguide'}
+      <Styleguide />
+    {:else}
+      <h2>Not found</h2>
+      <p>Nothing lives at <code>{current.hash}</code>.</p>
+    {/if}
+  </main>
+</div>
 
 <style>
-  .page {
+  .shell {
     max-width: var(--measure);
     margin: 0 auto;
-    padding: var(--space-6) var(--space-4);
   }
 
-  .title {
-    font-size: var(--text-3xl);
-    line-height: var(--leading-3xl);
-    margin: var(--space-2) 0 var(--space-5);
+  .header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-3) var(--space-5);
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--hairline);
   }
 
-  .poem {
-    margin: 0 0 var(--space-3);
-    font-style: italic;
-    font-size: var(--text-md);
-    line-height: var(--leading-md);
+  .app-name {
+    font-family: var(--font-serif);
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: var(--text-xl);
+    color: var(--text);
+    text-decoration: none;
   }
 
-  .author {
-    margin: 0 0 var(--space-6);
+  .nav {
+    display: flex;
+    gap: var(--space-4);
+    margin-right: auto;
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
   }
 
-  .prose {
-    font-family: var(--font-body);
-    font-size: var(--text-md);
-    line-height: var(--leading-md);
-    margin: 0 0 var(--space-6);
+  .nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: var(--space-1) 0;
+    border-bottom: 2px solid transparent;
+  }
+
+  .nav a:hover {
+    color: var(--text);
+  }
+
+  .nav a.active {
+    color: var(--text);
+    border-bottom-color: var(--accent-poem-text);
   }
 
   .theme-toggle {
@@ -115,5 +162,9 @@
 
   .theme-toggle:hover {
     background: var(--surface-pressed);
+  }
+
+  .page {
+    padding: var(--space-6) var(--space-4);
   }
 </style>
