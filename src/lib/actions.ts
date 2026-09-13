@@ -66,7 +66,9 @@ export function moreLikeThis(stores: { weights: ValueStore<Weights> }, work: Chi
 /** Toggles `id` in the saved list, prepending new saves (docs: "ordered, most-recent-first"). */
 export function toggleSaved(store: ValueStore<Saved>, id: string): void {
   const current = store.value;
-  store.set(current.includes(id) ? current.filter((existing) => existing !== id) : [id, ...current]);
+  store.set(
+    current.includes(id) ? current.filter((existing) => existing !== id) : [id, ...current]
+  );
 }
 
 /** Whether `id` is currently saved — a plain read, kept here so callers don't repeat `.includes`. */
@@ -82,7 +84,9 @@ export function isLiked(reactions: Reactions, id: string): boolean {
 /** Toggles `id` in the read list — the mutation behind Work.svelte's "Mark as read" button. */
 export function toggleRead(store: ValueStore<Read>, id: string): void {
   const current = store.value;
-  store.set(current.includes(id) ? current.filter((existing) => existing !== id) : [...current, id]);
+  store.set(
+    current.includes(id) ? current.filter((existing) => existing !== id) : [...current, id]
+  );
 }
 
 /**

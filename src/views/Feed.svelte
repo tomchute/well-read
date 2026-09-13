@@ -15,7 +15,7 @@
   // biome-ignore lint/correctness/noUnusedImports: used in template
   import WorkCard from '$lib/components/WorkCard.svelte';
   import { loadManifest, type ManifestEntry } from '$lib/data/manifest';
-  import { applyChip, buildPage, defaultRng, type ChipAction, type ScoringState } from '$lib/scoring';
+  import { applyChip, buildPage, type ChipAction, defaultRng, type ScoringState } from '$lib/scoring';
   import { reactions, read, saved, seen, sessionPins, weights } from '$lib/stores/index.svelte';
 
   type Status = 'loading' | 'error' | 'ready';

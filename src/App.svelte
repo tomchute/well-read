@@ -4,7 +4,7 @@
   import { shouldShowOnboarding } from '$lib/components/onboarding';
   import { route } from '$lib/router.svelte';
   import { decay, type ScoringState } from '$lib/scoring';
-  import { read, reactions, seen, sessionPins, settings, weights } from '$lib/stores/index.svelte';
+  import { reactions, read, seen, sessionPins, settings, weights } from '$lib/stores/index.svelte';
   import Feed from './views/Feed.svelte';
   import Library from './views/Library.svelte';
   import Settings from './views/Settings.svelte';

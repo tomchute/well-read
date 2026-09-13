@@ -7,6 +7,7 @@
 
 import { describe, expect, it } from 'vitest';
 import {
+  dislikeWork,
   isLiked,
   isSaved,
   likeWork,
@@ -16,7 +17,6 @@ import {
   toggleSaved,
   type ValueStore,
 } from '../src/lib/actions';
-import { dislikeWork } from '../src/lib/actions';
 import {
   ALL_STORES,
   createMemoryStorage,
@@ -51,7 +51,12 @@ function makeStores(storage: StorageLike) {
   };
 }
 
-const WORK = { id: 'plath-tulips-1962', type: 'poem' as const, author: 'Sylvia Plath', themes: ['grief', 'body'] };
+const WORK = {
+  id: 'plath-tulips-1962',
+  type: 'poem' as const,
+  author: 'Sylvia Plath',
+  themes: ['grief', 'body'],
+};
 
 describe('likeWork / dislikeWork', () => {
   it('like sets reactions[id] = 1 and applies the more-like-this deltas', () => {
@@ -166,7 +171,12 @@ describe('export -> import round-trip after acting through actions.ts', () => {
     const stores = makeStores(source);
 
     likeWork(stores, WORK);
-    moreLikeThis(stores, { id: 'other-work', type: 'essay', author: 'Zadie Smith', themes: ['home'] });
+    moreLikeThis(stores, {
+      id: 'other-work',
+      type: 'essay',
+      author: 'Zadie Smith',
+      themes: ['home'],
+    });
     toggleSaved(stores.saved, WORK.id);
     toggleRead(stores.read, WORK.id);
     markSeen(stores.seen, WORK.id, new Date('2026-09-13T12:00:00.000Z'));

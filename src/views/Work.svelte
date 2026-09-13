@@ -1,9 +1,9 @@
 <script lang="ts">
+  import { isSaved, moreLikeThis, toggleRead, toggleSaved } from '$lib/actions';
   // biome-ignore-start lint/correctness/noUnusedImports: used in template
   import MasterNotes from '$lib/components/MasterNotes.svelte';
   import WorkLinks from '$lib/components/WorkLinks.svelte';
   // biome-ignore-end lint/correctness/noUnusedImports: used in template
-  import { isSaved, moreLikeThis, toggleRead, toggleSaved } from '$lib/actions';
   import { loadWork } from '$lib/data/work';
   import { read, saved, weights } from '$lib/stores/index.svelte';
   import type { Era, Work as WorkRecord } from '$lib/types/work';
