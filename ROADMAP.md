@@ -41,7 +41,7 @@ Verification: seed works render as cards; detail view shows all master-notes sec
 ## Phase 3 — Steering + library
 Verification: scorer tests green; steering chips visibly reorder the feed; export → import round-trips localStorage.
 
-- [ ] [WP-3.1](docs/work-packages/WP-3.1-persisted-stores.md) Versioned localStorage stores
+- [x] [WP-3.1](docs/work-packages/WP-3.1-persisted-stores.md) Versioned localStorage stores
 - [ ] [WP-3.2](docs/work-packages/WP-3.2-scoring-module.md) Pure scoring module + vitest
 - [ ] [WP-3.3](docs/work-packages/WP-3.3-steering-bar.md) Steering bar wired to scorer
 - [ ] [WP-3.4](docs/work-packages/WP-3.4-library-views.md) Library: Saved / Read / Liked
