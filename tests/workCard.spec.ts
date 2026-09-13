@@ -8,7 +8,7 @@ import { describe, expect, it } from 'vitest';
 import { computeTeaser } from '../src/lib/components/WorkCard.svelte';
 
 describe('computeTeaser', () => {
-  it('shows a poem\'s first 3-4 non-blank lines verbatim, preserving indentation', () => {
+  it("shows a poem's first 3-4 non-blank lines verbatim, preserving indentation", () => {
     const text = [
       '   Because I could not stop for Death –',
       'He kindly stopped for me –',
@@ -50,7 +50,10 @@ describe('computeTeaser', () => {
   });
 
   it('does not add an ellipsis when prose text is already short', () => {
-    const teaser = computeTeaser({ type: 'essay', excerpt: 'A short excerpt of ten words here yes it is.' });
+    const teaser = computeTeaser({
+      type: 'essay',
+      excerpt: 'A short excerpt of ten words here yes it is.',
+    });
     expect(teaser).toEqual({
       kind: 'text',
       value: 'A short excerpt of ten words here yes it is.',

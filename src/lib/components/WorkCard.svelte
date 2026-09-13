@@ -70,31 +70,6 @@
     return TYPE_LABELS[type];
   }
 
-  /**
-   * Accent CSS custom-property names by `type`, per docs/design-system.md
-   * ("poem=teal, story=vermilion, book=ochre") plus two sensible reuses for
-   * the two types the design system doesn't assign a dedicated hue to
-   * (§8 rules out inventing new hues beyond the four specimen accents):
-   * essay borrows the cooler `saved` (sky) family — reflective, non-fiction
-   * prose — and play borrows `story` (vermilion) — both are performed/staged
-   * narrative forms.
-   */
-  const ACCENT_BY_TYPE: Record<WorkType, { bar: string; tint: string; text: string }> = {
-    poem: { bar: 'var(--accent-poem)', tint: 'var(--accent-poem-tint)', text: 'var(--accent-poem-text)' },
-    short_story: {
-      bar: 'var(--accent-story)',
-      tint: 'var(--accent-story-tint)',
-      text: 'var(--accent-story-text)',
-    },
-    book: { bar: 'var(--accent-book)', tint: 'var(--accent-book-tint)', text: 'var(--accent-book-text)' },
-    essay: { bar: 'var(--accent-saved)', tint: 'var(--accent-saved-tint)', text: 'var(--accent-saved-text)' },
-    play: {
-      bar: 'var(--accent-story)',
-      tint: 'var(--accent-story-tint)',
-      text: 'var(--accent-story-text)',
-    },
-  };
-
   /** Textual `textPolicy` note shown only while a card is waiting on its shard fetch. */
   export function pendingNoticeFor(textPolicy: TextPolicy): string {
     return textPolicy === 'pending' ? 'Notes and links — text coming' : 'Text coming';
@@ -156,6 +131,31 @@
       ? computeTeaser({ type: entry.type, text: work.text, excerpt: work.excerpt })
       : { kind: 'pending' }
   );
+
+  /**
+   * Accent CSS custom-property names by `type`, per docs/design-system.md
+   * ("poem=teal, story=vermilion, book=ochre") plus two sensible reuses for
+   * the two types the design system doesn't assign a dedicated hue to
+   * (§8 rules out inventing new hues beyond the four specimen accents):
+   * essay borrows the cooler `saved` (sky) family — reflective, non-fiction
+   * prose — and play borrows `story` (vermilion) — both are performed/staged
+   * narrative forms.
+   */
+  const ACCENT_BY_TYPE: Record<WorkType, { bar: string; tint: string; text: string }> = {
+    poem: { bar: 'var(--accent-poem)', tint: 'var(--accent-poem-tint)', text: 'var(--accent-poem-text)' },
+    short_story: {
+      bar: 'var(--accent-story)',
+      tint: 'var(--accent-story-tint)',
+      text: 'var(--accent-story-text)',
+    },
+    book: { bar: 'var(--accent-book)', tint: 'var(--accent-book-tint)', text: 'var(--accent-book-text)' },
+    essay: { bar: 'var(--accent-saved)', tint: 'var(--accent-saved-tint)', text: 'var(--accent-saved-text)' },
+    play: {
+      bar: 'var(--accent-story)',
+      tint: 'var(--accent-story-tint)',
+      text: 'var(--accent-story-text)',
+    },
+  };
 
   const accent = $derived(ACCENT_BY_TYPE[entry.type]);
   const workHref = $derived(routeToHash({ name: 'work', id: entry.id }));

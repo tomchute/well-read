@@ -1,0 +1,78 @@
+{
+  "id": "dorfman-death-and-the-maiden-1990",
+  "type": "play",
+  "title": "Death and the Maiden",
+  "author": "Ariel Dorfman",
+  "authorGender": "man",
+  "authorRegion": "Chile",
+  "year": 1990,
+  "era": "contemporary",
+  "form": "three-character stage drama, single setting, real-time confrontation",
+  "themes": [
+    "justice",
+    "power",
+    "memory",
+    "doubt"
+  ],
+  "tags": [
+    "chile",
+    "truth-commission",
+    "needs-text"
+  ],
+  "length": {
+    "unit": "pages",
+    "value": 70
+  },
+  "difficulty": 3,
+  "source": {
+    "name": "Ariel Dorfman, Death and the Maiden (Nick Hern Books, 1991; Spanish-language premiere in Chile, 1990); rights held by the author",
+    "url": "https://search.worldcat.org/search?q=Death+and+the+Maiden+Dorfman",
+    "license": "all-rights-reserved",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "pending",
+  "externalLinks": [
+    {
+      "kind": "bookstore",
+      "url": "https://bookshop.org/search?keywords=Death+and+the+Maiden+Dorfman",
+      "label": "Search Bookshop.org"
+    },
+    {
+      "kind": "library",
+      "url": "https://search.worldcat.org/search?q=Death+and+the+Maiden+Dorfman",
+      "label": "Find a library copy on WorldCat"
+    }
+  ],
+  "masterNotes": {
+    "context": "Dorfman wrote *Death and the Maiden* in 1990, immediately after Chile's return to civilian rule following the Pinochet dictatorship, at the moment when the new government's truth commission was investigating past human rights abuses without any power to prosecute them. The play's unnamed country deliberately mirrors Chile's specific, unresolved position: a nation asked to move forward without full justice, or even full certainty, for individual victims of torture. It premiered in London in 1991, was staged internationally within a few years, and was adapted into a 1994 film by Roman Polanski. Its title borrows Schubert's string quartet of the same name, which the play's accused torturer is said to have played during the protagonist's interrogation sessions years earlier.",
+    "form": "The play holds to three characters and essentially one room, building its tension the way a real interrogation would rather than through scene changes or a larger cast. Paulina, a torture survivor, takes a man her husband brings home captive, convinced he is the doctor who abused her years before; her husband Gerardo, newly appointed to the country's truth commission, is caught between his professional commitment to due process and his wife's certainty. Dorfman withholds definitive proof either way, so the audience is placed in Gerardo's position exactly — asked to judge a claim it cannot independently verify.",
+    "keyImages": [
+      "Schubert's \"Death and the Maiden\" quartet, which the visitor happens to have in his car — treated by Paulina as confirmation rather than coincidence.",
+      "Paulina's improvised tribunal, tying her accused torturer to a chair inside her own home — staging the trial the state itself never held.",
+      "Gerardo's appointment to the new truth commission, which asks him to investigate abuses of exactly the kind he cannot resolve inside his own marriage."
+    ],
+    "whatToNotice": [
+      "Notice that the audience is kept in the same position as Gerardo throughout: unable to independently confirm Paulina's identification.",
+      "Notice how the single confined setting is used to build pressure across the play, rather than through incident or event.",
+      "Notice how often the Schubert quartet is returned to as the play's closest thing to material evidence.",
+      "Notice how the play is reported to resist a clean resolution of guilt or innocence by its final scene."
+    ],
+    "discussionQuestions": [
+      "Does the play ultimately want the audience to know whether the accused is guilty, or is sustained uncertainty the point?",
+      "What does Paulina's private tribunal suggest about the limits of official truth commissions for survivors seeking individual justice?",
+      "How does the confined, real-time setting shift your sympathies among the three characters as the play goes on?",
+      "Gerardo believes in due process professionally but is placed in an impossible position personally. What does the play argue about that gap?"
+    ],
+    "furtherReading": [
+      "Ariel Dorfman, *Heading South, Looking North* (memoir) — for the experience of exile that shaped Dorfman's political writing.",
+      "The 1994 film adaptation, directed by Roman Polanski — for how the confrontation translates to a different medium.",
+      "Chile's National Commission for Truth and Reconciliation (the Rettig Report, 1991) — the real historical process the play directly responds to."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-dogfood",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}

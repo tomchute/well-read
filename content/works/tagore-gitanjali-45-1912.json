@@ -1,0 +1,75 @@
+{
+  "id": "tagore-gitanjali-45-1912",
+  "type": "poem",
+  "title": "Gitanjali, Song XLV",
+  "author": "Rabindranath Tagore",
+  "authorGender": "man",
+  "authorRegion": "India",
+  "year": 1912,
+  "era": "early_20th_century",
+  "form": "prose poem (devotional song), translated from Bengali by the poet himself",
+  "themes": [
+    "faith",
+    "wonder",
+    "time",
+    "desire"
+  ],
+  "tags": [
+    "gitanjali",
+    "bhakti",
+    "translation",
+    "refrain"
+  ],
+  "length": {
+    "unit": "lines",
+    "value": 6
+  },
+  "difficulty": 3,
+  "source": {
+    "name": "Standard Ebooks (GitHub mirror)",
+    "url": "https://raw.githubusercontent.com/standardebooks/rabindranath-tagore_gitanjali/master/src/epub/text/gitanjali.xhtml",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "full",
+  "ebookLinks": [
+    {
+      "provider": "standard-ebooks",
+      "format": "epub",
+      "url": "https://standardebooks.org/ebooks/rabindranath-tagore/gitanjali/downloads/rabindranath-tagore_gitanjali.epub"
+    }
+  ],
+  "masterNotes": {
+    "context": "Tagore translated *Gitanjali* into English himself in 1912 during a stay in London, drawing on Bengali devotional songs he had written over the preceding years. The manuscript found early, influential admirers among London literary circles — W. B. Yeats wrote the introduction to the English edition — and the collection won Tagore the Nobel Prize in Literature the following year, in 1913, making him the first non-European laureate. Song XLV sits within the collection's devotional mode: it addresses an unnamed \"he\" whose arrival the speaker experiences as constant and ongoing rather than as a single, datable event, which is characteristic of the bhakti devotional tradition the songs draw on, where longing itself is treated as a form of worship rather than a problem to be resolved.",
+    "form": "Tagore's own English rendering abandons metrical verse for short prose paragraphs, so the poem's unity comes from a repeated refrain — a variation on \"he comes, comes, ever comes\" — rather than from rhyme or line count. The refrain's own internal repetition (the same verb three times in a row) works like a chant or a held note, insisting on a claim rather than building an argument toward it. Each paragraph relocates the refrain to a different season or moment, so the form itself performs the poem's central idea: arrival that keeps happening, in different guises, rather than arrival as a single completed event.",
+    "keyImages": [
+      "The refrain \"he comes, comes, ever comes,\" repeated with a different surrounding clause in nearly every paragraph — closer to a chant than a description.",
+      "The pairing of \"the fragrant days of sunny April\" against \"the rainy gloom of July nights\" — opposite seasons treated as equally valid sites of the same arrival.",
+      "The closing image of \"the golden touch of his feet\" turning sorrow into shine — the poem's one moment where abstract devotion becomes something felt on the body."
+    ],
+    "whatToNotice": [
+      "Notice how the refrain's surrounding clause changes each time — silent steps, every age, the forest path, a thundering chariot of clouds — while its ending never varies.",
+      "Notice that the poem opens with a question posed outward (\"Have you not heard...\") before turning entirely inward for the rest of its length.",
+      "Notice that \"he\" is never named or described physically — track what associations the poem lets you bring to that blank instead.",
+      "Notice the final sentence's turn from \"sorrow after sorrow\" to \"joy\" arriving in the same breath, without any transition between them."
+    ],
+    "discussionQuestions": [
+      "What does the poem gain by placing the same arrival inside completely different seasons and settings, rather than picking one?",
+      "Is the poem's insistence through repetition more persuasive than a single vivid image would be? Why might Tagore have chosen to repeat rather than to describe?",
+      "The poem never names who \"he\" is. Does that openness make it more devotional, more universal, or does it do something else entirely?",
+      "This is Tagore's own English rendering of his Bengali original, not a translation by someone else. Does knowing that change how you read its plain, repeated diction?"
+    ],
+    "furtherReading": [
+      "*Gitanjali*, Song I (\"Thou hast made me endless\") — the collection's opening, establishing the devotional address this poem continues.",
+      "W. B. Yeats's introduction to the 1912 English *Gitanjali* — an early, influential piece of reception from one of Tagore's first Western advocates.",
+      "Tagore's 1913 Nobel Prize in Literature citation — context for how this specific English collection was received abroad."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-dogfood",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  },
+  "text": "Have you not heard his silent steps? He comes, comes, ever comes.\n\nEvery moment and every age, every day and every night he comes, comes, ever comes.\n\nMany a song have I sung in many a mood of mind, but all their notes have always proclaimed, “He comes, comes, ever comes.”\n\nIn the fragrant days of sunny April through the forest path he comes, comes, ever comes.\n\nIn the rainy gloom of July nights on the thundering chariot of clouds he comes, comes, ever comes.\n\nIn sorrow after sorrow it is his steps that press upon my heart, and it is the golden touch of his feet that makes my joy to shine."
+}

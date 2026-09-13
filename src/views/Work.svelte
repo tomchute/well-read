@@ -1,6 +1,8 @@
 <script lang="ts">
+  // biome-ignore-start lint/correctness/noUnusedImports: used in template
   import MasterNotes from '$lib/components/MasterNotes.svelte';
   import WorkLinks from '$lib/components/WorkLinks.svelte';
+  // biome-ignore-end lint/correctness/noUnusedImports: used in template
   import { loadWork } from '$lib/data/work';
   import { read } from '$lib/stores/index.svelte';
   import type { Era, Work as WorkRecord } from '$lib/types/work';
@@ -13,11 +15,15 @@
 
   type Status = 'loading' | 'error' | 'not-found' | 'ready';
 
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
   let status = $state<Status>('loading');
   let work = $state<WorkRecord | undefined>(undefined);
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
   let errorMessage = $state('');
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
   let notesOpen = $state(false);
 
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
   const ERA_LABELS: Record<Era, string> = {
     ancient: 'Ancient',
     medieval: 'Medieval',
@@ -29,6 +35,7 @@
     contemporary: 'Contemporary',
   };
 
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
   const isRead = $derived(work ? read.value.includes(work.id) : false);
 
   // Splits shipped prose (short_story/book/essay/play `text`/`excerpt`) into
@@ -36,6 +43,7 @@
   // than one `white-space: pre-wrap` block — poems keep pre-wrap in `.poem`
   // to preserve line breaks and indentation exactly as authored (see
   // docs/design-system.md, "Poem rendering").
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
   function paragraphsOf(text: string): string[] {
     return text
       .split(/\n\s*\n/)
@@ -43,10 +51,12 @@
       .filter((paragraph) => paragraph.length > 0);
   }
 
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
   function formatLength(record: WorkRecord): string {
     return `${record.length.value.toLocaleString()} ${record.length.unit}`;
   }
 
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
   function toggleRead(): void {
     if (!work) return;
     const currentId = work.id;

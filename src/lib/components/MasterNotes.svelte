@@ -8,8 +8,10 @@
   both with a close button, Escape-to-close, a focus trap, and a backdrop.
 -->
 <script lang="ts">
+  // biome-ignore-start lint/correctness/noUnusedImports: used in template
   import { fade, fly } from 'svelte/transition';
   import { renderMarkdown } from '$lib/markdown';
+  // biome-ignore-end lint/correctness/noUnusedImports: used in template
   import type { MasterNotes as MasterNotesData } from '$lib/types/work';
 
   interface Props {
@@ -28,6 +30,7 @@
     | 'discussionQuestions'
     | 'furtherReading';
 
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
   const SECTIONS: { key: SectionKey; label: string; kind: 'text' | 'list' }[] = [
     { key: 'context', label: 'Context', kind: 'text' },
     { key: 'form', label: 'Form', kind: 'text' },
@@ -37,20 +40,25 @@
     { key: 'furtherReading', label: 'Further reading', kind: 'list' },
   ];
 
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
   function textValue(key: SectionKey): string {
     const value = notes[key];
     return typeof value === 'string' ? value : '';
   }
 
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
   function listValue(key: SectionKey): string[] {
     const value = notes[key];
     return Array.isArray(value) ? value : [];
   }
 
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
   let activeTab = $state<SectionKey>('context');
   let panelEl = $state<HTMLElement | undefined>(undefined);
   let closeButtonEl = $state<HTMLButtonElement | undefined>(undefined);
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
   let reducedMotion = $state(false);
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
   let wideViewport = $state(true);
 
   const FOCUSABLE_SELECTOR =

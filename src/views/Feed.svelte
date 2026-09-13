@@ -1,15 +1,17 @@
 <script lang="ts">
   import { createVirtualizer } from '@tanstack/svelte-virtual';
   import { onMount } from 'svelte';
+  // biome-ignore lint/correctness/noUnusedImports: used in template
+  import WorkCard from '$lib/components/WorkCard.svelte';
   import { loadManifest, type ManifestEntry } from '$lib/data/manifest';
   import { buildPage, defaultRng, type ScoringState } from '$lib/scoring';
-  import WorkCard from '$lib/components/WorkCard.svelte';
   import { reactions, read, seen, sessionPins, weights } from '$lib/stores/index.svelte';
 
   type Status = 'loading' | 'error' | 'ready';
 
   let status = $state<Status>('loading');
   let entries = $state<ManifestEntry[]>([]);
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
   let errorMessage = $state('');
   let scrollElement = $state<HTMLDivElement | undefined>(undefined);
 

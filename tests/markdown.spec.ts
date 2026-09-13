@@ -76,7 +76,9 @@ describe('renderMarkdown', () => {
   });
 
   it('overrides an author-supplied target/rel instead of duplicating it', () => {
-    const html = renderMarkdown('<a href="https://example.com" target="_self" rel="bogus">link</a>');
+    const html = renderMarkdown(
+      '<a href="https://example.com" target="_self" rel="bogus">link</a>'
+    );
 
     expect(html.match(/target=/g)).toHaveLength(1);
     expect(html.match(/rel=/g)).toHaveLength(1);
