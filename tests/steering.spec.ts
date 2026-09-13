@@ -12,9 +12,11 @@ import {
   FORM_CATEGORIES,
   formatThemeLabel,
   isFormActive,
+  isFormMoreActive,
   isThemeActive,
   lessFormChip,
   moreAboutThemeChip,
+  moreFormChip,
   surpriseMeChip,
 } from '../src/lib/components/steering';
 import { applyChip } from '../src/lib/scoring/chips';
@@ -92,10 +94,17 @@ describe('isThemeActive / isFormActive', () => {
 
   it('a form is inactive at the default zero weight', () => {
     expect(isFormActive(zeroWeights(), 'poem')).toBe(false);
+    expect(isFormMoreActive(zeroWeights(), 'poem')).toBe(false);
   });
 
   it('a form is active once "less <form>" has pushed its weight negative', () => {
     expect(isFormActive({ ...zeroWeights(), form: { poem: -2 } }, 'poem')).toBe(true);
+    expect(isFormMoreActive({ ...zeroWeights(), form: { poem: -2 } }, 'poem')).toBe(false);
+  });
+
+  it('a form reads "more"-active once "more <form>" has pushed its weight positive', () => {
+    expect(isFormMoreActive({ ...zeroWeights(), form: { poem: 2 } }, 'poem')).toBe(true);
+    expect(isFormActive({ ...zeroWeights(), form: { poem: 2 } }, 'poem')).toBe(false);
   });
 });
 
@@ -129,16 +138,28 @@ describe('buildThemeChips', () => {
 });
 
 describe('buildFormChips', () => {
-  it('returns one chip per work category, inactive at zero weight', () => {
+  it('returns one chip per work category, both sides inactive at zero weight', () => {
     const chips = buildFormChips(zeroWeights());
     expect(chips.map((c) => c.form)).toEqual(FORM_CATEGORIES.map((f) => f.key));
-    expect(chips.every((c) => c.active === false)).toBe(true);
+    expect(chips.every((c) => c.lessActive === false && c.moreActive === false)).toBe(true);
   });
 
-  it('marks only the form whose weight has been pushed negative as active', () => {
+  it('marks only the form whose weight has been pushed negative as less-active', () => {
     const chips = buildFormChips({ ...zeroWeights(), form: { short_story: -2 } });
-    expect(chips.find((c) => c.form === 'short_story')?.active).toBe(true);
-    expect(chips.filter((c) => c.active).length).toBe(1);
+    const shortStory = chips.find((c) => c.form === 'short_story');
+    expect(shortStory?.lessActive).toBe(true);
+    expect(shortStory?.moreActive).toBe(false);
+    expect(chips.filter((c) => c.lessActive).length).toBe(1);
+    expect(chips.filter((c) => c.moreActive).length).toBe(0);
+  });
+
+  it('marks only the form whose weight has been pushed positive as more-active', () => {
+    const chips = buildFormChips({ ...zeroWeights(), form: { essay: 2 } });
+    const essay = chips.find((c) => c.form === 'essay');
+    expect(essay?.moreActive).toBe(true);
+    expect(essay?.lessActive).toBe(false);
+    expect(chips.filter((c) => c.moreActive).length).toBe(1);
+    expect(chips.filter((c) => c.lessActive).length).toBe(0);
   });
 });
 
@@ -162,7 +183,24 @@ describe('chip action builders flow through applyChip', () => {
     expect(state.weights.form.poem).toBe(-5);
 
     const chips = buildFormChips(state.weights);
-    expect(chips.find((c) => c.form === 'poem')?.active).toBe(true);
+    const poem = chips.find((c) => c.form === 'poem');
+    expect(poem?.lessActive).toBe(true);
+    expect(poem?.moreActive).toBe(false);
+  });
+
+  it('moreFormChip applies the documented +2 form delta, mirroring lessFormChip', () => {
+    let state = emptyState();
+    state = applyChip(state, moreFormChip('play'));
+    expect(state.weights.form.play).toBe(2);
+
+    const chips = buildFormChips(state.weights);
+    const play = chips.find((c) => c.form === 'play');
+    expect(play?.moreActive).toBe(true);
+    expect(play?.lessActive).toBe(false);
+
+    // more-form and less-form are independent, symmetric deltas on the same key.
+    state = applyChip(state, lessFormChip('play'));
+    expect(state.weights.form.play).toBe(0);
   });
 
   it('surpriseMeChip resets weights and session pins without touching reactions/read', () => {

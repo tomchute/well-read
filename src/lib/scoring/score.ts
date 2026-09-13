@@ -56,7 +56,10 @@ export function scoreWork(
   for (const theme of indexEntry.themes) {
     total += weights.theme[theme] ?? 0;
   }
-  total += weights.form[indexEntry.form] ?? 0;
+  // `weights.form` is keyed by the coarse `WorkType`, not the free-text
+  // `form` sub-genre field — see docs/recommendation-design.md ("Score
+  // formula") and src/lib/scoring/types.ts (`ChipAction`).
+  total += weights.form[indexEntry.type] ?? 0;
   total += weights.era[indexEntry.era] ?? 0;
   total += weights.author[indexEntry.author] ?? 0;
   total += pinBoost(indexEntry, pins);

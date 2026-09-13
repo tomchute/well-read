@@ -34,9 +34,14 @@ function violatesAuthorCap(picks: ManifestEntry[], candidate: ManifestEntry): bo
   return trailingWindow(picks).some((pick) => pick.author === candidate.author);
 }
 
+/**
+ * The "≤60% of one form" diversity cap keys on the coarse `WorkType`
+ * (`entry.type`), not the free-text `Work.form` sub-genre field — see
+ * docs/recommendation-design.md ("Greedy page builder", "Score formula").
+ */
 function violatesFormCap(picks: ManifestEntry[], candidate: ManifestEntry): boolean {
   const window = [...trailingWindow(picks), candidate];
-  const sameForm = window.filter((pick) => pick.form === candidate.form).length;
+  const sameForm = window.filter((pick) => pick.type === candidate.type).length;
   const limit = Math.max(1, Math.floor(window.length * FORM_CAP_RATIO));
   return sameForm > limit;
 }

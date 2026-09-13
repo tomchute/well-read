@@ -8,7 +8,7 @@ Versioned keys, prefix `wellread:v1:*` (bump the version segment on breaking sha
 
 | Key | Shape | Notes |
 |---|---|---|
-| `wellread:v1:weights` | `{ theme: Record<string, number>, form: Record<string, number>, era: Record<string, number>, author: Record<string, number> }` | Each value clipped to **[-10, 10]**. Missing entries default to `0`. |
+| `wellread:v1:weights` | `{ theme: Record<string, number>, form: Record<string, number>, era: Record<string, number>, author: Record<string, number> }` | Each value clipped to **[-10, 10]**. Missing entries default to `0`. **`form` is keyed by the coarse `Work.type`** (`poem \| short_story \| book \| essay \| play`), **not** the free-text `Work.form` sub-genre field (e.g. `"sonnet"`, `"epistolary novel"`) — that field is display-only (badges, filters) and never feeds scoring. The persisted key stays named `form` to avoid a migration; read it as "form-category weights," keyed by type. |
 | `wellread:v1:seen` | `Record<workId, string /* ISO date first-seen */>` | Written the first time a card is rendered in the feed (not on hover/prefetch). |
 | `wellread:v1:reactions` | `Record<workId, 1 | -1>` | Explicit like/dislike; absent = neutral. |
 | `wellread:v1:saved` | `workId[]` | Ordered, most-recent-first. |
@@ -23,12 +23,15 @@ Every chip action mutates `weights` (and `sessionPins` for the "more about" chip
 
 | Chip | Effect |
 |---|---|
-| "More like this" (on a work) | `theme[t] += 2` for each of the work's themes; `form[work.form] += 1`; `author[work.author] += 2` |
+| "More like this" (on a work) | `theme[t] += 2` for each of the work's themes; `form[work.type] += 1`; `author[work.author] += 2` |
 | "More about X" (theme chip) | `theme[X] += 3`; push `{ theme: X, strength: 3, appliedCount: 0 }` onto `sessionPins` |
-| "Less <form>" | `form[form] -= 2`, floored at **-5** (never fully excluded — a floor, not a ban) |
+| "More <form>" | `form[type] += 2`, clipped to the standard **[-10, 10]** range (mirrors "Less <form>"; no special ceiling — a boost, not a guarantee) |
+| "Less <form>" | `form[type] -= 2`, floored at **-5** (never fully excluded — a floor, not a ban) |
 | "Not interested" (on a work) | `theme[t] -= 1` for each theme, `author[work.author] -= 3` |
 | Explicit like (♥) | sets `reactions[id] = 1`; also applies "more like this" deltas |
 | Explicit dislike | sets `reactions[id] = -1`; also applies "less-like-this": `theme[t] -= 2`, `author[work.author] -= 2` |
+
+"More <form>" and "Less <form>" both key `form` by the coarse `Work.type` (`poem \| short_story \| book \| essay \| play`), never the free-text `Work.form` field — see the `weights` row above and `ChipAction` in `src/lib/scoring/types.ts`. The steering bar offers both directions per category (a paired/segmented control), active state read from the weight's sign: positive → "More" active, negative → "Less" active.
 
 Session pins decay linearly to zero influence over the next **~20** cards shown (tracked via `appliedCount`, incremented each time `scoreWork` applies the pin; the pin is dropped once `appliedCount >= 20`), and bias only the next ~5 cards at full strength before tapering — see `pinBoost` in the score formula.
 
@@ -37,7 +40,7 @@ Session pins decay linearly to zero influence over the next **~20** cards shown 
 ```
 score(work) =
     Σ weights.theme[t] for t in work.themes
-  + weights.form[work.form]
+  + weights.form[work.type]     // keyed by coarse type, not the free-text form field
   + weights.era[work.era]
   + weights.author[work.author]
   + pinBoost(work, sessionPins)
@@ -70,7 +73,7 @@ A work seen in the last two weeks is pushed down hard (flat −8); older exposur
 `buildPage` sorts all candidates by `score` descending, then walks the sorted list filling a page of `pageSize` (default 10) under two constraints evaluated over the **trailing 10 picks already on the page being built** (a rolling window, not the whole page at once):
 
 1. **≤ 1 work per author** in any rolling window of 10.
-2. **≤ 60% of one form** in any rolling window of 10 (i.e. at most 6 of 10 sharing a form).
+2. **≤ 60% of one form** in any rolling window of 10 (i.e. at most 6 of 10 sharing a form) — "form" here means the coarse `Work.type`, the same key `weights.form` uses, not the free-text `Work.form` field.
 
 Algorithm: take the next-highest-scoring candidate; if adding it would violate either constraint, skip it and try the next; if the walk exhausts all candidates without filling the page, **relax the constraints one at a time (form cap first, then author cap)** and re-walk the skipped candidates by score — the page must always fill if enough candidates exist. Already-read works (`read[]`) are excluded from candidates entirely, not merely down-scored.
 
@@ -105,12 +108,14 @@ All four are pure: no `localStorage`, no `Date.now()` internally (caller passes 
 2. `scoreWork applies the flat -8 recency penalty for a work seen under 14 days ago`
 3. `scoreWork applies the decaying 1/daysSince * 2 penalty for a work seen 14+ days ago`
 4. `scoreWork adds full pinBoost for the first 5 applications of a matching session pin and zero after 20`
-5. `applyChip more-like-this increases theme/form/author weights by the documented deltas`
+5. `applyChip more-like-this increases theme/form/author weights by the documented deltas` (`form` keyed by `work.type`)
 6. `applyChip less-form floors the form weight at -5 and never goes lower`
 7. `buildPage enforces the ≤1-per-author constraint over a rolling window of 10`
-8. `buildPage enforces the ≤60%-one-form constraint and relaxes it only when candidates run out`
+8. `buildPage enforces the ≤60%-one-form constraint (keyed by work.type) and relaxes it only when candidates run out`
 9. `buildPage excludes works already in read[] from candidates`
 10. `decay multiplies every weight by 0.98 and clips results to [-10, 10]`
 11. `buildPage with all-zero weights (cold-start skip) still applies diversity constraints`
+12. `applyChip more-form adds +2 to the type-keyed form weight, clipped to [-10, 10]`
+13. `scoreWork keys weights.form by work.type, not the free-text work.form field` (a work whose free-text `form` collides with another type's key must not leak weight)
 
-(11 listed to comfortably exceed the "at least 8" floor; an implementer may merge closely related cases but must not drop coverage of recency, pins, chip deltas, both diversity constraints, decay, and the read-exclusion.)
+(13 listed to comfortably exceed the "at least 8" floor; an implementer may merge closely related cases but must not drop coverage of recency, pins, chip deltas, both diversity constraints, decay, the read-exclusion, the more-form action, and the type- vs free-text-form keying.)

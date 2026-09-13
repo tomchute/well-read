@@ -11,6 +11,7 @@
     buildThemeChips,
     lessFormChip,
     moreAboutThemeChip,
+    moreFormChip,
     surpriseMeChip,
   } from './steering';
 
@@ -51,7 +52,12 @@
   }
 
   // biome-ignore lint/correctness/noUnusedVariables: used in template
-  function onFormChipClick(form: string) {
+  function onMoreFormClick(form: string) {
+    dispatch(moreFormChip(form));
+  }
+
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
+  function onLessFormClick(form: string) {
     dispatch(lessFormChip(form));
   }
 
@@ -89,15 +95,26 @@
   <section class="chip-section" aria-label="Steer by form">
     <div class="chip-row">
       {#each formChips as chip (chip.form)}
-        <button
-          type="button"
-          class="chip form-chip"
-          class:active={chip.active}
-          aria-pressed={chip.active}
-          onclick={() => onFormChipClick(chip.form)}
-        >
-          Less {chip.label}
-        </button>
+        <div class="form-segment" role="group" aria-label={chip.label}>
+          <button
+            type="button"
+            class="chip form-chip segment-start"
+            class:active={chip.moreActive}
+            aria-pressed={chip.moreActive}
+            onclick={() => onMoreFormClick(chip.form)}
+          >
+            More {chip.label}
+          </button>
+          <button
+            type="button"
+            class="chip form-chip segment-end"
+            class:active={chip.lessActive}
+            aria-pressed={chip.lessActive}
+            onclick={() => onLessFormClick(chip.form)}
+          >
+            Less {chip.label}
+          </button>
+        </div>
       {/each}
     </div>
   </section>
@@ -166,6 +183,10 @@
     outline-offset: 2px;
   }
 
+  .form-segment {
+    display: inline-flex;
+  }
+
   .form-chip {
     background-color: var(--accent-story-tint);
     color: var(--accent-story-text);
@@ -178,6 +199,18 @@
 
   .form-chip:focus-visible {
     outline-color: var(--accent-story-text);
+  }
+
+  /* Join the More/Less pair into one compact segmented control. */
+  .form-segment .segment-start {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .form-segment .segment-end {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
   }
 
   .expander-chip {

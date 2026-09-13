@@ -7,12 +7,13 @@
 // action applies and docs/design-system.md ("SteeringChip") for the states
 // the component derives from the booleans below.
 //
-// Note: docs/recommendation-design.md's chip table (and the `ChipAction`
-// union in src/lib/scoring/types.ts) defines only a "Less <form>" action —
-// there is no "more-form" counterpart in the pure scoring API. The form row
-// below therefore offers "less <category>" chips only, even though this
-// WP's scope note says "more/less poems | stories | books | essays | plays";
-// see this WP's report for the flagged gap.
+// The form row offers both a "more-form" and a "less-form" action per
+// category (a paired/segmented control), mirroring the `+2`/`-2`
+// `weights.form[type]` deltas in `src/lib/scoring/chips.ts`. `weights.form`
+// (and every action here) keys by the coarse `WorkType` — the
+// `FORM_CATEGORIES` keys below — never the free-text `Work.form` sub-genre
+// field; see docs/recommendation-design.md ("Score formula", "Chip
+// actions").
 
 import type { ChipAction, Weights } from '$lib/scoring';
 import { THEME_VOCABULARY } from '$lib/types/work';
@@ -53,7 +54,10 @@ export interface ThemeChip {
 export interface FormChip {
   form: string;
   label: string;
-  active: boolean;
+  /** True once "less <form>" has pushed this category's weight negative. */
+  lessActive: boolean;
+  /** True once "more <form>" has pushed this category's weight positive. */
+  moreActive: boolean;
 }
 
 function capitalize(word: string): string {
@@ -71,9 +75,14 @@ export function isThemeActive(weights: Weights, theme: string): boolean {
   return (weights.theme[theme] ?? 0) > 0;
 }
 
-/** A form category reads as "on" once "less <form>" has pushed its weight negative. */
+/** A form category's "Less" side reads as "on" once its weight is negative. */
 export function isFormActive(weights: Weights, form: string): boolean {
   return (weights.form[form] ?? 0) < 0;
+}
+
+/** A form category's "More" side reads as "on" once its weight is positive. */
+export function isFormMoreActive(weights: Weights, form: string): boolean {
+  return (weights.form[form] ?? 0) > 0;
 }
 
 /**
@@ -93,17 +102,25 @@ export function buildThemeChips(weights: Weights, expanded: boolean): ThemeChip[
   }));
 }
 
-/** Builds the five "less <form>" chips, active state derived from `weights.form`. */
+/**
+ * Builds the five form-category rows, each carrying both "more" and "less"
+ * active state derived from the sign of `weights.form[type]`.
+ */
 export function buildFormChips(weights: Weights): FormChip[] {
   return FORM_CATEGORIES.map(({ key, label }) => ({
     form: key,
     label,
-    active: isFormActive(weights, key),
+    lessActive: isFormActive(weights, key),
+    moreActive: isFormMoreActive(weights, key),
   }));
 }
 
 export function moreAboutThemeChip(theme: string): ChipAction {
   return { type: 'more-about-theme', theme };
+}
+
+export function moreFormChip(form: string): ChipAction {
+  return { type: 'more-form', form };
 }
 
 export function lessFormChip(form: string): ChipAction {

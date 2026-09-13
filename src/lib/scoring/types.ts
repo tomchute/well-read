@@ -27,10 +27,17 @@ export interface ScoringState {
  * Chip actions from docs/recommendation-design.md ("Chip actions"), plus
  * `surprise-me` (the "Surprise me" reset) so callers have one pure entry
  * point for every steering interaction in the design.
+ *
+ * `more-form`/`less-form`'s `form` field holds a coarse `WorkType` value
+ * (`"poem" | "short_story" | "book" | "essay" | "play"`), not the free-text
+ * `Work.form` sub-genre field — `weights.form` is keyed by `WorkType` even
+ * though the persisted key stays named `form`. See
+ * docs/recommendation-design.md ("Score formula", "Chip actions").
  */
 export type ChipAction =
   | { type: 'more-like-this'; work: ManifestEntry }
   | { type: 'more-about-theme'; theme: string }
+  | { type: 'more-form'; form: string }
   | { type: 'less-form'; form: string }
   | { type: 'not-interested'; work: ManifestEntry }
   | { type: 'like'; work: ManifestEntry }

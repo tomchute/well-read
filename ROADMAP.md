@@ -43,7 +43,7 @@ Verification: scorer tests green; steering chips visibly reorder the feed; expor
 
 - [x] [WP-3.1](docs/work-packages/WP-3.1-persisted-stores.md) Versioned localStorage stores
 - [x] [WP-3.2](docs/work-packages/WP-3.2-scoring-module.md) Pure scoring module + vitest
-- [ ] [WP-3.3](docs/work-packages/WP-3.3-steering-bar.md) Steering bar wired to scorer
+- [x] [WP-3.3](docs/work-packages/WP-3.3-steering-bar.md) Steering bar wired to scorer
 - [x] [WP-3.4](docs/work-packages/WP-3.4-library-views.md) Library: Saved / Read / Liked
 - [x] [WP-3.5](docs/work-packages/WP-3.5-onboarding-quiz.md) First-run taste quiz
 - [x] [WP-3.6](docs/work-packages/WP-3.6-kindle-helper-export-import.md) Kindle helper + JSON export/import

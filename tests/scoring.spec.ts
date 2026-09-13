@@ -55,13 +55,14 @@ describe('scoreWork', () => {
   it('sums theme, form, era, and author weights independently', () => {
     const entry = makeEntry({
       themes: ['mortality', 'time'],
+      type: 'book',
       form: 'novel',
       era: '19th_century',
       author: 'X',
     });
     const weights: Weights = {
       theme: { mortality: 2, time: 3, unrelated: 100 },
-      form: { novel: 1 },
+      form: { book: 1 },
       era: { '19th_century': 4 },
       author: { X: 5 },
     };
@@ -69,6 +70,23 @@ describe('scoreWork', () => {
     const rng = () => 0.5;
     const score = scoreWork(entry, weights, {}, [], NOW, rng);
     expect(score).toBe(2 + 3 + 1 + 4 + 5);
+  });
+
+  // Case 13
+  it('keys weights.form by work.type, not the free-text work.form field', () => {
+    // The free-text `form` value collides with the *other* type's weight
+    // key: if scoring ever regressed to reading `work.form`, this would
+    // wrongly pick up the `short_story` weight instead of `book`'s.
+    const entry = makeEntry({ type: 'book', form: 'short_story', themes: [] });
+    const weights: Weights = {
+      theme: {},
+      form: { book: 4, short_story: -100 },
+      era: {},
+      author: {},
+    };
+    const rng = () => 0.5; // jitter = 0
+    const score = scoreWork(entry, weights, {}, [], NOW, rng);
+    expect(score).toBe(4);
   });
 
   // Case 2
@@ -138,11 +156,18 @@ describe('scoreWork', () => {
 describe('applyChip', () => {
   // Case 5
   it('more-like-this increases theme/form/author weights by the documented deltas', () => {
-    const work = makeEntry({ themes: ['mortality', 'time'], form: 'novel', author: 'Kate Chopin' });
+    const work = makeEntry({
+      themes: ['mortality', 'time'],
+      type: 'book',
+      form: 'novel',
+      author: 'Kate Chopin',
+    });
     const next = applyChip(emptyState(), { type: 'more-like-this', work });
     expect(next.weights.theme.mortality).toBe(2);
     expect(next.weights.theme.time).toBe(2);
-    expect(next.weights.form.novel).toBe(1);
+    // Keyed by work.type ('book'), not the free-text form ('novel').
+    expect(next.weights.form.book).toBe(1);
+    expect(next.weights.form.novel).toBeUndefined();
     expect(next.weights.author['Kate Chopin']).toBe(2);
   });
 
@@ -193,12 +218,30 @@ describe('applyChip', () => {
 
   // Case 6
   it('less-form floors the form weight at -5 and never goes lower', () => {
-    let state = emptyState({ weights: { theme: {}, form: { novel: -4 }, era: {}, author: {} } });
-    state = applyChip(state, { type: 'less-form', form: 'novel' });
-    expect(state.weights.form.novel).toBe(-5);
+    let state = emptyState({ weights: { theme: {}, form: { book: -4 }, era: {}, author: {} } });
+    state = applyChip(state, { type: 'less-form', form: 'book' });
+    expect(state.weights.form.book).toBe(-5);
     // Applying again must not push it past the floor.
-    state = applyChip(state, { type: 'less-form', form: 'novel' });
-    expect(state.weights.form.novel).toBe(-5);
+    state = applyChip(state, { type: 'less-form', form: 'book' });
+    expect(state.weights.form.book).toBe(-5);
+  });
+
+  // Case 12
+  it('more-form adds +2 to the form weight, clipped to [-10, 10], mirroring less-form', () => {
+    let state = emptyState({ weights: { theme: {}, form: { poem: 9 }, era: {}, author: {} } });
+    state = applyChip(state, { type: 'more-form', form: 'poem' });
+    expect(state.weights.form.poem).toBe(10);
+    // Applying again must not push it past the standard ceiling.
+    state = applyChip(state, { type: 'more-form', form: 'poem' });
+    expect(state.weights.form.poem).toBe(10);
+  });
+
+  it('more-form and less-form are independent, symmetric deltas on the same key', () => {
+    let state = emptyState();
+    state = applyChip(state, { type: 'more-form', form: 'essay' });
+    expect(state.weights.form.essay).toBe(2);
+    state = applyChip(state, { type: 'less-form', form: 'essay' });
+    expect(state.weights.form.essay).toBe(0);
   });
 
   it('does not mutate the input state', () => {
@@ -263,34 +306,46 @@ describe('buildPage', () => {
   });
 
   // Case 8
-  it('enforces the <=60%-one-form constraint and relaxes it only when candidates run out', () => {
-    // 8 novels (distinct authors) that would otherwise dominate the top of
-    // the ranking, plus 4 other-form works to fill the rest of the page.
-    const novels = Array.from({ length: 8 }, (_, i) =>
-      makeEntry({ id: `novel-${i}`, author: `Novel Author ${i}`, form: 'novel' })
+  it('enforces the <=60%-one-type constraint (keyed by work.type) and relaxes it only when candidates run out', () => {
+    // 8 books (distinct authors, and deliberately varied free-text `form`
+    // values so the constraint can't be passing by coincidentally grouping
+    // on `form`) that would otherwise dominate the top of the ranking, plus
+    // 4 other-type works to fill the rest of the page.
+    const books = Array.from({ length: 8 }, (_, i) =>
+      makeEntry({
+        id: `book-${i}`,
+        author: `Book Author ${i}`,
+        type: 'book',
+        form: `book-subgenre-${i}`,
+      })
     );
-    const others = Array.from({ length: 4 }, (_, i) =>
-      makeEntry({ id: `other-${i}`, author: `Other Author ${i}`, form: `other-form-${i}` })
+    // Four distinct types (the four non-"book" WorkType values) so each
+    // filler is unique and never triggers the cap against the others.
+    const otherTypes = ['poem', 'short_story', 'essay', 'play'] as const;
+    const others = otherTypes.map((type, i) =>
+      makeEntry({ id: `other-${i}`, author: `Other Author ${i}`, type, form: `other-form-${i}` })
     );
-    const index = [...novels, ...others];
+    const index = [...books, ...others];
     const page = buildPage(index, emptyState(), 10, NOW, () => 0.5);
-    const novelCount = page.filter((w) => w.form === 'novel').length;
-    expect(novelCount).toBeLessThanOrEqual(6);
+    const bookCount = page.filter((w) => w.type === 'book').length;
+    expect(bookCount).toBeLessThanOrEqual(6);
     expect(page).toHaveLength(10);
   });
 
-  it('relaxes the form cap (not the author cap) first when candidates run out', () => {
-    // 8 novels from 8 distinct authors + only 1 other-form work: the form
-    // cap (max 6 novels) cannot be satisfied while also filling all 9 slots
+  it('relaxes the type cap (not the author cap) first when candidates run out', () => {
+    // 8 books from 8 distinct authors + only 1 other-type work: the type
+    // cap (max 6 books) cannot be satisfied while also filling all 9 slots
     // without repeating an author, so it must relax to fill the page,
     // while still never repeating an author (only 9 distinct authors exist
     // here, so the author cap is never actually tested against, but every
     // pick must remain unique).
-    const novels = Array.from({ length: 8 }, (_, i) =>
-      makeEntry({ id: `novel-${i}`, author: `Novel Author ${i}`, form: 'novel' })
+    const books = Array.from({ length: 8 }, (_, i) =>
+      makeEntry({ id: `book-${i}`, author: `Book Author ${i}`, type: 'book', form: 'novel' })
     );
-    const other = [makeEntry({ id: 'other-0', author: 'Other Author', form: 'poem' })];
-    const index = [...novels, ...other];
+    const other = [
+      makeEntry({ id: 'other-0', author: 'Other Author', type: 'poem', form: 'poem' }),
+    ];
+    const index = [...books, ...other];
     const page = buildPage(index, emptyState(), 9, NOW, () => 0.5);
     expect(page).toHaveLength(9);
     const authors = new Set(page.map((w) => w.author));
