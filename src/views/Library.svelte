@@ -2,6 +2,8 @@
   import { onMount } from 'svelte';
   // biome-ignore lint/correctness/noUnusedImports: used in template
   import EmptyState from '$lib/components/EmptyState.svelte';
+  // biome-ignore lint/correctness/noUnusedImports: used in template
+  import { formatType } from '$lib/components/WorkCard.svelte';
   import { loadManifest, type ManifestEntry } from '$lib/data/manifest';
   import { routeToHash } from '$lib/router.svelte';
   import { reactions, read, saved } from '$lib/stores/index.svelte';
@@ -21,13 +23,6 @@
   let typeFilter = $state<WorkType>('all');
 
 
-  const WORK_TYPE_BADGES: Record<ManifestEntry['type'], string> = {
-    poem: 'Poem',
-    short_story: 'Short story',
-    book: 'Book',
-    essay: 'Essay',
-    play: 'Play',
-  };
 
   const EMPTY_MESSAGES: Record<TabType, string> = {
     saved: 'You haven\'t saved any works yet.',
@@ -157,7 +152,7 @@
                 <a class="work-link" href={routeToHash({ name: 'work', id: entry.id })}>
                   <span class="work-title">{entry.title}</span>
                   <span class="work-author small-caps">{entry.author}</span>
-                  <span class="work-type-badge">{WORK_TYPE_BADGES[entry.type]}</span>
+                  <span class="work-type-badge">{formatType(entry.type)}</span>
                   <span class="work-era">{entry.era}</span>
                 </a>
                 {#if activeTab === 'saved'}

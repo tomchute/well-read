@@ -30,6 +30,12 @@ let current = $state<Route>(
   typeof window === 'undefined' ? DEFAULT_ROUTE : parseHash(readCurrentHash())
 );
 
+// The in-app route we came from, or `undefined` on a fresh load (a deep
+// link, a reload). Lets a detail page offer "Back to feed"/"Back to library"
+// and lets `goBack` tell "there's in-app history behind us" apart from
+// "we'd leave the app if we called `history.back()`".
+let previous = $state<Route | undefined>(undefined);
+
 function prefersReducedMotion(): boolean {
   return (
     typeof window !== 'undefined' &&
@@ -39,6 +45,7 @@ function prefersReducedMotion(): boolean {
 
 /** Applies a resolved route, wrapped in a View Transition when the browser supports one and motion isn't reduced. */
 function applyRoute(next: Route): void {
+  previous = current;
   if (
     typeof document !== 'undefined' &&
     typeof document.startViewTransition === 'function' &&
@@ -59,12 +66,30 @@ if (typeof window !== 'undefined') {
   });
 }
 
-/** The current route. Reading `.current` inside a component tracks it. */
+/** The current route. Reading `.current` (or `.previous`) inside a component tracks it. */
 export const route = {
   get current(): Route {
     return current;
   },
+  get previous(): Route | undefined {
+    return previous;
+  },
 };
+
+/**
+ * Goes back one step in the browser's history when that step is an in-app
+ * route we saw (so scroll position and card focus restore for free), or
+ * navigates to `fallback` when there's no in-app history behind us — e.g.
+ * the reader arrived by deep link straight onto `#/work/...`.
+ */
+export function goBack(fallback: Route): void {
+  if (typeof window === 'undefined') return;
+  if (previous !== undefined && window.history.length > 1) {
+    window.history.back();
+    return;
+  }
+  navigate(fallback);
+}
 
 /** Navigates to a route (or a raw `#...` hash string), updating `location.hash`. */
 export function navigate(target: Route | string): void {

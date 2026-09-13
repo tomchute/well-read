@@ -261,7 +261,7 @@
         <div class="shortcuts-row"><dt><kbd>Enter</kbd></dt><dd>Open the focused card</dd></div>
         <div class="shortcuts-row"><dt><kbd>s</kbd></dt><dd>Save / unsave</dd></div>
         <div class="shortcuts-row"><dt><kbd>m</kbd></dt><dd>More like this</dd></div>
-        <div class="shortcuts-row"><dt><kbd>Esc</kbd></dt><dd>Close notes, or back to feed</dd></div>
+        <div class="shortcuts-row"><dt><kbd>Esc</kbd></dt><dd>Close notes, or go back</dd></div>
         <div class="shortcuts-row"><dt><kbd>?</kbd></dt><dd>Toggle this overlay</dd></div>
       </dl>
     </div>

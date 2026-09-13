@@ -81,6 +81,7 @@
   import { loadWork } from '$lib/data/work';
   import { routeToHash } from '$lib/router';
   import type { Work } from '$lib/types/work';
+  import { accentFor, typeGlyphFor } from './workAccent';
 
   interface Props {
     /** The manifest entry to render — every field except shipped text is available immediately. */
@@ -159,32 +160,8 @@
       : { kind: 'pending' }
   );
 
-  /**
-   * Accent CSS custom-property names by `type`, per docs/design-system.md
-   * ("poem=teal, story=vermilion, book=ochre") plus two sensible reuses for
-   * the two types the design system doesn't assign a dedicated hue to
-   * (§8 rules out inventing new hues beyond the four specimen accents):
-   * essay borrows the cooler `saved` (sky) family — reflective, non-fiction
-   * prose — and play borrows `story` (vermilion) — both are performed/staged
-   * narrative forms.
-   */
-  const ACCENT_BY_TYPE: Record<WorkType, { bar: string; tint: string; text: string }> = {
-    poem: { bar: 'var(--accent-poem)', tint: 'var(--accent-poem-tint)', text: 'var(--accent-poem-text)' },
-    short_story: {
-      bar: 'var(--accent-story)',
-      tint: 'var(--accent-story-tint)',
-      text: 'var(--accent-story-text)',
-    },
-    book: { bar: 'var(--accent-book)', tint: 'var(--accent-book-tint)', text: 'var(--accent-book-text)' },
-    essay: { bar: 'var(--accent-saved)', tint: 'var(--accent-saved-tint)', text: 'var(--accent-saved-text)' },
-    play: {
-      bar: 'var(--accent-story)',
-      tint: 'var(--accent-story-tint)',
-      text: 'var(--accent-story-text)',
-    },
-  };
-
-  const accent = $derived(ACCENT_BY_TYPE[entry.type]);
+  const accent = $derived(accentFor(entry.type));
+  const glyph = $derived(typeGlyphFor(entry.type));
   const workHref = $derived(routeToHash({ name: 'work', id: entry.id }));
 
   function handleLike(event: MouseEvent) {
@@ -220,7 +197,7 @@
   <a
     class="card-link"
     href={workHref}
-    aria-label={`${entry.title} by ${entry.author}`}
+    aria-label={`${entry.title} by ${entry.author} (${formatType(entry.type)})`}
     onclick={handleOpen}
   ></a>
 
@@ -228,15 +205,18 @@
     <p class="specimen-number">No. {index}</p>
 
     <div class="cover-box" aria-hidden="true">
-      <!-- SVG placeholder for card cover art. When a real image is added,
-           use: <img loading="lazy" decoding="async" src="..." alt="" />
+      <!-- Type glyph standing in for card cover art (the badge row carries
+           the same type as text, so this stays decorative). When a real
+           image is added, use: <img loading="lazy" decoding="async" src="..." alt="" />
            The fixed aspect ratio (4/3) is already set to prevent layout shift. -->
       <svg viewBox="0 0 24 24" class="cover-glyph" focusable="false">
         <path
-          d="M12 3c3 3 7 4 7 9a7 7 0 0 1-14 0c0-5 4-6 7-9Z"
+          d={glyph}
           fill="none"
           stroke="currentColor"
-          stroke-width="1"
+          stroke-width="1.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
         />
       </svg>
     </div>
@@ -246,6 +226,7 @@
       <p class="author small-caps">{entry.author}</p>
 
       <div class="badges">
+        <span class="badge badge-type">{formatType(entry.type)}</span>
         <span class="badge">{formatEra(entry.era)}</span>
         <span class="badge">{entry.form}</span>
       </div>
@@ -421,6 +402,11 @@
     gap: var(--space-4);
     padding: var(--space-4) var(--space-4) var(--space-4) var(--space-5);
     width: 100%;
+    /* border-box + min-width 0: as a flex item of `.work-card` this must
+     * never grow past the card (its padding used to be added on top of
+     * `width: 100%`, and a long no-wrap badge could hold it there). */
+    box-sizing: border-box;
+    min-width: 0;
     pointer-events: none;
   }
 
@@ -450,9 +436,9 @@
   }
 
   .cover-glyph {
-    width: 40%;
-    height: 40%;
-    opacity: 0.6;
+    width: 48%;
+    height: 48%;
+    opacity: 0.8;
   }
 
   .card-main {
@@ -495,6 +481,20 @@
     background: var(--card-accent-tint);
     color: var(--card-accent-text);
     white-space: nowrap;
+    /* A long free-text form ("novel, translated from Russian") truncates
+     * inside the card rather than forcing the whole card body wider than
+     * the card and clipping the teaser on narrow screens. */
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* The type badge is the legend for the card's accent: same tint, but
+   * bolder and outlined in the accent so it reads as the lead badge. */
+  .badge-type {
+    font-weight: 700;
+    box-shadow: inset 0 0 0 1px var(--card-accent);
   }
 
   /* Reserves a stable block of teaser lines regardless of loading/ready/pending
@@ -613,6 +613,26 @@
 
     .cover-box {
       width: 72px;
+    }
+
+    /* Narrow cards keep the fixed CARD_HEIGHT (Feed.svelte) by clamping the
+     * title to two lines and reserving three teaser lines instead of four:
+     * at ~220px of text width the badge row wraps to two or three lines
+     * and a long title to three, which together pushed the action row out
+     * of the card. The full title is still in the card link's aria-label. */
+    .title {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .teaser {
+      min-height: calc(var(--leading-md) * var(--text-md) * 3);
+    }
+
+    .teaser-text {
+      -webkit-line-clamp: 3;
     }
 
     .action.wide span {
