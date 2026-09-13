@@ -1,0 +1,69 @@
+{
+  "id": "fixture-larkspur-street-2021",
+  "type": "book",
+  "title": "Larkspur Street",
+  "author": "Fixture Novelist",
+  "year": 2021,
+  "era": "contemporary",
+  "form": "novel",
+  "themes": [
+    "family",
+    "memory",
+    "home"
+  ],
+  "tags": [
+    "inheritance",
+    "fixture"
+  ],
+  "length": {
+    "unit": "words",
+    "value": 523
+  },
+  "difficulty": 2,
+  "source": {
+    "name": "Fixture Press",
+    "url": "https://example.org/fixtures/larkspur-street",
+    "license": "all-rights-reserved",
+    "retrievedDate": "2026-09-01"
+  },
+  "textPolicy": "excerpt",
+  "excerpt": "The house on Larkspur Street had belonged to three generations of the same family before it passed, through a chain of circumstances nobody liked to discuss in detail, into the hands of a stranger. Eleanor Voss arrived on a Tuesday in early October with a moving truck half full of furniture and a folder of paperwork she had not yet fully read, and stood on the porch for a long moment before she found the courage to use the key.\n\nInside, the house smelled of dust and old wood polish, the particular scent of rooms that had been closed up rather than lived in. Sheets covered most of the furniture, ghostly shapes in the low afternoon light, and Eleanor moved through the downstairs rooms pulling them off one at a time as though she were unveiling something rather than merely uncovering it. A piano. A rolltop desk. A pair of armchairs facing a cold fireplace, angled toward each other as if two people had just stepped out of a conversation.\n\nShe had inherited the house from an aunt she had met exactly twice, both times at funerals for other relatives, and she still could not entirely explain to herself why she had decided to live in it rather than sell it, as every practical voice in her life had advised. Perhaps it was simply that she had nowhere else in particular to be, her lease in the city having ended the same month the lawyer's letter arrived, as if the timing itself were an argument she could not refuse.\n\nThe upstairs rooms held more of the aunt's life than the downstairs did: a bedroom with a quilt still folded at the foot of the bed, a study lined with books in three languages, a narrow room at the end of the hall that appeared to have been used for nothing but storing boxes, dozens of them, labeled in handwriting that grew shakier toward the bottom of each stack. Eleanor did not open any of them that first night. She made up the bed in the guest room instead, unwilling yet to claim the aunt's own room as hers, and lay awake listening to a house settle around her in unfamiliar ways, creaks and knocks she would spend the coming months learning to place.\n\nIn the morning she made coffee in a kitchen still stocked with someone else's spices and sat at the table with the folder of paperwork finally spread in front of her. Deeds, insurance documents, a hand-drawn map of the property lines that did not match the surveyor's more recent version by several feet. And beneath all of it, in an envelope that had clearly been added after the rest, a single sheet of paper in the aunt's handwriting, addressed not to a lawyer or an executor but, improbably, to Eleanor herself, dated some four years before her death.\n\nEleanor read the letter twice before she let herself absorb what it said, and a third time before she stood up, walked to the narrow room at the end of the hall, and began, for the first time, to open the boxes.",
+  "excerptNote": "opening 523 words of chapter one, ending at the chapter break",
+  "externalLinks": [
+    {
+      "kind": "bookstore",
+      "url": "https://example.org/fixtures/larkspur-street",
+      "label": "Buy from Fixture Press"
+    },
+    {
+      "kind": "library",
+      "url": "https://example.org/fixtures/larkspur-street-library",
+      "label": "Borrow via library catalog"
+    }
+  ],
+  "masterNotes": {
+    "context": "This fixture stands in for a contemporary novel, always shipped as an excerpt regardless of rights status, per the book-always-excerpt gate.",
+    "form": "Close third-person narration opening on a single day, using inherited domestic space to introduce the novel's central mystery.",
+    "keyImages": [
+      "The armchairs \"angled toward each other as if two people had just stepped out of a conversation,\" foreshadowing the aunt's unfinished business.",
+      "The stack of unopened boxes at the end of the hall, deferred until the letter forces Eleanor to open them."
+    ],
+    "whatToNotice": [
+      "Notice how the chapter withholds the letter's contents, ending on the act of opening rather than what is found."
+    ],
+    "discussionQuestions": [
+      "Why might the novel open with the house itself rather than with Eleanor's backstory?",
+      "What does the mismatched hand-drawn property map suggest about the aunt as a character?",
+      "How does the pacing of the chapter build toward the letter without rushing there?"
+    ],
+    "furtherReading": [
+      "Fixture note: this entry exists only to exercise validate-content.mjs and has no real further reading."
+    ]
+  },
+  "pipeline": {
+    "batchId": "fixture-batch",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "fixture",
+    "schemaVersion": 1
+  }
+}

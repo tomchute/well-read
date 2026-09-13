@@ -1,0 +1,54 @@
+{
+  "id": "anon-riverlight-verses-1888",
+  "type": "poem",
+  "title": "Riverlight Verses",
+  "author": "Anonymous",
+  "year": 1888,
+  "era": "19th_century",
+  "form": "free verse",
+  "themes": ["nature", "time", "memory"],
+  "tags": ["river", "fixture"],
+  "length": { "unit": "lines", "value": 44 },
+  "difficulty": 2,
+  "source": {
+    "name": "Fixture Public Domain Anthology",
+    "url": "https://example.org/fixtures/riverlight-verses",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-01"
+  },
+  "textPolicy": "excerpt",
+  "excerpt": "The river keeps no calendar of its own,\nonly the long unspooling of water over stone.\nI have stood on this bank in every season\nand called it the same river, though it never is.\n\nIn spring the current runs loud with melted snow,\ncarrying twigs and the pale husks of winter.\nIn summer it slows to a murmur beneath the willows,\nwarm enough that children wade in without flinching.\n\nBy autumn the water has darkened with fallen leaves,\nand the light on its surface turns the color of rust.\nWinter freezes only the shallows near the shore,\nleaving a black channel where the current still moves.\n\nI think of the people who stood here before me,\nfilling jars, watering animals, washing cloth,\nnone of them thinking of the river as a symbol,\nonly as the thing that had to be crossed or used.\n\nNow I come here with no task at all,\nonly the habit of watching water move,\nas if watching long enough might explain\nwhy nothing in a life stays the same shape twice.\n\nThe fish do not care that I am watching.\nThe herons do not care that I am watching.\nEven the stones underfoot, worn smooth by centuries,\nseem indifferent to whoever happens to be standing here.\n\nAnd yet I keep coming back to this bend in the river,\nas though it owed me an answer,\nas though enough mornings spent here\nwould add up to something like understanding.\n\nMaybe that is what a river is for:\nnot to answer, but to keep moving\nwhile you stand still and change anyway,\ncarried along by something you cannot see.\n\nSo I let the water do what it does,\nand I do what I do, which is watch,\nand call it, for lack of a better word,\npeace, though it is closer to attention.",
+  "excerptNote": "middle 44 of roughly 80 lines, the poem's central river-watching sequence",
+  "externalLinks": [
+    {
+      "kind": "library",
+      "url": "https://example.org/fixtures/riverlight-verses",
+      "label": "Read at fixture library"
+    }
+  ],
+  "masterNotes": {
+    "context": "This fixture stands in for a 19th-century public-domain poem excerpted for length rather than for rights reasons — the full poem runs well past the 60-line threshold for shipping poems in full.",
+    "form": "Free verse organized in quatrains, each stanza tied to a season, building toward a closing meditation on attention versus answers.",
+    "keyImages": [
+      "The river's surface turning \"the color of rust\" in autumn, marking the passage of a year in a single image.",
+      "The closing distinction between \"peace\" and \"attention\" as two names for the same unresolved feeling."
+    ],
+    "whatToNotice": [
+      "Notice how each stanza moves through a season without ever naming the speaker's own life directly."
+    ],
+    "discussionQuestions": [
+      "Why might the speaker resist calling the river a symbol?",
+      "What does the poem gain by ending on a distinction between two words rather than a clear statement?",
+      "How does the seasonal structure shape your sense of time passing across the excerpt?"
+    ],
+    "furtherReading": [
+      "Fixture note: this entry exists only to exercise validate-content.mjs and has no real further reading."
+    ]
+  },
+  "pipeline": {
+    "batchId": "fixture-batch",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "fixture",
+    "schemaVersion": 1
+  }
+}
