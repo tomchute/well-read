@@ -1,0 +1,64 @@
+{
+  "id": "szymborska-the-end-and-the-beginning-1993",
+  "type": "poem",
+  "title": "The End and the Beginning",
+  "author": "Wisława Szymborska (translated by Stanisław Barańczak and Clare Cavanagh)",
+  "year": 1993,
+  "era": "contemporary",
+  "form": "free verse, translated from Polish",
+  "themes": ["war", "memory", "time"],
+  "tags": ["translation", "poland", "postwar-europe", "needs-text"],
+  "length": { "unit": "lines", "value": 48 },
+  "difficulty": 3,
+  "source": {
+    "name": "Wisława Szymborska, \"Koniec i początek\" (1993), trans. Stanisław Barańczak and Clare Cavanagh, in View with a Grain of Sand: Selected Poems (Harcourt Brace, 1995); English translation copyright held separately from the Polish original by the translators/publisher",
+    "url": "https://www.poetryfoundation.org/poets/wislawa-szymborska",
+    "license": "all-rights-reserved",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "pending",
+  "externalLinks": [
+    {
+      "kind": "poetry-foundation",
+      "url": "https://www.poetryfoundation.org/search?q=The+End+and+the+Beginning+Szymborska+Baranczak+Cavanagh",
+      "label": "Search Poetry Foundation for this poem"
+    },
+    {
+      "kind": "bookstore",
+      "url": "https://bookshop.org/search?keywords=View+with+a+Grain+of+Sand+Szymborska",
+      "label": "Find View with a Grain of Sand at Bookshop.org"
+    }
+  ],
+  "masterNotes": {
+    "context": "Szymborska published \"Koniec i początek\" in Polish in 1993, in the collection of the same name, four years after the fall of Communist rule in Poland and not long after the wars in the former Yugoslavia had returned large-scale European war to daily headlines. Szymborska had lived through the German occupation of Poland and the destruction of Warsaw in the Second World War, and this poem's flat, almost administrative tone toward the labor of cleanup after war reads as hard-won rather than detached. The widely used English version is by Stanisław Barańczak and Clare Cavanagh, whose translations did much to build Szymborska's English-language readership; it appears in *View with a Grain of Sand* (1995). Szymborska won the Nobel Prize in Literature in 1996, three years after this poem's original publication, and it remains one of her most frequently cited works on the aftermath of war.",
+    "form": "The poem proceeds as a plain, unornamented list of the unglamorous physical and social tasks that follow a war, refusing the elevated register readers might expect from a poem on this subject. Its short, declarative lines and matter-of-fact tone are characteristic of Szymborska's broader style, which favors irony and understatement over overt emotion, and the translators have preserved that flatness in English rather than smoothing it into more conventionally poetic language. The poem moves in stages, from immediate physical cleanup toward the slower work of memory and forgetting, ending on figures who were not present for the events at all — a structural choice that carries the poem's real argument about how history gets absorbed.",
+    "keyImages": [
+      "The recurring image of physical rubble and debris being cleared by unnamed, uncelebrated workers, the poem's insistence on the unglamorous labor that always follows a war.",
+      "The figure who leans on a broom and still remembers how it was, a single human presence who has not yet caught up to the poem's larger movement toward forgetting.",
+      "The closing figures too young to have witnessed the events at all, lying in the grass and looking up at clouds, marking how completely the past can be absorbed by those who come after."
+    ],
+    "whatToNotice": [
+      "Notice how deliberately the poem avoids naming any specific war, army, or nation, keeping its subject general rather than tied to one conflict.",
+      "Notice the shift partway through from concrete physical labor toward more abstract processes of memory and explanation.",
+      "Notice how the poem's tone stays level and almost bureaucratic throughout, even as its subject grows larger and more painful.",
+      "Notice who the poem chooses to end on, and how much distance separates that final figure from the poem's opening images."
+    ],
+    "discussionQuestions": [
+      "Why might Szymborska have chosen a flat, list-like structure to describe the aftermath of war rather than a more overtly emotional one?",
+      "What is the effect of ending the poem with people who have no memory of the events it describes?",
+      "Does the poem's refusal to name a specific war make its argument more universal, or does it risk flattening real historical differences?",
+      "How does translation — the choice to keep the English plain rather than more lyrical — affect how this poem's argument lands for an English-language reader?"
+    ],
+    "furtherReading": [
+      "Wisława Szymborska, \"Could Have\" — another poem taking a similarly flat, ironic approach to catastrophe and survival.",
+      "Czesław Miłosz, *The Captive Mind* — a prose companion from another Polish writer on living through and after totalitarian upheaval.",
+      "Clare Cavanagh, *Lyric Poetry and Modern Politics* — discusses Szymborska's translated reception and the politics of postwar Polish poetry."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed-b",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}

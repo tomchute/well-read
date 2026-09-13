@@ -1,0 +1,82 @@
+{
+  "id": "eliot-the-love-song-of-j-alfred-prufrock-1915",
+  "type": "poem",
+  "title": "The Love Song of J. Alfred Prufrock",
+  "author": "T. S. Eliot",
+  "year": 1915,
+  "era": "early_20th_century",
+  "form": "dramatic monologue, free verse with intermittent rhyme",
+  "themes": [
+    "solitude",
+    "doubt",
+    "time",
+    "the-city"
+  ],
+  "tags": [
+    "modernism",
+    "interior-monologue",
+    "prufrock-and-other-observations",
+    "needs-link-verification"
+  ],
+  "length": {
+    "unit": "lines",
+    "value": 131
+  },
+  "difficulty": 4,
+  "source": {
+    "name": "Standard Ebooks (GitHub mirror)",
+    "url": "https://raw.githubusercontent.com/standardebooks/t-s-eliot_poetry/master/src/epub/text/poetry.xhtml",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "full",
+  "externalLinks": [
+    {
+      "kind": "poetry-foundation",
+      "url": "https://www.poetryfoundation.org/search?q=The+Love+Song+of+J+Alfred+Prufrock+T+S+Eliot",
+      "label": "Search Poetry Foundation for this poem"
+    }
+  ],
+  "masterNotes": {
+    "context": "Eliot wrote most of this poem between 1910 and 1911, while a graduate student in his early twenties, though it did not find a publisher until 1915, when Ezra Pound championed it into the magazine *Poetry*; it then gave its name to Eliot's first collection, *Prufrock and Other Observations* (1917). The poem arrived just as English-language poetry was breaking from Victorian and Georgian convention, and its jarring first move, comparing an evening sky to a patient on an operating table, announced that break immediately. Eliot was an American living in England, steeped in French Symbolist poetry, and the poem's speaker, an anxious, aging man rehearsing a social visit he may never make, became one of modernism's founding voices of self-conscious paralysis.",
+    "form": "The poem takes its title's promise, a love song, and undercuts it: instead of address to a beloved, it is an interior monologue in which the speaker circles, stalls, and interrupts himself, drafting and discarding the visit he claims he is about to make. Eliot mixes passages of loose iambic rhythm and intermittent rhyme with lines that break into free verse entirely, so the form itself seems to lose its nerve alongside the speaker. Recurring refrains (women coming and going, the recurring question \"do I dare\") give the poem a circling, non-linear structure rather than forward narrative movement, and the epigraph, borrowed from Dante's *Inferno*, frames everything that follows as a confession the speaker believes will never be repeated back to the world.",
+    "keyImages": [
+      "The evening sky compared to a patient etherized on a table — the poem's opening gesture, replacing a conventional romantic image with a clinical, unsettling one.",
+      "The recurring image of women in a room discussing Michelangelo — a social scene the speaker observes from outside his own nerve to enter it.",
+      "The fog compared to a cat, curling and settling around a house — an image of hesitation given a body of its own.",
+      "The mermaids at the poem's end, singing to each other but not, the speaker is certain, to him — the poem's final image of exclusion from a beauty he can only overhear."
+    ],
+    "whatToNotice": [
+      "Notice how often the speaker rehearses a question he never actually asks, and how many times some version of \"do I dare\" recurs.",
+      "Notice the shift in scale between the poem's grand literary and biblical allusions and the speaker's small, specific anxieties about clothing and appearance.",
+      "Track the refrain about the women and Michelangelo — notice it returns without developing, as if the speaker cannot get past this image.",
+      "Notice how the poem measures the speaker's life in small units, coffee spoons among them, rather than in large accomplishments.",
+      "Watch for the moment the poem shifts from a real or imagined social visit into an explicitly imagined, almost mythic seascape at the end."
+    ],
+    "discussionQuestions": [
+      "Is Prufrock's paralysis primarily about fear of romantic rejection, or something larger about his sense of his own insignificance?",
+      "What does the epigraph from Dante suggest about how honestly, or dishonestly, the speaker expects to be heard?",
+      "Why might Eliot have chosen an aging, self-conscious speaker rather than a young one for a poem framed as a \"love song\"?",
+      "How does the poem's fragmented, circling structure support or undercut its speaker's claim that he has already \"known them all\"?"
+    ],
+    "furtherReading": [
+      "\"Portrait of a Lady\" (Eliot, also in *Prufrock and Other Observations*) — a companion study in social hesitation and interior monologue.",
+      "Dante, *Inferno*, Canto XXVII — the source of the poem's epigraph, spoken by a damned soul who believes his confession will never leave Hell.",
+      "Ezra Pound's correspondence with Harriet Monroe advocating for the poem's publication — for the story of how it nearly went unprinted."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed-b",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  },
+  "ebookLinks": [
+    {
+      "provider": "standard-ebooks",
+      "format": "epub",
+      "url": "https://standardebooks.org/ebooks/t-s-eliot/poetry/downloads/t-s-eliot_poetry.epub"
+    }
+  ],
+  "text": "Let us go then, you and I,\nWhen the evening is spread out against the sky\nLike a patient etherized upon a table;\nLet us go, through certain half-deserted streets,\nThe muttering retreats\nOf restless nights in one-night cheap hotels\nAnd sawdust restaurants with oyster-shells:\nStreets that follow like a tedious argument\nOf insidious intent\nTo lead you to an overwhelming question.⁠ ⁠…\nOh, do not ask, “What is it?”\nLet us go and make our visit.\n\nIn the room the women come and go\nTalking of Michelangelo.\n\nThe yellow fog that rubs its back upon the windowpanes,\nThe yellow smoke that rubs its muzzle on the windowpanes\nLicked its tongue into the corners of the evening,\nLingered upon the pools that stand in drains,\nLet fall upon its back the soot that falls from chimneys,\nSlipped by the terrace, made a sudden leap,\nAnd seeing that it was a soft October night,\nCurled once about the house, and fell asleep.\n\nAnd indeed there will be time\nFor the yellow smoke that slides along the street,\nRubbing its back upon the window panes;\nThere will be time, there will be time\nTo prepare a face to meet the faces that you meet\nThere will be time to murder and create,\nAnd time for all the works and days of hands\nThat lift and drop a question on your plate;\nTime for you and time for me,\nAnd time yet for a hundred indecisions,\nAnd for a hundred visions and revisions,\nBefore the taking of a toast and tea.\n\nIn the room the women come and go\nTalking of Michelangelo.\n\nAnd indeed there will be time\nTo wonder, “Do I dare?” and, “Do I dare?”\nTime to turn back and descend the stair,\nWith a bald spot in the middle of my hair⁠—\n(They will say: “How his hair is growing thin!”)\nMy morning coat, my collar mounting firmly to the chin,\nMy necktie rich and modest, but asserted by a simple pin⁠—\n(They will say: “But how his arms and legs are thin!”)\nDo I dare\nDisturb the universe?\nIn a minute there is time\nFor decisions and revisions which a minute will reverse.\n\nFor I have known them all already, known them all:\nHave known the evenings, mornings, afternoons,\nI have measured out my life with coffee spoons;\nI know the voices dying with a dying fall\nBeneath the music from a farther room.\nSo how should I presume?\n\nAnd I have known the eyes already, known them all⁠—\nThe eyes that fix you in a formulated phrase,\nAnd when I am formulated, sprawling on a pin,\nWhen I am pinned and wriggling on the wall,\nThen how should I begin\nTo spit out all the butt-ends of my days and ways?\nAnd how should I presume?\n\nAnd I have known the arms already, known them all⁠—\nArms that are braceleted and white and bare\n(But in the lamplight, downed with light brown hair!)\nIs it perfume from a dress\nThat makes me so digress?\nArms that lie along a table, or wrap about a shawl.\nAnd should I then presume?\nAnd how should I begin?\n\nShall I say, I have gone at dusk through narrow streets\nAnd watched the smoke that rises from the pipes\nOf lonely men in shirtsleeves, leaning out of windows?⁠ ⁠…\n\nI should have been a pair of ragged claws\nScuttling across the floors of silent seas.\n\nAnd the afternoon, the evening, sleeps so peacefully!\nSmoothed by long fingers,\nAsleep⁠ ⁠… tired⁠ ⁠… or it malingers.\nStretched on the floor, here beside you and me.\nShould I, after tea and cakes and ices,\nHave the strength to force the moment to its crisis?\nBut though I have wept and fasted, wept and prayed,\nThough I have seen my head (grown slightly bald) brought in upon a platter,\nI am no prophet⁠—and here’s no great matter;\nI have seen the moment of my greatness flicker,\nAnd I have seen the eternal Footman hold my coat, and snicker,\nAnd in short, I was afraid.\n\nAnd would it have been worth it, after all,\nAfter the cups, the marmalade, the tea,\nAmong the porcelain, among some talk of you and me,\nWould it have been worth while,\nTo have bitten off the matter with a smile,\nTo have squeezed the universe into a ball\nTo roll it toward some overwhelming question,\nTo say: “I am Lazarus, come from the dead,\nCome back to tell you all, I shall tell you all”⁠—\nIf one, settling a pillow by her head,\nShould say: “That is not what I meant at all;\nThat is not it, at all.”\n\nAnd would it have been worth it, after all,\nWould it have been worth while,\nAfter the sunsets and the dooryards and the sprinkled streets,\nAfter the novels, after the teacups, after the skirts that trail along the floor⁠—\nAnd this, and so much more?⁠—\nIt is impossible to say just what I mean!\nBut as if a magic lantern threw the nerves in patterns on a screen:\nWould it have been worth while\nIf one, settling a pillow or throwing off a shawl,\nAnd turning toward the window, should say:\n“That is not it at all,\nThat is not what I meant, at all.”\n\nNo! I am not Prince Hamlet, nor was meant to be;\nAm an attendant lord, one that will do\nTo swell a progress, start a scene or two,\nAdvise the prince; no doubt, an easy tool,\nDeferential, glad to be of use,\nPolitic, cautious, and meticulous;\nFull of high sentence, but a bit obtuse;\nAt times, indeed, almost ridiculous⁠—\nAlmost, at times, the Fool.\n\nI grow old⁠ ⁠… I grow old⁠ ⁠…\nI shall wear the bottoms of my trousers rolled.\n\nShall I part my hair behind? Do I dare to eat a peach?\nI shall wear white flannel trousers, and walk upon the beach.\nI have heard the mermaids singing, each to each.\n\nI do not think that they will sing to me.\n\nI have seen them riding seaward on the waves\nCombing the white hair of the waves blown back\nWhen the wind blows the water white and black.\n\nWe have lingered in the chambers of the sea\nBy sea-girls wreathed with seaweed red and brown\nTill human voices wake us, and we drown.\n\nPortrait of a Lady\n\nThou hast committed⁠—\nFornication: but that was in another country,\nAnd besides, the wench is dead.\n\nThe Jew of Malta\n\nI"
+}

@@ -1,0 +1,64 @@
+{
+  "id": "hughes-harlem-1951",
+  "type": "poem",
+  "title": "Harlem",
+  "author": "Langston Hughes",
+  "year": 1951,
+  "era": "mid_20th_century",
+  "form": "free verse, short lyric built on a rhetorical question",
+  "themes": ["race", "desire", "the-city"],
+  "tags": ["montage-of-a-dream-deferred", "harlem-renaissance-legacy", "needs-text"],
+  "length": { "unit": "lines", "value": 11 },
+  "difficulty": 2,
+  "source": {
+    "name": "Langston Hughes, Montage of a Dream Deferred (Henry Holt, 1951); rights held by the Langston Hughes estate",
+    "url": "https://www.poetryfoundation.org/poets/langston-hughes",
+    "license": "all-rights-reserved",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "pending",
+  "externalLinks": [
+    {
+      "kind": "poetry-foundation",
+      "url": "https://www.poetryfoundation.org/search?q=Harlem+Langston+Hughes+dream+deferred",
+      "label": "Search Poetry Foundation for this poem"
+    },
+    {
+      "kind": "bookstore",
+      "url": "https://bookshop.org/search?keywords=Montage+of+a+Dream+Deferred+Langston+Hughes",
+      "label": "Find Montage of a Dream Deferred at Bookshop.org"
+    }
+  ],
+  "masterNotes": {
+    "context": "Hughes wrote this poem for *Montage of a Dream Deferred* (1951), a book-length sequence built to evoke, in his own description, the broken, syncopated feel of bebop jazz rather than a single continuous argument. It arrived well after the Harlem Renaissance of the 1920s that had made Hughes famous, at a moment when the postwar promises of prosperity and full citizenship were visibly not reaching Black America, and Harlem itself had shifted from the symbol of cultural flowering it had been decades earlier to a neighborhood facing overcrowding and disinvestment. The poem takes as its subject a single unanswered question about what happens to a postponed hope, and it has since become one of the most frequently taught and quoted short poems in American literature, cited everywhere from classrooms to the title of a Lorraine Hansberry play.",
+    "form": "The poem is built almost entirely from a series of similes answering one opening question, each proposing a different fate for a deferred dream, before ending on a final, isolated line set off in italics that breaks from the pattern the earlier lines established. Hughes's line lengths are short and irregular, closer to spoken rhythm or jazz phrasing than to a fixed meter, which fits the poem's place inside a sequence explicitly modeled on bebop's broken, additive structure. The poem never answers its own question directly; it only offers possibilities, and the final line's shift in form, rather than content, is where the poem lands its full weight.",
+    "keyImages": [
+      "The central comparison of a deferred dream to dried-out fruit, an image of something that was once fresh curdling from neglect rather than being destroyed outright.",
+      "The image of a load being carried until it becomes unbearable, shifting the poem from private disappointment toward the possibility of collective consequence.",
+      "The poem's closing line, visually and rhythmically set apart from everything before it, the one moment the question format breaks down entirely."
+    ],
+    "whatToNotice": [
+      "Notice that the poem is structured as a single question followed entirely by proposed answers, none of them confirmed as correct.",
+      "Notice how the similes escalate in intensity as the poem goes on, moving from images of decay toward images of danger.",
+      "Notice the formatting of the final line — it stands apart from the rest of the poem visually as well as rhythmically.",
+      "Notice how short each line is, and consider what effect that clipped, jazz-influenced phrasing has on how quickly you read the poem."
+    ],
+    "discussionQuestions": [
+      "Why might Hughes end on a question that breaks from the poem's own pattern of similes rather than resolving it?",
+      "How does the poem's placement within a book modeled on jazz and bebop change how its short, fragmented form should be read?",
+      "Is the \"dream\" in the poem a specifically Black American aspiration, a more universal one, or does the poem depend on holding both readings open?",
+      "What is the effect of answering a serious question with a series of everyday, domestic images rather than abstract language?"
+    ],
+    "furtherReading": [
+      "*Montage of a Dream Deferred* (full sequence) — for how this poem functions as one movement within Hughes's larger jazz-structured book.",
+      "Lorraine Hansberry, *A Raisin in the Sun* — a play whose title is drawn directly from this poem's opening image.",
+      "Langston Hughes, \"The Negro Artist and the Racial Mountain\" — Hughes's earlier essay on the pressures facing a Black writer's subject matter, useful context for this later, harder-edged poem."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed-b",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}

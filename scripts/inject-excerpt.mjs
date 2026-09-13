@@ -461,11 +461,16 @@ export async function injectExcerpt(options) {
     }
   }
   const fullText = texts.join('\n\n');
-  const totalWords = countWords(fullText);
+  let totalWords = countWords(fullText);
 
   let excerptWordCount = null;
   if (mode === 'full') {
-    work.text = fullText;
+    const trimmed =
+      start || end
+        ? sliceExcerpt(fullText, { min: 0, max: Number.POSITIVE_INFINITY, start, end }).excerpt
+        : fullText;
+    totalWords = countWords(trimmed);
+    work.text = trimmed;
     delete work.excerpt;
     delete work.excerptNote;
   } else {

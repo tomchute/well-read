@@ -1,0 +1,81 @@
+{
+  "id": "donne-death-be-not-proud-1633",
+  "type": "poem",
+  "title": "Death, be not proud (Holy Sonnet X)",
+  "author": "John Donne",
+  "year": 1633,
+  "era": "renaissance",
+  "form": "sonnet, metaphysical",
+  "themes": [
+    "death",
+    "mortality",
+    "faith"
+  ],
+  "tags": [
+    "holy-sonnets",
+    "divine-meditations",
+    "metaphysical-poetry",
+    "needs-link-verification"
+  ],
+  "length": {
+    "unit": "lines",
+    "value": 14
+  },
+  "difficulty": 4,
+  "source": {
+    "name": "Standard Ebooks (GitHub mirror)",
+    "url": "https://raw.githubusercontent.com/standardebooks/john-donne_poetry/master/src/epub/text/divine-poems.xhtml",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "full",
+  "externalLinks": [
+    {
+      "kind": "poetry-foundation",
+      "url": "https://www.poetryfoundation.org/search?q=Death+be+not+proud+John+Donne",
+      "label": "Search Poetry Foundation for this poem"
+    }
+  ],
+  "masterNotes": {
+    "context": "Donne wrote his Holy Sonnets, this one among them, around 1609–1610, in the years after he had abandoned an early ambition for court advancement and before he was ordained in the Church of England in 1615. He circulated them privately in manuscript; they were not printed until 1633, two years after his death, in the first collected edition of his *Poems*. This sonnet is conventionally numbered the tenth in that sequence, following the ordering long used in anthologies and classrooms. Donne had lived through serious illness and the deaths of several close family members by the time he wrote it, and the poem reads less like a settled theological position than an argument the speaker is actively working himself into believing, sentence by sentence, in real time.",
+    "form": "The poem is a direct address to a personified Death, structured as a single sustained argument across an Italian (Petrarchan) sonnet form, though Donne bends its octave/sestet logic to his own rhetorical needs. Each quatrain supplies a fresh reason Death has been overrated — a rest that resembles sleep, a servant to other, greater forces, a mere passage rather than an end — building toward the famous closing paradox, a final couplet that inverts the sonnet's addressee from feared power to condemned prisoner. The argumentative, almost legalistic momentum, characteristic of the metaphysical style, matters more here than any single image: the poem enacts persuasion rather than simply stating a conclusion.",
+    "keyImages": [
+      "Death addressed directly as a person the speaker can rebuke to its face, sustained across all fourteen lines rather than dropped after an opening apostrophe.",
+      "Death likened to rest and sleep, images the poem treats as pleasurable rather than fearsome, undercutting Death's claim to being anything worse than a nap.",
+      "Death recast as a servant of larger forces — chance, kings, and desperate men — stripping it of independent power rather than granting it any.",
+      "The closing paradox in which Death itself is said to die, the poem's rhetorical payoff after thirteen lines of buildup."
+    ],
+    "whatToNotice": [
+      "Notice that the poem opens by forbidding Death an emotion, pride, before it has offered a single argument — the rebuke comes first, the reasoning after.",
+      "Track how each quatrain adds one more argument rather than repeating the first; the poem accumulates its case instead of restating it.",
+      "Notice how often the poem compares Death to something ordinary and survivable, rather than describing Death's own terrors.",
+      "Watch the final couplet's grammar carefully — the poem's whole argument is compressed into a single reversal of subject and object.",
+      "Notice the sonnet never claims the speaker isn't afraid; it stages an argument against fear rather than an absence of it."
+    ],
+    "discussionQuestions": [
+      "Is the speaker fully convinced by his own argument, or does the poem's insistence suggest he is still working to persuade himself?",
+      "What is the effect of addressing Death directly, in the second person, rather than describing it from a distance?",
+      "How does comparing Death to sleep change the emotional register of the poem compared to more conventional images of Death as a reaper or destroyer?",
+      "Does the poem's confidence depend on its Christian framework, or could a reader without that belief still find the argument persuasive on its own terms?"
+    ],
+    "furtherReading": [
+      "Donne's other Holy Sonnets (e.g. \"Batter my heart, three-personed God\") — for the same argumentative intensity turned toward a pleading rather than defiant address.",
+      "John Donne, sermon \"Death's Duel\" — his final sermon, delivered while visibly dying, on a related but far darker view of mortality.",
+      "Helen Gardner (ed.), *The Divine Poems of John Donne* — the standard scholarly edition and textual history of this sequence."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed-b",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  },
+  "ebookLinks": [
+    {
+      "provider": "standard-ebooks",
+      "format": "epub",
+      "url": "https://standardebooks.org/ebooks/john-donne/poetry/downloads/john-donne_poetry.epub"
+    }
+  ],
+  "text": "Death, be not proud, though some have called thee\nMighty and dreadful, for thou art not so;\nFor those, whom thou think’st thou dost overthrow,\nDie not, poor Death, nor yet canst thou kill me.\nFrom rest and sleep, which but thy picture be,\nMuch pleasure, then from thee much more must flow,\nAnd soonest our best men with thee do go,\nRest of their bones, and soul’s delivery.\nThou’rt slave to Fate, chance, kings, and desperate men,\nAnd dost with poison, war, and sickness dwell,\nAnd poppy, or charms can make us sleep as well,\nAnd better than thy stroke; why swell’st thou then?\nOne short sleep past, we wake eternally,\nAnd Death shall be no more; Death, thou shalt die.\n\nXI"
+}

@@ -1,0 +1,84 @@
+{
+  "id": "ibsen-a-dolls-house-1879",
+  "type": "play",
+  "title": "A Doll's House",
+  "author": "Henrik Ibsen",
+  "year": 1879,
+  "era": "19th_century",
+  "form": "play in three acts (prose realist drama)",
+  "themes": [
+    "gender",
+    "family",
+    "power",
+    "home",
+    "doubt"
+  ],
+  "tags": [
+    "needs-anchor-recheck",
+    "needs-link-verification",
+    "translation",
+    "norwegian-literature"
+  ],
+  "length": {
+    "unit": "pages",
+    "value": 90
+  },
+  "difficulty": 3,
+  "source": {
+    "name": "Standard Ebooks (GitHub mirror)",
+    "url": "https://raw.githubusercontent.com/standardebooks/henrik-ibsen_a-dolls-house_r-farquharson-sharp/master/src/epub/text/act-1.xhtml",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "excerpt",
+  "ebookLinks": [
+    {
+      "provider": "gutenberg",
+      "format": "html",
+      "url": "https://www.gutenberg.org/ebooks/2542"
+    }
+  ],
+  "externalLinks": [
+    {
+      "kind": "other",
+      "url": "https://en.wikipedia.org/wiki/A_Doll%27s_House",
+      "label": "Background at Wikipedia"
+    }
+  ],
+  "masterNotes": {
+    "context": "Ibsen wrote *A Doll's House* in Danish-Norwegian in 1879, midway through a run of prose \"problem plays\" that turned away from his earlier verse dramas to examine contemporary middle-class life. Set in a Norwegian household at Christmastime, it became one of the founding texts of modern realist theater and provoked immediate controversy over its treatment of marriage and a wife's independence, controversy sharp enough that some European productions were staged with an altered ending against Ibsen's wishes. R. Farquharson Sharp's early-twentieth-century English translation, used here, remains one of the most widely read public-domain versions. The play opens on Nora Helmer returning home with Christmas shopping, just as her husband Torvald has secured a promotion that will finally ease the household's finances.",
+    "form": "Ibsen builds the play from detailed stage directions and naturalistic dialogue confined to a single household set, letting backstory emerge gradually through conversation rather than exposition or monologue. The opening exchange between Nora and Torvald is built almost entirely from small domestic business, arriving home, tidying parcels, a private treat quickly hidden, establishing rhythm and character before any larger conflict is named. Torvald's habit of addressing Nora with affectionate diminutives, heard from his very first lines, does quiet double duty, sounding like tenderness while also marking exactly how he expects her to behave.",
+    "keyImages": [
+      "Nora hiding a bag of macaroons the moment she hears Torvald's study door, a small private rule-breaking established before he even enters.",
+      "Torvald's pet names for Nora, calling her his little skylark and his little squirrel, heard within his first lines onstage.",
+      "The Christmas tree Nora asks to have kept out of sight until it can be properly decorated, held in reserve for later in the scene.",
+      "The two characters' contrasting entrances: Nora arriving from outside, laden with parcels and humming, Torvald emerging from his study to correct and inquire."
+    ],
+    "whatToNotice": [
+      "Notice how quickly Torvald's opening lines settle into diminutives and gentle correction rather than plain conversation.",
+      "Notice Nora's small act of concealment with the macaroons, happening before any larger secret in the play is even hinted at.",
+      "Notice how much of the early dialogue turns on money, Torvald's new position, and what it will finally let the household afford.",
+      "Notice the difference in physical energy between Nora's entrance and Torvald's, and what that contrast suggests about each character's relationship to the household.",
+      "Notice that Nora's evident delight is tied specifically to financial security, not to the position itself."
+    ],
+    "discussionQuestions": [
+      "What does the teasing, affectionate tone of this opening exchange reveal, and what might it be covering over?",
+      "Why might Ibsen choose to open on a small domestic secret, the hidden macaroons, rather than a more overtly dramatic moment?",
+      "How do Torvald's pet names for Nora function here, and does their affection change how you read the control embedded in them?",
+      "What does Nora's happiness about the family's improved finances suggest about what security means to her at this point in the play?"
+    ],
+    "furtherReading": [
+      "Ibsen's *Hedda Gabler* — a bleaker study of a woman confined by social convention.",
+      "Ibsen's *Ghosts* — a companion play continuing debates this one provoked about marriage and inherited obligation.",
+      "George Bernard Shaw's *The Quintessence of Ibsenism* — an influential contemporary defense of Ibsen's realist method."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed-b",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  },
+  "excerpt": "Act I\n\nA room furnished comfortably and tastefully, but not extravagantly. At the back, a door to the right leads to the entrance hall, another to the left leads to Helmer’s study. Between the doors stands a piano. In the middle of the left-hand wall is a door, and beyond it a window. Near the window are a round table, armchairs and a small sofa. In the right-hand wall, at the farther end, another door; and on the same side, nearer the footlights, a stove, two easy chairs and a rocking chair; between the stove and the door, a small table. Engravings on the walls; a cabinet with china and other small objects; a small bookcase with well-bound books. The floors are carpeted, and a fire burns in the stove. It is winter.\n\nA bell rings in the hall; shortly afterwards the door is heard to open. Enter Nora, humming a tune and in high spirits. She is in outdoor dress and carries a number of parcels; these she lays on the table to the right. She leaves the outer door open after her, and through it is seen a Porter who is carrying a Christmas tree and a basket, which he gives to the Maid who has opened the door.\n\nNora\n\nHide the Christmas tree carefully, Helen. Be sure the children do not see it until this evening, when it is dressed. To the Porter, taking out her purse. How much?\n\nPorter\n\nSixpence.\n\nNora\n\nThere is a shilling. No, keep the change. The Porter thanks her, and goes out. Nora shuts the door. She is laughing to herself, as she takes off her hat and coat. She takes a packet of macaroons from her pocket and eats one or two; then goes cautiously to her husband’s door and listens. Yes, he is in. Still humming, she goes to the table on the right.\n\nHelmer\n\nCalls out from his room. Is that my little lark twittering out there?\n\nNora\n\nBusy opening some of the parcels. Yes, it is!\n\nHelmer\n\nIs it my little squirrel bustling about?\n\nNora\n\nYes!\n\nHelmer\n\nWhen did my squirrel come home?\n\nNora\n\nJust now. Puts the bag of macaroons into her pocket and wipes her mouth. Come in here, Torvald, and see what I have bought.\n\nHelmer\n\nDon’t disturb me. A little later, he opens the door and looks into the room, pen in hand. Bought, did you say? All these things? Has my little spendthrift been wasting money again?\n\nNora\n\nYes but, Torvald, this year we really can let ourselves go a little. This is the first Christmas that we have not needed to economise.\n\nHelmer\n\nStill, you know, we can’t spend money recklessly.\n\nNora\n\nYes, Torvald, we may be a wee bit more reckless now, mayn’t we? Just a tiny wee bit! You are going to have a big salary and earn lots and lots of money.\n\nHelmer\n\nYes, after the New Year; but then it will be a whole quarter before the salary is due.\n\nNora\n\nPooh! we can borrow until then.\n\nHelmer\n\nNora! Goes up to her and takes her playfully by the ear. The same little featherhead! Suppose, now, that I borrowed fifty pounds today, and you spent it all in the Christmas week, and then on New Year’s Eve a slate fell on my head and killed me, and⁠—\n\nNora\n\nPutting her hands over his mouth. Oh! don’t say such horrid things.\n\nHelmer\n\nStill, suppose that happened⁠—what then?\n\nNora\n\nIf that were to happen, I don’t suppose I should care whether I owed money or not.\n\nHelmer\n\nYes, but what about the people who had lent it?\n\nNora\n\nThey? Who would bother about them? I should not know who they were.\n\nHelmer\n\nThat is like a woman! But seriously, Nora, you know what I think about that. No debt, no borrowing. There can be no freedom or beauty about a home life that depends on borrowing and debt. We two have kept bravely on the straight road so far, and we will go on the same way for the short time longer that there need be any struggle.\n\nNora\n\nMoving towards the stove. As you please, Torvald.\n\nHelmer\n\nFollowing her. Come, come, my little skylark must not droop her wings. What is this! Is my little squirrel out of temper? Taking out his purse. Nora, what do you think I have got here?\n\nNora\n\nTurning round quickly. Money!\n\nHelmer\n\nThere you are. Gives her some money. Do you think I don’t know what a lot is wanted for housekeeping at Christmas-time?\n\nNora\n\nCounting. Ten shillings⁠—a pound⁠—two pounds! Thank you, thank you, Torvald; that will keep me going for a long time.\n\nHelmer\n\nIndeed it must.\n\nNora\n\nYes, yes, it will. But come here and let me show you what I have bought. And all so cheap! Look, here is a new suit for Ivar, and a sword; and a horse and a trumpet for Bob; and a doll and dolly’s bedstead for Emmy⁠—they are very plain, but anyway she will soon break them in pieces. And here are dress-lengths and handkerchiefs for the maids; old Anne ought really to have something better.\n\nHelmer\n\nAnd what is in this parcel?\n\nNora\n\nCrying out. No, no! you mustn’t see that until this evening.\n\nHelmer\n\nVery well. But now tell me, you extravagant little person, what would you like for yourself?\n\nNora\n\nFor myself? Oh, I am sure I don’t want anything.\n\nHelmer\n\nYes, but you must. Tell me something reasonable that you would particularly like to have.\n\nNora\n\nNo, I really can’t think of anything⁠—unless, Torvald⁠—\n\nHelmer\n\nWell?\n\nNora\n\nPlaying with his coat buttons, and without raising her eyes to his. If you really want to give me something, you might⁠—you might⁠—\n\nHelmer\n\nWell, out with it!\n\nNora\n\nSpeaking quickly. You might give me money, Torvald. Only just as much as you can afford; and then one of these days I will buy something with it.\n\nHelmer\n\nBut, Nora⁠—\n\nNora\n\nOh, do! dear Torvald; please, please do! Then I will wrap it up in beautiful gilt paper and hang it on the Christmas tree. Wouldn’t that be fun?\n\nHelmer\n\nWhat are little people called that are always wasting money?\n\nNora\n\nSpendthrifts⁠—I know. Let us do as you suggest, Torvald, and then I shall have time to think what I am most in want of. That is a very sensible plan, isn’t it?\n\nHelmer\n\nSmiling. Indeed it is⁠—that is to say, if you were really to save out of the money I give you, and then really buy something for yourself. But if you spend it all on the housekeeping and any number of unnecessary things, then I merely have to pay up again.\n\nNora\n\nOh but, Torvald⁠—\n\nHelmer\n\nYou can’t deny it, my dear little Nora. Puts his arm round her waist. It’s a sweet little spendthrift, but she uses up a deal of money. One would hardly believe how expensive such little persons are!\n\nNora\n\nIt’s a shame to say that. I do really save all I can.\n\nHelmer\n\nLaughing. That’s very true⁠—all you can. But you can’t save anything!\n\nNora\n\nSmiling quietly and happily. You haven’t any idea how many expenses we skylarks and squirrels have, Torvald.\n\nHelmer\n\nYou are an odd little soul. Very like your father. You always find some new way of wheedling money out of me, and, as soon as you have got it, it seems to melt in your hands. You never know where it has gone. Still, one must take you as you are. It is in the blood; for indeed it is true that you can inherit these things, Nora.\n\nNora\n\nAh, I wish I had inherited many of Papa’s qualities.\n\nHelmer\n\nAnd I would not wish you to be anything but just what you are, my sweet little skylark. But, do you know, it strikes me that you are looking rather⁠—what shall I say⁠—rather uneasy today?\n\nNora\n\nDo I?\n\nHelmer\n\nYou do, really. Look straight at me.\n\nNora\n\nLooks at him. Well?\n\nHelmer\n\nWagging his finger at her. Hasn’t Miss Sweet Tooth been breaking rules in town today?\n\nNora\n\nNo; what makes you think that?\n\nHelmer\n\nHasn’t she paid a visit to the confectioner’s?\n\nNora\n\nNo, I assure you, Torvald⁠—\n\nHelmer\n\nNot been nibbling sweets?\n\nNora\n\nNo, certainly not.\n\nHelmer\n\nNot even taken a bite at a macaroon or two?\n\nNora\n\nNo, Torvald, I assure you really⁠—\n\nHelmer\n\nThere, there, of course I was only joking.\n\nNora\n\nGoing to the table on the right. I should not think of going against your wishes.\n\nHelmer\n\nNo, I am sure of that; besides, you gave me your word⁠—Going up to her. Keep your little Christmas secrets to yourself, my darling. They will all be revealed tonight when the Christmas tree is lit, no doubt.\n\nNora\n\nDid you remember to invite Doctor Rank?\n\nHelmer",
+  "excerptNote": "Opening 1479 words of the work, ending at a paragraph break (source: raw.githubusercontent.com/standardebooks/henrik-ibsen_a-dolls-house_r-farquharson-sharp)"
+}

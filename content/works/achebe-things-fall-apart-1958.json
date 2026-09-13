@@ -1,0 +1,74 @@
+{
+  "id": "achebe-things-fall-apart-1958",
+  "type": "book",
+  "title": "Things Fall Apart",
+  "author": "Chinua Achebe",
+  "year": 1958,
+  "era": "mid_20th_century",
+  "form": "novel",
+  "themes": ["power", "family", "faith", "home"],
+  "tags": ["needs-text", "needs-anchor-recheck", "nigerian-literature", "igbo", "postcolonial-literature"],
+  "length": {
+    "unit": "words",
+    "value": 66000
+  },
+  "difficulty": 3,
+  "source": {
+    "name": "Things Fall Apart (Anchor Books / Penguin Random House edition)",
+    "url": "https://www.penguinrandomhouse.com/books/175055/things-fall-apart-by-chinua-achebe/",
+    "license": "all-rights-reserved",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "pending",
+  "externalLinks": [
+    {
+      "kind": "publisher",
+      "url": "https://www.penguinrandomhouse.com/books/175055/things-fall-apart-by-chinua-achebe/",
+      "label": "Publisher page (Anchor Books)"
+    },
+    {
+      "kind": "bookstore",
+      "url": "https://bookshop.org/search?keywords=Things%20Fall%20Apart%20Achebe",
+      "label": "Search Bookshop.org"
+    },
+    {
+      "kind": "library",
+      "url": "https://search.worldcat.org/search?q=Things%20Fall%20Apart%20Achebe",
+      "label": "Find a library copy on WorldCat"
+    }
+  ],
+  "masterNotes": {
+    "context": "Achebe published *Things Fall Apart* in 1958 while working for the Nigerian Broadcasting Corporation, writing in English but shaping the prose around Igbo speech rhythms and proverb. It became the founding text of modern African literature in English, launching Heinemann's African Writers Series and answering, deliberately, the flattened depictions of Africa in earlier European fiction Achebe later criticized directly in his own essays. The novel opens in the Igbo village of Umuofia before the arrival of European missionaries and administrators, introducing Okonkwo, a man whose standing rests on physical strength and discipline, and whose fear of resembling his gentle, indebted father, Unoka, shapes nearly everything he does.",
+    "form": "Achebe narrates in close but not fully interior third person, adopting the pacing and communal authority of oral storytelling within English prose, proverbs are woven into the narration itself, not only into dialogue, as a shared measure of wisdom. The opening chapter moves fluidly between Okonkwo's present standing in the village and an extended flashback into his father Unoka's life and death, delaying any forward action to first establish the values by which this community judges a man. Even Unoka's death is rendered in the same measured, unsensational register as everything else, a restraint that lets custom itself carry the emotional weight.",
+    "keyImages": [
+      "Okonkwo's fame from a wrestling match against Amalinze the Cat, still remembered by the village years afterward.",
+      "Unoka's flute-playing and mounting debts, presented as the opposite of everything Okonkwo has built his reputation on.",
+      "The account of Unoka's death from a swelling illness considered an abomination to the earth goddess, left to die in the Evil Forest without burial.",
+      "Okonkwo's visible impatience with anyone in his household who reminds him, even faintly, of his father."
+    ],
+    "whatToNotice": [
+      "Notice that Okonkwo is introduced entirely through reputation and comparison before the narration gives any direct physical description.",
+      "Notice how long the chapter lingers on Unoka before returning to Okonkwo's present life, and what that delay suggests about what shaped him.",
+      "Notice the proverbs offered as communal wisdom within the narration itself, not just as something a character says aloud.",
+      "Notice the specific, unsentimental detail given to the customs surrounding Unoka's death and burial.",
+      "Notice that the narrator names fear plainly as Okonkwo's central motivation, rather than leaving it for the reader to infer."
+    ],
+    "discussionQuestions": [
+      "How does opening with Okonkwo's reputation, rather than his private thoughts, shape your first understanding of him?",
+      "What does the extended account of Unoka's failures suggest about how Umuofia measures a man's worth?",
+      "How do the proverbs woven into the narration change the novel's voice compared to a more conventional English narrative style?",
+      "Beyond this excerpt: Okonkwo's fear of resembling his father recurs in his dealings with his own children later in the novel — what in this chapter already signals how costly that fear might become?"
+    ],
+    "furtherReading": [
+      "Chinua Achebe's essay \"An Image of Africa\" — his direct critique of Joseph Conrad's *Heart of Darkness*, useful context for what this novel was written to answer.",
+      "Achebe's *No Longer at Ease* — a loosely connected later novel following a descendant of this world into a colonial-era city.",
+      "Ezenwa-Ohaeto's *Chinua Achebe: A Biography* — a standard critical biography of the author."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed-b",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}

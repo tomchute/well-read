@@ -1,0 +1,74 @@
+{
+  "id": "borges-the-garden-of-forking-paths-1941",
+  "type": "short_story",
+  "title": "The Garden of Forking Paths",
+  "author": "Jorge Luis Borges",
+  "year": 1941,
+  "era": "mid_20th_century",
+  "form": "short story (metaphysical spy fiction)",
+  "themes": ["time", "war", "doubt", "wonder"],
+  "tags": ["needs-text", "needs-anchor-recheck", "needs-link-verification", "argentine-literature", "translation", "labyrinth"],
+  "difficulty": 4,
+  "length": {
+    "unit": "words",
+    "value": 5600
+  },
+  "source": {
+    "name": "Labyrinths: Selected Stories & Other Writings (New Directions, trans. Donald A. Yates)",
+    "url": "https://www.ndbooks.com/book/labyrinths/",
+    "license": "all-rights-reserved",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "pending",
+  "externalLinks": [
+    {
+      "kind": "publisher",
+      "url": "https://www.ndbooks.com/book/labyrinths/",
+      "label": "Publisher page (New Directions)"
+    },
+    {
+      "kind": "bookstore",
+      "url": "https://bookshop.org/search?keywords=Labyrinths%20Borges",
+      "label": "Search Bookshop.org"
+    },
+    {
+      "kind": "library",
+      "url": "https://search.worldcat.org/search?q=Labyrinths%20Borges",
+      "label": "Find a library copy on WorldCat"
+    }
+  ],
+  "masterNotes": {
+    "context": "Borges published this story in Spanish in 1941, later collected in *Ficciones* (1944); Donald A. Yates's English translation, used here, appeared in the 1962 anthology *Labyrinths*, the volume that introduced Borges to a wide English-language readership and shaped a generation of writers working in fabulist and postmodern modes. The story presents itself as a document from the First World War: a British historian's account of a delayed German artillery offensive, followed by a found statement from a Chinese scholar turned German spy, Yu Tsun, explaining what happened. The passage anchored here is the story's opening frame, before any of the spy plot itself unfolds.",
+    "form": "Borges opens the story as a nested document rather than as ordinary narration: an editorial historical note, citing a real-seeming work of military history, gives way to Yu Tsun's own first-person statement, itself introduced as incomplete. This framing device blurs documentary authority and invented testimony from the very first sentence, a technique Borges returns to across his fiction, and it primes the reader to distrust exactly the kind of fact-citing precision the story keeps offering.",
+    "keyImages": [
+      "The opening citation attributing to a historian's account of the war a detail about a delayed artillery offensive, presented with scholarly precision before any story proper begins.",
+      "The editorial note's claim that the first pages of Yu Tsun's statement are missing, so the reader enters an already incomplete account.",
+      "Yu Tsun identifying himself and his urgent circumstance in the opening lines of his own statement, contrasting sharply with the cool historical framing that precedes it.",
+      "The abrupt shift in register between the historian's detached citation and Yu Tsun's immediate, personal voice."
+    ],
+    "whatToNotice": [
+      "Notice that the story opens not with action but with a citation to a work of history, immediately blurring documented fact and invention.",
+      "Notice that the editorial note announces missing pages before Yu Tsun's account even starts, priming distrust of everything that follows.",
+      "Notice how quickly Yu Tsun states his own name and situation once his statement begins, compared to the impersonal historian's note before it.",
+      "Notice the contrast in tone between the clinical framing device and the urgent personal voice it introduces.",
+      "Notice how much authority the story borrows from the mere form of a citation and a footnote, before offering any evidence."
+    ],
+    "discussionQuestions": [
+      "What effect does opening with a citation to a real-seeming historical work have on how you read everything that follows?",
+      "Why might Borges have the editorial note announce missing pages before Yu Tsun's statement even begins?",
+      "How does framing personal testimony inside a scholarly-sounding footnote change the authority a reader grants it?",
+      "Beyond this excerpt: given that pages of Yu Tsun's statement are already missing, how much should a reader trust the account as it continues?"
+    ],
+    "furtherReading": [
+      "Borges's *Other Inquisitions* — nonfiction essays revisiting his recurring fascination with labyrinths and infinite branching structures.",
+      "Borges's story \"The Library of Babel\" — another metaphysical fiction built on an infinite, ordered structure.",
+      "Emir Rodríguez Monegal's *Jorge Luis Borges: A Literary Biography* — a standard critical biography."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed-b",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}
