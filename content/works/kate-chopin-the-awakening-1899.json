@@ -3,6 +3,8 @@
   "type": "book",
   "title": "The Awakening",
   "author": "Kate Chopin",
+  "authorGender": "woman",
+  "authorRegion": "US",
   "year": 1899,
   "era": "19th_century",
   "form": "novella",

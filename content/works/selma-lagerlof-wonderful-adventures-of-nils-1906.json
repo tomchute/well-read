@@ -3,6 +3,8 @@
   "type": "book",
   "title": "The Wonderful Adventures of Nils",
   "author": "Selma Lagerlöf",
+  "authorGender": "woman",
+  "authorRegion": "Sweden",
   "year": 1906,
   "era": "early_20th_century",
   "form": "novel, translated from Swedish by Velma Swanston Howard",

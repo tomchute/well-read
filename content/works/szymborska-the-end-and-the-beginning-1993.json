@@ -3,12 +3,26 @@
   "type": "poem",
   "title": "The End and the Beginning",
   "author": "Wisława Szymborska (translated by Stanisław Barańczak and Clare Cavanagh)",
+  "authorGender": "woman",
+  "authorRegion": "Poland",
   "year": 1993,
   "era": "contemporary",
   "form": "free verse, translated from Polish",
-  "themes": ["war", "memory", "time"],
-  "tags": ["translation", "poland", "postwar-europe", "needs-text"],
-  "length": { "unit": "lines", "value": 48 },
+  "themes": [
+    "war",
+    "memory",
+    "time"
+  ],
+  "tags": [
+    "translation",
+    "poland",
+    "postwar-europe",
+    "needs-text"
+  ],
+  "length": {
+    "unit": "lines",
+    "value": 48
+  },
   "difficulty": 3,
   "source": {
     "name": "Wisława Szymborska, \"Koniec i początek\" (1993), trans. Stanisław Barańczak and Clare Cavanagh, in View with a Grain of Sand: Selected Poems (Harcourt Brace, 1995); English translation copyright held separately from the Polish original by the translators/publisher",

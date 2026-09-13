@@ -3,12 +3,27 @@
   "type": "short_story",
   "title": "Interpreter of Maladies",
   "author": "Jhumpa Lahiri",
+  "authorGender": "woman",
+  "authorRegion": "US",
   "year": 1999,
   "era": "contemporary",
   "form": "contemporary short story",
-  "themes": ["language", "family", "migration", "desire"],
-  "tags": ["needs-text", "needs-link-verification", "pulitzer-prize", "diaspora"],
-  "length": { "unit": "words", "value": 8000 },
+  "themes": [
+    "language",
+    "family",
+    "migration",
+    "desire"
+  ],
+  "tags": [
+    "needs-text",
+    "needs-link-verification",
+    "pulitzer-prize",
+    "diaspora"
+  ],
+  "length": {
+    "unit": "words",
+    "value": 8000
+  },
   "difficulty": 3,
   "source": {
     "name": "Interpreter of Maladies (Houghton Mifflin, 1999)",

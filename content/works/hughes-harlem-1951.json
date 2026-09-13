@@ -3,12 +3,25 @@
   "type": "poem",
   "title": "Harlem",
   "author": "Langston Hughes",
+  "authorGender": "man",
+  "authorRegion": "US",
   "year": 1951,
   "era": "mid_20th_century",
   "form": "free verse, short lyric built on a rhetorical question",
-  "themes": ["race", "desire", "the-city"],
-  "tags": ["montage-of-a-dream-deferred", "harlem-renaissance-legacy", "needs-text"],
-  "length": { "unit": "lines", "value": 11 },
+  "themes": [
+    "race",
+    "desire",
+    "the-city"
+  ],
+  "tags": [
+    "montage-of-a-dream-deferred",
+    "harlem-renaissance-legacy",
+    "needs-text"
+  ],
+  "length": {
+    "unit": "lines",
+    "value": 11
+  },
   "difficulty": 2,
   "source": {
     "name": "Langston Hughes, Montage of a Dream Deferred (Henry Holt, 1951); rights held by the Langston Hughes estate",

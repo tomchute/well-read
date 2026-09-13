@@ -3,12 +3,27 @@
   "type": "poem",
   "title": "won't you celebrate with me",
   "author": "Lucille Clifton",
+  "authorGender": "woman",
+  "authorRegion": "US",
   "year": 1993,
   "era": "contemporary",
   "form": "free verse",
-  "themes": ["race", "gender", "mortality", "the-body"],
-  "tags": ["lowercase-style", "book-of-light", "needs-text", "needs-link-verification"],
-  "length": { "unit": "lines", "value": 14 },
+  "themes": [
+    "race",
+    "gender",
+    "mortality",
+    "the-body"
+  ],
+  "tags": [
+    "lowercase-style",
+    "book-of-light",
+    "needs-text",
+    "needs-link-verification"
+  ],
+  "length": {
+    "unit": "lines",
+    "value": 14
+  },
   "difficulty": 3,
   "source": {
     "name": "Lucille Clifton, The Book of Light (Copper Canyon Press, 1993)",

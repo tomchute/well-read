@@ -3,12 +3,27 @@
   "type": "poem",
   "title": "Remember",
   "author": "Christina Rossetti",
+  "authorGender": "woman",
+  "authorRegion": "UK",
   "year": 1849,
   "era": "19th_century",
   "form": "Petrarchan sonnet",
-  "themes": ["love", "death", "memory", "grief"],
-  "tags": ["sonnet", "volta", "pre-raphaelite-circle", "needs-link-verification"],
-  "length": { "unit": "lines", "value": 14 },
+  "themes": [
+    "love",
+    "death",
+    "memory",
+    "grief"
+  ],
+  "tags": [
+    "sonnet",
+    "volta",
+    "pre-raphaelite-circle",
+    "needs-link-verification"
+  ],
+  "length": {
+    "unit": "lines",
+    "value": 14
+  },
   "difficulty": 2,
   "source": {
     "name": "Christina Rossetti, Goblin Market and Other Poems (1862)",

@@ -3,6 +3,8 @@
   "type": "poem",
   "title": "Death, be not proud (Holy Sonnet X)",
   "author": "John Donne",
+  "authorGender": "man",
+  "authorRegion": "UK",
   "year": 1633,
   "era": "renaissance",
   "form": "sonnet, metaphysical",

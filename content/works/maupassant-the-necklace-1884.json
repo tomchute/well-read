@@ -3,6 +3,8 @@
   "type": "short_story",
   "title": "The Necklace",
   "author": "Guy de Maupassant",
+  "authorGender": "man",
+  "authorRegion": "France",
   "year": 1884,
   "era": "19th_century",
   "form": "short story with twist ending",

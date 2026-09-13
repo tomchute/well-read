@@ -3,6 +3,8 @@
   "type": "poem",
   "title": "Time does not bring relief; you all have lied",
   "author": "Edna St. Vincent Millay",
+  "authorGender": "woman",
+  "authorRegion": "US",
   "year": 1917,
   "era": "early_20th_century",
   "form": "sonnet, Petrarchan",

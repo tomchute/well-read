@@ -3,6 +3,8 @@
   "type": "play",
   "title": "A Doll's House",
   "author": "Henrik Ibsen",
+  "authorGender": "man",
+  "authorRegion": "Norway",
   "year": 1879,
   "era": "19th_century",
   "form": "play in three acts (prose realist drama)",

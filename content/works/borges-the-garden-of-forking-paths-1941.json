@@ -3,11 +3,25 @@
   "type": "short_story",
   "title": "The Garden of Forking Paths",
   "author": "Jorge Luis Borges",
+  "authorGender": "man",
+  "authorRegion": "Argentina",
   "year": 1941,
   "era": "mid_20th_century",
   "form": "short story (metaphysical spy fiction)",
-  "themes": ["time", "war", "doubt", "wonder"],
-  "tags": ["needs-text", "needs-anchor-recheck", "needs-link-verification", "argentine-literature", "translation", "labyrinth"],
+  "themes": [
+    "time",
+    "war",
+    "doubt",
+    "wonder"
+  ],
+  "tags": [
+    "needs-text",
+    "needs-anchor-recheck",
+    "needs-link-verification",
+    "argentine-literature",
+    "translation",
+    "labyrinth"
+  ],
   "difficulty": 4,
   "length": {
     "unit": "words",

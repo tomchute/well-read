@@ -3,6 +3,8 @@
   "type": "book",
   "title": "The Metamorphosis",
   "author": "Franz Kafka",
+  "authorGender": "man",
+  "authorRegion": "Austria-Hungary (Prague)",
   "year": 1915,
   "era": "early_20th_century",
   "form": "novella",

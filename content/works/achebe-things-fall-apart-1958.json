@@ -3,11 +3,24 @@
   "type": "book",
   "title": "Things Fall Apart",
   "author": "Chinua Achebe",
+  "authorGender": "man",
+  "authorRegion": "Nigeria",
   "year": 1958,
   "era": "mid_20th_century",
   "form": "novel",
-  "themes": ["power", "family", "faith", "home"],
-  "tags": ["needs-text", "needs-anchor-recheck", "nigerian-literature", "igbo", "postcolonial-literature"],
+  "themes": [
+    "power",
+    "family",
+    "faith",
+    "home"
+  ],
+  "tags": [
+    "needs-text",
+    "needs-anchor-recheck",
+    "nigerian-literature",
+    "igbo",
+    "postcolonial-literature"
+  ],
   "length": {
     "unit": "words",
     "value": 66000

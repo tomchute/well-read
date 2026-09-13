@@ -3,12 +3,27 @@
   "type": "poem",
   "title": "The Tyger",
   "author": "William Blake",
+  "authorGender": "man",
+  "authorRegion": "UK",
   "year": 1794,
   "era": "18th_century",
   "form": "lyric poem, Songs of Experience",
-  "themes": ["nature", "animals", "wonder", "power"],
-  "tags": ["songs-of-experience", "creation", "symmetry", "needs-link-verification"],
-  "length": { "unit": "lines", "value": 24 },
+  "themes": [
+    "nature",
+    "animals",
+    "wonder",
+    "power"
+  ],
+  "tags": [
+    "songs-of-experience",
+    "creation",
+    "symmetry",
+    "needs-link-verification"
+  ],
+  "length": {
+    "unit": "lines",
+    "value": 24
+  },
   "difficulty": 3,
   "source": {
     "name": "William Blake, Songs of Innocence and of Experience (1794)",

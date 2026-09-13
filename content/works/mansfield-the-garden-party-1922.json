@@ -3,6 +3,8 @@
   "type": "short_story",
   "title": "The Garden Party",
   "author": "Katherine Mansfield",
+  "authorGender": "woman",
+  "authorRegion": "New Zealand",
   "year": 1922,
   "era": "early_20th_century",
   "form": "modernist short story",

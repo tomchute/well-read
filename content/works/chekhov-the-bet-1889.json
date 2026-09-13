@@ -3,6 +3,8 @@
   "type": "short_story",
   "title": "The Bet",
   "author": "Anton Chekhov",
+  "authorGender": "man",
+  "authorRegion": "Russia",
   "year": 1889,
   "era": "19th_century",
   "form": "philosophical short story",

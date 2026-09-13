@@ -3,11 +3,23 @@
   "type": "book",
   "title": "The Remains of the Day",
   "author": "Kazuo Ishiguro",
+  "authorGender": "man",
+  "authorRegion": "UK",
   "year": 1989,
   "era": "contemporary",
   "form": "novel",
-  "themes": ["memory", "time", "work", "solitude", "doubt"],
-  "tags": ["british-literature", "booker-prize", "needs-text"],
+  "themes": [
+    "memory",
+    "time",
+    "work",
+    "solitude",
+    "doubt"
+  ],
+  "tags": [
+    "british-literature",
+    "booker-prize",
+    "needs-text"
+  ],
   "length": {
     "unit": "words",
     "value": 63000

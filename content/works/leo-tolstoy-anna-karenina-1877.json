@@ -3,6 +3,8 @@
   "type": "book",
   "title": "Anna Karenina",
   "author": "Leo Tolstoy",
+  "authorGender": "man",
+  "authorRegion": "Russia",
   "year": 1877,
   "era": "19th_century",
   "form": "novel, translated from Russian by Constance Garnett",

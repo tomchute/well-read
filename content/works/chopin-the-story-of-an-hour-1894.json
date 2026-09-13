@@ -3,6 +3,8 @@
   "type": "short_story",
   "title": "The Story of an Hour",
   "author": "Kate Chopin",
+  "authorGender": "woman",
+  "authorRegion": "US",
   "year": 1894,
   "era": "19th_century",
   "form": "short story",

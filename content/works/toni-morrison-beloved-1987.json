@@ -3,11 +3,24 @@
   "type": "book",
   "title": "Beloved",
   "author": "Toni Morrison",
+  "authorGender": "woman",
+  "authorRegion": "US",
   "year": 1987,
   "era": "contemporary",
   "form": "novel",
-  "themes": ["memory", "grief", "family", "race", "the-body"],
-  "tags": ["american-literature", "pulitzer-prize", "african-american-literature", "needs-text"],
+  "themes": [
+    "memory",
+    "grief",
+    "family",
+    "race",
+    "the-body"
+  ],
+  "tags": [
+    "american-literature",
+    "pulitzer-prize",
+    "african-american-literature",
+    "needs-text"
+  ],
   "length": {
     "unit": "words",
     "value": 110000

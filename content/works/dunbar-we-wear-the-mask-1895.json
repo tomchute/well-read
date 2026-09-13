@@ -3,12 +3,27 @@
   "type": "poem",
   "title": "We Wear the Mask",
   "author": "Paul Laurence Dunbar",
+  "authorGender": "man",
+  "authorRegion": "US",
   "year": 1895,
   "era": "19th_century",
   "form": "rondeau",
-  "themes": ["race", "grief", "power", "solitude"],
-  "tags": ["rondeau", "jim-crow-era", "concealment", "needs-link-verification"],
-  "length": { "unit": "lines", "value": 15 },
+  "themes": [
+    "race",
+    "grief",
+    "power",
+    "solitude"
+  ],
+  "tags": [
+    "rondeau",
+    "jim-crow-era",
+    "concealment",
+    "needs-link-verification"
+  ],
+  "length": {
+    "unit": "lines",
+    "value": 15
+  },
   "difficulty": 3,
   "source": {
     "name": "Paul Laurence Dunbar, Majors and Minors (1895)",

@@ -3,6 +3,8 @@
   "type": "poem",
   "title": "The Love Song of J. Alfred Prufrock",
   "author": "T. S. Eliot",
+  "authorGender": "man",
+  "authorRegion": "US",
   "year": 1915,
   "era": "early_20th_century",
   "form": "dramatic monologue, free verse with intermittent rhyme",

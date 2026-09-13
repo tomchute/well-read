@@ -3,12 +3,28 @@
   "type": "poem",
   "title": "Because I could not stop for Death",
   "author": "Emily Dickinson",
+  "authorGender": "woman",
+  "authorRegion": "US",
   "year": 1863,
   "era": "19th_century",
   "form": "lyric poem, ballad meter",
-  "themes": ["mortality", "time", "nature", "wonder"],
-  "tags": ["carriage", "afterlife", "personification", "franklin-479", "johnson-712"],
-  "length": { "unit": "lines", "value": 24 },
+  "themes": [
+    "mortality",
+    "time",
+    "nature",
+    "wonder"
+  ],
+  "tags": [
+    "carriage",
+    "afterlife",
+    "personification",
+    "franklin-479",
+    "johnson-712"
+  ],
+  "length": {
+    "unit": "lines",
+    "value": 24
+  },
   "difficulty": 2,
   "source": {
     "name": "Standard Ebooks — Emily Dickinson: Poems",
