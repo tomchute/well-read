@@ -1,0 +1,186 @@
+// Vitest cases for src/lib/components/steering.ts — see
+// docs/work-packages/WP-3.3-steering-bar.md. Covers chip list construction,
+// active-state derivation, label formatting, and that the `ChipAction`s our
+// helpers build actually flow through `applyChip` (the pure scoring API
+// SteeringBar.svelte calls when its `state` prop is bound).
+
+import { describe, expect, it } from 'vitest';
+import {
+  buildFormChips,
+  buildThemeChips,
+  CURATED_THEMES,
+  FORM_CATEGORIES,
+  formatThemeLabel,
+  isFormActive,
+  isThemeActive,
+  lessFormChip,
+  moreAboutThemeChip,
+  surpriseMeChip,
+} from '../src/lib/components/steering';
+import { applyChip } from '../src/lib/scoring/chips';
+import type { ScoringState, Weights } from '../src/lib/scoring/types';
+import { THEME_VOCABULARY } from '../src/lib/types/work';
+
+function zeroWeights(): Weights {
+  return { theme: {}, form: {}, era: {}, author: {} };
+}
+
+function emptyState(overrides: Partial<ScoringState> = {}): ScoringState {
+  return {
+    weights: zeroWeights(),
+    seen: {},
+    reactions: {},
+    sessionPins: [],
+    read: [],
+    ...overrides,
+  };
+}
+
+describe('formatThemeLabel', () => {
+  it('title-cases a single-word theme', () => {
+    expect(formatThemeLabel('love')).toBe('Love');
+  });
+
+  it('title-cases every hyphen-joined word, e.g. "the-city" -> "The City"', () => {
+    expect(formatThemeLabel('the-city')).toBe('The City');
+    expect(formatThemeLabel('art-making')).toBe('Art Making');
+  });
+});
+
+describe('CURATED_THEMES / FORM_CATEGORIES', () => {
+  it('every curated theme is a member of the controlled vocabulary', () => {
+    for (const theme of CURATED_THEMES) {
+      expect(THEME_VOCABULARY).toContain(theme);
+    }
+  });
+
+  it('is a curated subset — around 10 terms, fewer than the full 32-term vocabulary', () => {
+    expect(CURATED_THEMES.length).toBeGreaterThanOrEqual(8);
+    expect(CURATED_THEMES.length).toBeLessThan(THEME_VOCABULARY.length);
+  });
+
+  it('has exactly the five documented work categories: poems, stories, books, essays, plays', () => {
+    expect(FORM_CATEGORIES.map((f) => f.key)).toEqual([
+      'poem',
+      'short_story',
+      'book',
+      'essay',
+      'play',
+    ]);
+    expect(FORM_CATEGORIES.map((f) => f.label)).toEqual([
+      'poems',
+      'stories',
+      'books',
+      'essays',
+      'plays',
+    ]);
+  });
+});
+
+describe('isThemeActive / isFormActive', () => {
+  it('a theme is inactive at the default zero weight', () => {
+    expect(isThemeActive(zeroWeights(), 'love')).toBe(false);
+  });
+
+  it('a theme is active once its weight is positive', () => {
+    expect(isThemeActive({ ...zeroWeights(), theme: { love: 3 } }, 'love')).toBe(true);
+  });
+
+  it('a theme pushed negative (e.g. by "not interested") does not read as active', () => {
+    expect(isThemeActive({ ...zeroWeights(), theme: { love: -1 } }, 'love')).toBe(false);
+  });
+
+  it('a form is inactive at the default zero weight', () => {
+    expect(isFormActive(zeroWeights(), 'poem')).toBe(false);
+  });
+
+  it('a form is active once "less <form>" has pushed its weight negative', () => {
+    expect(isFormActive({ ...zeroWeights(), form: { poem: -2 } }, 'poem')).toBe(true);
+  });
+});
+
+describe('buildThemeChips', () => {
+  it('returns exactly the curated themes when collapsed, all inactive at zero weight', () => {
+    const chips = buildThemeChips(zeroWeights(), false);
+    expect(chips.map((c) => c.theme)).toEqual([...CURATED_THEMES]);
+    expect(chips.every((c) => c.active === false)).toBe(true);
+  });
+
+  it('marks a chip active once its theme has positive weight', () => {
+    const chips = buildThemeChips({ ...zeroWeights(), theme: { nature: 3 } }, false);
+    const nature = chips.find((c) => c.theme === 'nature');
+    expect(nature?.active).toBe(true);
+    expect(chips.filter((c) => c.active).length).toBe(1);
+  });
+
+  it('expanded includes the full controlled vocabulary, curated chips first and no duplicates', () => {
+    const chips = buildThemeChips(zeroWeights(), true);
+    expect(chips.length).toBe(THEME_VOCABULARY.length);
+    expect(chips.slice(0, CURATED_THEMES.length).map((c) => c.theme)).toEqual([...CURATED_THEMES]);
+    expect(new Set(chips.map((c) => c.theme)).size).toBe(THEME_VOCABULARY.length);
+  });
+
+  it('every chip label is a human-readable formatting of its theme', () => {
+    const chips = buildThemeChips(zeroWeights(), true);
+    for (const chip of chips) {
+      expect(chip.label).toBe(formatThemeLabel(chip.theme));
+    }
+  });
+});
+
+describe('buildFormChips', () => {
+  it('returns one chip per work category, inactive at zero weight', () => {
+    const chips = buildFormChips(zeroWeights());
+    expect(chips.map((c) => c.form)).toEqual(FORM_CATEGORIES.map((f) => f.key));
+    expect(chips.every((c) => c.active === false)).toBe(true);
+  });
+
+  it('marks only the form whose weight has been pushed negative as active', () => {
+    const chips = buildFormChips({ ...zeroWeights(), form: { short_story: -2 } });
+    expect(chips.find((c) => c.form === 'short_story')?.active).toBe(true);
+    expect(chips.filter((c) => c.active).length).toBe(1);
+  });
+});
+
+describe('chip action builders flow through applyChip', () => {
+  it('moreAboutThemeChip applies the documented +3 theme delta and pushes a session pin', () => {
+    const state = applyChip(emptyState(), moreAboutThemeChip('wonder'));
+    expect(state.weights.theme.wonder).toBe(3);
+    expect(state.sessionPins).toEqual([{ theme: 'wonder', strength: 3, appliedCount: 0 }]);
+
+    // The chip list built from the resulting weights now reads "active".
+    const chips = buildThemeChips(state.weights, false);
+    expect(chips.find((c) => c.theme === 'wonder')?.active).toBe(true);
+  });
+
+  it('lessFormChip applies the documented -2 form delta, floored at -5', () => {
+    let state = emptyState();
+    state = applyChip(state, lessFormChip('poem'));
+    state = applyChip(state, lessFormChip('poem'));
+    state = applyChip(state, lessFormChip('poem'));
+    state = applyChip(state, lessFormChip('poem'));
+    expect(state.weights.form.poem).toBe(-5);
+
+    const chips = buildFormChips(state.weights);
+    expect(chips.find((c) => c.form === 'poem')?.active).toBe(true);
+  });
+
+  it('surpriseMeChip resets weights and session pins without touching reactions/read', () => {
+    const dirty = emptyState({
+      weights: { theme: { love: 4 }, form: { poem: -3 }, era: {}, author: {} },
+      sessionPins: [{ theme: 'love', strength: 3, appliedCount: 1 }],
+      reactions: { 'author-title-1900': 1 },
+      read: ['author-title-1900'],
+    });
+
+    const state = applyChip(dirty, surpriseMeChip());
+
+    expect(state.weights).toEqual(zeroWeights());
+    expect(state.sessionPins).toEqual([]);
+    expect(state.reactions).toEqual({ 'author-title-1900': 1 });
+    expect(state.read).toEqual(['author-title-1900']);
+
+    const chips = buildThemeChips(state.weights, false);
+    expect(chips.every((c) => c.active === false)).toBe(true);
+  });
+});

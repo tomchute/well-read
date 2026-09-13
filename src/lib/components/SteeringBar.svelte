@@ -5,8 +5,7 @@
   // ("SteeringChip"). Standalone: does not import stores, the router, or
   // App.svelte — the caller supplies the current `ScoringState` and receives
   // every chip's `ChipAction` via `onchip`.
-  import { applyChip } from '$lib/scoring';
-  import type { ChipAction, ScoringState, Weights } from '$lib/scoring';
+  import { applyChip, type ChipAction, type ScoringState, type Weights } from '$lib/scoring';
   import {
     buildFormChips,
     buildThemeChips,
@@ -41,8 +40,24 @@
     }
   }
 
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
   function toggleExpanded() {
     expanded = !expanded;
+  }
+
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
+  function onThemeChipClick(theme: string) {
+    dispatch(moreAboutThemeChip(theme));
+  }
+
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
+  function onFormChipClick(form: string) {
+    dispatch(lessFormChip(form));
+  }
+
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
+  function onSurpriseClick() {
+    dispatch(surpriseMeChip());
   }
 </script>
 
@@ -55,7 +70,7 @@
           class="chip theme-chip"
           class:active={chip.active}
           aria-pressed={chip.active}
-          onclick={() => dispatch(moreAboutThemeChip(chip.theme))}
+          onclick={() => onThemeChipClick(chip.theme)}
         >
           {chip.label}
         </button>
@@ -79,7 +94,7 @@
           class="chip form-chip"
           class:active={chip.active}
           aria-pressed={chip.active}
-          onclick={() => dispatch(lessFormChip(chip.form))}
+          onclick={() => onFormChipClick(chip.form)}
         >
           Less {chip.label}
         </button>
@@ -87,7 +102,7 @@
     </div>
   </section>
 
-  <button type="button" class="chip surprise-chip" onclick={() => dispatch(surpriseMeChip())}>
+  <button type="button" class="chip surprise-chip" onclick={onSurpriseClick}>
     Surprise me
   </button>
 </div>
