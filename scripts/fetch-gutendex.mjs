@@ -7,42 +7,21 @@
  * Usage:
  *   node scripts/fetch-gutendex.mjs --search "Emily Dickinson" [--limit 10]
  *   node scripts/fetch-gutendex.mjs --author "Jane Austen" [--limit 5]
+ *
+ * @typedef {{name: string, birth_year: number|null, death_year: number|null}} GutendexAuthor
+ * @typedef {{id: number, title: string, authors: GutendexAuthor[], subjects: string[], formats: Record<string, string>}} GutendexResult
+ * @typedef {{count: number, results: GutendexResult[]}} GutendexResponse
+ * @typedef {{title: string, author: string|null, year: number|null, gutenbergId: number, subjects: string[], epubUrl: string|null, htmlUrl: string|null, sourceUrl: string}} Candidate
  */
 
 import { argv } from 'process';
 
 const BASE_URL = 'https://gutendex.com/books';
 
-interface GutendexAuthor {
-  name: string;
-  birth_year: number | null;
-  death_year: number | null;
-}
-
-interface GutendexResult {
-  id: number;
-  title: string;
-  authors: GutendexAuthor[];
-  subjects: string[];
-  formats: Record<string, string>;
-}
-
-interface GutendexResponse {
-  count: number;
-  results: GutendexResult[];
-}
-
-interface Candidate {
-  title: string;
-  author: string | null;
-  year: number | null;
-  gutenbergId: number;
-  subjects: string[];
-  epubUrl: string | null;
-  htmlUrl: string | null;
-  sourceUrl: string;
-}
-
+/**
+ * Parse command-line arguments
+ * @returns {{search: string, author: string, limit: number}}
+ */
 function parseArguments() {
   const args = {
     search: '',
@@ -66,7 +45,12 @@ function parseArguments() {
   return args;
 }
 
-function buildQueryUrl(args: typeof parseArguments()): string {
+/**
+ * Build the query URL for Gutendex API
+ * @param {ReturnType<typeof parseArguments>} args
+ * @returns {string}
+ */
+function buildQueryUrl(args) {
   const params = new URLSearchParams();
 
   if (args.search) {
@@ -75,13 +59,15 @@ function buildQueryUrl(args: typeof parseArguments()): string {
     params.append('search', args.author);
   }
 
-  // Fetch more than limit to account for filtering
-  params.append('topic', 'limit=' + (args.limit * 2));
-
   return `${BASE_URL}?${params.toString()}`;
 }
 
-function extractCandidate(result: GutendexResult): Candidate | null {
+/**
+ * Extract and transform a Gutendex result into a candidate object
+ * @param {GutendexResult} result
+ * @returns {Candidate|null}
+ */
+function extractCandidate(result) {
   try {
     // Required fields
     if (!result.id || !result.title) {
@@ -92,8 +78,8 @@ function extractCandidate(result: GutendexResult): Candidate | null {
     }
 
     // Author extraction
-    let author: string | null = null;
-    let year: number | null = null;
+    let author = null;
+    let year = null;
 
     if (result.authors && result.authors.length > 0) {
       const firstAuthor = result.authors[0];
@@ -134,6 +120,9 @@ function extractCandidate(result: GutendexResult): Candidate | null {
   }
 }
 
+/**
+ * Main function: fetch and process candidates from Gutendex
+ */
 async function main() {
   const args = parseArguments();
 
@@ -154,14 +143,14 @@ async function main() {
       process.exit(1);
     }
 
-    const data: GutendexResponse = await response.json();
+    const data = await response.json();
 
     if (!data.results || !Array.isArray(data.results)) {
       console.error('[ERROR] Invalid response from Gutendex API: missing results array');
       process.exit(1);
     }
 
-    const candidates: Candidate[] = [];
+    const candidates = [];
 
     for (const result of data.results) {
       if (candidates.length >= args.limit) break;

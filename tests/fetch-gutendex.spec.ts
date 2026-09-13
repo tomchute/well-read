@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 describe('fetch-gutendex', () => {
   beforeEach(() => {
@@ -24,10 +24,8 @@ describe('fetch-gutendex', () => {
           subjects: ['American fiction', 'Women -- Poetry'],
           formats: {
             'text/html': 'https://www.gutenberg.org/files/694/694-h/694-h.htm',
-            'application/epub+zip':
-              'https://www.gutenberg.org/ebooks/694.epub.images',
-            'application/x-mobipocket-ebook':
-              'https://www.gutenberg.org/ebooks/694.kindle.images',
+            'application/epub+zip': 'https://www.gutenberg.org/ebooks/694.epub.images',
+            'application/x-mobipocket-ebook': 'https://www.gutenberg.org/ebooks/694.kindle.images',
           },
         },
         {
@@ -42,10 +40,8 @@ describe('fetch-gutendex', () => {
           ],
           subjects: ['Poetry', 'American poetry'],
           formats: {
-            'text/html':
-              'https://www.gutenberg.org/files/11992/11992-h/11992-h.htm',
-            'application/epub+zip':
-              'https://www.gutenberg.org/ebooks/11992.epub.images',
+            'text/html': 'https://www.gutenberg.org/files/11992/11992-h/11992-h.htm',
+            'application/epub+zip': 'https://www.gutenberg.org/ebooks/11992.epub.images',
           },
         },
       ],
@@ -105,10 +101,7 @@ describe('fetch-gutendex', () => {
 
     let author: string | null = null;
 
-    if (
-      resultWithoutAuthors.authors &&
-      resultWithoutAuthors.authors.length > 0
-    ) {
+    if (resultWithoutAuthors.authors && resultWithoutAuthors.authors.length > 0) {
       author = resultWithoutAuthors.authors[0].name || null;
     }
 
