@@ -13,7 +13,7 @@ Verification: `npm run dev` boots, `npm run build` passes, a push to `main` depl
 - [x] [WP-0.2](docs/work-packages/WP-0.2-pages-deploy-workflow.md) GitHub Pages deploy workflow
 - [x] [WP-0.3](docs/work-packages/WP-0.3-ci-workflow.md) CI workflow: validate content + tests on every push
 - [x] [WP-0.4](docs/work-packages/WP-0.4-biome-tsconfig.md) Biome lint/format + strict tsconfig
-- [ ] [WP-0.5](docs/work-packages/WP-0.5-vitest-smoke.md) Vitest setup + smoke test
+- [x] [WP-0.5](docs/work-packages/WP-0.5-vitest-smoke.md) Vitest setup + smoke test
 
 ## Phase 1 — Content schema + seed batch
 Verification: `npm run validate:content` passes on the seed works and fails on the bad fixtures; `npm run build:manifest` emits `public/data/manifest.json` + shards.
