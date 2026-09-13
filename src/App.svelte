@@ -182,7 +182,7 @@
 
 <div class="shell" class:fill={current.name === 'feed'}>
   <header class="header">
-    <h1 class="app-name-heading"><a class="app-name" href="#/">well-read</a></h1>
+    <h1 class="app-name-heading"><a class="app-name" href="#/">WellRead</a></h1>
 
     <nav class="nav" aria-label="Primary">
       <a href="#/" class:active={isActive('feed')} aria-current={isActive('feed') ? 'page' : undefined}>

@@ -15,8 +15,8 @@ export default defineConfig({
         enabled: false,
       },
       manifest: {
-        name: 'well-read',
-        short_name: 'well-read',
+        name: 'WellRead',
+        short_name: 'WellRead',
         description: 'A curated literature feed',
         start_url: '/well-read/',
         scope: '/well-read/',
