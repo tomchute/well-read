@@ -132,7 +132,7 @@ A documented takedown path exists for rights concerns (see `docs/editorial-polic
 
 ## Manifest index shape
 
-`public/data/manifest.json` is an array of entries containing only the text-free subset of `Work`, plus which shard holds the full record:
+`public/data/manifest.json` is an object `{ schemaVersion, generatedAt, count, shards, works }` where `works` is an array of entries containing only the text-free subset of `Work`, plus which shard holds the full record:
 
 ```ts
 interface ManifestEntry {

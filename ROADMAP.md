@@ -20,7 +20,7 @@ Verification: `npm run validate:content` passes on the seed works and fails on t
 
 - [x] [WP-1.1](docs/work-packages/WP-1.1-zod-schema-and-types.md) zod schema + TS types for `Work`
 - [ ] [WP-1.2](docs/work-packages/WP-1.2-validate-content-script.md) `validate-content.mjs` with good/bad fixtures
-- [ ] [WP-1.3](docs/work-packages/WP-1.3-build-manifest-script.md) `build-manifest.mjs` with sharding + dedupe warnings
+- [x] [WP-1.3](docs/work-packages/WP-1.3-build-manifest-script.md) `build-manifest.mjs` with sharding + dedupe warnings
 - [x] [WP-1.4](docs/work-packages/WP-1.4-fetch-gutendex.md) `fetch-gutendex.mjs`
 - [x] [WP-1.5](docs/work-packages/WP-1.5-fetch-standard-ebooks.md) `fetch-standard-ebooks.mjs` (OPDS)
 - [x] [WP-1.6](docs/work-packages/WP-1.6-fetch-poetrydb.md) `fetch-poetrydb.mjs`
