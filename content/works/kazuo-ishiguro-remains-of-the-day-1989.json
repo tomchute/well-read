@@ -1,0 +1,86 @@
+{
+  "id": "kazuo-ishiguro-remains-of-the-day-1989",
+  "type": "book",
+  "title": "The Remains of the Day",
+  "author": "Kazuo Ishiguro",
+  "authorGender": "man",
+  "authorRegion": "UK",
+  "year": 1989,
+  "era": "contemporary",
+  "form": "novel",
+  "themes": [
+    "memory",
+    "time",
+    "work",
+    "solitude",
+    "doubt"
+  ],
+  "tags": [
+    "british-literature",
+    "booker-prize",
+    "needs-text"
+  ],
+  "length": {
+    "unit": "words",
+    "value": 63000
+  },
+  "difficulty": 3,
+  "source": {
+    "name": "Faber & Faber, first edition, 1989",
+    "url": "https://www.faber.co.uk/product/9780571258246-the-remains-of-the-day/",
+    "license": "all-rights-reserved",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "pending",
+  "externalLinks": [
+    {
+      "kind": "publisher",
+      "url": "https://www.faber.co.uk/product/9780571258246-the-remains-of-the-day/",
+      "label": "Publisher page (Faber & Faber)"
+    },
+    {
+      "kind": "bookstore",
+      "url": "https://bookshop.org/search?keywords=The%20Remains%20of%20the%20Day%20Ishiguro",
+      "label": "Search Bookshop.org"
+    },
+    {
+      "kind": "library",
+      "url": "https://search.worldcat.org/search?q=The%20Remains%20of%20the%20Day%20Ishiguro",
+      "label": "Find a library copy on WorldCat"
+    }
+  ],
+  "masterNotes": {
+    "context": "Ishiguro published *The Remains of the Day* in 1989, his third novel, and it won the Booker Prize that year; he received the Nobel Prize in Literature in 2017. The novel is narrated by Stevens, an English butler, in the form of a journal kept during a brief motoring trip through the West Country in 1956, a framing device that lets Ishiguro set Stevens's account of a single week against decades of service at Darlington Hall recalled in retrospect. The country-house setting and the interwar period Stevens repeatedly circles back to draw on a long English literary tradition of upstairs-downstairs fiction, which the novel uses while quietly working against its usual assumptions about whose account of events should be trusted. The book was adapted into a widely seen 1993 film, which considerably widened its readership beyond the audience for literary fiction.",
+    "form": "The novel is written entirely in Stevens's first-person voice, formal, self-monitoring, and given to abstraction exactly where feeling threatens to surface, so that the gap between what Stevens reports and what the reader infers becomes the book's primary source of meaning. The journal-entry structure lets present-tense travel observations trigger extended retrospective digressions with only light transitions, blurring 1956 and the 1920s-30s almost as freely as *Beloved* blurs its own past and present, though to very different ends. Ishiguro sustains dramatic irony throughout by keeping Stevens's professional vocabulary of \"dignity\" and \"greatness\" stable even as the events he recounts increasingly strain it.",
+    "keyImages": [
+      "Stevens's repeated, almost theoretical discussions of what makes a butler \"great,\" returned to at intervals as his private measure of a life well spent.",
+      "The now much-diminished staff at Darlington Hall under its new American owner, a small but persistent reminder of how much has already ended before the narration begins.",
+      "Miss Kenton's letter, which prompts Stevens's journey, read and reread by him for meanings he seems reluctant to state plainly.",
+      "The view from a Salisbury hillside partway through the trip, offered by a stranger as an image of English landscape's quiet, unspectacular greatness — a claim the novel lets sit uncommented on."
+    ],
+    "whatToNotice": [
+      "Notice how often Stevens explains or justifies a feeling in professional terms just after a moment that seems to call for a personal one.",
+      "Notice the vocabulary Stevens uses to define \"dignity\" and \"greatness,\" and track whether it stays consistent as the journey continues.",
+      "Pay attention to what Stevens chooses to report about his former employer, Lord Darlington, and what he declines to evaluate directly.",
+      "Notice the ordinary strangers Stevens meets on his trip, and how each conversation quietly tests a claim he has made about himself.",
+      "Track the handful of moments Stevens describes his own physical or emotional state without a professional framing, and notice how rare they are."
+    ],
+    "discussionQuestions": [
+      "What does Stevens's vocabulary of \"dignity\" and professional \"greatness\" allow him to avoid saying directly, and where does that strategy start to fail?",
+      "How does the frame of a short present-day journey change how you read the much longer stretch of remembered past it keeps interrupting?",
+      "What responsibility, if any, does the novel suggest Stevens bears for decisions made by Lord Darlington that he merely served?",
+      "How does the novel use ordinary strangers Stevens meets on the road to test or unsettle his own account of himself?"
+    ],
+    "furtherReading": [
+      "Kazuo Ishiguro's *Never Let Me Go* — another novel built on a narrator whose calm, controlled voice conceals more than it states.",
+      "P. G. Wodehouse's Jeeves stories — an earlier, comic use of the English butler figure that this novel's premise quietly answers.",
+      "Ishiguro's Nobel Prize lecture, \"My Twentieth Century Evening and Other Small Breakthroughs\" — his own account of the concerns running through his fiction."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}

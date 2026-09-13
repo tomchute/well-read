@@ -1,0 +1,840 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-13",
+  "count": 30,
+  "shards": 1,
+  "works": [
+    {
+      "id": "achebe-things-fall-apart-1958",
+      "title": "Things Fall Apart",
+      "author": "Chinua Achebe",
+      "year": 1958,
+      "era": "mid_20th_century",
+      "type": "book",
+      "form": "novel",
+      "themes": [
+        "power",
+        "family",
+        "faith",
+        "home"
+      ],
+      "tags": [
+        "needs-text",
+        "needs-anchor-recheck",
+        "nigerian-literature",
+        "igbo",
+        "postcolonial-literature"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "words",
+        "value": 66000
+      },
+      "textPolicy": "pending",
+      "shard": 0
+    },
+    {
+      "id": "adichie-the-thing-around-your-neck-2009",
+      "title": "The Thing Around Your Neck",
+      "author": "Chimamanda Ngozi Adichie",
+      "year": 2009,
+      "era": "contemporary",
+      "type": "short_story",
+      "form": "short story, second-person narration",
+      "themes": [
+        "migration",
+        "exile",
+        "home",
+        "solitude"
+      ],
+      "tags": [
+        "diaspora",
+        "second-person",
+        "needs-text"
+      ],
+      "difficulty": 2,
+      "length": {
+        "unit": "words",
+        "value": 4300
+      },
+      "textPolicy": "pending",
+      "shard": 0
+    },
+    {
+      "id": "blake-the-tyger-1794",
+      "title": "The Tyger",
+      "author": "William Blake",
+      "year": 1794,
+      "era": "18th_century",
+      "type": "poem",
+      "form": "lyric poem, Songs of Experience",
+      "themes": [
+        "nature",
+        "animals",
+        "wonder",
+        "power"
+      ],
+      "tags": [
+        "songs-of-experience",
+        "creation",
+        "symmetry",
+        "needs-link-verification"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "lines",
+        "value": 24
+      },
+      "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "borges-the-garden-of-forking-paths-1941",
+      "title": "The Garden of Forking Paths",
+      "author": "Jorge Luis Borges",
+      "year": 1941,
+      "era": "mid_20th_century",
+      "type": "short_story",
+      "form": "short story (metaphysical spy fiction)",
+      "themes": [
+        "time",
+        "war",
+        "doubt",
+        "wonder"
+      ],
+      "tags": [
+        "needs-text",
+        "needs-anchor-recheck",
+        "needs-link-verification",
+        "argentine-literature",
+        "translation",
+        "labyrinth"
+      ],
+      "difficulty": 4,
+      "length": {
+        "unit": "words",
+        "value": 5600
+      },
+      "textPolicy": "pending",
+      "shard": 0
+    },
+    {
+      "id": "chekhov-the-bet-1889",
+      "title": "The Bet",
+      "author": "Anton Chekhov",
+      "year": 1889,
+      "era": "19th_century",
+      "type": "short_story",
+      "form": "philosophical short story",
+      "themes": [
+        "solitude",
+        "time",
+        "doubt",
+        "wonder"
+      ],
+      "tags": [
+        "needs-link-verification",
+        "parable",
+        "translation",
+        "russia"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "words",
+        "value": 3400
+      },
+      "textPolicy": "excerpt",
+      "shard": 0
+    },
+    {
+      "id": "chopin-the-story-of-an-hour-1894",
+      "title": "The Story of an Hour",
+      "author": "Kate Chopin",
+      "year": 1894,
+      "era": "19th_century",
+      "type": "short_story",
+      "form": "short story",
+      "themes": [
+        "death",
+        "gender",
+        "family",
+        "power"
+      ],
+      "tags": [
+        "needs-link-verification",
+        "irony",
+        "american-realism"
+      ],
+      "difficulty": 2,
+      "length": {
+        "unit": "words",
+        "value": 1000
+      },
+      "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "clifton-wont-you-celebrate-with-me-1993",
+      "title": "won't you celebrate with me",
+      "author": "Lucille Clifton",
+      "year": 1993,
+      "era": "contemporary",
+      "type": "poem",
+      "form": "free verse",
+      "themes": [
+        "race",
+        "gender",
+        "mortality",
+        "the-body"
+      ],
+      "tags": [
+        "lowercase-style",
+        "book-of-light",
+        "needs-text",
+        "needs-link-verification"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "lines",
+        "value": 14
+      },
+      "textPolicy": "pending",
+      "shard": 0
+    },
+    {
+      "id": "dickinson-because-i-could-not-stop-for-death-1863",
+      "title": "Because I could not stop for Death",
+      "author": "Emily Dickinson",
+      "year": 1863,
+      "era": "19th_century",
+      "type": "poem",
+      "form": "lyric poem, ballad meter",
+      "themes": [
+        "mortality",
+        "time",
+        "nature",
+        "wonder"
+      ],
+      "tags": [
+        "carriage",
+        "afterlife",
+        "personification",
+        "franklin-479",
+        "johnson-712"
+      ],
+      "difficulty": 2,
+      "length": {
+        "unit": "lines",
+        "value": 24
+      },
+      "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "donne-death-be-not-proud-1633",
+      "title": "Death, be not proud (Holy Sonnet X)",
+      "author": "John Donne",
+      "year": 1633,
+      "era": "renaissance",
+      "type": "poem",
+      "form": "sonnet, metaphysical",
+      "themes": [
+        "death",
+        "mortality",
+        "faith"
+      ],
+      "tags": [
+        "holy-sonnets",
+        "divine-meditations",
+        "metaphysical-poetry",
+        "needs-link-verification"
+      ],
+      "difficulty": 4,
+      "length": {
+        "unit": "lines",
+        "value": 14
+      },
+      "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "dorfman-death-and-the-maiden-1990",
+      "title": "Death and the Maiden",
+      "author": "Ariel Dorfman",
+      "year": 1990,
+      "era": "contemporary",
+      "type": "play",
+      "form": "three-character stage drama, single setting, real-time confrontation",
+      "themes": [
+        "justice",
+        "power",
+        "memory",
+        "doubt"
+      ],
+      "tags": [
+        "chile",
+        "truth-commission",
+        "needs-text"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "pages",
+        "value": 70
+      },
+      "textPolicy": "pending",
+      "shard": 0
+    },
+    {
+      "id": "douglass-what-to-the-slave-is-the-fourth-of-july-1852",
+      "title": "What to the Slave Is the Fourth of July?",
+      "author": "Frederick Douglass",
+      "year": 1852,
+      "era": "19th_century",
+      "type": "essay",
+      "form": "oration (public address)",
+      "themes": [
+        "justice",
+        "race",
+        "power",
+        "faith"
+      ],
+      "tags": [
+        "needs-link-verification",
+        "oratory",
+        "abolitionism",
+        "rochester"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "words",
+        "value": 9000
+      },
+      "textPolicy": "excerpt",
+      "shard": 0
+    },
+    {
+      "id": "dunbar-we-wear-the-mask-1895",
+      "title": "We Wear the Mask",
+      "author": "Paul Laurence Dunbar",
+      "year": 1895,
+      "era": "19th_century",
+      "type": "poem",
+      "form": "rondeau",
+      "themes": [
+        "race",
+        "grief",
+        "power",
+        "solitude"
+      ],
+      "tags": [
+        "rondeau",
+        "jim-crow-era",
+        "concealment",
+        "needs-link-verification"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "lines",
+        "value": 15
+      },
+      "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "eliot-the-love-song-of-j-alfred-prufrock-1915",
+      "title": "The Love Song of J. Alfred Prufrock",
+      "author": "T. S. Eliot",
+      "year": 1915,
+      "era": "early_20th_century",
+      "type": "poem",
+      "form": "dramatic monologue, free verse with intermittent rhyme",
+      "themes": [
+        "solitude",
+        "doubt",
+        "time",
+        "the-city"
+      ],
+      "tags": [
+        "modernism",
+        "interior-monologue",
+        "prufrock-and-other-observations",
+        "needs-link-verification"
+      ],
+      "difficulty": 4,
+      "length": {
+        "unit": "lines",
+        "value": 131
+      },
+      "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "frost-after-apple-picking-1914",
+      "title": "After Apple-Picking",
+      "author": "Robert Frost",
+      "year": 1914,
+      "era": "early_20th_century",
+      "type": "poem",
+      "form": "irregular rhymed lyric, dream-monologue",
+      "themes": [
+        "work",
+        "mortality",
+        "nature",
+        "seasons"
+      ],
+      "tags": [
+        "north-of-boston",
+        "harvest",
+        "sleep-and-death"
+      ],
+      "difficulty": 4,
+      "length": {
+        "unit": "lines",
+        "value": 42
+      },
+      "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "han-kang-the-vegetarian-2007",
+      "title": "The Vegetarian",
+      "author": "Han Kang",
+      "year": 2007,
+      "era": "contemporary",
+      "type": "book",
+      "form": "novel in three linked parts, told through the perspectives of the protagonist's family",
+      "themes": [
+        "the-body",
+        "power",
+        "family",
+        "illness"
+      ],
+      "tags": [
+        "man-booker-international",
+        "translation",
+        "needs-text"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "words",
+        "value": 47000
+      },
+      "textPolicy": "pending",
+      "shard": 0
+    },
+    {
+      "id": "hughes-harlem-1951",
+      "title": "Harlem",
+      "author": "Langston Hughes",
+      "year": 1951,
+      "era": "mid_20th_century",
+      "type": "poem",
+      "form": "free verse, short lyric built on a rhetorical question",
+      "themes": [
+        "race",
+        "desire",
+        "the-city"
+      ],
+      "tags": [
+        "montage-of-a-dream-deferred",
+        "harlem-renaissance-legacy",
+        "needs-text"
+      ],
+      "difficulty": 2,
+      "length": {
+        "unit": "lines",
+        "value": 11
+      },
+      "textPolicy": "pending",
+      "shard": 0
+    },
+    {
+      "id": "ibsen-a-dolls-house-1879",
+      "title": "A Doll's House",
+      "author": "Henrik Ibsen",
+      "year": 1879,
+      "era": "19th_century",
+      "type": "play",
+      "form": "play in three acts (prose realist drama)",
+      "themes": [
+        "gender",
+        "family",
+        "power",
+        "home",
+        "doubt"
+      ],
+      "tags": [
+        "needs-link-verification",
+        "translation",
+        "norwegian-literature"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "pages",
+        "value": 90
+      },
+      "textPolicy": "excerpt",
+      "shard": 0
+    },
+    {
+      "id": "kafka-the-metamorphosis-1915",
+      "title": "The Metamorphosis",
+      "author": "Franz Kafka",
+      "year": 1915,
+      "era": "early_20th_century",
+      "type": "book",
+      "form": "novella",
+      "themes": [
+        "family",
+        "work",
+        "the-body",
+        "illness",
+        "solitude"
+      ],
+      "tags": [
+        "needs-link-verification",
+        "german-literature",
+        "translation",
+        "prague"
+      ],
+      "difficulty": 5,
+      "length": {
+        "unit": "words",
+        "value": 22300
+      },
+      "textPolicy": "excerpt",
+      "shard": 0
+    },
+    {
+      "id": "kate-chopin-the-awakening-1899",
+      "title": "The Awakening",
+      "author": "Kate Chopin",
+      "year": 1899,
+      "era": "19th_century",
+      "type": "book",
+      "form": "novella",
+      "themes": [
+        "desire",
+        "gender",
+        "the-body",
+        "solitude",
+        "home"
+      ],
+      "tags": [
+        "american-literature",
+        "louisiana",
+        "creole-society"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "words",
+        "value": 32000
+      },
+      "textPolicy": "excerpt",
+      "shard": 0
+    },
+    {
+      "id": "kazuo-ishiguro-remains-of-the-day-1989",
+      "title": "The Remains of the Day",
+      "author": "Kazuo Ishiguro",
+      "year": 1989,
+      "era": "contemporary",
+      "type": "book",
+      "form": "novel",
+      "themes": [
+        "memory",
+        "time",
+        "work",
+        "solitude",
+        "doubt"
+      ],
+      "tags": [
+        "british-literature",
+        "booker-prize",
+        "needs-text"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "words",
+        "value": 63000
+      },
+      "textPolicy": "pending",
+      "shard": 0
+    },
+    {
+      "id": "lahiri-interpreter-of-maladies-1999",
+      "title": "Interpreter of Maladies",
+      "author": "Jhumpa Lahiri",
+      "year": 1999,
+      "era": "contemporary",
+      "type": "short_story",
+      "form": "contemporary short story",
+      "themes": [
+        "language",
+        "family",
+        "migration",
+        "desire"
+      ],
+      "tags": [
+        "needs-text",
+        "needs-link-verification",
+        "pulitzer-prize",
+        "diaspora"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "words",
+        "value": 8000
+      },
+      "textPolicy": "pending",
+      "shard": 0
+    },
+    {
+      "id": "leo-tolstoy-anna-karenina-1877",
+      "title": "Anna Karenina",
+      "author": "Leo Tolstoy",
+      "year": 1877,
+      "era": "19th_century",
+      "type": "book",
+      "form": "novel, translated from Russian by Constance Garnett",
+      "themes": [
+        "love",
+        "desire",
+        "family",
+        "gender",
+        "power"
+      ],
+      "tags": [
+        "russian-literature",
+        "translation",
+        "adultery-plot"
+      ],
+      "difficulty": 4,
+      "length": {
+        "unit": "words",
+        "value": 349000
+      },
+      "textPolicy": "excerpt",
+      "shard": 0
+    },
+    {
+      "id": "mansfield-the-garden-party-1922",
+      "title": "The Garden Party",
+      "author": "Katherine Mansfield",
+      "year": 1922,
+      "era": "early_20th_century",
+      "type": "short_story",
+      "form": "modernist short story",
+      "themes": [
+        "death",
+        "childhood",
+        "family"
+      ],
+      "tags": [
+        "needs-link-verification",
+        "modernism",
+        "new-zealand"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "words",
+        "value": 5800
+      },
+      "textPolicy": "excerpt",
+      "shard": 0
+    },
+    {
+      "id": "maupassant-the-necklace-1884",
+      "title": "The Necklace",
+      "author": "Guy de Maupassant",
+      "year": 1884,
+      "era": "19th_century",
+      "type": "short_story",
+      "form": "short story with twist ending",
+      "themes": [
+        "desire",
+        "work",
+        "time"
+      ],
+      "tags": [
+        "needs-link-verification",
+        "twist-ending",
+        "translation",
+        "paris"
+      ],
+      "difficulty": 2,
+      "length": {
+        "unit": "words",
+        "value": 3300
+      },
+      "textPolicy": "excerpt",
+      "shard": 0
+    },
+    {
+      "id": "millay-time-does-not-bring-relief-1917",
+      "title": "Time does not bring relief; you all have lied",
+      "author": "Edna St. Vincent Millay",
+      "year": 1917,
+      "era": "early_20th_century",
+      "type": "poem",
+      "form": "sonnet, Petrarchan",
+      "themes": [
+        "grief",
+        "memory",
+        "time"
+      ],
+      "tags": [
+        "renascence-and-other-poems",
+        "sonnet",
+        "needs-link-verification"
+      ],
+      "difficulty": 2,
+      "length": {
+        "unit": "lines",
+        "value": 14
+      },
+      "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "rossetti-remember-1849",
+      "title": "Remember",
+      "author": "Christina Rossetti",
+      "year": 1849,
+      "era": "19th_century",
+      "type": "poem",
+      "form": "Petrarchan sonnet",
+      "themes": [
+        "love",
+        "death",
+        "memory",
+        "grief"
+      ],
+      "tags": [
+        "sonnet",
+        "volta",
+        "pre-raphaelite-circle",
+        "needs-link-verification"
+      ],
+      "difficulty": 2,
+      "length": {
+        "unit": "lines",
+        "value": 14
+      },
+      "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "selma-lagerlof-wonderful-adventures-of-nils-1906",
+      "title": "The Wonderful Adventures of Nils",
+      "author": "Selma Lagerlöf",
+      "year": 1906,
+      "era": "early_20th_century",
+      "type": "book",
+      "form": "novel, translated from Swedish by Velma Swanston Howard",
+      "themes": [
+        "nature",
+        "animals",
+        "migration",
+        "home",
+        "wonder"
+      ],
+      "tags": [
+        "swedish-literature",
+        "nobel-laureate",
+        "translation"
+      ],
+      "difficulty": 2,
+      "length": {
+        "unit": "words",
+        "value": 130000
+      },
+      "textPolicy": "excerpt",
+      "shard": 0
+    },
+    {
+      "id": "szymborska-the-end-and-the-beginning-1993",
+      "title": "The End and the Beginning",
+      "author": "Wisława Szymborska (translated by Stanisław Barańczak and Clare Cavanagh)",
+      "year": 1993,
+      "era": "contemporary",
+      "type": "poem",
+      "form": "free verse, translated from Polish",
+      "themes": [
+        "war",
+        "memory",
+        "time"
+      ],
+      "tags": [
+        "translation",
+        "poland",
+        "postwar-europe",
+        "needs-text"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "lines",
+        "value": 48
+      },
+      "textPolicy": "pending",
+      "shard": 0
+    },
+    {
+      "id": "tagore-gitanjali-45-1912",
+      "title": "Gitanjali, Song XLV",
+      "author": "Rabindranath Tagore",
+      "year": 1912,
+      "era": "early_20th_century",
+      "type": "poem",
+      "form": "prose poem (devotional song), translated from Bengali by the poet himself",
+      "themes": [
+        "faith",
+        "wonder",
+        "time",
+        "desire"
+      ],
+      "tags": [
+        "gitanjali",
+        "bhakti",
+        "translation",
+        "refrain"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "lines",
+        "value": 6
+      },
+      "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "toni-morrison-beloved-1987",
+      "title": "Beloved",
+      "author": "Toni Morrison",
+      "year": 1987,
+      "era": "contemporary",
+      "type": "book",
+      "form": "novel",
+      "themes": [
+        "memory",
+        "grief",
+        "family",
+        "race",
+        "the-body"
+      ],
+      "tags": [
+        "american-literature",
+        "pulitzer-prize",
+        "african-american-literature",
+        "needs-text"
+      ],
+      "difficulty": 5,
+      "length": {
+        "unit": "words",
+        "value": 110000
+      },
+      "textPolicy": "pending",
+      "shard": 0
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "id": "dickinson-because-i-could-not-stop-for-death-1863",
+  "type": "poem",
+  "title": "Because I could not stop for Death",
+  "author": "Emily Dickinson",
+  "authorGender": "woman",
+  "authorRegion": "US",
+  "year": 1863,
+  "era": "19th_century",
+  "form": "lyric poem, ballad meter",
+  "themes": [
+    "mortality",
+    "time",
+    "nature",
+    "wonder"
+  ],
+  "tags": [
+    "carriage",
+    "afterlife",
+    "personification",
+    "franklin-479",
+    "johnson-712"
+  ],
+  "length": {
+    "unit": "lines",
+    "value": 24
+  },
+  "difficulty": 2,
+  "source": {
+    "name": "Standard Ebooks — Emily Dickinson: Poems",
+    "url": "https://standardebooks.org/ebooks/emily-dickinson/poems",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "full",
+  "text": "Because I could not stop for Death –\nHe kindly stopped for me –\nThe Carriage held but just Ourselves –\nAnd Immortality.\n\nWe slowly drove – He knew no haste\nAnd I had put away\nMy labor and my leisure too,\nFor His Civility –\n\nWe passed the School, where Children strove\nAt Recess – in the Ring –\nWe passed the Fields of Gazing Grain –\nWe passed the Setting Sun –\n\nOr rather – He passed us –\nThe Dews drew quivering and Chill –\nFor only Gossamer, my Gown –\nMy Tippet – only Tulle –\n\nWe paused before a House that seemed\nA Swelling of the Ground –\nThe Roof was scarcely visible –\nThe Cornice – in the Ground –\n\nSince then – 'tis Centuries – and yet\nFeels shorter than the Day\nI first surmised the Horses' Heads\nWere toward Eternity –",
+  "ebookLinks": [
+    {
+      "provider": "standard-ebooks",
+      "format": "epub",
+      "url": "https://standardebooks.org/ebooks/emily-dickinson/poems/downloads/emily-dickinson_poems.epub"
+    },
+    {
+      "provider": "gutenberg",
+      "format": "pdf",
+      "url": "https://www.gutenberg.org/ebooks/12242"
+    }
+  ],
+  "externalLinks": [
+    {
+      "kind": "poetry-foundation",
+      "url": "https://www.poetryfoundation.org/search?q=Because+I+could+not+stop+for+Death+Emily+Dickinson",
+      "label": "Search Poetry Foundation for this poem"
+    }
+  ],
+  "masterNotes": {
+    "context": "Dickinson wrote this poem in 1863 — Ralph Franklin's variorum numbers it 479, Thomas Johnson's earlier edition 712, and the two numbering systems are the reason the poem sometimes travels under different reference numbers in criticism. It was not published until 1890, four years after her death, when her editors gathered loose manuscripts into the first posthumous *Poems*. She lived a famously withdrawn life in Amherst, Massachusetts, and death was one of her most persistent subjects, staged again and again as an encounter rather than an abstraction.\n\nThe poem takes the New England custom of a horse-drawn funeral carriage and turns it into an unhurried social call: Death arrives not as a violent interruption but as a courteous suitor, and the speaker, mid-errand, simply goes along for the ride.",
+    "form": "The poem is written in Dickinson's signature common meter (alternating four- and three-stress lines), the meter of hymns and ballads, which lends even her most unsettling ideas a deceptively singable, familiar rhythm. Her characteristic dashes replace conventional punctuation throughout, creating pauses that feel like held breath rather than grammatical stops.\n\nSlant rhyme (\"me\"/\"Immortality,\" \"Ground\"/\"Ground\") and the slow widening of stanza scope — from carriage, to schoolyard, to fields, to sunset, to grave — build a quiet deceleration that mirrors the ride itself.",
+    "keyImages": [
+      "The carriage holding \"just Ourselves – / And Immortality\" — a third, abstract passenger riding along as if it were a person.",
+      "The house that \"seemed / A Swelling of the Ground\" — the grave described with the softened, domestic word \"House.\"",
+      "The final image of the horses' heads pointed \"toward Eternity,\" left suspended without arrival."
+    ],
+    "whatToNotice": [
+      "Death is personified as courteous and unhurried (\"He kindly stopped for me\"), never menacing — notice how that tone shapes your own sense of dread, or lack of it.",
+      "The speaker's clothing (\"Gossamer,\" \"Tulle\") is unfit for the cold, marking the crossing from the world of the living into something else without ever naming it directly.",
+      "Time collapses in the final stanza: centuries feel shorter than the single day of the ride. Notice how the poem never actually arrives anywhere — it ends suspended, mid-journey.",
+      "The dashes control pacing more than grammar does. Try reading a stanza aloud, pausing only where a dash falls.",
+      "Notice the third stanza's triple anaphora, \"We passed... We passed... We passed...\" — a steady procession that stops abruptly when the syntax flips in the next line: \"Or rather – He passed us.\""
+    ],
+    "discussionQuestions": [
+      "Why might Dickinson have chosen to make Death a polite, familiar figure rather than a frightening one?",
+      "What is the effect of ending the poem mid-journey, with the horses still \"toward Eternity,\" rather than at a clear arrival?",
+      "How does the hymn-like meter interact with the poem's subject? Does the familiarity of the rhythm comfort, unsettle, or both?",
+      "The speaker says she \"could not stop for Death\" — what does it change that Death, not the speaker, controls the pace of the whole ride?"
+    ],
+    "furtherReading": [
+      "Helen Vendler, *Dickinson: Selected Poems and Commentaries* — a close-reading companion covering this poem in detail.",
+      "[Poetry Foundation: Emily Dickinson](https://www.poetryfoundation.org/poets/emily-dickinson) — biography and further poems.",
+      "\"I'm Nobody! Who are you?\" (Dickinson) — for the same dash-driven meter turned toward a much lighter subject."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed-b",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}

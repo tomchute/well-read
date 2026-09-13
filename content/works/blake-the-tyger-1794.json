@@ -1,0 +1,84 @@
+{
+  "id": "blake-the-tyger-1794",
+  "type": "poem",
+  "title": "The Tyger",
+  "author": "William Blake",
+  "authorGender": "man",
+  "authorRegion": "UK",
+  "year": 1794,
+  "era": "18th_century",
+  "form": "lyric poem, Songs of Experience",
+  "themes": [
+    "nature",
+    "animals",
+    "wonder",
+    "power"
+  ],
+  "tags": [
+    "songs-of-experience",
+    "creation",
+    "symmetry",
+    "needs-link-verification"
+  ],
+  "length": {
+    "unit": "lines",
+    "value": 24
+  },
+  "difficulty": 3,
+  "source": {
+    "name": "William Blake, Songs of Innocence and of Experience (1794)",
+    "url": "https://www.gutenberg.org/ebooks/search/?query=William+Blake+Songs+of+Innocence+and+of+Experience",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "full",
+  "text": "Tyger Tyger, burning bright,\nIn the forests of the night;\nWhat immortal hand or eye,\nCould frame thy fearful symmetry?\n\nIn what distant deeps or skies,\nBurnt the fire of thine eyes?\nOn what wings dare he aspire?\nWhat the hand, dare seize the fire?\n\nAnd what shoulder, & what art,\nCould twist the sinews of thy heart?\nAnd when thy heart began to beat,\nWhat dread hand? & what dread feet?\n\nWhat the hammer? what the chain,\nIn what furnace was thy brain?\nWhat the anvil? what dread grasp,\nDare its deadly terrors clasp?\n\nWhen the stars threw down their spears\nAnd water'd heaven with their tears:\nDid he smile his work to see?\nDid he who made the Lamb make thee?\n\nTyger Tyger burning bright,\nIn the forests of the night:\nWhat immortal hand or eye,\nDare frame thy fearful symmetry?",
+  "ebookLinks": [
+    {
+      "provider": "gutenberg",
+      "format": "html",
+      "url": "https://www.gutenberg.org/ebooks/search/?query=William+Blake+Songs+of+Innocence+and+of+Experience"
+    }
+  ],
+  "externalLinks": [
+    {
+      "kind": "poetry-foundation",
+      "url": "https://www.poetryfoundation.org/search?q=The+Tyger+William+Blake",
+      "label": "Search Poetry Foundation for this poem"
+    }
+  ],
+  "masterNotes": {
+    "context": "Blake wrote \"The Tyger\" for Songs of Experience (1794), the companion volume to his earlier Songs of Innocence (1789); the two were eventually issued together as Songs of Innocence and of Experience, Shewing the Two Contrary States of the Human Soul. Blake was a printmaker as well as a poet, and he etched, hand-colored, and self-published both books rather than working through a conventional printer — the poem's original page carries his own illustration of the tiger. \"The Tyger\" answers, almost as a direct rebuttal, \"The Lamb\" from the earlier volume, in which a child asks a lamb who made it and answers confidently: God, who is also a lamb. Here the same question is asked of something fearsome, and the poem never supplies Blake's earlier easy answer. It has become one of the most anthologized poems in English, largely because it refuses to resolve its own central question.",
+    "form": "Every stanza but the last is built entirely from questions, and Blake never answers a single one directly — the poem interrogates the tiger's maker rather than describing the tiger itself. The insistent trochaic rhythm (\"TY-ger TY-ger\") gives the poem a hammering, forge-like beat that matches its central conceit of the creator as blacksmith, working with hammer, chain, furnace, and anvil. The rhymed couplets tighten the pressure stanza by stanza, and the final stanza almost exactly repeats the first — except \"Could frame\" becomes \"Dare frame,\" a single-word change that quietly shifts the whole poem from wonder toward something closer to accusation.",
+    "keyImages": [
+      "\"The forests of the night\" — the tiger appears already inside a landscape charged with mystery and menace rather than lit by daylight.",
+      "The forge imagery of \"the hammer,\" \"the chain,\" \"the anvil,\" and \"the furnace\" — the creator recast as a blacksmith laboring over something dangerous rather than a gentle craftsman.",
+      "\"When the stars threw down their spears / And water'd heaven with their tears\" — a cosmic image of surrender or grief whose exact meaning the poem never explains.",
+      "The final line's single altered word, \"Dare frame\" replacing \"Could frame\" — the same question returning with its emotional register changed."
+    ],
+    "whatToNotice": [
+      "Notice that almost every line in the poem is a question, and count how many actually get answered.",
+      "Notice the forge vocabulary arriving in the third and fourth stanzas — hammer, chain, furnace, anvil — and what kind of maker that implies.",
+      "In the fifth stanza, notice the poem widens suddenly from the tiger's body to \"the stars\" and \"heaven,\" without explanation.",
+      "Compare the first and last stanzas line by line; notice exactly which word changes.",
+      "Notice the poem never once describes the tiger's stripes, size, or behavior — only the terror and awe of imagining who could have made it."
+    ],
+    "discussionQuestions": [
+      "What does it mean that Blake asks whether the same god made both \"the Lamb\" and the tiger, without answering?",
+      "Why might Blake choose a hammering, sing-song rhythm for a poem about something as frightening as a tiger?",
+      "Does the shift from \"Could frame\" to \"Dare frame\" change your sense of who is doing the daring — the maker, or the reader questioning the maker?",
+      "What is gained by describing the tiger entirely through the reaction it provokes, rather than through direct physical description?"
+    ],
+    "furtherReading": [
+      "\"The Lamb\" (Blake, *Songs of Innocence*) — the poem \"The Tyger\" is answering, asking the same question of a gentler creature.",
+      "*Songs of Innocence and of Experience* (full volume) — for the \"two contrary states\" frame Blake built the poem within.",
+      "Northrop Frye, *Fearful Symmetry: A Study of William Blake* — a foundational critical study that takes its title directly from this poem."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}

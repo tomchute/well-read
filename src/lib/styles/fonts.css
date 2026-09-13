@@ -1,0 +1,19 @@
+/*
+ * Self-hosted fonts (WP-2.1).
+ *
+ * These @font-face rules come from the @fontsource-variable packages and are
+ * bundled by Vite as woff2 assets — there is no runtime request to
+ * fonts.googleapis.com or fonts.gstatic.com. Each import below already ships
+ * `font-display: swap`.
+ *
+ * - Fraunces: opsz + wght axes (normal + italic) — display/titles, small caps,
+ *   specimen numbers.
+ * - Newsreader: opsz + wght axes (normal + italic) — body/work text, italic
+ *   axis for poem stanzas and pull-quotes.
+ * - Inter: wght axis only — UI chrome (labels, buttons, nav, timestamps).
+ */
+@import "@fontsource-variable/fraunces/standard.css";
+@import "@fontsource-variable/fraunces/standard-italic.css";
+@import "@fontsource-variable/newsreader/standard.css";
+@import "@fontsource-variable/newsreader/standard-italic.css";
+@import "@fontsource-variable/inter/wght.css";

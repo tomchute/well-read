@@ -1,0 +1,274 @@
+/*
+ * Design tokens (WP-2.1). Source of truth: docs/design-system.md — do not
+ * improvise values here that contradict that file.
+ *
+ * Layering: open-props first (spacing/easing/shadow primitives), then the
+ * self-hosted font faces, then the semantic tokens below, so the names here
+ * are the only ones components should ever consume.
+ */
+@import "open-props/style";
+@import "./fonts.css";
+
+:root {
+  color-scheme: light;
+
+  /* --- Raw palette: paper / ink / sepia --- */
+  --paper-100: #f8f2e7; /* lightest — app background */
+  --paper-200: #f3ebdd; /* base paper — card surfaces */
+  --paper-300: #e8dcc6; /* deepest — raised surfaces, pressed states */
+  --ink-900: #1f1b16; /* primary text, never pure black */
+  --sepia-600: #6b5a46; /* muted text */
+  --sepia-300: #d9c9ae; /* hairline borders, dividers */
+
+  /* --- Raw palette: specimen accents (each with a soft tint) --- */
+  --teal-500: #3f8f8a;
+  --teal-tint: #e4efec;
+  --teal-text: #2a6d69; /* AA-safe darkened variant for small text */
+  --vermilion-500: #c8452b;
+  --vermilion-tint: #f5e4de;
+  --vermilion-text: #a83a24; /* AA-safe darkened variant for small text */
+  --ochre-500: #d8a43a;
+  --ochre-tint: #f7edd8;
+  --ochre-text: #7f5a15; /* AA-safe darkened variant for small text */
+  --sky-500: #7fa8c9;
+  --sky-tint: #e6eef4;
+  --sky-text: #2f5c7d; /* AA-safe darkened variant for small text */
+
+  /* --- Semantic surfaces & text --- */
+  --surface: var(--paper-100);
+  --surface-raised: var(--paper-200);
+  --surface-pressed: var(--paper-300);
+  --text: var(--ink-900);
+  --text-muted: var(--sepia-600);
+  --hairline: var(--sepia-300);
+
+  /* --- Semantic accents: one family per card type --- */
+  --accent-poem: var(--teal-500);
+  --accent-poem-tint: var(--teal-tint);
+  --accent-poem-text: var(--teal-text);
+  --accent-story: var(--vermilion-500);
+  --accent-story-tint: var(--vermilion-tint);
+  --accent-story-text: var(--vermilion-text);
+  --accent-book: var(--ochre-500);
+  --accent-book-tint: var(--ochre-tint);
+  --accent-book-text: var(--ochre-text);
+  --accent-saved: var(--sky-500);
+  --accent-saved-tint: var(--sky-tint);
+  --accent-saved-text: var(--sky-text);
+
+  /* --- Radii --- */
+  --radius-sm: 6px; /* chips, badges */
+  --radius-md: 12px; /* cards, buttons */
+  --radius-lg: 20px; /* sheets, modals */
+
+  /* --- Shadows: soft, warm-tinted, never grey --- */
+  --shadow-sm: 0 1px 2px rgba(31, 27, 22, 0.06);
+  --shadow-md: 0 4px 16px rgba(31, 27, 22, 0.08), 0 1px 2px rgba(31, 27, 22, 0.05);
+  --shadow-lg: 0 12px 32px rgba(31, 27, 22, 0.12), 0 2px 6px rgba(31, 27, 22, 0.06);
+
+  /* --- Spacing scale (maps onto open-props --size-*) --- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* --- Motion --- */
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-slow: 250ms;
+
+  /* --- Fonts (self-hosted, see fonts.css) --- */
+  --font-serif: "Fraunces Variable", Georgia, "Times New Roman", serif;
+  --font-body: "Newsreader Variable", Georgia, "Times New Roman", serif;
+  --font-ui: "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* --- Type scale (px / line-height from docs/design-system.md, in rem) --- */
+  --text-xs: 0.75rem; /* 12px — specimen numbers, captions */
+  --leading-xs: 1.4;
+  --text-sm: 0.875rem; /* 14px — metadata, badges */
+  --leading-sm: 1.5;
+  --text-base: 1rem; /* 16px — UI body */
+  --leading-base: 1.6;
+  --text-md: 1.125rem; /* 18px — card teaser, work body (mobile) */
+  --leading-md: 1.7;
+  --text-lg: 1.375rem; /* 22px — card title */
+  --leading-lg: 1.65;
+  --text-xl: 1.75rem; /* 28px — section headers */
+  --leading-xl: 1.4;
+  --text-2xl: 2.25rem; /* 36px — detail-view title */
+  --leading-2xl: 1.3;
+  --text-3xl: 3rem; /* 48px — hero / empty-state headline */
+  --leading-3xl: 1.2;
+
+  /* --- Measure --- */
+  --measure: 65ch;
+}
+
+/* --- Dark mode: warm charcoal paper, same accents desaturated ~15% ---
+ * Duplicated under a prefers-color-scheme fallback (for viewers who have not
+ * made an explicit choice) and under [data-theme="dark"] (an explicit
+ * choice, which always wins).
+ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --paper-100: #1c1915;
+    --paper-200: #221e18;
+    --paper-300: #2a251e;
+    --ink-900: #f0e6d6; /* now the light "ink" text colour */
+    --sepia-600: #b8a78c;
+    --sepia-300: #3a342b;
+
+    --teal-500: #4e938e; /* ~15% desaturated + lightened for dark ground */
+    --teal-tint: #263433;
+    --teal-text: #7fc4be;
+    --vermilion-500: #c05c42;
+    --vermilion-tint: #332420;
+    --vermilion-text: #e06a4a;
+    --ochre-500: #c9a150;
+    --ochre-tint: #332b1c;
+    --ochre-text: #d8a43a;
+    --sky-500: #82a6c4;
+    --sky-tint: #232a31;
+    --sky-text: #9cc0dd;
+
+    --surface: var(--paper-100);
+    --surface-raised: var(--paper-200);
+    --surface-pressed: var(--paper-300);
+    --text: var(--ink-900);
+    --text-muted: var(--sepia-600);
+    --hairline: var(--sepia-300);
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.36), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.28);
+  }
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --paper-100: #1c1915;
+  --paper-200: #221e18;
+  --paper-300: #2a251e;
+  --ink-900: #f0e6d6;
+  --sepia-600: #b8a78c;
+  --sepia-300: #3a342b;
+
+  --teal-500: #4e938e;
+  --teal-tint: #263433;
+  --teal-text: #7fc4be;
+  --vermilion-500: #c05c42;
+  --vermilion-tint: #332420;
+  --vermilion-text: #e06a4a;
+  --ochre-500: #c9a150;
+  --ochre-tint: #332b1c;
+  --ochre-text: #d8a43a;
+  --sky-500: #82a6c4;
+  --sky-tint: #232a31;
+  --sky-text: #9cc0dd;
+
+  --surface: var(--paper-100);
+  --surface-raised: var(--paper-200);
+  --surface-pressed: var(--paper-300);
+  --text: var(--ink-900);
+  --text-muted: var(--sepia-600);
+  --hairline: var(--sepia-300);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.36), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.28);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* --- Reduced motion: cap durations at the token level; component authors
+ * are still responsible for guarding transform on hover/press (Phase 2
+ * component WPs) per docs/design-system.md §5. --- */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 100ms;
+    --duration-slow: 100ms;
+  }
+}
+
+/* --- Base typography --- */
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  line-height: var(--leading-base);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+/* Work text, master notes: capped measure, generous line-height, real body
+ * serif — never the UI sans. */
+.work-text,
+.measure {
+  max-width: var(--measure);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: var(--leading-md);
+}
+
+/* Poem rendering: preserve line breaks and leading-space indentation exactly
+ * as authored; never justified; no automatic hyphenation; hanging
+ * punctuation where supported (graceful no-op elsewhere). */
+.poem {
+  white-space: pre-wrap;
+  text-align: left;
+  hanging-punctuation: first last;
+  hyphens: none;
+  font-family: var(--font-body);
+}
+
+/* Author names: real small caps using Fraunces' native small-cap glyphs. */
+.small-caps {
+  font-family: var(--font-serif);
+  font-variant-caps: small-caps;
+  font-size: var(--text-sm);
+  letter-spacing: 0.02em;
+}
+
+/* Specimen labels: the numbered index identifying a work's position in its
+ * batch, set in italic old-style figures. */
+.specimen-number {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-variant-numeric: oldstyle-nums;
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+/* Focus ring (docs/design-system.md §7) — never removed, only restyled. */
+:focus-visible {
+  outline: 2px solid var(--accent-poem-text);
+  outline-offset: 2px;
+}

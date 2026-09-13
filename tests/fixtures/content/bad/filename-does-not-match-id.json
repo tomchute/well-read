@@ -1,0 +1,42 @@
+{
+  "id": "some-other-id-entirely-2020",
+  "type": "poem",
+  "title": "Mismatched Filename",
+  "author": "Fixture Poet",
+  "year": 2020,
+  "era": "contemporary",
+  "form": "free verse",
+  "themes": ["home"],
+  "tags": ["fixture"],
+  "length": { "unit": "lines", "value": 8 },
+  "difficulty": 1,
+  "source": {
+    "name": "Fixture Journal",
+    "url": "https://example.org/fixtures/filename-mismatch",
+    "license": "cc-by",
+    "retrievedDate": "2026-09-01"
+  },
+  "textPolicy": "full",
+  "text": "Line one of a short fixture poem.\nLine two continues it.\nLine three keeps going.\nLine four still going.\nLine five almost there.\nLine six close now.\nLine seven nearly done.\nLine eight, the end.",
+  "externalLinks": [
+    { "kind": "publisher", "url": "https://example.org/fixtures/filename-mismatch" }
+  ],
+  "masterNotes": {
+    "context": "Fixture for the filename-equals-id gate: the id field does not match this file's name.",
+    "form": "Fixture form notes.",
+    "keyImages": ["Fixture image one.", "Fixture image two."],
+    "whatToNotice": ["Fixture notice."],
+    "discussionQuestions": [
+      "Fixture question one?",
+      "Fixture question two?",
+      "Fixture question three?"
+    ],
+    "furtherReading": ["Fixture further reading."]
+  },
+  "pipeline": {
+    "batchId": "fixture-batch",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "fixture",
+    "schemaVersion": 1
+  }
+}

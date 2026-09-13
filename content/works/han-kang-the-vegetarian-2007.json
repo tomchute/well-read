@@ -1,0 +1,79 @@
+{
+  "id": "han-kang-the-vegetarian-2007",
+  "type": "book",
+  "title": "The Vegetarian",
+  "author": "Han Kang",
+  "authorGender": "woman",
+  "authorRegion": "South Korea",
+  "year": 2007,
+  "era": "contemporary",
+  "form": "novel in three linked parts, told through the perspectives of the protagonist's family",
+  "themes": [
+    "the-body",
+    "power",
+    "family",
+    "illness"
+  ],
+  "tags": [
+    "man-booker-international",
+    "translation",
+    "needs-text"
+  ],
+  "length": {
+    "unit": "words",
+    "value": 47000
+  },
+  "difficulty": 3,
+  "source": {
+    "name": "Han Kang, The Vegetarian, trans. Deborah Smith (Portobello Books / Hogarth, 2015; Korean original 2007); rights held by the author and translator",
+    "url": "https://search.worldcat.org/search?q=The+Vegetarian+Han+Kang",
+    "license": "all-rights-reserved",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "pending",
+  "externalLinks": [
+    {
+      "kind": "bookstore",
+      "url": "https://bookshop.org/search?keywords=The+Vegetarian+Han+Kang",
+      "label": "Search Bookshop.org"
+    },
+    {
+      "kind": "library",
+      "url": "https://search.worldcat.org/search?q=The+Vegetarian+Han+Kang",
+      "label": "Find a library copy on WorldCat"
+    }
+  ],
+  "masterNotes": {
+    "context": "Han Kang published *The Vegetarian* in Korean in 2007; Deborah Smith's English translation appeared in 2015 and won the Man Booker International Prize the following year, an award given jointly to author and translator, which brought Han international attention nearly a decade before she won the Nobel Prize in Literature in 2024. The novel is built from three parts, each narrated by a different person close to its protagonist, Yeong-hye — so the reader never gets direct access to her own account of the decision, beginning with a sudden refusal to eat meat, that reshapes and eventually unravels the ordinary life built around her.",
+    "form": "Each of the novel's three parts belongs to someone else's point of view — her husband, then her brother-in-law, then her sister — so Yeong-hye herself is only ever described, never self-narrating. That structural choice keeps her reasoning permanently just out of reach, and it shifts the novel's real subject from \"why does she stop eating meat\" to \"what does her refusal reveal about the people around her,\" each of whom is shown to be more preoccupied with what her transformation costs or means for them than with understanding her. Han Kang's prose is often described as spare and clinical even in the novel's most extreme scenes, letting restraint rather than explicit description carry the disturbance.",
+    "keyImages": [
+      "Yeong-hye's recurring nightmare of blood and violence, described only in fragments, which precedes and is never fully explained by her decision to stop eating meat.",
+      "Her brother-in-law's video art project involving a body painted with flowers — one of the novel's most discussed and unsettling stretches.",
+      "The hospital force-feeding scenes, which convert what began as a private, personal refusal into a matter of medical and legal control over her body.",
+      "The closing image of Yeong-hye trying to become like a tree — the novel's most direct statement of what her refusal was reaching toward all along."
+    ],
+    "whatToNotice": [
+      "Notice that no part of the novel is narrated by Yeong-hye herself — everything we learn about her reasoning comes secondhand, through people who largely fail to understand it.",
+      "Notice how each narrator's account is shaped by what Yeong-hye's transformation costs them personally, not by curiosity about her interior life.",
+      "Notice the novel's escalation, from a private dietary choice, to family conflict, to full institutional control over her body.",
+      "Notice where the prose stays flat and clinical even at the most extreme moments — restraint doing the unsettling work instead of explicit description."
+    ],
+    "discussionQuestions": [
+      "Why might Han Kang have chosen to keep Yeong-hye's own voice entirely out of a novel that is fundamentally about her body and her choices?",
+      "Is Yeong-hye's transformation best read as self-destruction, as a form of self-assertion, or does the novel deliberately refuse to resolve it into either?",
+      "How does each narrator's self-interest limit or distort what the reader is allowed to know about Yeong-hye?",
+      "What does the novel suggest about the limits of family loyalty when a loved one's choices can't be made to make sense?"
+    ],
+    "furtherReading": [
+      "Han Kang, *Human Acts* (2014) — her novel about the 1980 Gwangju massacre, for a different treatment of the body under state violence.",
+      "Han Kang's 2024 Nobel Prize in Literature citation — for how the international attention this novel first brought her culminated.",
+      "Franz Kafka, \"A Hunger Artist\" — an earlier story about a body's public refusal of food, useful as a contrast in how each writer stages the refusal."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-dogfood",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}

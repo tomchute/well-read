@@ -1,0 +1,57 @@
+{
+  "id": "fixture-lamplight-hours-2018",
+  "type": "essay",
+  "title": "Lamplight Hours",
+  "author": "Fixture Essayist",
+  "year": 2018,
+  "era": "contemporary",
+  "form": "personal essay",
+  "themes": ["solitude", "memory", "art-making"],
+  "tags": ["fixture", "reading"],
+  "length": {
+    "unit": "words",
+    "value": 514
+  },
+  "difficulty": 2,
+  "source": {
+    "name": "Fixture Review of Books",
+    "url": "https://example.org/fixtures/lamplight-hours",
+    "license": "all-rights-reserved",
+    "retrievedDate": "2026-09-01"
+  },
+  "textPolicy": "excerpt",
+  "excerpt": "I have kept the same reading lamp for eleven years, moving it from apartment to apartment the way other people move a favorite chair, and I have come to think of the particular quality of its light as the actual location where most of my reading happens, more than any of the rooms it has stood in. The lamp itself is unremarkable, a brass gooseneck bought secondhand from a store that has since closed, but the angle it throws across a page at ten at night is, to me, indistinguishable from the act of reading itself.\n\nThis is a strange thing to admit, because it suggests that what I love is not quite literature but a specific staging of literature, a small theater I have built and rebuilt in every place I have lived. I do not think I am alone in this. Ask any serious reader to describe their favorite book and they will often describe, without quite meaning to, the chair, the light, the hour, the weather outside the window, as though the book cannot be separated from the room it was read in.\n\nI used to find this embarrassing, a kind of impurity in my devotion to books, as if the real readers were the ones who could absorb a novel equally well on a train platform or in a waiting room, indifferent to circumstance. But I have come to think the opposite: that the ritual is not a contamination of the reading but a substantial part of what reading is, for those of us who do it seriously and regularly rather than as an occasional errand.\n\nThe lamp, then, is not incidental. It marks a boundary between the hours that belong to obligation and the hours that belong to attention of a different, slower kind. When I switch it on, something in my own posture changes before I have even opened a book, the way a runner's body changes on stepping onto a track it has run a hundred times before. I have tried, on trips, to replicate this with hotel lamps of every wattage and angle, with mixed success; the ritual, it turns out, does not transplant easily, which is either a limitation of my discipline or evidence that the ritual was never really about the lamp at all.\n\nWhat I am circling, without quite landing on it, is a question about attention: whether it can be manufactured through habit and object, or whether habit and object are simply the visible scaffolding around something that either happens or does not, lamp or no lamp. I suspect both are partly true. The lamp does not make me read well. But its absence, some nights, is enough to make me not read at all, to let the evening dissolve into smaller and lesser forms of attention instead, and that seems to me a real effect, however unglamorous the cause. I keep the lamp anyway, wired badly, shade a little crooked, because I would rather trust an unglamorous cause that reliably works than search for a more dignified one that might not.",
+  "excerptNote": "opening 514 of roughly 1,900 words",
+  "externalLinks": [
+    {
+      "kind": "publisher",
+      "url": "https://example.org/fixtures/lamplight-hours",
+      "label": "Read at Fixture Review of Books"
+    }
+  ],
+  "masterNotes": {
+    "context": "This fixture stands in for a contemporary personal essay shown as an excerpt under mandatory outbound links, per the all-rights-reserved rights posture.",
+    "form": "First-person reflective essay built around a single recurring object (a reading lamp) used to open a broader question about ritual and attention.",
+    "keyImages": [
+      "The brass gooseneck lamp itself, carried from apartment to apartment as the essay's one constant.",
+      "The failed hotel-lamp experiments, used to test whether the ritual can survive outside its usual setting."
+    ],
+    "whatToNotice": [
+      "Notice how the essay refuses to resolve its own central question, ending on \"I suspect both are partly true\" rather than a tidy conclusion."
+    ],
+    "discussionQuestions": [
+      "Why might the essayist frame a question about literary attention through an object as ordinary as a lamp?",
+      "What is the effect of the essay's refusal to fully resolve its central question?",
+      "How does the essay's own structure — circling a question rather than answering it — mirror its subject?"
+    ],
+    "furtherReading": [
+      "Fixture note: this entry exists only to exercise validate-content.mjs and has no real further reading."
+    ]
+  },
+  "pipeline": {
+    "batchId": "fixture-batch",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "fixture",
+    "schemaVersion": 1
+  }
+}

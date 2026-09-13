@@ -1,0 +1,10 @@
+
+*.local
+*.log
+.DS_Store
+blob-report/
+dist
+logs
+node_modules
+playwright-report/
+test-results/

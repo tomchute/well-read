@@ -1,0 +1,81 @@
+{
+  "id": "lahiri-interpreter-of-maladies-1999",
+  "type": "short_story",
+  "title": "Interpreter of Maladies",
+  "author": "Jhumpa Lahiri",
+  "authorGender": "woman",
+  "authorRegion": "US",
+  "year": 1999,
+  "era": "contemporary",
+  "form": "contemporary short story",
+  "themes": [
+    "language",
+    "family",
+    "migration",
+    "desire"
+  ],
+  "tags": [
+    "needs-text",
+    "needs-link-verification",
+    "pulitzer-prize",
+    "diaspora"
+  ],
+  "length": {
+    "unit": "words",
+    "value": 8000
+  },
+  "difficulty": 3,
+  "source": {
+    "name": "Interpreter of Maladies (Houghton Mifflin, 1999)",
+    "url": "https://bookshop.org/p/books/interpreter-of-maladies-a-novel-jhumpa-lahiri/0aa1046deeb7c570",
+    "license": "all-rights-reserved",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "pending",
+  "externalLinks": [
+    {
+      "kind": "bookstore",
+      "url": "https://bookshop.org/p/books/interpreter-of-maladies-a-novel-jhumpa-lahiri/0aa1046deeb7c570",
+      "label": "Buy from Bookshop.org"
+    },
+    {
+      "kind": "other",
+      "url": "https://en.wikipedia.org/wiki/Interpreter_of_Maladies",
+      "label": "Background at Wikipedia"
+    }
+  ],
+  "masterNotes": {
+    "context": "\"Interpreter of Maladies\" is the title story of Jhumpa Lahiri's first collection, published by Houghton Mifflin in 1999, which went on to win the Pulitzer Prize for Fiction in 2000, making Lahiri the first writer of South Asian descent to receive it. Lahiri was born in London to Bengali parents and raised in Rhode Island, and much of her early fiction, this story included, works the territory between Indian-American family life and the experience of visiting India as a partial outsider. The story follows an Indian-American family being driven around Indian tourist sites by a local guide who also works, in his other job, as a translator for a doctor treating patients who speak a different regional language than he does — a detail the collection's title borrows directly. Lahiri's prose in this period is plain and controlled, more interested in what goes unsaid between people who technically share a language than in overt drama.",
+    "form": "The story is told in close third person centered on Mr. Kapasi, the guide, which is a deliberate choice — the tourists he is driving are the ostensible subject, but the reader experiences the day's events refracted through his hopes and misreadings rather than theirs. Lahiri paces the story as a single day's excursion, structured around stops at tourist sites that double as settings for the shifting dynamic between Mr. Kapasi and one of the visiting family's parents. Dialogue in the story is often oblique, characters answering questions other than the ones asked, and Lahiri lets physical detail, what people wear, eat, photograph, carry information the characters never state directly. The story's ending resists a clean resolution, closing on an image rather than an explanation.",
+    "keyImages": [
+      "Mr. Kapasi's business card, which he hands over early in the story and which becomes freighted with more meaning to him than to the family he gives it to.",
+      "The family's mismatched relationship to the country they are visiting, visible in small choices about food, dress, and what they choose to photograph.",
+      "The temple carvings the family stops to see partway through the day, treated by the tour itself as background rather than destination.",
+      "A piece of paper exchanged partway through the story, whose significance depends entirely on what has and hasn't been said aloud around it."
+    ],
+    "whatToNotice": [
+      "Notice how often Mr. Kapasi's internal narration diverges from what he actually says to the family in the car.",
+      "Notice the details Lahiri gives about each family member's clothing and manner, and what those details communicate about their relationship to India and to each other.",
+      "Notice how the story paces its stops at tourist sites, and how each stop shifts the dynamic between Mr. Kapasi and the parent he is drawn to slightly further.",
+      "Notice the story's handling of Mr. Kapasi's other job, the actual interpreting of maladies, and how sparingly Lahiri returns to it once it's introduced.",
+      "Notice how the final scene is staged physically, who is standing where, what passes between which characters, rather than explained."
+    ],
+    "discussionQuestions": [
+      "Mr. Kapasi imagines a version of his relationship with one of the visiting family's parents that the story lets the reader see is at least partly mistaken. Where exactly does that misreading begin?",
+      "How does the story use the family's status as tourists, seeing India as outsiders, to complicate what \"interpreting\" means in the title?",
+      "What does the story suggest about the limits of language even between people who technically share one?",
+      "Why might Lahiri choose to center the story on Mr. Kapasi's perspective rather than the visiting family's?"
+    ],
+    "furtherReading": [
+      "Lahiri's *The Namesake* — a novel expanding on the same territory of Indian-American identity across generations.",
+      "Other stories in the *Interpreter of Maladies* collection, particularly \"A Temporary Matter,\" for a companion treatment of what goes unsaid inside a marriage.",
+      "The 2000 Pulitzer Prize citation and contemporary reviews of the collection, useful for the reception context around its unusually fast critical and popular success."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}

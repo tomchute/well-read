@@ -1,0 +1,43 @@
+{
+  "id": "excerpt-below-word-minimum",
+  "type": "short_story",
+  "title": "Too Short an Excerpt",
+  "author": "Fixture Author",
+  "year": 2020,
+  "era": "contemporary",
+  "form": "literary short story",
+  "themes": ["home"],
+  "tags": ["fixture"],
+  "length": { "unit": "words", "value": 40 },
+  "difficulty": 1,
+  "source": {
+    "name": "Fixture Journal",
+    "url": "https://example.org/fixtures/excerpt-below-word-minimum",
+    "license": "all-rights-reserved",
+    "retrievedDate": "2026-09-01"
+  },
+  "textPolicy": "excerpt",
+  "excerpt": "This excerpt is deliberately far too short to satisfy the five hundred word floor that validate-content.mjs enforces for prose excerpts, containing only a small handful of sentences and nowhere near enough words.",
+  "excerptNote": "opening 40 of roughly 3,000 words",
+  "externalLinks": [
+    { "kind": "publisher", "url": "https://example.org/fixtures/excerpt-below-word-minimum" }
+  ],
+  "masterNotes": {
+    "context": "Fixture for the prose-excerpt-minimum gate: the excerpt is under the 500-word floor.",
+    "form": "Fixture form notes.",
+    "keyImages": ["Fixture image one.", "Fixture image two."],
+    "whatToNotice": ["Fixture notice."],
+    "discussionQuestions": [
+      "Fixture question one?",
+      "Fixture question two?",
+      "Fixture question three?"
+    ],
+    "furtherReading": ["Fixture further reading."]
+  },
+  "pipeline": {
+    "batchId": "fixture-batch",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "fixture",
+    "schemaVersion": 1
+  }
+}

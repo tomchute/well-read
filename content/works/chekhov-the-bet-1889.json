@@ -1,0 +1,86 @@
+{
+  "id": "chekhov-the-bet-1889",
+  "type": "short_story",
+  "title": "The Bet",
+  "author": "Anton Chekhov",
+  "authorGender": "man",
+  "authorRegion": "Russia",
+  "year": 1889,
+  "era": "19th_century",
+  "form": "philosophical short story",
+  "themes": [
+    "solitude",
+    "time",
+    "doubt",
+    "wonder"
+  ],
+  "tags": [
+    "needs-link-verification",
+    "parable",
+    "translation",
+    "russia"
+  ],
+  "length": {
+    "unit": "words",
+    "value": 3400
+  },
+  "difficulty": 3,
+  "source": {
+    "name": "Standard Ebooks (GitHub mirror)",
+    "url": "https://raw.githubusercontent.com/standardebooks/anton-chekhov_short-fiction_constance-garnett/master/src/epub/text/the-bet.xhtml",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "excerpt",
+  "ebookLinks": [
+    {
+      "provider": "standard-ebooks",
+      "format": "epub",
+      "url": "https://standardebooks.org/ebooks/anton-chekhov/short-fiction/constance-garnett/downloads/anton-chekhov_short-fiction_constance-garnett.epub"
+    }
+  ],
+  "externalLinks": [
+    {
+      "kind": "other",
+      "url": "https://en.wikipedia.org/wiki/The_Bet_(short_story)",
+      "label": "Background at Wikipedia"
+    }
+  ],
+  "masterNotes": {
+    "context": "Chekhov wrote \"The Bet\" in 1889, early in a career that would make him the most influential short-story writer of his generation, at a point when he was still writing quickly for periodicals and had not yet stepped back from his medical practice. The premise is a wager struck at a dinner party: a banker and a young lawyer argue over which is crueler, a life sentence or execution, and the argument hardens into an actual bet, with the lawyer volunteering to spend fifteen years in solitary confinement to prove his point. Chekhov returned constantly, across his career, to isolation, self-deception, and the gap between what people believe about themselves and what circumstance eventually reveals. Here he uses an almost fable-like premise less as a thought experiment than as a pressure chamber for testing two men against a single, artificial constraint over a very long stretch of time.",
+    "form": "The story is told in brisk omniscient third person, compressing fifteen years into a few pages by cutting between the banker's present-tense anxiety on the final night and quick summaries of what filtered out of the lawyer's confinement year by year, glimpsed mostly through the books he requests. Chekhov gives almost no direct access to the lawyer's interior life during the wager itself; the reader learns what he has become only secondhand, through inference and a late document, which makes the ending depend on the reader's own interpretation rather than on being told how to feel. The structure narrows steadily toward a single scene, the banker's approach to the lodge, and the story's control of pace is an early, clear demonstration of restraint as technique.",
+    "keyImages": [
+      "The banker's fist on the table and the two-million wager struck on the spot — the story's founding rash gesture, made at a dinner party over dessert.",
+      "The year-by-year list of what the prisoner requests to read, swinging from light novels to the classics to nothing at all.",
+      "The two gunshots the banker orders fired in the garden, confirming that the prisoner's six-language letter has passed muster.",
+      "The banker's present-tense arithmetic of ruin, which closes the excerpt mid-thought rather than resolving anything."
+    ],
+    "whatToNotice": [
+      "Notice that the dinner-party argument stages two entirely abstract positions before either man has personally been tested by anything.",
+      "Notice how little direct speech the lawyer gets after his opening declaration — almost everything after is filtered through requests and rumor.",
+      "Notice the uneven pace of the year-by-year summary — the first year gets several sentences, other years barely a clause.",
+      "Notice how the six-language letter substitutes a document for any direct access to the prisoner's state of mind.",
+      "Notice the sequence of his reading — entertainment, then classics, then wine and idleness, then philosophy, then scripture, then everything at once — and what pattern that traces.",
+      "Notice that the excerpt ends on the banker doing arithmetic, not on any resolution of the wager."
+    ],
+    "discussionQuestions": [
+      "The two men's opening positions are entirely abstract, argued before either has anything at stake. What does the story's method suggest is the danger of arguing that way?",
+      "Why might Chekhov give the reader the lawyer's reading list instead of his thoughts?",
+      "What does the swing in the prisoner's reading, from entertainment to scripture to everything at once, suggest about what years of isolation do to a mind?",
+      "Beyond this excerpt: the story eventually returns to the very argument that opened it, in a form neither man predicts. What, in this excerpt, would already complicate either man's original position?"
+    ],
+    "furtherReading": [
+      "Chekhov's *Ward No. 6* — a longer, darker treatment of confinement and the porous line between keeper and kept.",
+      "Fyodor Dostoevsky's *Notes from Underground* — an earlier Russian treatment of isolation chosen rather than imposed, useful for comparison of tone and conclusion.",
+      "The other stories in the same Standard Ebooks Constance Garnett collection, for tracing how Chekhov's method changed across a decade of story writing."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  },
+  "excerpt": "The Bet\n\nI\n\nIt was a dark autumn night. The old banker was walking up and down his study and remembering how, fifteen years before, he had given a party one autumn evening. There had been many clever men there, and there had been interesting conversations. Among other things they had talked of capital punishment. The majority of the guests, among whom were many journalists and intellectual men, disapproved of the death penalty. They considered that form of punishment out of date, immoral, and unsuitable for Christian states. In the opinion of some of them the death penalty ought to be replaced everywhere by imprisonment for life.\n\n“I don’t agree with you,” said their host the banker. “I have not tried either the death penalty or imprisonment for life, but if one may judge a priori, the death penalty is more moral and more humane than imprisonment for life. Capital punishment kills a man at once, but lifelong imprisonment kills him slowly. Which executioner is the more humane, he who kills you in a few minutes or he who drags the life out of you in the course of many years?”\n\n“Both are equally immoral,” observed one of the guests, “for they both have the same object⁠—to take away life. The State is not God. It has not the right to take away what it cannot restore when it wants to.”\n\nAmong the guests was a young lawyer, a young man of five-and-twenty. When he was asked his opinion, he said:\n\n“The death sentence and the life sentence are equally immoral, but if I had to choose between the death penalty and imprisonment for life, I would certainly choose the second. To live anyhow is better than not at all.”\n\nA lively discussion arose. The banker, who was younger and more nervous in those days, was suddenly carried away by excitement; he struck the table with his fist and shouted at the young man:\n\n“It’s not true! I’ll bet you two millions you wouldn’t stay in solitary confinement for five years.”\n\n“If you mean that in earnest,” said the young man, “I’ll take the bet, but I would stay not five but fifteen years.”\n\n“Fifteen? Done!” cried the banker. “Gentlemen, I stake two millions!”\n\n“Agreed! You stake your millions and I stake my freedom!” said the young man.\n\nAnd this wild, senseless bet was carried out! The banker, spoilt and frivolous, with millions beyond his reckoning, was delighted at the bet. At supper he made fun of the young man, and said:\n\n“Think better of it, young man, while there is still time. To me two millions are a trifle, but you are losing three or four of the best years of your life. I say three or four, because you won’t stay longer. Don’t forget either, you unhappy man, that voluntary confinement is a great deal harder to bear than compulsory. The thought that you have the right to step out in liberty at any moment will poison your whole existence in prison. I am sorry for you.”\n\nAnd now the banker, walking to and fro, remembered all this, and asked himself: “What was the object of that bet? What is the good of that man’s losing fifteen years of his life and my throwing away two millions? Can it prove that the death penalty is better or worse than imprisonment for life? No, no. It was all nonsensical and meaningless. On my part it was the caprice of a pampered man, and on his part simple greed for money.⁠ ⁠…”\n\nThen he remembered what followed that evening. It was decided that the young man should spend the years of his captivity under the strictest supervision in one of the lodges in the banker’s garden. It was agreed that for fifteen years he should not be free to cross the threshold of the lodge, to see human beings, to hear the human voice, or to receive letters and newspapers. He was allowed to have a musical instrument and books, and was allowed to write letters, to drink wine, and to smoke. By the terms of the agreement, the only relations he could have with the outer world were by a little window made purposely for that object. He might have anything he wanted⁠—books, music, wine, and so on⁠—in any quantity he desired by writing an order, but could only receive them through the window. The agreement provided for every detail and every trifle that would make his imprisonment strictly solitary, and bound the young man to stay there exactly fifteen years, beginning from twelve o’clock of November 14, 1870, and ending at twelve o’clock of November 14, 1885. The slightest attempt on his part to break the conditions, if only two minutes before the end, released the banker from the obligation to pay him two millions.\n\nFor the first year of his confinement, as far as one could judge from his brief notes, the prisoner suffered severely from loneliness and depression. The sounds of the piano could be heard continually day and night from his lodge. He refused wine and tobacco. Wine, he wrote, excites the desires, and desires are the worst foes of the prisoner; and besides, nothing could be more dreary than drinking good wine and seeing no one. And tobacco spoilt the air of his room. In the first year the books he sent for were principally of a light character; novels with a complicated love plot, sensational and fantastic stories, and so on.\n\nIn the second year the piano was silent in the lodge, and the prisoner asked only for the classics. In the fifth year music was audible again, and the prisoner asked for wine. Those who watched him through the window said that all that year he spent doing nothing but eating and drinking and lying on his bed, frequently yawning and angrily talking to himself. He did not read books. Sometimes at night he would sit down to write; he would spend hours writing, and in the morning tear up all that he had written. More than once he could be heard crying.\n\nIn the second half of the sixth year the prisoner began zealously studying languages, philosophy, and history. He threw himself eagerly into these studies⁠—so much so that the banker had enough to do to get him the books he ordered. In the course of four years some six hundred volumes were procured at his request. It was during this period that the banker received the following letter from his prisoner:\n\n“My dear Jailer, I write you these lines in six languages. Show them to people who know the languages. Let them read them. If they find not one mistake I implore you to fire a shot in the garden. That shot will show me that my efforts have not been thrown away. The geniuses of all ages and of all lands speak different languages, but the same flame burns in them all. Oh, if you only knew what unearthly happiness my soul feels now from being able to understand them!” The prisoner’s desire was fulfilled. The banker ordered two shots to be fired in the garden.\n\nThen after the tenth year, the prisoner sat immovably at the table and read nothing but the Gospel. It seemed strange to the banker that a man who in four years had mastered six hundred learned volumes should waste nearly a year over one thin book easy of comprehension. Theology and histories of religion followed the Gospels.\n\nIn the last two years of his confinement the prisoner read an immense quantity of books quite indiscriminately. At one time he was busy with the natural sciences, then he would ask for Byron or Shakespeare. There were notes in which he demanded at the same time books on chemistry, and a manual of medicine, and a novel, and some treatise on philosophy or theology. His reading suggested a man swimming in the sea among the wreckage of his ship, and trying to save his life by greedily clutching first at one spar and then at another.\n\nII\n\nThe old banker remembered all this, and thought:\n\n“Tomorrow at twelve o’clock he will regain his freedom. By our agreement I ought to pay him two millions. If I do pay him, it is all over with me: I shall be utterly ruined.”",
+  "excerptNote": "Opening 1395 words of the work, ending at a paragraph break (source: raw.githubusercontent.com/standardebooks/anton-chekhov_short-fiction_constance-garnett)"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "discussion-questions-below-minimum",
+  "type": "poem",
+  "title": "Too Few Discussion Questions",
+  "author": "Fixture Poet",
+  "year": 2020,
+  "era": "contemporary",
+  "form": "free verse",
+  "themes": ["home"],
+  "tags": ["fixture"],
+  "length": { "unit": "lines", "value": 8 },
+  "difficulty": 1,
+  "source": {
+    "name": "Fixture Journal",
+    "url": "https://example.org/fixtures/discussion-questions-below-minimum",
+    "license": "cc-by",
+    "retrievedDate": "2026-09-01"
+  },
+  "textPolicy": "full",
+  "text": "Line one of a short fixture poem.\nLine two continues it.\nLine three keeps going.\nLine four still going.\nLine five almost there.\nLine six close now.\nLine seven nearly done.\nLine eight, the end.",
+  "externalLinks": [
+    {
+      "kind": "publisher",
+      "url": "https://example.org/fixtures/discussion-questions-below-minimum"
+    }
+  ],
+  "masterNotes": {
+    "context": "Fixture for the discussionQuestions-minimum gate: only two entries are provided, below the required minimum of three.",
+    "form": "Fixture form notes.",
+    "keyImages": ["Fixture image one.", "Fixture image two."],
+    "whatToNotice": ["Fixture notice."],
+    "discussionQuestions": ["Fixture question one?", "Fixture question two?"],
+    "furtherReading": ["Fixture further reading."]
+  },
+  "pipeline": {
+    "batchId": "fixture-batch",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "fixture",
+    "schemaVersion": 1
+  }
+}

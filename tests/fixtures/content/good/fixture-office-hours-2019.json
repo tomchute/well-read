@@ -1,0 +1,57 @@
+{
+  "id": "fixture-office-hours-2019",
+  "type": "short_story",
+  "title": "Office Hours",
+  "author": "Fixture Author",
+  "year": 2019,
+  "era": "contemporary",
+  "form": "literary short story",
+  "themes": ["memory", "work", "time"],
+  "tags": ["office", "fixture"],
+  "length": {
+    "unit": "words",
+    "value": 564
+  },
+  "difficulty": 2,
+  "source": {
+    "name": "Fixture Quarterly",
+    "url": "https://example.org/fixtures/office-hours",
+    "license": "all-rights-reserved",
+    "retrievedDate": "2026-09-01"
+  },
+  "textPolicy": "excerpt",
+  "excerpt": "The office had emptied out an hour before, and Marguerite stayed behind not because the work required it but because the quiet did. She liked the particular silence of a building after everyone else had gone home, the way the hum of the ventilation system became audible only once the phones stopped ringing and the printers stopped chattering. It was in that silence that she did her best thinking, if thinking was even the right word for what happened to her mind in those hours.\n\nShe had come to the city eleven years earlier with two suitcases and a job that no longer existed in any form she would recognize now. The company had been sold twice, renamed once, and reorganized more times than she could count, and yet she had stayed, floor by floor, title by title, until she found herself in an office with a window and a door that closed, which counted, in this building, as arriving somewhere.\n\nTonight she was reading through a stack of old project files, not because anyone had asked her to but because a colleague was retiring at the end of the month and someone needed to know where the bodies, so to speak, were buried. The files told a story she had half forgotten: a merger that fell through, a client who had threatened to sue and then quietly disappeared, a summer when three people quit within the same week for reasons nobody ever fully explained. She found her own name in the margins of several memos, in a handwriting she barely recognized as her own, younger and more certain of things.\n\nThere was a particular memo, dated some eight years back, in which she had argued forcefully against a plan that the company had gone on to adopt anyway, and which had, by any reasonable measure, worked out fine. She read her own arguments now with a kind of distant amusement, the way one might read an old diary entry recording a heartbreak that no longer stings. She had been so sure. She had marshaled evidence and precedent and the testimony of two consultants who no longer worked in the field. And she had been wrong, or at least the version of being wrong that consists of the world simply moving on without confirming or denying your predictions.\n\nOutside the window, the street had gone the particular orange of the city at night, streetlights competing with a sky that never got fully dark. She could see, four floors down, a delivery cyclist waiting at the corner, and further off, the outline of the bridge she crossed every morning without really looking at anymore. She wondered how many other people were doing exactly what she was doing right now, in exactly this kind of window, reading old paperwork by the light of a desk lamp, trying to reconstruct a version of themselves through the sediment of memos and minutes.\n\nShe closed the last file and did not file it away properly, leaving it instead in a loose stack for the retiring colleague to find or ignore as she pleased. It seemed to Marguerite, walking to the elevator, that most institutional memory worked this way: not preserved so much as abandoned in a slightly more organized way than it might otherwise have been, waiting for whoever came next to decide whether any of it still mattered.",
+  "excerptNote": "opening 564 of roughly 3,200 words",
+  "externalLinks": [
+    {
+      "kind": "publisher",
+      "url": "https://example.org/fixtures/office-hours",
+      "label": "Read at Fixture Quarterly"
+    }
+  ],
+  "masterNotes": {
+    "context": "This fixture stands in for a contemporary short story shown as an excerpt under mandatory outbound links, per the all-rights-reserved rights posture.",
+    "form": "Close third-person narration built around a single extended scene of a character reading old office files after hours.",
+    "keyImages": [
+      "The old memo where the narrator argued against a plan the company later adopted successfully, read back with distant amusement.",
+      "The orange glow of the city at night seen through the office window, set against the quiet of an empty floor."
+    ],
+    "whatToNotice": [
+      "Notice how the story uses old paperwork, rather than direct flashback, to deliver backstory."
+    ],
+    "discussionQuestions": [
+      "What does the story suggest about institutional memory through its closing image of the abandoned file stack?",
+      "Why does the narrator feel \"distant amusement\" rather than embarrassment reading her old memo?",
+      "How does the setting of an empty office after hours shape the story's tone?"
+    ],
+    "furtherReading": [
+      "Fixture note: this entry exists only to exercise validate-content.mjs and has no real further reading."
+    ]
+  },
+  "pipeline": {
+    "batchId": "fixture-batch",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "fixture",
+    "schemaVersion": 1
+  }
+}

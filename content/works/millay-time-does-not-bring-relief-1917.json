@@ -1,0 +1,80 @@
+{
+  "id": "millay-time-does-not-bring-relief-1917",
+  "type": "poem",
+  "title": "Time does not bring relief; you all have lied",
+  "author": "Edna St. Vincent Millay",
+  "authorGender": "woman",
+  "authorRegion": "US",
+  "year": 1917,
+  "era": "early_20th_century",
+  "form": "sonnet, Petrarchan",
+  "themes": [
+    "grief",
+    "memory",
+    "time"
+  ],
+  "tags": [
+    "renascence-and-other-poems",
+    "sonnet",
+    "needs-link-verification"
+  ],
+  "length": {
+    "unit": "lines",
+    "value": 14
+  },
+  "difficulty": 2,
+  "source": {
+    "name": "Project Gutenberg (GITenberg mirror)",
+    "url": "https://raw.githubusercontent.com/GITenberg/Renascence-and-Other-Poems_109/master/109.txt",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "full",
+  "externalLinks": [
+    {
+      "kind": "poetry-foundation",
+      "url": "https://www.poetryfoundation.org/search?q=Time+does+not+bring+relief+Edna+St+Vincent+Millay",
+      "label": "Search Poetry Foundation for this poem"
+    }
+  ],
+  "masterNotes": {
+    "context": "Millay published this sonnet in 1917 in her first full collection, *Renascence and Other Poems*, released the same year she graduated from Vassar College, when she was twenty-five. The book made her reputation less on its title poem, an ambitious meditation on death and rebirth she had written as a teenager, than on a cluster of shorter lyrics and sonnets, this one among them, that showed a colder, more skeptical voice than the era's popular sentimental verse about grief. Millay would go on to become one of the most widely read American poets of the 1920s, celebrated for exactly this kind of formally traditional but emotionally blunt sonnet. The poem takes direct aim at a piece of common consolation, that time heals loss, and refuses it outright rather than easing into agreement.",
+    "form": "The poem is a Petrarchan sonnet, its octave built almost entirely from a list of ordinary places and objects the speaker still cannot encounter without grief resurfacing, before the closing sestet turns from complaint to a sharper, more specific admission. Millay's diction throughout is plain and declarative rather than ornate, which sharpens the argument: this is a poem that wants to sound like blunt fact, not decorated feeling. The formal control of the sonnet, its steady meter and full rhymes, sits in deliberate tension with the raw claim being made inside it, so that composure and grief are made to occupy the same lines rather than one giving way to the other.",
+    "keyImages": [
+      "The catalogue of ordinary, unremarkable places the speaker still cannot pass without being reminded of the loss — grief attached to geography rather than to any single dramatic scene.",
+      "The direct rebuttal of secondhand comfort in the opening line, the poem positioning itself against everyone else's reassurance before offering its own view.",
+      "The turn in the sestet toward a narrower, more physical admission of what the speaker still cannot do, sharpening the poem's abstract claim about grief into something concrete."
+    ],
+    "whatToNotice": [
+      "Notice that the poem opens by contradicting other people's comfort rather than describing the loss itself — the argument comes before the grief is even named.",
+      "Notice how the octave accumulates ordinary settings rather than one big, dramatic scene of mourning.",
+      "Watch for the sonnet's turn between octave and sestet, and notice how the claim narrows rather than widens at that point.",
+      "Notice how plain and unadorned the diction stays throughout, even as the feeling being described is severe."
+    ],
+    "discussionQuestions": [
+      "Why might Millay open by rejecting other people's comfort rather than describing her own grief first?",
+      "What is the effect of using a traditional, tightly rhymed sonnet form to make an argument against a comforting cliché?",
+      "Does the poem's insistence that time does not heal read as more true, or less, for being stated so flatly rather than dramatized?",
+      "How does moving from general claim (octave) to specific admission (sestet) change how convincing the poem feels by its final lines?"
+    ],
+    "furtherReading": [
+      "\"Renascence\" (Millay, same collection) — the volume's more famous title poem, for a very different, visionary treatment of death and survival.",
+      "Edna St. Vincent Millay, *A Few Figs from Thistles* (1920) — for the wittier, more defiant voice she became known for shortly after this collection.",
+      "Nancy Milford, *Savage Beauty: The Life of Edna St. Vincent Millay* — a biography covering the period of Millay's early sonnets."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed-b",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  },
+  "ebookLinks": [
+    {
+      "provider": "gutenberg",
+      "format": "epub",
+      "url": "https://www.gutenberg.org/ebooks/109.epub.images"
+    }
+  ],
+  "text": "Time does not bring relief; you all have lied\nWho told me time would ease me of my pain!\nI miss him in the weeping of the rain;\nI want him at the shrinking of the tide;\nThe old snows melt from every mountain-side,\nAnd last year's leaves are smoke in every lane;\nBut last year's bitter loving must remain\nHeaped on my heart, and my old thoughts abide!\n\nThere are a hundred places where I fear\nTo go,--so with his memory they brim!\nAnd entering with relief some quiet place\nWhere never fell his foot or shone his face\nI say, \"There is no memory of him here!\"\nAnd so stand stricken, so remembering him!"
+}

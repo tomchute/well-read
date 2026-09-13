@@ -1,0 +1,88 @@
+{
+  "id": "toni-morrison-beloved-1987",
+  "type": "book",
+  "title": "Beloved",
+  "author": "Toni Morrison",
+  "authorGender": "woman",
+  "authorRegion": "US",
+  "year": 1987,
+  "era": "contemporary",
+  "form": "novel",
+  "themes": [
+    "memory",
+    "grief",
+    "family",
+    "race",
+    "the-body"
+  ],
+  "tags": [
+    "american-literature",
+    "pulitzer-prize",
+    "african-american-literature",
+    "needs-text"
+  ],
+  "length": {
+    "unit": "words",
+    "value": 110000
+  },
+  "difficulty": 5,
+  "source": {
+    "name": "Alfred A. Knopf, first edition, 1987",
+    "url": "https://www.penguinrandomhouse.com/books/149972/beloved-by-toni-morrison/",
+    "license": "all-rights-reserved",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "pending",
+  "externalLinks": [
+    {
+      "kind": "publisher",
+      "url": "https://www.penguinrandomhouse.com/books/149972/beloved-by-toni-morrison/",
+      "label": "Publisher page (Penguin Random House)"
+    },
+    {
+      "kind": "bookstore",
+      "url": "https://bookshop.org/search?keywords=Beloved%20Toni%20Morrison",
+      "label": "Search Bookshop.org"
+    },
+    {
+      "kind": "library",
+      "url": "https://search.worldcat.org/search?q=Beloved%20Toni%20Morrison",
+      "label": "Find a library copy on WorldCat"
+    }
+  ],
+  "masterNotes": {
+    "context": "Morrison published *Beloved* in 1987, the first novel in what she later described as a loose trilogy continued by *Jazz* and *Paradise*. It won the Pulitzer Prize for Fiction in 1988, and Morrison went on to receive the Nobel Prize in Literature in 1993, the first Black woman to do so. The novel's starting point, publicly acknowledged by Morrison, is the historical case of Margaret Garner, an enslaved woman who in 1856 killed her own daughter rather than see her returned to slavery after a failed escape from Kentucky into Ohio; Morrison used this as a point of departure rather than a case to reconstruct, inventing the novel's characters, setting, and events freely from there. The book is set mostly in and around Cincinnati in the years following the Civil War, among formerly enslaved people for whom the war's end did not end the past's claims on the present.",
+    "form": "Morrison structures the novel non-chronologically, circling around a central act of violence that the narration approaches and retreats from repeatedly rather than disclosing in a single scene, so that the reader's understanding accumulates the way traumatic memory itself is shown to work for the characters. Point of view shifts among several characters, including extended passages of interior monologue that break from conventional syntax and punctuation, most notably in sections voicing Beloved herself. Present action and remembered past are given comparable narrative weight and are often not clearly demarcated, collapsing the distance a reader might expect between what is happening and what is being remembered.",
+    "keyImages": [
+      "The house at 124 Bluestone Road, introduced as an active, almost sentient presence rather than a passive setting, its numbering used instead of a name throughout.",
+      "Sethe's back, scarred in a pattern another character reads as a tree, an image of the body carrying legible, permanent testimony to what has been done to it.",
+      "The color white, and its recurring, unsettling appearances, tracked by Baby Suggs as a private, wordless system of meaning.",
+      "The clearing in the woods where Baby Suggs preaches self-love to the formerly enslaved community, an image of collective healing set against the novel's private, individual wounds."
+    ],
+    "whatToNotice": [
+      "Notice how long the novel withholds a full, direct account of the central act at its heart, and how it uses that delay rather than treating it as a twist.",
+      "Notice the shifts into fragmented, unpunctuated interior monologue and consider what kind of consciousness they seem to be rendering.",
+      "Pay attention to how physical scars and marks on the body are treated throughout as a kind of language the other characters have to learn to read.",
+      "Notice how present-tense domestic detail, cooking, chores, arrivals, is interrupted by memory without typographic warning, and track how you can tell the difference.",
+      "Notice the different relationships Sethe, Denver, and Paul D each have to the past, and how the novel keeps them distinct rather than treating trauma as a single shared experience."
+    ],
+    "discussionQuestions": [
+      "What is gained by Morrison's choice to withhold and circle around the novel's central act rather than presenting it early and directly?",
+      "How does the novel's treatment of the body, scars, touch, appetite, shape its argument about what slavery did and did not take from its characters?",
+      "What role does the community around 124 Bluestone Road play in both isolating and eventually reaching Sethe?",
+      "How do Denver's and Paul D's differing relationships to Sethe's past change how you read her?",
+      "What does the novel's ending suggest about whether the past it depicts can, in any sense, be put down?"
+    ],
+    "furtherReading": [
+      "Toni Morrison's *Jazz* — the loosely connected novel that continues the informal trilogy *Beloved* begins.",
+      "Toni Morrison's essay collection *Playing in the Dark* — her own critical writing on race and the American literary imagination, useful context for her fiction's concerns.",
+      "William Faulkner's *Absalom, Absalom!* — an earlier American novel Morrison studied closely, built on a similarly circling, retrospective narrative method."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}

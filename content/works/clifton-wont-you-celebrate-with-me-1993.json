@@ -1,0 +1,77 @@
+{
+  "id": "clifton-wont-you-celebrate-with-me-1993",
+  "type": "poem",
+  "title": "won't you celebrate with me",
+  "author": "Lucille Clifton",
+  "authorGender": "woman",
+  "authorRegion": "US",
+  "year": 1993,
+  "era": "contemporary",
+  "form": "free verse",
+  "themes": [
+    "race",
+    "gender",
+    "mortality",
+    "the-body"
+  ],
+  "tags": [
+    "lowercase-style",
+    "book-of-light",
+    "needs-text",
+    "needs-link-verification"
+  ],
+  "length": {
+    "unit": "lines",
+    "value": 14
+  },
+  "difficulty": 3,
+  "source": {
+    "name": "Lucille Clifton, The Book of Light (Copper Canyon Press, 1993)",
+    "url": "https://www.poetryfoundation.org/search?q=won%27t+you+celebrate+with+me+Lucille+Clifton",
+    "license": "all-rights-reserved",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "pending",
+  "externalLinks": [
+    {
+      "kind": "poetry-foundation",
+      "url": "https://www.poetryfoundation.org/search?q=won%27t+you+celebrate+with+me+Lucille+Clifton",
+      "label": "Search Poetry Foundation for this poem"
+    },
+    {
+      "kind": "publisher",
+      "url": "https://www.coppercanyonpress.org/?s=Lucille+Clifton+Book+of+Light",
+      "label": "Search Copper Canyon Press for this collection"
+    }
+  ],
+  "masterNotes": {
+    "context": "Clifton published \"won't you celebrate with me\" in *The Book of Light* (1993), well into a career that had already produced more than a dozen collections and two National Book Award nominations before she won the award outright in 2000. She grew up in Depew, New York, the descendant of a family who had preserved an oral history reaching back to an enslaved ancestor, and Clifton wrote often, though rarely directly, out of that inheritance. Her poems are almost never capitalized and use minimal punctuation, a signature style she maintained across four decades. This poem addresses the reader directly, asking for celebration rather than sympathy, and it has become one of her most frequently taught poems, especially for how plainly it names the specific conditions — race, gender, lack of precedent — that shaped the life it describes.",
+    "form": "The poem is built as unrhymed, unpunctuated free verse, with even the personal pronoun \"i\" kept lowercase — Clifton refuses grammatical convention its usual deference throughout her work. A central image compresses the poem's argument about self-invention into a handful of words, comparing the space the speaker has made a life in to a bridge between two very different registers, the exalted and the ordinary. The poem builds toward its ending through direct address and accumulating clauses rather than metaphor, and its final short statement lands harder for arriving without any rhetorical flourish to cushion it.",
+    "keyImages": [
+      "The poem naming its own starting conditions — birth into a hostile environment, and both a racial and gender identity that offered no ready model — without complaint or elaboration.",
+      "The central bridge image, self-invention pictured as a precarious position between the exalted and the ordinary.",
+      "A closing gesture of self-sufficiency, one hand holding the other, pictured as a literal, almost defiant, physical act."
+    ],
+    "whatToNotice": [
+      "Notice the lowercase style throughout — even the poem's one first-person pronoun refuses standard capitalization.",
+      "Notice the poem is framed as an invitation to celebrate, rather than as a statement seeking sympathy.",
+      "Notice how flatly the final statement is delivered — no exclamation, just plain assertion.",
+      "Notice that place names and proper nouns are also kept lowercase, treated as conditions rather than as specific, capitalized places."
+    ],
+    "discussionQuestions": [
+      "What is the effect of framing survival as something to celebrate rather than simply endure?",
+      "Why might Clifton refuse capitalization throughout, including on the first-person pronoun?",
+      "What does the bridge image suggest about how the speaker understands her own life?"
+    ],
+    "furtherReading": [
+      "\"homage to my hips\" (Clifton) — for the same unapologetic, plainspoken celebration of self in a different register.",
+      "*Blessing the Boats: New and Selected Poems* (Clifton) — the National Book Award–winning collection spanning her career."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-seed",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}

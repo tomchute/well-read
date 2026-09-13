@@ -1,0 +1,79 @@
+{
+  "id": "adichie-the-thing-around-your-neck-2009",
+  "type": "short_story",
+  "title": "The Thing Around Your Neck",
+  "author": "Chimamanda Ngozi Adichie",
+  "authorGender": "woman",
+  "authorRegion": "Nigeria",
+  "year": 2009,
+  "era": "contemporary",
+  "form": "short story, second-person narration",
+  "themes": [
+    "migration",
+    "exile",
+    "home",
+    "solitude"
+  ],
+  "tags": [
+    "diaspora",
+    "second-person",
+    "needs-text"
+  ],
+  "length": {
+    "unit": "words",
+    "value": 4300
+  },
+  "difficulty": 2,
+  "source": {
+    "name": "Chimamanda Ngozi Adichie, The Thing Around Your Neck (Fourth Estate / Knopf, 2009); rights held by the author",
+    "url": "https://search.worldcat.org/search?q=The+Thing+Around+Your+Neck+Adichie",
+    "license": "all-rights-reserved",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "pending",
+  "externalLinks": [
+    {
+      "kind": "bookstore",
+      "url": "https://bookshop.org/search?keywords=The+Thing+Around+Your+Neck+Adichie",
+      "label": "Search Bookshop.org"
+    },
+    {
+      "kind": "library",
+      "url": "https://search.worldcat.org/search?q=The+Thing+Around+Your+Neck+Adichie",
+      "label": "Find a library copy on WorldCat"
+    }
+  ],
+  "masterNotes": {
+    "context": "Adichie published \"The Thing Around Your Neck\" as the title story of her 2009 collection, following the two novels — *Purple Hibiscus* and the Orange Prize-winning *Half of a Yellow Sun* — that had already made her one of the most closely watched writers of contemporary Anglophone African fiction. Where those novels are set mostly in Nigeria, several stories in this collection, including this one, follow characters who leave it. The story tracks a young Nigerian woman who wins a US visa lottery — a system that decides who gets to emigrate essentially by chance — and moves to a small Connecticut town to live with an uncle, only to find the promise of America delivering isolation, casual exploitation, and a string of people who are curious about her mainly as a type rather than as a person.",
+    "form": "The story is narrated in the second person throughout, addressing its protagonist as \"you\" rather than \"I\" or \"she.\" That choice does two things at once: it reads at first like a flat, almost instructional account of what happens to someone in this situation, and it holds the reader at a slight remove from feelings the narration refuses to name directly. Adichie's prose stays plain and unadorned even at the story's most painful turns, which matches its larger argument — that a life-altering migration, and the losses folded into it, can look almost unremarkable from the outside.",
+    "keyImages": [
+      "The visa lottery letter — an arbitrary piece of paper that decides, essentially by chance, who gets to leave and who doesn't.",
+      "The uncle's house and his unwanted advances — the story's first and sharpest disappointment about what \"family\" abroad turns out to mean.",
+      "The title image itself, a felt tightening around the throat that recurs at moments of dislocation, never explained away as a simple metaphor.",
+      "The American boyfriend's assumption that she must want to visit \"the real Africa\" one day — a small, telling instance of being flattened into an idea."
+    ],
+    "whatToNotice": [
+      "Notice the effect of being addressed as \"you\" for the whole story, and whether that distance closes or widens as the story goes on.",
+      "Notice how often other characters explain Nigeria, or Africa, back to the protagonist — and how the story handles those moments without editorial comment.",
+      "Notice the plainness of the prose even at the story's most difficult moments — Adichie is not reaching for lyrical effect there.",
+      "Notice what role money, or its absence, plays in nearly every relationship the protagonist has in America."
+    ],
+    "discussionQuestions": [
+      "What does the second-person address let Adichie do that first or third person wouldn't, especially at the story's most painful moments?",
+      "How does the story distinguish between the people who are curious about the protagonist and the people who actually see her?",
+      "Is the title's central image — a tightening around the neck — better read as suffocation, grief, or something the story deliberately leaves open?",
+      "What does the story suggest about the cost of the specific, arbitrary process (the visa lottery) that got her to America in the first place?"
+    ],
+    "furtherReading": [
+      "Chimamanda Ngozi Adichie, *Americanah* (2013) — a novel-length treatment of many of the same questions about migration, race, and return.",
+      "Adichie's TED talk \"The Danger of a Single Story\" (2009) — her own account of the flattening this story dramatizes.",
+      "Jhumpa Lahiri, \"Interpreter of Maladies\" — a comparable close study of cultural distance and misreading between people who should understand each other."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-dogfood",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  }
+}

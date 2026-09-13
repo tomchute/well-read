@@ -1,0 +1,65 @@
+{
+  "id": "dickinson-because-i-could-not-stop-for-death-1863",
+  "type": "poem",
+  "title": "Because I could not stop for Death",
+  "author": "Emily Dickinson",
+  "year": 1863,
+  "era": "19th_century",
+  "form": "lyric poem, ballad meter",
+  "themes": ["mortality", "time", "nature", "wonder"],
+  "tags": ["carriage", "afterlife", "personification"],
+  "length": { "unit": "lines", "value": 24 },
+  "difficulty": 2,
+  "source": {
+    "name": "Standard Ebooks — Emily Dickinson: Poems",
+    "url": "https://standardebooks.org/ebooks/emily-dickinson/poems",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-01"
+  },
+  "textPolicy": "full",
+  "text": "Because I could not stop for Death –\nHe kindly stopped for me –\nThe Carriage held but just Ourselves –\nAnd Immortality.\n\nWe slowly drove – He knew no haste\nAnd I had put away\nMy labor and my leisure too,\nFor His Civility –\n\nWe passed the School, where Children strove\nAt Recess – in the Ring –\nWe passed the Fields of Gazing Grain –\nWe passed the Setting Sun –\n\nOr rather – He passed us –\nThe Dews drew quivering and Chill –\nFor only Gossamer, my Gown –\nMy Tippet – only Tulle –\n\nWe paused before a House that seemed\nA Swelling of the Ground –\nThe Roof was scarcely visible –\nThe Cornice – in the Ground –\n\nSince then – 'tis Centuries – and yet\nFeels shorter than the Day\nI first surmised the Horses' Heads\nWere toward Eternity –",
+  "ebookLinks": [
+    {
+      "provider": "standard-ebooks",
+      "format": "epub",
+      "url": "https://standardebooks.org/ebooks/emily-dickinson/poems/downloads/emily-dickinson_poems.epub"
+    },
+    {
+      "provider": "gutenberg",
+      "format": "pdf",
+      "url": "https://www.gutenberg.org/ebooks/12242"
+    }
+  ],
+  "externalLinks": [
+    {
+      "kind": "poetry-foundation",
+      "url": "https://www.poetryfoundation.org/poems/47652/because-i-could-not-stop-for-death-479",
+      "label": "Read at Poetry Foundation"
+    }
+  ],
+  "masterNotes": {
+    "context": "Dickinson wrote this poem around 1862-63, during the extraordinarily productive years of the Civil War period, though it was not published until 1890, four years after her death. She lived a famously withdrawn life in Amherst, Massachusetts, and death was one of her most persistent subjects.\n\nThe poem takes the New England custom of a horse-drawn funeral carriage and turns it into an unhurried social call.",
+    "form": "The poem is written in Dickinson's signature common meter, the meter of hymns and ballads, which lends even her most unsettling ideas a deceptively singable rhythm. Her characteristic dashes replace conventional punctuation throughout.\n\nSlant rhyme and the slow widening of stanza scope build a quiet deceleration that mirrors the ride itself.",
+    "keyImages": [
+      "The carriage holding \"just Ourselves – / And Immortality\" — a third, abstract passenger riding along as if it were a person.",
+      "The house that \"seemed / A Swelling of the Ground\" — the grave described with the softened word \"House.\""
+    ],
+    "whatToNotice": [
+      "Death is personified as courteous and unhurried, never menacing — notice how that tone shapes your own sense of dread, or lack of it."
+    ],
+    "discussionQuestions": [
+      "Why might Dickinson have chosen to make Death a polite, familiar figure rather than a frightening one?",
+      "What is the effect of ending the poem mid-journey, with the horses still \"toward Eternity\"?",
+      "How does the hymn-like meter interact with the poem's subject?"
+    ],
+    "furtherReading": [
+      "Helen Vendler, *Dickinson: Selected Poems and Commentaries* — a close-reading companion covering this poem in detail."
+    ]
+  },
+  "pipeline": {
+    "batchId": "seed-0001",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "orchestrator-seed",
+    "schemaVersion": 1
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "book-not-using-excerpt",
+  "type": "book",
+  "title": "A Whole Novel Shipped Whole",
+  "author": "Fixture Novelist",
+  "year": 1900,
+  "era": "19th_century",
+  "form": "novel",
+  "themes": ["home"],
+  "tags": ["fixture"],
+  "length": { "unit": "words", "value": 900 },
+  "difficulty": 1,
+  "source": {
+    "name": "Fixture Public Domain Press",
+    "url": "https://example.org/fixtures/whole-novel",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-01"
+  },
+  "textPolicy": "full",
+  "text": "This fixture pretends to hold an entire public-domain novel's text, which is exactly what the book-always-excerpt gate forbids: books must always use textPolicy 'excerpt', never 'full', regardless of rights status.",
+  "ebookLinks": [
+    {
+      "provider": "gutenberg",
+      "format": "epub",
+      "url": "https://example.org/fixtures/whole-novel.epub"
+    }
+  ],
+  "masterNotes": {
+    "context": "Fixture for the book-always-excerpt gate: type is 'book' but textPolicy is 'full'.",
+    "form": "Fixture form notes.",
+    "keyImages": ["Fixture image one.", "Fixture image two."],
+    "whatToNotice": ["Fixture notice."],
+    "discussionQuestions": [
+      "Fixture question one?",
+      "Fixture question two?",
+      "Fixture question three?"
+    ],
+    "furtherReading": ["Fixture further reading."]
+  },
+  "pipeline": {
+    "batchId": "fixture-batch",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "fixture",
+    "schemaVersion": 1
+  }
+}

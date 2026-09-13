@@ -1,0 +1,53 @@
+{
+  "id": "fixture-porch-light-2022",
+  "type": "poem",
+  "title": "Porch Light",
+  "author": "Fixture Poet",
+  "year": 2022,
+  "era": "contemporary",
+  "form": "free verse",
+  "themes": ["home", "solitude", "seasons"],
+  "tags": ["fixture", "evening"],
+  "length": { "unit": "lines", "value": 12 },
+  "difficulty": 1,
+  "source": {
+    "name": "Fixture Journal",
+    "url": "https://example.org/fixtures/porch-light",
+    "license": "cc-by",
+    "retrievedDate": "2026-09-01"
+  },
+  "textPolicy": "full",
+  "text": "The porch light stays on past the hour anyone is expected.\nMoths find it before people do.\n\nI sit under it anyway, reading nothing,\nwatching the street settle into itself for the night.\n\nSomewhere a screen door closes twice, then a third time,\nas if someone can't decide whether to stay in or out.\n\nThe light draws a small yellow circle on the steps,\njust wide enough for one chair and one cup going cold.\n\nI could go inside. Nothing is keeping me here\nexcept the particular privacy of being visible and alone,\nlit up for anyone passing to see and not stop for,\nwhich is, some nights, exactly what I want.",
+  "externalLinks": [
+    {
+      "kind": "publisher",
+      "url": "https://example.org/fixtures/porch-light",
+      "label": "Read at Fixture Journal"
+    }
+  ],
+  "masterNotes": {
+    "context": "This fixture stands in for a short contemporary poem shown in full, with externalLinks rather than ebookLinks because the source license is not public-domain-ish.",
+    "form": "Unrhymed couplets, each a single unhurried observation, building toward a quiet claim about chosen solitude.",
+    "keyImages": [
+      "The porch light drawing \"a small yellow circle on the steps, just wide enough for one chair and one cup going cold.\"",
+      "The screen door closing three times, a small unresolved domestic drama happening just offstage."
+    ],
+    "whatToNotice": [
+      "Notice how the poem never explains who else lives in or near the house, keeping the solitude ambiguous rather than lonely."
+    ],
+    "discussionQuestions": [
+      "Why might the speaker prefer being \"visible and alone\" to being fully private?",
+      "What is the effect of the couplet form on the poem's pacing?",
+      "How does the porch light function as more than just a setting detail?"
+    ],
+    "furtherReading": [
+      "Fixture note: this entry exists only to exercise validate-content.mjs and has no real further reading."
+    ]
+  },
+  "pipeline": {
+    "batchId": "fixture-batch",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "fixture",
+    "schemaVersion": 1
+  }
+}

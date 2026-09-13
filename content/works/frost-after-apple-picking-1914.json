@@ -1,0 +1,76 @@
+{
+  "id": "frost-after-apple-picking-1914",
+  "type": "poem",
+  "title": "After Apple-Picking",
+  "author": "Robert Frost",
+  "authorGender": "man",
+  "authorRegion": "US",
+  "year": 1914,
+  "era": "early_20th_century",
+  "form": "irregular rhymed lyric, dream-monologue",
+  "themes": [
+    "work",
+    "mortality",
+    "nature",
+    "seasons"
+  ],
+  "tags": [
+    "north-of-boston",
+    "harvest",
+    "sleep-and-death"
+  ],
+  "length": {
+    "unit": "lines",
+    "value": 42
+  },
+  "difficulty": 4,
+  "source": {
+    "name": "Standard Ebooks (GitHub mirror)",
+    "url": "https://raw.githubusercontent.com/standardebooks/robert-frost_north-of-boston/master/src/epub/text/north-of-boston.xhtml",
+    "license": "public-domain",
+    "retrievedDate": "2026-09-13"
+  },
+  "textPolicy": "full",
+  "ebookLinks": [
+    {
+      "provider": "standard-ebooks",
+      "format": "epub",
+      "url": "https://standardebooks.org/ebooks/robert-frost/north-of-boston/downloads/robert-frost_north-of-boston.epub"
+    }
+  ],
+  "masterNotes": {
+    "context": "Frost wrote \"After Apple-Picking\" for *North of Boston* (1914), his second book, published in London after he had moved his family to England in 1912 in search of the readership American publishers hadn't given him. Where most of the volume's poems are dramatic narratives spoken by New England farmers and neighbors to one another, this one is a private lyric monologue, spoken by someone still half-inside the labor he claims to be finished with. Apple-picking was seasonal, exhausting, repetitive work, done from ladders against trees rather than from the ground, and the poem trusts the reader to know that literal exhaustion before it starts asking what else the exhaustion might mean. It has since become one of Frost's most frequently anthologized and taught shorter poems, prized for how quietly it slides from harvest labor into something closer to a meditation on ending.",
+    "form": "The poem's lines are loosely iambic but irregular in length, and its rhymes arrive unevenly — sometimes in quick pairs, sometimes held apart for many lines — which gives the whole poem a drifting, half-asleep momentum rather than a fixed pattern. It moves without warning between plain physical description and dream-logic image, and its tenses blur: the speaker describes what he did, what he is still seeing, and what he expects to dream, often within the same few lines. The poem never states outright whether the \"sleep\" it is approaching is ordinary tiredness or something more final, and that unresolved doubling is the poem's real subject, not a puzzle to be solved by the end.",
+    "keyImages": [
+      "The ladder \"sticking through a tree / Toward heaven still\" — a literal harvest tool left pointing past the world it was used in.",
+      "The sheet of ice \"skimmed\" from the drinking trough and held up to see the \"world of hoary grass\" through it, before it melts and breaks.",
+      "\"Magnified apples appear and disappear\" behind the speaker's closed eyes — the day's labor replaying on its own, before real sleep even arrives.",
+      "The closing appeal to the woodchuck, whose \"long sleep\" the speaker can't quite claim to share or rule out."
+    ],
+    "whatToNotice": [
+      "Notice how the poem opens in the past tense, describing finished labor, then drifts into present-tense description of a half-dream state.",
+      "Notice how many times some form of the word \"sleep\" appears, and how its meaning shifts each time — physical tiredness, hibernation, and something more final all use the same word.",
+      "Notice the exaggerated count, \"ten thousand thousand fruit to touch\" — a number too large to be literal, signaling exhaustion rather than arithmetic.",
+      "Notice that the speaker claims in the first stanza to be \"done with apple-picking now,\" then spends the rest of the poem still doing it, in his mind.",
+      "Notice where the rhymes fall close together and where they're held apart across many lines — the pattern loosens exactly where the speaker's thinking does."
+    ],
+    "discussionQuestions": [
+      "Is this poem finally about the end of a season's labor, or about mortality — and what in the poem keeps both readings open at once?",
+      "Why end by handing the question of what kind of sleep this is to an animal, rather than answering it directly?",
+      "The speaker announces early on that he's finished with the harvest. What does the rest of the poem suggest about when work actually ends?",
+      "How does the poem's loose, uneven form — its irregular rhyme and blurred tense — help make its argument, rather than just decorate it?"
+    ],
+    "furtherReading": [
+      "Robert Frost, \"Mending Wall\" (same collection) — for the volume's more typical mode, a dialogue between neighbors rather than a private monologue.",
+      "Robert Frost, \"Directive\" (from *Steeple Bush*, 1947) — a later poem returning to exhaustion and near-allegorical retreat from a much older vantage point.",
+      "Randall Jarrell, \"The Other Frost\" (in *Poetry and the Age*) — an influential essay arguing for reading past Frost's folksy public reputation into darker poems like this one."
+    ]
+  },
+  "pipeline": {
+    "batchId": "2026-09-13-dogfood",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "claude",
+    "schemaVersion": 1
+  },
+  "text": "My long two-pointed ladder’s sticking through a tree\nToward heaven still,\nAnd there’s a barrel that I didn’t fill\nBeside it, and there may be two or three\nApples I didn’t pick upon some bough.\nBut I am done with apple-picking now.\nEssence of winter sleep is on the night,\nThe scent of apples: I am drowsing off.\nI cannot rub the strangeness from my sight\nI got from looking through a pane of glass\nI skimmed this morning from the drinking trough\nAnd held against the world of hoary grass.\nIt melted, and I let it fall and break.\nBut I was well\nUpon my way to sleep before it fell,\nAnd I could tell\nWhat form my dreaming was about to take.\nMagnified apples appear and disappear,\nStem end and blossom end,\nAnd every fleck of russet showing clear.\nMy instep arch not only keeps the ache,\nIt keeps the pressure of a ladder-round.\nI feel the ladder sway as the boughs bend.\nAnd I keep hearing from the cellar bin\nThe rumbling sound\nOf load on load of apples coming in.\nFor I have had too much\nOf apple-picking: I am overtired\nOf the great harvest I myself desired.\nThere were ten thousand thousand fruit to touch,\nCherish in hand, lift down, and not let fall.\nFor all\nThat struck the earth,\nNo matter if not bruised or spiked with stubble,\nWent surely to the cider-apple heap\nAs of no worth.\nOne can see what will trouble\nThis sleep of mine, whatever sleep it is.\nWere he not gone,\nThe woodchuck could say whether it’s like his\nLong sleep, as I describe its coming on,\nOr just some human sleep."
+}
