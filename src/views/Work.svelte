@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { loadWork } from '$lib/data/work';
   import WorkLinks from '$lib/components/WorkLinks.svelte';
+  import { loadWork } from '$lib/data/work';
   import type { Work as WorkRecord } from '$lib/types/work';
 
   interface Props {

@@ -13,7 +13,9 @@ function readCurrentHash(): string {
   return typeof window === 'undefined' ? '' : window.location.hash;
 }
 
-let current = $state<Route>(typeof window === 'undefined' ? DEFAULT_ROUTE : parseHash(readCurrentHash()));
+let current = $state<Route>(
+  typeof window === 'undefined' ? DEFAULT_ROUTE : parseHash(readCurrentHash())
+);
 
 if (typeof window !== 'undefined') {
   window.addEventListener('hashchange', () => {

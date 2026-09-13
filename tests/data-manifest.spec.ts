@@ -75,7 +75,9 @@ describe('loadManifest', () => {
 
 describe('findManifestEntry', () => {
   it('finds an entry by id', () => {
-    expect(findManifestEntry(sampleManifest, 'blake-the-tyger-1794')).toEqual(sampleManifest.works[0]);
+    expect(findManifestEntry(sampleManifest, 'blake-the-tyger-1794')).toEqual(
+      sampleManifest.works[0]
+    );
   });
 
   it('returns undefined for an unknown id', () => {

@@ -32,7 +32,7 @@ Verification: `npm run validate:content` passes on the seed works and fails on t
 Verification: seed works render as cards; detail view shows all master-notes sections; `full` and `excerpt` works render their link types correctly; the app looks like `docs/design-system.md`.
 
 - [x] [WP-2.1](docs/work-packages/WP-2.1-design-tokens-typography.md) Design tokens, self-hosted fonts, typography base
-- [ ] [WP-2.2](docs/work-packages/WP-2.2-app-shell-routing-manifest.md) App shell, hash routing, manifest + shard loading
+- [x] [WP-2.2](docs/work-packages/WP-2.2-app-shell-routing-manifest.md) App shell, hash routing, manifest + shard loading
 - [ ] [WP-2.3](docs/work-packages/WP-2.3-work-card-virtual-feed.md) `WorkCard` + virtualised feed
 - [ ] [WP-2.4](docs/work-packages/WP-2.4-work-detail-master-notes.md) Work detail + master-notes side/bottom sheet
 - [x] [WP-2.5](docs/work-packages/WP-2.5-links-by-text-policy.md) Ebook/external link rendering by `textPolicy`

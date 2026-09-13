@@ -91,7 +91,9 @@ describe('loadWork', () => {
     await loadWork('blake-the-tyger-1794', fetchImpl);
     await loadWork('blake-the-lamb-1789', fetchImpl);
 
-    const shardFetches = fetchImpl.mock.calls.filter(([url]) => (url as string).endsWith('shard-0.json'));
+    const shardFetches = fetchImpl.mock.calls.filter(([url]) =>
+      (url as string).endsWith('shard-0.json')
+    );
     expect(shardFetches).toHaveLength(1);
   });
 
