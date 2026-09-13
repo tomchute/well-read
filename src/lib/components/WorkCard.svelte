@@ -449,6 +449,20 @@
     padding-top: var(--space-4);
   }
 
+  /* The card is a fixed height (Feed.svelte's CARD_HEIGHT) and `.card-main` is
+   * a flex column, so any content overrun is absorbed by shrinking its
+   * children — which silently squashed the title to a clipped half-line
+   * whenever it wrapped to two lines, a badge row wrapped, or a long
+   * translator credit pushed the block down. These four carry the card's
+   * identity and so hold their natural height; `.teaser` below is the one
+   * expendable block and absorbs the overrun instead. */
+  .title,
+  .author,
+  .badges,
+  .actions {
+    flex-shrink: 0;
+  }
+
   .title {
     font-family: var(--font-serif);
     font-optical-sizing: auto;
@@ -457,11 +471,24 @@
     line-height: var(--leading-lg);
     margin: 0 0 var(--space-1);
     color: var(--text);
+    /* Bounded at every width, not just narrow ones — an unbounded title is
+     * what makes a fixed-height card's content unpredictable. The full title
+     * stays in the card link's aria-label. */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .author {
     margin: 0 0 var(--space-3);
     color: var(--text-muted);
+    /* Translator credits ("… (translated by X and Y)") ran to three lines at
+     * phone widths, which is what squashed the title above them. */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .badges {
@@ -497,10 +524,19 @@
     box-shadow: inset 0 0 0 1px var(--card-accent);
   }
 
-  /* Reserves a stable block of teaser lines regardless of loading/ready/pending
-   * state, so a card never resizes once its shard finishes loading. */
+  /* The single flexible block: it gives up lines so that a two-line title or a
+   * wrapped badge row costs preview text rather than clipping the title. It
+   * only ever shrinks (never grows past its content), with a two-line floor so
+   * a heavily constrained card still previews something.
+   *
+   * This no longer reserves a fixed block of lines. That reservation existed to
+   * stop the card resizing when its shard landed, but the card's fixed height
+   * and `.actions { margin-top: auto }` already pin the layout: the teaser can
+   * change height without moving anything around it. */
   .teaser {
-    min-height: calc(var(--leading-md) * var(--text-md) * 4);
+    flex: 0 1 auto;
+    min-height: calc(var(--leading-md) * var(--text-md) * 2);
+    overflow: hidden;
     margin-bottom: var(--space-3);
   }
 
@@ -615,22 +651,10 @@
       width: 72px;
     }
 
-    /* Narrow cards keep the fixed CARD_HEIGHT (Feed.svelte) by clamping the
-     * title to two lines and reserving three teaser lines instead of four:
-     * at ~220px of text width the badge row wraps to two or three lines
-     * and a long title to three, which together pushed the action row out
-     * of the card. The full title is still in the card link's aria-label. */
-    .title {
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .teaser {
-      min-height: calc(var(--leading-md) * var(--text-md) * 3);
-    }
-
+    /* At ~220px of text width the badge row wraps to two or three rows, so the
+     * preview gives up a line to keep the card's content inside CARD_HEIGHT.
+     * (The two-line title clamp this block used to carry now applies at every
+     * width, alongside the author clamp.) */
     .teaser-text {
       -webkit-line-clamp: 3;
     }
