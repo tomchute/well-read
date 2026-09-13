@@ -5,9 +5,13 @@ on:
     branches: [main]
   workflow_dispatch:
 
-# NOTE: before the first deploy will succeed, the repo's Pages source must be
-# set to "GitHub Actions" once, manually, in Settings > Pages. This is not
-# automatable from a workflow file.
+# NOTE: the repo's Pages source must be "GitHub Actions", not a branch. In
+# branch mode this workflow still builds and uploads the artifact and reports
+# success, but Pages serves the repo root instead — which publishes the source
+# index.html and its /src/main.ts script tag, giving a blank page. Check and fix
+# with:
+#   gh api repos/tomchute/well-read/pages --jq .build_type   # want "workflow"
+#   gh api -X PUT repos/tomchute/well-read/pages -f build_type=workflow
 
 permissions:
   contents: read
