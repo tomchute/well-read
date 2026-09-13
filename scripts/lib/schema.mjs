@@ -51,7 +51,11 @@ const THEME_SET = new Set(THEME_VOCABULARY);
 
 // -------- enums / literal unions --------
 
-export const WorkTypeSchema = z.enum(['poem', 'short_story', 'book']);
+export const WorkTypeSchema = z.enum(['poem', 'short_story', 'book', 'essay', 'play']);
+
+// Types that never ship the whole work as `textPolicy: 'full'` — always
+// 'excerpt' or 'pending' (docs/content-schema.md, validation rule 5).
+const NEVER_FULL_TYPES = new Set(['book', 'essay', 'play']);
 
 export const EraSchema = z.enum([
   'ancient',
@@ -104,7 +108,7 @@ const nonEmptyString = z.string().min(1);
 // -------- composite fields --------
 
 export const LengthSchema = z.object({
-  unit: z.enum(['lines', 'words']),
+  unit: z.enum(['lines', 'words', 'pages']),
   value: z.number().int().positive(),
 });
 
@@ -193,12 +197,14 @@ export const WorkSchema = WorkBaseSchema.superRefine((work, ctx) => {
   const ebookLinkCount = work.ebookLinks?.length ?? 0;
   const externalLinkCount = work.externalLinks?.length ?? 0;
 
-  // Rule 4: books never ship `full` — always excerpted, even public domain.
-  if (work.type === 'book' && work.textPolicy === 'full') {
+  // Rule 4: books, essays, and plays never ship `full` — always excerpted or
+  // pending, even public domain.
+  if (NEVER_FULL_TYPES.has(work.type) && work.textPolicy === 'full') {
     ctx.addIssue({
       code: 'custom',
       path: ['textPolicy'],
-      message: "type 'book' must always use textPolicy 'excerpt' (never 'full')",
+      message:
+        "types 'book', 'essay', and 'play' must always use textPolicy 'excerpt' or 'pending' (never 'full')",
     });
   }
 
@@ -277,7 +283,8 @@ export const WorkSchema = WorkBaseSchema.superRefine((work, ctx) => {
       });
     }
 
-    // Rule 3: excerpt minimums — poems >= 8 lines, prose (short_story/book) >= 500 words.
+    // Rule 3: excerpt minimums — poems >= 8 lines, prose (short_story/book/
+    // essay/play) >= 500 words.
     if (work.excerpt) {
       if (work.type === 'poem') {
         const lines = countLines(work.excerpt);
@@ -333,8 +340,10 @@ export const WorkSchema = WorkBaseSchema.superRefine((work, ctx) => {
     }
   }
 
-  // `length.unit` follows the shipped text's kind: lines for poems, words for prose.
-  const expectedUnit = work.type === 'poem' ? 'lines' : 'words';
+  // `length.unit` follows the shipped text's kind: lines for poems, pages for
+  // plays, words for all other prose (short_story, book, essay).
+  const UNIT_BY_TYPE = { poem: 'lines', play: 'pages' };
+  const expectedUnit = UNIT_BY_TYPE[work.type] ?? 'words';
   if (work.length.unit !== expectedUnit) {
     ctx.addIssue({
       code: 'custom',

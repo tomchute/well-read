@@ -16,16 +16,22 @@
  *     https://raw.githubusercontent.com/GITenberg/Pride-and-Prejudice_1342/master/1342.txt
  *
  * Usage:
- *   node scripts/inject-excerpt.mjs --id <work-id> --url <raw-url> [--url <raw-url> ...] \
+ *   node scripts/inject-excerpt.mjs --id <work-id> (--url <raw-url> | --file <path>) \
+ *     [--url <raw-url> | --file <path> ...] \
  *     [--mode excerpt|full] [--min 800] [--max 1500] [--start "<phrase>"] [--end "<phrase>"] \
  *     [--dir <works dir>]
  *
- * --mode excerpt (default): fetches and concatenates all --url bodies (in
- *   order), takes whole paragraphs until the word count is >= --min, stopping
+ * --url: fetch text from a raw GitHub URL (repeatable).
+ * --file: read text from a local file (repeatable, mutually exclusive with --url).
+ *   File extension determines handling: .xhtml/.html use HTML parser; files
+ *   containing *** START/END markers use Gutenberg format; otherwise plain text
+ *   with paragraphs separated by blank lines, single newlines preserved as verse.
+ *
+ * --mode excerpt (default): fetches/reads and concatenates all --url/--file sources
+ *   (in order), takes whole paragraphs until the word count is >= --min, stopping
  *   at the last paragraph boundary before exceeding --max. Writes `excerpt`
  *   and `excerptNote`, and records provenance in `source` (if `source.url` is
- *   empty or differs from the fetched URL — the existing `source.license` is
- *   never touched).
+ *   empty or differs — the existing `source.license` is never touched).
  * --mode full: writes the whole cleaned, concatenated text into `text` and
  *   removes `excerpt`/`excerptNote`. Also records provenance in `source`.
  *
@@ -57,7 +63,7 @@ export const DEFAULT_MAX_WORDS = 1500;
 /**
  * @param {string[]} args - argv slice (no `node`/script path entries)
  * @returns {{
- *   id: string|null, urls: string[], mode: string, min: number, max: number,
+ *   id: string|null, urls: string[], files: string[], mode: string, min: number, max: number,
  *   start: string|null, end: string|null, dir: string|null
  * }}
  */
@@ -65,6 +71,7 @@ export function parseArguments(args) {
   const opts = {
     id: null,
     urls: [],
+    files: [],
     mode: 'excerpt',
     min: DEFAULT_MIN_WORDS,
     max: DEFAULT_MAX_WORDS,
@@ -79,6 +86,8 @@ export function parseArguments(args) {
       opts.id = args[++i];
     } else if (arg === '--url' && i + 1 < args.length) {
       opts.urls.push(args[++i]);
+    } else if (arg === '--file' && i + 1 < args.length) {
+      opts.files.push(args[++i]);
     } else if (arg === '--mode' && i + 1 < args.length) {
       opts.mode = args[++i];
     } else if (arg === '--min' && i + 1 < args.length) {
@@ -240,6 +249,29 @@ export function gutenbergToText(raw) {
   return paragraphs.join('\n\n');
 }
 
+/**
+ * Convert plain text to plain text: splits by blank lines (2+ newlines),
+ * trims each line, and preserves single newlines within paragraphs for verse.
+ * @param {string} raw
+ * @returns {string}
+ */
+export function plainTextToText(raw) {
+  const text = String(raw).replace(/\r\n/g, '\n');
+
+  const paragraphs = text
+    .split(/\n{2,}/)
+    .map((block) =>
+      block
+        .split('\n')
+        .map((line) => line.trim())
+        .filter((line) => line.length > 0)
+        .join('\n')
+    )
+    .filter((block) => block.length > 0);
+
+  return paragraphs.join('\n\n');
+}
+
 // -------- excerpt slicing (pure) --------
 
 /**
@@ -293,7 +325,7 @@ export function sliceExcerpt(text, options = {}) {
   return { excerpt: included.join('\n\n'), wordCount };
 }
 
-// -------- fetching --------
+// -------- fetching and file loading --------
 
 /**
  * Fetch one source URL and convert it to plain text, choosing the converter
@@ -309,6 +341,32 @@ async function fetchText(url) {
   }
   const body = await response.text();
   return /\.txt(?:$|[?#])/i.test(url) ? gutenbergToText(body) : xhtmlToText(body);
+}
+
+/**
+ * Read one source file and convert it to plain text, choosing the converter
+ * from the file's extension and content:
+ * - .xhtml/.html -> XHTML/HTML parser
+ * - contains Gutenberg START/END markers -> Gutenberg format
+ * - otherwise -> plain text (preserving verse line breaks)
+ * @param {string} filePath
+ * @returns {Promise<string>}
+ */
+async function loadTextFile(filePath) {
+  const body = await readFile(filePath, 'utf8');
+
+  // Check file extension
+  if (/\.(?:xhtml|html)$/i.test(filePath)) {
+    return xhtmlToText(body);
+  }
+
+  // Check for Gutenberg markers
+  if (GUTENBERG_START_RE.test(body)) {
+    return gutenbergToText(body);
+  }
+
+  // Treat as plain text
+  return plainTextToText(body);
 }
 
 /**
@@ -344,14 +402,14 @@ function isoToday(now = new Date()) {
 
 /**
  * @typedef {{
- *   id: string, urls: string[], mode?: string, min?: number, max?: number,
+ *   id: string, urls?: string[], files?: string[], mode?: string, min?: number, max?: number,
  *   start?: string|null, end?: string|null, dir?: string, now?: Date
  * }} InjectExcerptOptions
  * @typedef {{ workPath: string, mode: string, totalWords: number, excerptWordCount: number|null }} InjectExcerptResult
  */
 
 /**
- * Read `<dir>/<id>.json`, fetch and concatenate `urls`, inject the resulting
+ * Read `<dir>/<id>.json`, fetch/load and concatenate `urls`/`files`, inject the resulting
  * text as an excerpt or the full text, validate against `WorkSchema`, and
  * write the file back (preserving key order) — or throw and leave the file
  * untouched if the result would be invalid.
@@ -361,7 +419,8 @@ function isoToday(now = new Date()) {
 export async function injectExcerpt(options) {
   const {
     id,
-    urls,
+    urls = [],
+    files = [],
     mode = 'excerpt',
     min = DEFAULT_MIN_WORDS,
     max = DEFAULT_MAX_WORDS,
@@ -374,8 +433,13 @@ export async function injectExcerpt(options) {
   if (!id) {
     throw new Error('--id is required');
   }
-  if (!urls || urls.length === 0) {
-    throw new Error('--url is required (one or more)');
+  const hasUrls = urls && urls.length > 0;
+  const hasFiles = files && files.length > 0;
+  if (!hasUrls && !hasFiles) {
+    throw new Error('--url or --file is required (one or more)');
+  }
+  if (hasUrls && hasFiles) {
+    throw new Error('--url and --file are mutually exclusive');
   }
   if (mode !== 'excerpt' && mode !== 'full') {
     throw new Error(`--mode must be "excerpt" or "full" (got "${mode}")`);
@@ -387,8 +451,14 @@ export async function injectExcerpt(options) {
   const work = JSON.parse(raw);
 
   const texts = [];
-  for (const url of urls) {
-    texts.push(await fetchText(url));
+  if (hasUrls) {
+    for (const url of urls) {
+      texts.push(await fetchText(url));
+    }
+  } else {
+    for (const filePath of files) {
+      texts.push(await loadTextFile(filePath));
+    }
   }
   const fullText = texts.join('\n\n');
   const totalWords = countWords(fullText);
@@ -400,12 +470,16 @@ export async function injectExcerpt(options) {
     delete work.excerptNote;
   } else {
     const sliced = sliceExcerpt(fullText, { min, max, start, end });
-    const { hostRepo } = describeSource(urls[0]);
+    let sourceDesc = 'manual paste';
+    if (hasUrls) {
+      const { hostRepo } = describeSource(urls[0]);
+      sourceDesc = hostRepo;
+    }
     work.excerpt = sliced.excerpt;
     work.excerptNote =
       sliced.wordCount === totalWords
-        ? `Opening ${sliced.wordCount} words: the complete first section as published (source: ${hostRepo})`
-        : `Opening ${sliced.wordCount} words of the work, ending at a paragraph break (source: ${hostRepo})`;
+        ? `Opening ${sliced.wordCount} words: the complete first section as published (source: ${sourceDesc})`
+        : `Opening ${sliced.wordCount} words of the work, ending at a paragraph break (source: ${sourceDesc})`;
     excerptWordCount = sliced.wordCount;
   }
 
@@ -414,16 +488,25 @@ export async function injectExcerpt(options) {
     work.tags = work.tags.filter((tag) => tag !== 'needs-text');
   }
 
-  const { name } = describeSource(urls[0]);
   const source = /** @type {{ url?: string, name?: string, retrievedDate?: string }} */ (
     work.source ?? {}
   );
-  if (!source.url || source.url !== urls[0]) {
-    source.name = name;
-    source.url = urls[0];
+  if (hasUrls) {
+    const { name } = describeSource(urls[0]);
+    if (!source.url || source.url !== urls[0]) {
+      source.name = name;
+      source.url = urls[0];
+      source.retrievedDate = isoToday(now);
+    }
+  } else {
+    // Manual paste: set name and retrievedDate, preserve existing URL only if non-empty
+    source.name = 'manual paste';
     source.retrievedDate = isoToday(now);
-    work.source = source;
+    if (!source.url) {
+      delete source.url;
+    }
   }
+  work.source = source;
 
   const result = WorkSchema.safeParse(work);
   if (!result.success) {

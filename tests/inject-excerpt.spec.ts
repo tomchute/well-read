@@ -7,6 +7,7 @@ import {
   gutenbergToText,
   injectExcerpt,
   parseArguments,
+  plainTextToText,
   sliceExcerpt,
   xhtmlToText,
 } from '../scripts/inject-excerpt.mjs';
@@ -152,6 +153,26 @@ describe('inject-excerpt: pure converters', () => {
     expect(result).not.toContain('placeholder\nparagraph'); // wrapped line was rejoined
   });
 
+  it('plainTextToText preserves verse line breaks and splits on blank lines', () => {
+    const plainText = [
+      'First placeholder line of verse',
+      'Second placeholder line of verse',
+      'Third placeholder line of verse',
+      '',
+      'Second paragraph placeholder text.',
+      'Also second paragraph.',
+    ].join('\n');
+
+    const result = plainTextToText(plainText);
+
+    const paragraphs = result.split('\n\n');
+    expect(paragraphs).toHaveLength(2);
+    expect(paragraphs[0]).toBe(
+      'First placeholder line of verse\nSecond placeholder line of verse\nThird placeholder line of verse'
+    );
+    expect(paragraphs[1]).toBe('Second paragraph placeholder text.\nAlso second paragraph.');
+  });
+
   it('describeSource derives a host/owner/repo string and a friendly name for known GitHub mirrors', () => {
     expect(
       describeSource(
@@ -259,6 +280,7 @@ describe('inject-excerpt: parseArguments', () => {
     expect(opts).toEqual({
       id: 'some-work-2020',
       urls: ['https://example.com/a.xhtml', 'https://example.com/b.xhtml'],
+      files: [],
       mode: 'full',
       min: 900,
       max: 1600,
@@ -268,9 +290,32 @@ describe('inject-excerpt: parseArguments', () => {
     });
   });
 
+  it('collects repeated --file flags separately from --url', () => {
+    const opts = parseArguments([
+      '--id',
+      'some-work-2020',
+      '--file',
+      '/tmp/part1.txt',
+      '--file',
+      '/tmp/part2.txt',
+    ]);
+
+    expect(opts).toEqual({
+      id: 'some-work-2020',
+      urls: [],
+      files: ['/tmp/part1.txt', '/tmp/part2.txt'],
+      mode: 'excerpt',
+      min: 800,
+      max: 1500,
+      start: null,
+      end: null,
+      dir: null,
+    });
+  });
+
   it('defaults mode/min/max when not given', () => {
     const opts = parseArguments(['--id', 'x', '--url', 'https://example.com/a.xhtml']);
-    expect(opts).toMatchObject({ mode: 'excerpt', min: 800, max: 1500 });
+    expect(opts).toMatchObject({ mode: 'excerpt', min: 800, max: 1500, files: [] });
   });
 });
 
@@ -446,5 +491,124 @@ describe('inject-excerpt: injectExcerpt (mocked fetch, temp works dir)', () => {
       })
     ).rejects.toThrow(/--mode must be/);
     expect(fetchSpy).not.toHaveBeenCalled();
+  });
+
+  it('rejects when both --url and --file are provided', async () => {
+    const work = makeExcerptWork();
+    await writeWork(work);
+
+    await expect(
+      injectExcerpt({
+        id: work.id as string,
+        urls: ['https://example.com/x.xhtml'],
+        files: ['/tmp/some.txt'],
+        dir,
+      })
+    ).rejects.toThrow(/--url and --file are mutually exclusive/);
+  });
+
+  it('full mode with plain-text file: writes whole text with verse line breaks preserved', async () => {
+    const poemWork = {
+      id: 'fixture-inject-poem-full-2020',
+      type: 'poem',
+      title: 'A Fixture Poem',
+      author: 'Fixture Poet',
+      year: 2020,
+      era: 'contemporary',
+      form: 'poem',
+      themes: ['memory'],
+      tags: ['fixture'],
+      length: { unit: 'lines', value: 9 },
+      difficulty: 2,
+      source: {
+        name: 'Placeholder Source',
+        license: 'public-domain',
+        retrievedDate: '2026-09-01',
+      },
+      textPolicy: 'full',
+      text: 'TODO placeholder text.',
+      ebookLinks: [{ provider: 'gutenberg', format: 'html', url: 'https://example.com/ebook' }],
+      masterNotes: {
+        context: 'Placeholder context.',
+        form: 'Placeholder form discussion.',
+        keyImages: ['Placeholder key image one.', 'Placeholder key image two.'],
+        whatToNotice: ['Placeholder thing to notice.'],
+        discussionQuestions: [
+          'Placeholder question one?',
+          'Placeholder question two?',
+          'Placeholder question three?',
+        ],
+        furtherReading: ['Placeholder reference.'],
+      },
+      pipeline: {
+        batchId: 'test-batch',
+        dateAdded: '2026-09-01',
+        curatedBy: 'test',
+        schemaVersion: 1,
+      },
+    };
+    await writeWork(poemWork);
+
+    const plainTextFile = join(dir, 'poem.txt');
+    const poemContent = [
+      'First placeholder line',
+      'Second placeholder line',
+      'Third placeholder line',
+      '',
+      'Fourth placeholder line',
+      'Fifth placeholder line',
+      'Sixth placeholder line',
+    ].join('\n');
+    await writeFile(plainTextFile, poemContent);
+
+    const result = await injectExcerpt({
+      id: poemWork.id as string,
+      files: [plainTextFile],
+      dir,
+      mode: 'full',
+      now: new Date('2026-09-13T00:00:00Z'),
+    });
+
+    expect(result.mode).toBe('full');
+    expect(result.excerptWordCount).toBeNull();
+
+    const onDisk = JSON.parse(await readFile(join(dir, `${poemWork.id}.json`), 'utf8'));
+    expect(onDisk.text).toContain('First placeholder line');
+    expect(onDisk.text).toContain('Fifth placeholder line');
+    expect(onDisk).not.toHaveProperty('excerpt');
+    expect(onDisk.source.name).toBe('manual paste');
+    expect(onDisk.source.retrievedDate).toBe('2026-09-13');
+    // Verify verse lines are preserved
+    expect(onDisk.text).toContain('\n');
+  });
+
+  it('excerpt mode with plain-text file: writes excerpt with source.name "manual paste"', async () => {
+    const work = makeExcerptWork();
+    await writeWork(work);
+
+    const plainTextFile = join(dir, 'prose.txt');
+    const proseContent = Array.from({ length: 6 }, (_, i) =>
+      placeholderParagraph(`para${i}`, 300)
+    ).join('\n\n');
+    await writeFile(plainTextFile, proseContent);
+
+    const result = await injectExcerpt({
+      id: work.id as string,
+      files: [plainTextFile],
+      dir,
+      min: 800,
+      max: 1500,
+      now: new Date('2026-09-13T00:00:00Z'),
+    });
+
+    expect(result.mode).toBe('excerpt');
+    expect(result.excerptWordCount).toBeGreaterThanOrEqual(800);
+    expect(result.excerptWordCount).toBeLessThanOrEqual(1500);
+
+    const onDisk = JSON.parse(await readFile(join(dir, `${work.id}.json`), 'utf8'));
+    expect(onDisk.excerpt).toBeDefined();
+    expect(onDisk.excerptNote).toMatch(/source: manual paste/);
+    expect(onDisk.source.name).toBe('manual paste');
+    expect(onDisk.source.retrievedDate).toBe('2026-09-13');
   });
 });

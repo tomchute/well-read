@@ -38,13 +38,21 @@ A work qualifies if it meets at least one of:
 virality, self-published work, or a single positive review. These can be a reason
 to *look closer* for one of the criteria above, never a substitute for it.
 
+**Overfamiliarity**: if a work is so widely taught or quoted that its own master
+notes would have to warn the reader against reading it on autopilot ("you may
+already know this poem by heart," "this opening is a cliché by now"), swap it
+for a less-overexposed work by the same author or in the same vein rather than
+include it. Well-respected is not the same as fresh; prefer the latter when
+they conflict.
+
 ## Balance targets (tracked over time, not per batch)
 
 Checked with `npm run report:coverage` against the whole catalogue, not any one
 batch. A single batch may skew; the running catalogue should trend toward:
 
 - **Eras**: ~40% pre-1900, ~30% 1900–1970, ~30% after 1970.
-- **Forms**: ~45% poems, ~30% short stories, ~25% books.
+- **Forms**: ~40% poems, ~25% short stories, ~25% books, ~10% essays and drama
+  combined.
 - **Gender**: at least 40% women and non-binary authors.
 - **Geography**: at least 30% authors from outside the US/UK. Translations are
   welcome and encouraged — always credit the translator in `source`/author
@@ -104,13 +112,19 @@ anything more specific — a place name, a form like "sonnet", a movement).
   give).
 - **Contemporary poems, >60 lines**: excerpt the strongest continuous 40–60
   lines — not the opening by default, whichever stretch reads best on its own.
-- **Short stories and books, any era shown as excerpt**: 800–1,500 words, or the
-  complete first section/chapter if that falls in a reasonable range, ending at a
-  natural break (scene, section, or chapter boundary) — never mid-scene.
+- **Short stories, essays, and books, any era shown as excerpt**: 800–1,500
+  words, or the complete first section/chapter if that falls in a reasonable
+  range, ending at a natural break (scene, section, or chapter boundary) —
+  never mid-scene.
+- **A book or play excerpt** may be either the opening or one complete
+  representative chapter/scene, named in `excerptNote` (e.g. "Part One,
+  Chapter 18, complete"). Whichever is chosen, the chapter or scene should
+  contain the protagonist or the work's central situation — not a minor aside.
 - `excerptNote` must state the boundary in plain terms, e.g. "opening 1,240 of
   ~5,400 words" or "first section of three."
-- **Books always use `excerpt`**, even when in the public domain — never ship a
-  whole novel into a shard.
+- **Books, essays, and plays always use `excerpt` or `pending`**, never
+  `full`, even when in the public domain — never ship a whole novel or script
+  into a shard.
 - Validation enforces floors only, not tight ceilings: poems ≥8 lines, prose
   ≥500 words. Above the floor, judgement decides where to end.
 - **Always at least one outbound link** on every work — `ebookLinks` for public
@@ -156,3 +170,20 @@ own `text`/`excerpt` field, not from memory of the work.
   Yorker*, *Poetry*, *The Paris Review*). Record that source's name, URL (if any),
   and retrieval date in the work's `source` field. Never transcribe from an
   unauthorized reposting.
+
+## Supplying text by hand
+
+For a work the Routine cannot fetch by script (no reachable raw-text URL —
+e.g. a human-supplied scan, a print-only source), text is added to a
+`pending` work after the fact, by hand:
+
+1. Paste the text into a local `.txt` file: one paragraph per
+   blank-line-separated block for prose, or one line per verse line for
+   poems/plays.
+2. Run:
+   ```
+   npm run inject:excerpt -- --id <id> --file <path> [--mode full]
+   ```
+   The script reads the file, validates it against `WorkSchema`, and flips
+   the work from `pending` to `excerpt` (default) or `full` (with
+   `--mode full`, only for types allowed to ship full text).

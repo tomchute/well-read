@@ -7,7 +7,7 @@ Source of truth for the `Work` type, its zod validation gates, and the manifest 
 ```ts
 // -------- enums / literal unions --------
 
-type WorkType = 'poem' | 'short_story' | 'book';
+type WorkType = 'poem' | 'short_story' | 'book' | 'essay' | 'play';
 
 type Era =
   | 'ancient'              // pre-500 CE
@@ -42,7 +42,7 @@ type SourceLicense =
 // -------- composite fields --------
 
 interface Length {
-  unit: 'lines' | 'words';  // lines for poems, words for prose
+  unit: 'lines' | 'words' | 'pages';  // lines for poems, pages for plays, words for other prose (short_story, book, essay)
   value: number;            // count for the unit above (of the shipped text, i.e. excerpt length if excerpted)
 }
 
@@ -119,10 +119,11 @@ Enforced by `scripts/validate-content.mjs` (zod) — a work fails the batch if a
 3. **`textPolicy: 'pending'`** ⇒ neither `text` nor `excerpt` is set, `externalLinks` has ≥1 entry, and `tags` includes `needs-text`. Used for contemporary (in-copyright) prose that cannot be sourced by script and must never be typed from a model's memory: the work enters the catalogue with full metadata, master notes, and links, and gets its text later via a human paste or a future source.
 4. **Excerpt boundary rules** (private use, quality first, not tight maximums):
    - Contemporary poems ≤60 lines are shown in full (`textPolicy: 'full'` with `externalLinks`, not `ebookLinks`); longer poems are excerpted to the strongest continuous 40–60 lines.
-   - Short stories and books are excerpted to 800–1,500 words or the complete first section/chapter, ending at a natural break.
+   - Short stories, essays, and books are excerpted to 800–1,500 words or the complete first section/chapter, ending at a natural break.
+   - A book or play excerpt may instead be one complete representative chapter or scene, named in `excerptNote` (see `docs/editorial-policy.md`).
    - `excerptNote` must state the boundary (e.g. "opening 1,240 of 5,400 words").
-   - Validation enforces **minimums only**: poem excerpts ≥8 lines, prose excerpts ≥500 words.
-5. **`type: 'book'`** always uses `textPolicy: 'excerpt'` plus links, even when the source is public domain — whole novels are never shipped in shards.
+   - Validation enforces **minimums only**: poem excerpts ≥8 lines, prose excerpts (short_story/book/essay/play) ≥500 words.
+5. **`type: 'book'`, `'essay'`, or `'play'`** always uses `textPolicy: 'excerpt'` or `'pending'`, never `'full'`, plus links, even when the source is public domain — whole novels or scripts are never shipped in shards.
 6. **`themes`** must be a subset of the controlled vocabulary defined in `docs/editorial-policy.md`.
 7. **`masterNotes.keyImages`** has ≥2 entries.
 8. **`masterNotes.discussionQuestions`** has ≥3 entries.
