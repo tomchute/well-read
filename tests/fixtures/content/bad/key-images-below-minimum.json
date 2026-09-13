@@ -1,0 +1,42 @@
+{
+  "id": "key-images-below-minimum",
+  "type": "poem",
+  "title": "Too Few Key Images",
+  "author": "Fixture Poet",
+  "year": 2020,
+  "era": "contemporary",
+  "form": "free verse",
+  "themes": ["home"],
+  "tags": ["fixture"],
+  "length": { "unit": "lines", "value": 8 },
+  "difficulty": 1,
+  "source": {
+    "name": "Fixture Journal",
+    "url": "https://example.org/fixtures/key-images-below-minimum",
+    "license": "cc-by",
+    "retrievedDate": "2026-09-01"
+  },
+  "textPolicy": "full",
+  "text": "Line one of a short fixture poem.\nLine two continues it.\nLine three keeps going.\nLine four still going.\nLine five almost there.\nLine six close now.\nLine seven nearly done.\nLine eight, the end.",
+  "externalLinks": [
+    { "kind": "publisher", "url": "https://example.org/fixtures/key-images-below-minimum" }
+  ],
+  "masterNotes": {
+    "context": "Fixture for the keyImages-minimum gate: only one entry is provided, below the required minimum of two.",
+    "form": "Fixture form notes.",
+    "keyImages": ["Only one fixture image."],
+    "whatToNotice": ["Fixture notice."],
+    "discussionQuestions": [
+      "Fixture question one?",
+      "Fixture question two?",
+      "Fixture question three?"
+    ],
+    "furtherReading": ["Fixture further reading."]
+  },
+  "pipeline": {
+    "batchId": "fixture-batch",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "fixture",
+    "schemaVersion": 1
+  }
+}

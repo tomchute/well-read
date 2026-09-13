@@ -1,0 +1,39 @@
+{
+  "id": "missing-text-for-full-policy",
+  "type": "poem",
+  "title": "No Text Attached",
+  "author": "Fixture Poet",
+  "year": 2020,
+  "era": "contemporary",
+  "form": "free verse",
+  "themes": ["home"],
+  "tags": ["fixture"],
+  "length": { "unit": "lines", "value": 8 },
+  "difficulty": 1,
+  "source": {
+    "name": "Fixture Journal",
+    "url": "https://example.org/fixtures/missing-text",
+    "license": "cc-by",
+    "retrievedDate": "2026-09-01"
+  },
+  "textPolicy": "full",
+  "externalLinks": [{ "kind": "publisher", "url": "https://example.org/fixtures/missing-text" }],
+  "masterNotes": {
+    "context": "Fixture for the full-requires-text gate: textPolicy is 'full' but `text` is not set.",
+    "form": "Fixture form notes.",
+    "keyImages": ["Fixture image one.", "Fixture image two."],
+    "whatToNotice": ["Fixture notice."],
+    "discussionQuestions": [
+      "Fixture question one?",
+      "Fixture question two?",
+      "Fixture question three?"
+    ],
+    "furtherReading": ["Fixture further reading."]
+  },
+  "pipeline": {
+    "batchId": "fixture-batch",
+    "dateAdded": "2026-09-13",
+    "curatedBy": "fixture",
+    "schemaVersion": 1
+  }
+}

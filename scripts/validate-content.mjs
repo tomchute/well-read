@@ -41,7 +41,9 @@ export function validateDirectory(dir) {
   /** @type {string[]} */
   let files;
   try {
-    files = readdirSync(dir).filter((f) => f.endsWith('.json')).sort();
+    files = readdirSync(dir)
+      .filter((f) => f.endsWith('.json'))
+      .sort();
   } catch (err) {
     throw new Error(`cannot read content directory "${dir}": ${err.message}`);
   }
@@ -164,7 +166,8 @@ function main() {
   process.exit(report.ok ? 0 : 1);
 }
 
-const isMainModule = path.resolve(fileURLToPath(import.meta.url)) === path.resolve(process.argv[1] ?? '');
+const isMainModule =
+  path.resolve(fileURLToPath(import.meta.url)) === path.resolve(process.argv[1] ?? '');
 if (isMainModule) {
   main();
 }

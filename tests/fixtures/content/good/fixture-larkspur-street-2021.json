@@ -6,15 +6,8 @@
   "year": 2021,
   "era": "contemporary",
   "form": "novel",
-  "themes": [
-    "family",
-    "memory",
-    "home"
-  ],
-  "tags": [
-    "inheritance",
-    "fixture"
-  ],
+  "themes": ["family", "memory", "home"],
+  "tags": ["inheritance", "fixture"],
   "length": {
     "unit": "words",
     "value": 523
