@@ -17,6 +17,7 @@
 
   let selectedIds = $state<Set<string>>(new Set());
 
+  // biome-ignore lint/correctness/noUnusedVariables: called from template
   function toggle(card: TasteCard) {
     const next = new Set(selectedIds);
     if (next.has(card.id)) {

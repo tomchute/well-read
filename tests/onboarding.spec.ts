@@ -11,8 +11,8 @@ import {
   TASTE_CARDS,
   type TasteCard,
 } from '../src/lib/components/onboarding';
-import { DEFAULT_SETTINGS } from '../src/lib/stores/schema';
 import type { Weights } from '../src/lib/stores/schema';
+import { DEFAULT_SETTINGS } from '../src/lib/stores/schema';
 
 function zeroWeights(): Weights {
   return { theme: {}, form: {}, era: {}, author: {} };
