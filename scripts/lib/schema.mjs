@@ -148,29 +148,19 @@ export const PipelineSchema = z.object({
 // -------- the Work schema --------
 
 const WorkBaseSchema = z.object({
-  id: z
-    .string()
-    .regex(KEBAB_CASE_ID, 'id must be kebab-case (lowercase letters, digits, hyphens)'),
+  id: z.string().regex(KEBAB_CASE_ID, 'id must be kebab-case (lowercase letters, digits, hyphens)'),
   type: WorkTypeSchema,
   title: nonEmptyString,
   author: nonEmptyString,
   year: z.number().int(),
   era: EraSchema,
   form: nonEmptyString,
-  themes: z
-    .array(z.string())
-    .refine((themes) => themes.every((t) => THEME_SET.has(t)), {
-      message: `themes must be a subset of the controlled vocabulary in docs/editorial-policy.md: ${THEME_VOCABULARY.join(', ')}`,
-    }),
+  themes: z.array(z.string()).refine((themes) => themes.every((t) => THEME_SET.has(t)), {
+    message: `themes must be a subset of the controlled vocabulary in docs/editorial-policy.md: ${THEME_VOCABULARY.join(', ')}`,
+  }),
   tags: z.array(z.string()),
   length: LengthSchema,
-  difficulty: z.union([
-    z.literal(1),
-    z.literal(2),
-    z.literal(3),
-    z.literal(4),
-    z.literal(5),
-  ]),
+  difficulty: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5)]),
   source: SourceInfoSchema,
   textPolicy: TextPolicySchema,
   text: z.string().min(1).optional(),
@@ -188,10 +178,12 @@ const WorkBaseSchema = z.object({
  * Mirrors how `length.value` is defined (docs/content-schema.md: "count for
  * the unit above, of the shipped text").
  */
+/** @param {string} text */
 function countLines(text) {
-  return text.split('\n').filter((line) => line.trim().length > 0).length;
+  return text.split('\n').filter((/** @type {string} */ line) => line.trim().length > 0).length;
 }
 
+/** @param {string} text */
 function countWords(text) {
   return text.trim().split(/\s+/).filter(Boolean).length;
 }

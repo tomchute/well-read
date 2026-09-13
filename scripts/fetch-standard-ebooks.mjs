@@ -43,15 +43,6 @@ function extractXmlText(xml, tagName) {
 }
 
 /**
- * Extract all text nodes between opening and closing tags (for nested elements)
- */
-function extractXmlContent(xml, tagName) {
-  const regex = new RegExp(`<${tagName}[^>]*>(.*?)</${tagName}>`, 'is');
-  const match = xml.match(regex);
-  return match ? match[1].trim() : '';
-}
-
-/**
  * Extract all entries from Atom feed
  */
 function extractEntries(xml) {
@@ -130,17 +121,8 @@ function parseEntry(entryXml) {
   try {
     const title = extractXmlText(entryXml, 'title');
     const author = extractAuthor(entryXml);
-    const summary = extractXmlText(entryXml, 'summary');
     const links = extractLinks(entryXml);
     const license = extractLicense(entryXml);
-
-    // Extract subjects/categories
-    const categoryRegex = /<category[^>]*term="([^"]*)"[^>]*>/g;
-    const subjects = [];
-    let catMatch;
-    while ((catMatch = categoryRegex.exec(entryXml)) !== null) {
-      subjects.push(catMatch[1]);
-    }
 
     if (!title) {
       console.error('Warning: Entry missing title, skipping');
@@ -152,10 +134,7 @@ function parseEntry(entryXml) {
       author: author || 'Unknown',
       url: links.pageUrl || null,
       epubUrl: links.epubUrl || null,
-      kepubUrl: links.kepubUrl || undefined,
       license,
-      summary: summary || '',
-      subjects,
     };
   } catch (error) {
     console.error(`Warning: Failed to parse entry: ${error.message}`);

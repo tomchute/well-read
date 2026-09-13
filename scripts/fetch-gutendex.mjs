@@ -20,6 +20,7 @@ const BASE_URL = 'https://gutendex.com/books';
 
 /**
  * Parse command-line arguments
+ * Supports: positional arg (search term), --search, --author, --limit
  * @returns {{search: string, author: string, limit: number}}
  */
 function parseArguments() {
@@ -29,16 +30,26 @@ function parseArguments() {
     limit: 10,
   };
 
+  let positionalIndex = 0;
+
   for (let i = 2; i < argv.length; i++) {
-    if (argv[i] === '--search' && i + 1 < argv.length) {
+    const arg = argv[i];
+
+    if (arg === '--search' && i + 1 < argv.length) {
       args.search = argv[i + 1];
       i++;
-    } else if (argv[i] === '--author' && i + 1 < argv.length) {
+    } else if (arg === '--author' && i + 1 < argv.length) {
       args.author = argv[i + 1];
       i++;
-    } else if (argv[i] === '--limit' && i + 1 < argv.length) {
+    } else if (arg === '--limit' && i + 1 < argv.length) {
       args.limit = parseInt(argv[i + 1], 10) || 10;
       i++;
+    } else if (!arg.startsWith('--')) {
+      // Treat as positional argument (first positional = search term)
+      if (positionalIndex === 0) {
+        args.search = arg;
+      }
+      positionalIndex++;
     }
   }
 

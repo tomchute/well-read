@@ -5,23 +5,33 @@
  * Fetches poem metadata and text from https://poetrydb.org
  *
  * Usage:
+ *   node scripts/fetch-poetrydb.mjs "Robert Frost"
  *   node scripts/fetch-poetrydb.mjs --author "Robert Frost" [--limit 10]
- *   node scripts/fetch-poetrydb.mjs --title "Fire" [--limit 10]
- *   node scripts/fetch-poetrydb.mjs --author "Robert Frost" --title "Fire" [--limit 10]
+ *   node scripts/fetch-poetrydb.mjs --title "Fire and Ice" [--limit 10]
+ *   node scripts/fetch-poetrydb.mjs --author "Robert Frost" --title "Fire and Ice" [--limit 10]
  *
- * Output: JSON array to stdout with {title, author, lines[], linecount, text, sourceUrl}
+ * Output: JSON array to stdout with {title, author, lines, linecount, text, sourceUrl}
+ *
+ * Exit codes: non-zero only when the request itself fails (network error or a
+ * non-OK / unparseable HTTP response). A successful request with no matching
+ * poems prints an empty JSON array and exits 0. Malformed individual poem
+ * entries are skipped with a warning to stderr (fail soft per item).
+ *
+ * @typedef {{title: string, author: string, lines: string[], linecount?: number}} PoetryDbPoem
+ * @typedef {{title: string, author: string, lines: string[], linecount: number, text: string, sourceUrl: string}} Candidate
  */
 
 const BASE_URL = 'https://poetrydb.org';
 
 /**
- * Parse CLI arguments
- * Supports both positional and flag-based formats:
+ * Parse command-line arguments.
+ * Supports both a bare positional author and flag-based options:
  *   node fetch-poetrydb.mjs "Robert Frost"
  *   node fetch-poetrydb.mjs --author "Robert Frost" --limit 5
+ * @param {string[]} argv - arguments after the node/script path (process.argv.slice(2))
+ * @returns {{author: string|null, title: string|null, limit: number}}
  */
-function parseArgs() {
-  const args = process.argv.slice(2);
+export function parseArgs(argv) {
   const config = {
     author: null,
     title: null,
@@ -30,20 +40,20 @@ function parseArgs() {
 
   let positionalIndex = 0;
 
-  for (let i = 0; i < args.length; i++) {
-    if (args[i] === '--author' && i + 1 < args.length) {
-      config.author = args[++i];
-    } else if (args[i] === '--title' && i + 1 < args.length) {
-      config.title = args[++i];
-    } else if (args[i] === '--limit' && i + 1 < args.length) {
-      const parsed = parseInt(args[++i], 10);
+  for (let i = 0; i < argv.length; i++) {
+    if (argv[i] === '--author' && i + 1 < argv.length) {
+      config.author = argv[++i];
+    } else if (argv[i] === '--title' && i + 1 < argv.length) {
+      config.title = argv[++i];
+    } else if (argv[i] === '--limit' && i + 1 < argv.length) {
+      const parsed = Number.parseInt(argv[++i], 10);
       if (!Number.isNaN(parsed) && parsed > 0) {
         config.limit = parsed;
       }
-    } else if (!args[i].startsWith('--')) {
-      // Positional argument: first one is author
+    } else if (!argv[i].startsWith('--')) {
+      // Bare positional argument: first one is treated as author
       if (positionalIndex === 0) {
-        config.author = args[i];
+        config.author = argv[i];
         positionalIndex++;
       }
     }
@@ -53,83 +63,89 @@ function parseArgs() {
 }
 
 /**
- * Fetch from PoetryDB API
- * Returns array of poems or empty array on error
+ * Build the PoetryDB request URL for the given author/title query.
+ * @param {string|null} author
+ * @param {string|null} title
+ * @returns {string}
  */
-async function fetchPoems(author, title) {
-  try {
-    let endpoint;
-    if (author && title) {
-      // Both author and title: use the combined endpoint
-      endpoint = `/author,title/${encodeURIComponent(author)};${encodeURIComponent(title)}`;
-    } else if (author) {
-      endpoint = `/author/${encodeURIComponent(author)}`;
-    } else if (title) {
-      endpoint = `/title/${encodeURIComponent(title)}`;
-    } else {
-      console.error('Error: must specify --author or --title', { file: 'stderr' });
-      return [];
-    }
-
-    const url = `${BASE_URL}${endpoint}`;
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      console.error(`PoetryDB API error (HTTP ${response.status}): ${url}`, { file: 'stderr' });
-      return [];
-    }
-
-    const data = await response.json();
-
-    // PoetryDB returns {poems: [...]} for search results
-    if (!Array.isArray(data)) {
-      if (data.poems && Array.isArray(data.poems)) {
-        return data.poems;
-      }
-      console.error('Unexpected PoetryDB response format', { file: 'stderr' });
-      return [];
-    }
-
-    return data;
-  } catch (error) {
-    console.error(`PoetryDB fetch error: ${error.message}`, { file: 'stderr' });
-    return [];
+export function buildRequestUrl(author, title) {
+  let endpoint;
+  if (author && title) {
+    endpoint = `/author,title/${encodeURIComponent(author)};${encodeURIComponent(title)}`;
+  } else if (author) {
+    endpoint = `/author/${encodeURIComponent(author)}`;
+  } else if (title) {
+    endpoint = `/title/${encodeURIComponent(title)}`;
+  } else {
+    throw new Error('must specify --author or --title');
   }
+
+  return `${BASE_URL}${endpoint}`;
 }
 
 /**
- * Transform a PoetryDB poem into the output format
+ * Fetch poems from the PoetryDB API.
+ * Throws when the request itself fails: a network error, a non-OK HTTP
+ * response, or a response body that isn't a recognizable PoetryDB shape.
+ * A well-formed "no matches" response (PoetryDB returns a {status, reason}
+ * object rather than an array) is not a failure — it resolves to [].
+ * @param {string|null} author
+ * @param {string|null} title
+ * @returns {Promise<PoetryDbPoem[]>}
  */
-function transformPoem(poem) {
+async function fetchPoems(author, title) {
+  const url = buildRequestUrl(author, title);
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error(`PoetryDB API error (HTTP ${response.status}): ${url}`);
+  }
+
+  const data = await response.json();
+
+  if (Array.isArray(data)) {
+    return data;
+  }
+
+  // PoetryDB responds with an object like {status, reason} when nothing matches.
+  if (data && typeof data === 'object' && 'status' in data) {
+    return [];
+  }
+
+  throw new Error(`Unexpected PoetryDB response format from ${url}`);
+}
+
+/**
+ * Transform a raw PoetryDB poem into the output candidate shape.
+ * Returns null (and warns to stderr) for a malformed/incomplete entry
+ * instead of throwing, so one bad item never aborts the whole run.
+ * @param {PoetryDbPoem} poem
+ * @returns {Candidate|null}
+ */
+export function transformPoem(poem) {
   try {
-    // Ensure required fields exist
-    if (!poem.title || !poem.author || !poem.lines) {
-      console.error(`Warning: skipping poem with missing fields: ${poem.title || '(no title)'}`, { file: 'stderr' });
+    if (!poem?.title || !poem.author || !poem.lines) {
+      console.error(`Warning: skipping poem with missing fields: ${poem?.title ?? '(no title)'}`);
       return null;
     }
 
-    // lines should be an array
     const lines = Array.isArray(poem.lines) ? poem.lines : [];
     if (lines.length === 0) {
-      console.error(`Warning: skipping poem with no lines: ${poem.title}`, { file: 'stderr' });
+      console.error(`Warning: skipping poem with no lines: ${poem.title}`);
       return null;
     }
-
-    const text = lines.join('\n');
-    const sourceUrl = poem.linecount
-      ? `${BASE_URL}/poems/${encodeURIComponent(poem.title.replace(/\s+/g, '-').toLowerCase())}`
-      : `${BASE_URL}`;
 
     return {
       title: poem.title,
       author: poem.author,
       lines,
       linecount: lines.length,
-      text,
-      sourceUrl,
+      text: lines.join('\n'),
+      sourceUrl: `${BASE_URL}/title/${encodeURIComponent(poem.title)}`,
     };
   } catch (error) {
-    console.error(`Warning: error transforming poem: ${error.message}`, { file: 'stderr' });
+    const message = error instanceof Error ? error.message : String(error);
+    console.error(`Warning: error transforming poem: ${message}`);
     return null;
   }
 }
@@ -138,23 +154,23 @@ function transformPoem(poem) {
  * Main
  */
 async function main() {
-  const config = parseArgs();
+  const config = parseArgs(process.argv.slice(2));
 
   if (!config.author && !config.title) {
-    console.error('Error: must specify --author or --title', { file: 'stderr' });
-    console.log(JSON.stringify([]));
+    console.error('Error: must specify --author or --title');
     process.exit(1);
   }
 
-  // Fetch poems from PoetryDB
-  const poems = await fetchPoems(config.author, config.title);
-
-  if (poems.length === 0) {
-    console.log(JSON.stringify([]));
+  let poems;
+  try {
+    poems = await fetchPoems(config.author, config.title);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error(`Error: PoetryDB request failed: ${message}`);
+    process.exit(1);
     return;
   }
 
-  // Transform and filter: apply limit and skip invalid entries
   const candidates = [];
   for (const poem of poems) {
     if (candidates.length >= config.limit) break;
@@ -165,12 +181,15 @@ async function main() {
     }
   }
 
-  // Output JSON array to stdout
   console.log(JSON.stringify(candidates, null, 2));
 }
 
-main().catch((error) => {
-  console.error(`Fatal error: ${error.message}`, { file: 'stderr' });
-  console.log(JSON.stringify([]));
-  process.exit(1);
-});
+const isMainModule = process.argv[1] && import.meta.url === `file://${process.argv[1]}`;
+
+if (isMainModule) {
+  main().catch((error) => {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error(`Fatal error: ${message}`);
+    process.exit(1);
+  });
+}
