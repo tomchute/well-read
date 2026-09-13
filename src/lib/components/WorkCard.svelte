@@ -95,6 +95,10 @@
     onDislike?: (entry: ManifestEntry) => void;
     onSave?: (entry: ManifestEntry) => void;
     onMoreLikeThis?: (entry: ManifestEntry) => void;
+    /** Called when the card is opened (its link clicked or activated) — before the browser follows `href`. */
+    onOpen?: (entry: ManifestEntry) => void;
+    /** Whether this card plays its entry fade/rise on mount (WP-2.6: first paint only, never on virtualiser recycling). */
+    animateEntry?: boolean;
   }
 
   const noop = () => {};
@@ -108,7 +112,18 @@
     onDislike = noop,
     onSave = noop,
     onMoreLikeThis = noop,
+    onOpen = noop,
+    animateEntry = false,
   }: Props = $props();
+
+  // Snapshot at creation time only: whether `animateEntry` was true the
+  // instant this card instance was created decides whether it ever plays
+  // the entry animation. A later flip of the prop (Feed.svelte's
+  // `hasPainted` turning true once first paint has happened) must not
+  // retroactively add or remove the animation from a card already mounted.
+  // svelte-ignore state_referenced_locally -- intentional: freezes the
+  // prop's value at creation time (see comment above).
+  const playEntryAnimation = animateEntry;
 
   type LoadStatus = 'loading' | 'ready' | 'error';
 
@@ -188,13 +203,26 @@
     event.preventDefault();
     onMoreLikeThis(entry);
   }
+  function handleOpen() {
+    // Never preventDefault here — the anchor's own `href` navigation (and
+    // the router's view-transition wrapping of it) still needs to happen;
+    // this only lets Feed.svelte record which card was opened so it can
+    // restore focus to it on the way back (WP-2.6).
+    onOpen(entry);
+  }
 </script>
 
 <article
   class="work-card"
+  class:entry-animate={playEntryAnimation}
   style="--card-accent: {accent.bar}; --card-accent-tint: {accent.tint}; --card-accent-text: {accent.text};"
 >
-  <a class="card-link" href={workHref} aria-label={`${entry.title} by ${entry.author}`}></a>
+  <a
+    class="card-link"
+    href={workHref}
+    aria-label={`${entry.title} by ${entry.author}`}
+    onclick={handleOpen}
+  ></a>
 
   <div class="card-body">
     <p class="specimen-number">No. {index}</p>
@@ -211,7 +239,7 @@
     </div>
 
     <div class="card-main">
-      <h3 class="title">{entry.title}</h3>
+      <h3 class="title" style="view-transition-name: work-title-{entry.id}">{entry.title}</h3>
       <p class="author small-caps">{entry.author}</p>
 
       <div class="badges">
@@ -338,6 +366,42 @@
     .work-card:has(> .card-link:hover),
     .work-card:has(> .card-link:active) {
       transform: none;
+    }
+  }
+
+  /* Entry fade/rise (WP-2.6): played only for cards Feed.svelte renders on
+   * first paint — never replayed for cards the virtualiser destroys and
+   * recreates while scrolling. `both` keeps the card at its resting state
+   * before and after the animation runs. */
+  .work-card.entry-animate {
+    animation: card-entry var(--duration-slow) var(--ease-out-soft) both;
+  }
+
+  @keyframes card-entry {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Reduced motion: crossfade only, no movement (docs/design-system.md §5) —
+   * `--duration-slow` is already capped to 100ms at the token level. */
+  @media (prefers-reduced-motion: reduce) {
+    .work-card.entry-animate {
+      animation-name: card-entry-fade;
+    }
+  }
+
+  @keyframes card-entry-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
 

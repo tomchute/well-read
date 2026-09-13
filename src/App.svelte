@@ -4,6 +4,7 @@
   import { shouldShowOnboarding } from '$lib/components/onboarding';
   import { route } from '$lib/router.svelte';
   import { decay, type ScoringState } from '$lib/scoring';
+  import { attachShortcuts, resolveShortcut } from '$lib/shortcuts';
   import { reactions, read, seen, sessionPins, settings, weights } from '$lib/stores/index.svelte';
   import Feed from './views/Feed.svelte';
   import Library from './views/Library.svelte';
@@ -46,6 +47,14 @@
 
   let theme = $state<Theme>('light');
 
+  // Shortcuts overlay (WP-2.6, docs/design-system.md §7: "listed in an
+  // in-app `?` help overlay"). Opened globally by `?`; Escape closes it
+  // with top priority over anything else Escape would otherwise do (Work's
+  // "close notes / back to feed") via a capture-phase listener below, since
+  // a capture-phase listener on `window` always runs before any
+  // bubble-phase one, regardless of which component attached first.
+  let shortcutsOpen = $state(false);
+
   function readStoredTheme(): Theme | null {
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
@@ -79,6 +88,32 @@
       theme = window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
     decayOncePerSession();
+
+    const detachHelp = attachShortcuts({
+      help: () => {
+        shortcutsOpen = !shortcutsOpen;
+      },
+    });
+
+    function closeOverlayFirst(event: KeyboardEvent): void {
+      const action = resolveShortcut({
+        key: event.key,
+        target: event.target,
+        metaKey: event.metaKey,
+        ctrlKey: event.ctrlKey,
+        altKey: event.altKey,
+      });
+      if (action !== 'close' || !shortcutsOpen) return;
+      event.preventDefault();
+      event.stopPropagation();
+      shortcutsOpen = false;
+    }
+    window.addEventListener('keydown', closeOverlayFirst, true);
+
+    return () => {
+      detachHelp();
+      window.removeEventListener('keydown', closeOverlayFirst, true);
+    };
   });
 
   const current = $derived(route.current);
@@ -135,6 +170,38 @@
       <p>Nothing lives at <code>{current.hash}</code>.</p>
     {/if}
   </main>
+
+  {#if shortcutsOpen}
+    <button
+      type="button"
+      class="shortcuts-backdrop"
+      tabindex="-1"
+      aria-hidden="true"
+      onclick={() => (shortcutsOpen = false)}
+    ></button>
+    <div class="shortcuts-overlay" role="dialog" aria-modal="true" aria-labelledby="shortcuts-heading">
+      <header class="shortcuts-header">
+        <h2 id="shortcuts-heading" class="shortcuts-title">Keyboard shortcuts</h2>
+        <button
+          type="button"
+          class="shortcuts-close"
+          onclick={() => (shortcutsOpen = false)}
+          aria-label="Close keyboard shortcuts"
+        >
+          &times;
+        </button>
+      </header>
+      <dl class="shortcuts-list">
+        <div class="shortcuts-row"><dt><kbd>j</kbd></dt><dd>Next card</dd></div>
+        <div class="shortcuts-row"><dt><kbd>k</kbd></dt><dd>Previous card</dd></div>
+        <div class="shortcuts-row"><dt><kbd>Enter</kbd></dt><dd>Open the focused card</dd></div>
+        <div class="shortcuts-row"><dt><kbd>s</kbd></dt><dd>Save / unsave</dd></div>
+        <div class="shortcuts-row"><dt><kbd>m</kbd></dt><dd>More like this</dd></div>
+        <div class="shortcuts-row"><dt><kbd>Esc</kbd></dt><dd>Close notes, or back to feed</dd></div>
+        <div class="shortcuts-row"><dt><kbd>?</kbd></dt><dd>Toggle this overlay</dd></div>
+      </dl>
+    </div>
+  {/if}
 </div>
 
 <style>
@@ -203,5 +270,103 @@
 
   .page {
     padding: var(--space-6) var(--space-4);
+  }
+
+  .shortcuts-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(31, 27, 22, 0.4);
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: default;
+    z-index: 50;
+  }
+
+  .shortcuts-overlay {
+    position: fixed;
+    z-index: 51;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(360px, calc(100vw - var(--space-6)));
+    max-height: 80vh;
+    overflow-y: auto;
+    background: var(--surface-raised);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-5);
+  }
+
+  .shortcuts-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+
+  .shortcuts-title {
+    font-size: var(--text-xl);
+    line-height: var(--leading-xl);
+  }
+
+  .shortcuts-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    font-size: var(--text-xl);
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color var(--duration-fast) var(--ease-out-soft);
+  }
+
+  .shortcuts-close:hover {
+    background: var(--surface-pressed);
+  }
+
+  .shortcuts-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin: 0;
+  }
+
+  .shortcuts-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .shortcuts-row dt {
+    flex: 0 0 auto;
+    min-width: 56px;
+  }
+
+  .shortcuts-row dd {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .shortcuts-row kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--hairline);
+    background: var(--surface);
+    font-family: var(--font-ui);
+    font-size: var(--text-xs);
+    color: var(--text);
   }
 </style>

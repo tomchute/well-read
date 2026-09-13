@@ -36,7 +36,7 @@ Verification: seed works render as cards; detail view shows all master-notes sec
 - [x] [WP-2.3](docs/work-packages/WP-2.3-work-card-virtual-feed.md) `WorkCard` + virtualised feed
 - [x] [WP-2.4](docs/work-packages/WP-2.4-work-detail-master-notes.md) Work detail + master-notes side/bottom sheet
 - [x] [WP-2.5](docs/work-packages/WP-2.5-links-by-text-policy.md) Ebook/external link rendering by `textPolicy`
-- [ ] [WP-2.6](docs/work-packages/WP-2.6-motion-polish-shortcuts.md) Motion, view transitions, keyboard shortcuts
+- [x] [WP-2.6](docs/work-packages/WP-2.6-motion-polish-shortcuts.md) Motion, view transitions, keyboard shortcuts
 
 ## Phase 3 — Steering + library
 Verification: scorer tests green; steering chips visibly reorder the feed; export → import round-trips localStorage.
@@ -63,7 +63,7 @@ Verification: Lighthouse accessibility score recorded in the WP; Playwright smok
 - [x] [WP-5.1](docs/work-packages/WP-5.1-pwa.md) PWA manifest + offline shell
 - [ ] [WP-5.2](docs/work-packages/WP-5.2-accessibility-pass.md) Accessibility pass
 - [ ] [WP-5.3](docs/work-packages/WP-5.3-lazy-shards-images.md) Lazy shard + image loading
-- [ ] [WP-5.4](docs/work-packages/WP-5.4-playwright-smoke.md) Playwright smoke test
+- [x] [WP-5.4](docs/work-packages/WP-5.4-playwright-smoke.md) Playwright smoke test
 - [ ] [WP-5.5](docs/work-packages/WP-5.5-empty-error-states.md) Empty and error states
 
 ## Deferred (not planned)

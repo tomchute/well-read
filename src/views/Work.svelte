@@ -1,10 +1,13 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { isSaved, moreLikeThis, toggleRead, toggleSaved } from '$lib/actions';
   // biome-ignore-start lint/correctness/noUnusedImports: used in template
   import MasterNotes from '$lib/components/MasterNotes.svelte';
   import WorkLinks from '$lib/components/WorkLinks.svelte';
   // biome-ignore-end lint/correctness/noUnusedImports: used in template
   import { loadWork } from '$lib/data/work';
+  import { navigate } from '$lib/router.svelte';
+  import { attachShortcuts } from '$lib/shortcuts';
   import { read, saved, weights } from '$lib/stores/index.svelte';
   import type { Era, Work as WorkRecord } from '$lib/types/work';
 
@@ -77,6 +80,26 @@
     moreLikeThis({ weights }, work);
   }
 
+  // Keyboard shortcuts (WP-2.6, docs/design-system.md §7): `s` and `m` act
+  // on the open work; `Escape` closes the notes sheet if it's open,
+  // otherwise returns to the feed. MasterNotes also closes itself on
+  // Escape while open (its own focus-trap listener) — harmless overlap,
+  // since both simply set `notesOpen` to `false`.
+  onMount(() => {
+    const detach = attachShortcuts({
+      save: handleToggleSaved,
+      'more-like-this': handleMoreLikeThis,
+      close: () => {
+        if (notesOpen) {
+          notesOpen = false;
+        } else {
+          navigate({ name: 'feed' });
+        }
+      },
+    });
+    return detach;
+  });
+
   $effect(() => {
     const workId = id;
     status = 'loading';
@@ -108,7 +131,7 @@
   <p role="alert">Couldn't load this work: {errorMessage}</p>
 {:else if work}
   <article>
-    <h2 class="work-title">{work.title}</h2>
+    <h2 class="work-title" style="view-transition-name: work-title-{work.id}">{work.title}</h2>
     <p class="small-caps work-author">{work.author}</p>
 
     <ul class="badge-row">

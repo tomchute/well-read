@@ -22,13 +22,22 @@
     onchip?: (action: ChipAction) => void;
   }
 
-  let { state = $bindable(), onchip }: Props = $props();
+  // Destructured to a differently-named local (`steeringState`, not `state`)
+  // even though the public prop is still named `state` (callers still pass
+  // `state={...}`/`bind:state`) — WP-2.6 fix: a local binding literally
+  // named `state` makes every `$state(...)` rune call below ambiguous with
+  // Svelte's legacy `$store` auto-subscription syntax, which the compiler
+  // resolves in the store's favour. That crashed this component on mount
+  // with `store_invalid_shape` ("`state` is not a store with a `subscribe`
+  // method") the instant the feed became ready — the reported blocking bug
+  // (no SteeringBar, no cards past the "Feed" heading).
+  let { state: steeringState = $bindable(), onchip }: Props = $props();
 
   const ZERO_WEIGHTS: Weights = { theme: {}, form: {}, era: {}, author: {} };
 
   let expanded = $state(false);
 
-  const weights = $derived(state?.weights ?? ZERO_WEIGHTS);
+  const weights = $derived(steeringState?.weights ?? ZERO_WEIGHTS);
   // biome-ignore lint/correctness/noUnusedVariables: used in template
   const themeChips = $derived(buildThemeChips(weights, expanded));
   // biome-ignore lint/correctness/noUnusedVariables: used in template
@@ -36,8 +45,8 @@
 
   function dispatch(action: ChipAction) {
     onchip?.(action);
-    if (state) {
-      state = applyChip(state, action);
+    if (steeringState) {
+      steeringState = applyChip(steeringState, action);
     }
   }
 
