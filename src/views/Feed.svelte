@@ -83,11 +83,18 @@
   }
 
   // Fixed card height (+ the gap below it) so the virtualiser never has to
-  // measure the DOM: WorkCard reserves its own teaser space, so every card
+  // measure the DOM: WorkCard bounds every block it renders, so every card
   // renders at exactly this height regardless of load state. Keeping it
   // constant is also what keeps the mounted-node count stable while
   // scrolling (docs/work-packages/WP-2.3 acceptance).
-  const CARD_HEIGHT = 360;
+  //
+  // Sized against WorkCard's worst case at phone widths — a two-line title
+  // over a two-line author over a wrapped badge row, measured at 404px — so
+  // the card's content fits without the flex column having to shrink it. It
+  // was 360px, which is where two-line titles were being clipped to a half
+  // line. WorkCard's teaser stays the safety valve above this: content that
+  // still overruns costs preview lines, never the title.
+  const CARD_HEIGHT = 408;
   const ROW_GAP = 16;
   const ROW_HEIGHT = CARD_HEIGHT + ROW_GAP;
 
@@ -312,7 +319,12 @@
 {/if}
 
 {#if status === 'loading'}
-  <div class="feed-skeleton" aria-hidden="true" aria-label="Loading works">
+  <div
+    class="feed-skeleton"
+    aria-hidden="true"
+    aria-label="Loading works"
+    style="--card-height: {CARD_HEIGHT}px;"
+  >
     {#each { length: 4 } as _, i (i)}
       <div class="skeleton-card"></div>
     {/each}
@@ -458,7 +470,9 @@
   }
 
   .skeleton-card {
-    height: 360px;
+    /* Same height as a real card, from the same constant — a literal here
+     * silently drifts from CARD_HEIGHT and makes the feed jump on load. */
+    height: var(--card-height);
     border-radius: var(--radius-md);
     background: var(--surface-raised);
     box-shadow: var(--shadow-sm);
