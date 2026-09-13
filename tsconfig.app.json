@@ -10,7 +10,6 @@
     "types": ["svelte", "vite/client"],
     "allowArbitraryExtensions": true,
     "noEmit": true,
-    "baseUrl": ".",
     "paths": { "$lib": ["src/lib"], "$lib/*": ["src/lib/*"] },
     /**
      * Typecheck JS in `.svelte` and `.js` files by default.
