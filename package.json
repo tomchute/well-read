@@ -11,7 +11,8 @@
     "lint": "biome check .",
     "validate:content": "node scripts/validate-content.mjs",
     "build:manifest": "node scripts/build-manifest.mjs",
-    "inject:excerpt": "node scripts/inject-excerpt.mjs"
+    "inject:excerpt": "node scripts/inject-excerpt.mjs",
+    "report:coverage": "node scripts/report-coverage.mjs"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.13",

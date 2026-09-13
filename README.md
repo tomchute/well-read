@@ -9,3 +9,4 @@ Status: Phase 0 (scaffold) and Phase 1 (content schema, pipeline scripts, 25 see
 - How work is delegated and how the content Routine runs: [docs/orchestration.md](docs/orchestration.md)
 - Adding text by hand (for works the Routine couldn't fetch by script): see
   "Supplying text by hand" in [docs/editorial-policy.md](docs/editorial-policy.md).
+- Corrections and takedowns: [GitHub issue templates](.github/ISSUE_TEMPLATE/) for flagging factual errors, broken links, metadata issues, or rights concerns. Removal is processed within one day per the [editorial policy](docs/editorial-policy.md#takedown-path).

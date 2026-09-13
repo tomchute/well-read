@@ -1,0 +1,33 @@
+name: Request removal
+description: Request that a work be removed or modified due to rights concerns
+labels: ['content', 'takedown']
+body:
+  - type: input
+    id: work_id
+    attributes:
+      label: Work ID
+      description: The filename in content/works/ without the .json extension (e.g., emily-dickinson-hope-1861)
+      placeholder: author-title-year
+    validations:
+      required: true
+  - type: textarea
+    id: requester_info
+    attributes:
+      label: Who is asking and your relationship to the rights
+      description: Your name, role, and your relationship to the work or its author (e.g., author, publisher, rights holder)
+      placeholder: Provide information about who you are and your authority to request removal
+    validations:
+      required: true
+  - type: dropdown
+    id: removal_scope
+    attributes:
+      label: What should be removed?
+      options:
+        - Text only
+        - Whole work
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        Per the [editorial policy](../../docs/editorial-policy.md#takedown-path), removal will be processed within one day of this issue being filed.

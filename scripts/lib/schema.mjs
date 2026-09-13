@@ -342,6 +342,7 @@ export const WorkSchema = WorkBaseSchema.superRefine((work, ctx) => {
 
   // `length.unit` follows the shipped text's kind: lines for poems, pages for
   // plays, words for all other prose (short_story, book, essay).
+  /** @type {Partial<Record<string, string>>} */
   const UNIT_BY_TYPE = { poem: 'lines', play: 'pages' };
   const expectedUnit = UNIT_BY_TYPE[work.type] ?? 'words';
   if (work.length.unit !== expectedUnit) {

@@ -1,0 +1,39 @@
+name: Flag a correction
+description: Report a factual error, broken link, or metadata issue in a work
+labels: ['content', 'correction']
+body:
+  - type: input
+    id: work_id
+    attributes:
+      label: Work ID
+      description: The filename in content/works/ without the .json extension (e.g., emily-dickinson-hope-1861)
+      placeholder: author-title-year
+    validations:
+      required: true
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: What is wrong?
+      options:
+        - Text accuracy
+        - Master notes
+        - Metadata
+        - Broken link
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: The correction
+      description: What needs to be fixed and where. If you have a source, please include the link or reference.
+      placeholder: Describe the issue and provide a source if available
+    validations:
+      required: true
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Verification
+      options:
+        - label: I have checked the shipped text in well-read and can confirm this issue
+          required: true

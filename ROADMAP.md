@@ -31,7 +31,7 @@ Verification: `npm run validate:content` passes on the seed works and fails on t
 ## Phase 2 — Feed UI
 Verification: seed works render as cards; detail view shows all master-notes sections; `full` and `excerpt` works render their link types correctly; the app looks like `docs/design-system.md`.
 
-- [ ] [WP-2.1](docs/work-packages/WP-2.1-design-tokens-typography.md) Design tokens, self-hosted fonts, typography base
+- [x] [WP-2.1](docs/work-packages/WP-2.1-design-tokens-typography.md) Design tokens, self-hosted fonts, typography base
 - [ ] [WP-2.2](docs/work-packages/WP-2.2-app-shell-routing-manifest.md) App shell, hash routing, manifest + shard loading
 - [ ] [WP-2.3](docs/work-packages/WP-2.3-work-card-virtual-feed.md) `WorkCard` + virtualised feed
 - [ ] [WP-2.4](docs/work-packages/WP-2.4-work-detail-master-notes.md) Work detail + master-notes side/bottom sheet
@@ -55,7 +55,7 @@ Verification: one Routine (or local `/curate`) run lands a validated batch on `m
 - [ ] [WP-4.2](docs/work-packages/WP-4.2-report-coverage-script.md) `report-coverage.mjs`
 - [ ] [WP-4.3](docs/work-packages/WP-4.3-dogfood-batch.md) Dogfood batch + human spot-check
 - [ ] [WP-4.4](docs/work-packages/WP-4.4-configure-routine.md) Configure the scheduled Routine (orchestrator task)
-- [ ] [WP-4.5](docs/work-packages/WP-4.5-flag-correction-issue-template.md) "Flag a correction / takedown" issue template
+- [x] [WP-4.5](docs/work-packages/WP-4.5-flag-correction-issue-template.md) "Flag a correction / takedown" issue template
 
 ## Phase 5 — Polish
 Verification: Lighthouse accessibility score recorded in the WP; Playwright smoke passes in CI.
