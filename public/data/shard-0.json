@@ -1,5 +1,90 @@
 [
   {
+    "id": "achebe-things-fall-apart-1958",
+    "type": "book",
+    "title": "Things Fall Apart",
+    "author": "Chinua Achebe",
+    "year": 1958,
+    "era": "mid_20th_century",
+    "form": "novel",
+    "themes": [
+      "power",
+      "family",
+      "faith",
+      "home"
+    ],
+    "tags": [
+      "needs-text",
+      "needs-anchor-recheck",
+      "nigerian-literature",
+      "igbo",
+      "postcolonial-literature"
+    ],
+    "length": {
+      "unit": "words",
+      "value": 66000
+    },
+    "difficulty": 3,
+    "source": {
+      "name": "Things Fall Apart (Anchor Books / Penguin Random House edition)",
+      "url": "https://www.penguinrandomhouse.com/books/175055/things-fall-apart-by-chinua-achebe/",
+      "license": "all-rights-reserved",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "pending",
+    "externalLinks": [
+      {
+        "kind": "publisher",
+        "url": "https://www.penguinrandomhouse.com/books/175055/things-fall-apart-by-chinua-achebe/",
+        "label": "Publisher page (Anchor Books)"
+      },
+      {
+        "kind": "bookstore",
+        "url": "https://bookshop.org/search?keywords=Things%20Fall%20Apart%20Achebe",
+        "label": "Search Bookshop.org"
+      },
+      {
+        "kind": "library",
+        "url": "https://search.worldcat.org/search?q=Things%20Fall%20Apart%20Achebe",
+        "label": "Find a library copy on WorldCat"
+      }
+    ],
+    "masterNotes": {
+      "context": "Achebe published *Things Fall Apart* in 1958 while working for the Nigerian Broadcasting Corporation, writing in English but shaping the prose around Igbo speech rhythms and proverb. It became the founding text of modern African literature in English, launching Heinemann's African Writers Series and answering, deliberately, the flattened depictions of Africa in earlier European fiction Achebe later criticized directly in his own essays. The novel opens in the Igbo village of Umuofia before the arrival of European missionaries and administrators, introducing Okonkwo, a man whose standing rests on physical strength and discipline, and whose fear of resembling his gentle, indebted father, Unoka, shapes nearly everything he does.",
+      "form": "Achebe narrates in close but not fully interior third person, adopting the pacing and communal authority of oral storytelling within English prose, proverbs are woven into the narration itself, not only into dialogue, as a shared measure of wisdom. The opening chapter moves fluidly between Okonkwo's present standing in the village and an extended flashback into his father Unoka's life and death, delaying any forward action to first establish the values by which this community judges a man. Even Unoka's death is rendered in the same measured, unsensational register as everything else, a restraint that lets custom itself carry the emotional weight.",
+      "keyImages": [
+        "Okonkwo's fame from a wrestling match against Amalinze the Cat, still remembered by the village years afterward.",
+        "Unoka's flute-playing and mounting debts, presented as the opposite of everything Okonkwo has built his reputation on.",
+        "The account of Unoka's death from a swelling illness considered an abomination to the earth goddess, left to die in the Evil Forest without burial.",
+        "Okonkwo's visible impatience with anyone in his household who reminds him, even faintly, of his father."
+      ],
+      "whatToNotice": [
+        "Notice that Okonkwo is introduced entirely through reputation and comparison before the narration gives any direct physical description.",
+        "Notice how long the chapter lingers on Unoka before returning to Okonkwo's present life, and what that delay suggests about what shaped him.",
+        "Notice the proverbs offered as communal wisdom within the narration itself, not just as something a character says aloud.",
+        "Notice the specific, unsentimental detail given to the customs surrounding Unoka's death and burial.",
+        "Notice that the narrator names fear plainly as Okonkwo's central motivation, rather than leaving it for the reader to infer."
+      ],
+      "discussionQuestions": [
+        "How does opening with Okonkwo's reputation, rather than his private thoughts, shape your first understanding of him?",
+        "What does the extended account of Unoka's failures suggest about how Umuofia measures a man's worth?",
+        "How do the proverbs woven into the narration change the novel's voice compared to a more conventional English narrative style?",
+        "Beyond this excerpt: Okonkwo's fear of resembling his father recurs in his dealings with his own children later in the novel — what in this chapter already signals how costly that fear might become?"
+      ],
+      "furtherReading": [
+        "Chinua Achebe's essay \"An Image of Africa\" — his direct critique of Joseph Conrad's *Heart of Darkness*, useful context for what this novel was written to answer.",
+        "Achebe's *No Longer at Ease* — a loosely connected later novel following a descendant of this world into a colonial-era city.",
+        "Ezenwa-Ohaeto's *Chinua Achebe: A Biography* — a standard critical biography of the author."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed-b",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
     "id": "blake-the-tyger-1794",
     "type": "poem",
     "title": "The Tyger",
@@ -76,6 +161,92 @@
     },
     "pipeline": {
       "batchId": "2026-09-13-seed",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "id": "borges-the-garden-of-forking-paths-1941",
+    "type": "short_story",
+    "title": "The Garden of Forking Paths",
+    "author": "Jorge Luis Borges",
+    "year": 1941,
+    "era": "mid_20th_century",
+    "form": "short story (metaphysical spy fiction)",
+    "themes": [
+      "time",
+      "war",
+      "doubt",
+      "wonder"
+    ],
+    "tags": [
+      "needs-text",
+      "needs-anchor-recheck",
+      "needs-link-verification",
+      "argentine-literature",
+      "translation",
+      "labyrinth"
+    ],
+    "length": {
+      "unit": "words",
+      "value": 5600
+    },
+    "difficulty": 4,
+    "source": {
+      "name": "Labyrinths: Selected Stories & Other Writings (New Directions, trans. Donald A. Yates)",
+      "url": "https://www.ndbooks.com/book/labyrinths/",
+      "license": "all-rights-reserved",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "pending",
+    "externalLinks": [
+      {
+        "kind": "publisher",
+        "url": "https://www.ndbooks.com/book/labyrinths/",
+        "label": "Publisher page (New Directions)"
+      },
+      {
+        "kind": "bookstore",
+        "url": "https://bookshop.org/search?keywords=Labyrinths%20Borges",
+        "label": "Search Bookshop.org"
+      },
+      {
+        "kind": "library",
+        "url": "https://search.worldcat.org/search?q=Labyrinths%20Borges",
+        "label": "Find a library copy on WorldCat"
+      }
+    ],
+    "masterNotes": {
+      "context": "Borges published this story in Spanish in 1941, later collected in *Ficciones* (1944); Donald A. Yates's English translation, used here, appeared in the 1962 anthology *Labyrinths*, the volume that introduced Borges to a wide English-language readership and shaped a generation of writers working in fabulist and postmodern modes. The story presents itself as a document from the First World War: a British historian's account of a delayed German artillery offensive, followed by a found statement from a Chinese scholar turned German spy, Yu Tsun, explaining what happened. The passage anchored here is the story's opening frame, before any of the spy plot itself unfolds.",
+      "form": "Borges opens the story as a nested document rather than as ordinary narration: an editorial historical note, citing a real-seeming work of military history, gives way to Yu Tsun's own first-person statement, itself introduced as incomplete. This framing device blurs documentary authority and invented testimony from the very first sentence, a technique Borges returns to across his fiction, and it primes the reader to distrust exactly the kind of fact-citing precision the story keeps offering.",
+      "keyImages": [
+        "The opening citation attributing to a historian's account of the war a detail about a delayed artillery offensive, presented with scholarly precision before any story proper begins.",
+        "The editorial note's claim that the first pages of Yu Tsun's statement are missing, so the reader enters an already incomplete account.",
+        "Yu Tsun identifying himself and his urgent circumstance in the opening lines of his own statement, contrasting sharply with the cool historical framing that precedes it.",
+        "The abrupt shift in register between the historian's detached citation and Yu Tsun's immediate, personal voice."
+      ],
+      "whatToNotice": [
+        "Notice that the story opens not with action but with a citation to a work of history, immediately blurring documented fact and invention.",
+        "Notice that the editorial note announces missing pages before Yu Tsun's account even starts, priming distrust of everything that follows.",
+        "Notice how quickly Yu Tsun states his own name and situation once his statement begins, compared to the impersonal historian's note before it.",
+        "Notice the contrast in tone between the clinical framing device and the urgent personal voice it introduces.",
+        "Notice how much authority the story borrows from the mere form of a citation and a footnote, before offering any evidence."
+      ],
+      "discussionQuestions": [
+        "What effect does opening with a citation to a real-seeming historical work have on how you read everything that follows?",
+        "Why might Borges have the editorial note announce missing pages before Yu Tsun's statement even begins?",
+        "How does framing personal testimony inside a scholarly-sounding footnote change the authority a reader grants it?",
+        "Beyond this excerpt: given that pages of Yu Tsun's statement are already missing, how much should a reader trust the account as it continues?"
+      ],
+      "furtherReading": [
+        "Borges's *Other Inquisitions* — nonfiction essays revisiting his recurring fascination with labyrinths and infinite branching structures.",
+        "Borges's story \"The Library of Babel\" — another metaphysical fiction built on an infinite, ordered structure.",
+        "Emir Rodríguez Monegal's *Jorge Luis Borges: A Literary Biography* — a standard critical biography."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed-b",
       "dateAdded": "2026-09-13",
       "curatedBy": "claude",
       "schemaVersion": 1
@@ -322,27 +493,29 @@
     }
   },
   {
-    "id": "dickinson-im-nobody-who-are-you-1861",
+    "id": "dickinson-because-i-could-not-stop-for-death-1863",
     "type": "poem",
-    "title": "I'm Nobody! Who are you?",
+    "title": "Because I could not stop for Death",
     "author": "Emily Dickinson",
-    "year": 1861,
+    "year": 1863,
     "era": "19th_century",
-    "form": "lyric poem, common meter",
+    "form": "lyric poem, ballad meter",
     "themes": [
-      "solitude",
-      "humor",
-      "language"
+      "mortality",
+      "time",
+      "nature",
+      "wonder"
     ],
     "tags": [
-      "fascicle",
-      "anonymity",
-      "irony",
-      "needs-link-verification"
+      "carriage",
+      "afterlife",
+      "personification",
+      "franklin-479",
+      "johnson-712"
     ],
     "length": {
       "unit": "lines",
-      "value": 8
+      "value": 24
     },
     "difficulty": 2,
     "source": {
@@ -352,7 +525,7 @@
       "retrievedDate": "2026-09-13"
     },
     "textPolicy": "full",
-    "text": "I'm Nobody! Who are you?\nAre you – Nobody – too?\nThen there's a pair of us!\nDon't tell! they'd advertise – you know!\n\nHow dreary – to be – Somebody!\nHow public – like a Frog –\nTo tell one's name – the livelong June –\nTo an admiring Bog!",
+    "text": "Because I could not stop for Death –\nHe kindly stopped for me –\nThe Carriage held but just Ourselves –\nAnd Immortality.\n\nWe slowly drove – He knew no haste\nAnd I had put away\nMy labor and my leisure too,\nFor His Civility –\n\nWe passed the School, where Children strove\nAt Recess – in the Ring –\nWe passed the Fields of Gazing Grain –\nWe passed the Setting Sun –\n\nOr rather – He passed us –\nThe Dews drew quivering and Chill –\nFor only Gossamer, my Gown –\nMy Tippet – only Tulle –\n\nWe paused before a House that seemed\nA Swelling of the Ground –\nThe Roof was scarcely visible –\nThe Cornice – in the Ground –\n\nSince then – 'tis Centuries – and yet\nFeels shorter than the Day\nI first surmised the Horses' Heads\nWere toward Eternity –",
     "ebookLinks": [
       {
         "provider": "standard-ebooks",
@@ -368,36 +541,209 @@
     "externalLinks": [
       {
         "kind": "poetry-foundation",
-        "url": "https://www.poetryfoundation.org/search?q=Im+Nobody+Who+are+you+Emily+Dickinson",
+        "url": "https://www.poetryfoundation.org/search?q=Because+I+could+not+stop+for+Death+Emily+Dickinson",
         "label": "Search Poetry Foundation for this poem"
       }
     ],
     "masterNotes": {
-      "context": "Dickinson wrote this poem around 1861, in the same extraordinarily productive early-1860s stretch that produced most of her best-known work, though almost none of it was published in her lifetime — she kept the poems hand-sewn into small booklets, called fascicles, discovered only after her death in 1886. She lived quietly in Amherst, Massachusetts, seeing few visitors in her later years, and \"nobody\" and \"somebody\" recur across her poems as a private vocabulary for social visibility and its costs. This poem's tone is playful rather than mournful, closer to a shared joke between the speaker and an imagined reader than a complaint. It has become one of her most quoted poems, often stripped of context and treated as a simple defense of introversion, though its second stanza is considerably sharper than that reading allows.",
-      "form": "The poem is built as a conspiratorial address — \"Are you – Nobody – too?\" — that recruits the reader as a co-conspirator within four lines, before the second stanza turns from intimacy to mockery. Dickinson's dashes do their usual work of controlling breath and emphasis rather than following grammatical rules, isolating \"Nobody\" and \"Somebody\" almost as proper nouns. The extended metaphor in the second stanza — a frog announcing itself to a bog all summer — lands as satire of self-importance, and the shift from the private \"us\" of the first stanza to the public spectacle of the second is where the poem's real argument lives.",
+      "context": "Dickinson wrote this poem in 1863 — Ralph Franklin's variorum numbers it 479, Thomas Johnson's earlier edition 712, and the two numbering systems are the reason the poem sometimes travels under different reference numbers in criticism. It was not published until 1890, four years after her death, when her editors gathered loose manuscripts into the first posthumous *Poems*. She lived a famously withdrawn life in Amherst, Massachusetts, and death was one of her most persistent subjects, staged again and again as an encounter rather than an abstraction.\n\nThe poem takes the New England custom of a horse-drawn funeral carriage and turns it into an unhurried social call: Death arrives not as a violent interruption but as a courteous suitor, and the speaker, mid-errand, simply goes along for the ride.",
+      "form": "The poem is written in Dickinson's signature common meter (alternating four- and three-stress lines), the meter of hymns and ballads, which lends even her most unsettling ideas a deceptively singable, familiar rhythm. Her characteristic dashes replace conventional punctuation throughout, creating pauses that feel like held breath rather than grammatical stops.\n\nSlant rhyme (\"me\"/\"Immortality,\" \"Ground\"/\"Ground\") and the slow widening of stanza scope — from carriage, to schoolyard, to fields, to sunset, to grave — build a quiet deceleration that mirrors the ride itself.",
       "keyImages": [
-        "The pairing \"Then there's a pair of us!\" — instant, almost giddy solidarity built from shared anonymity.",
-        "The frog \"telling one's name\" to \"an admiring Bog\" all \"the livelong June\" — self-announcement recast as absurd noise nobody needed.",
-        "The capitalized \"Nobody\" and \"Somebody\" — Dickinson treats social status as if it were a formal title one could hold."
+        "The carriage holding \"just Ourselves – / And Immortality\" — a third, abstract passenger riding along as if it were a person.",
+        "The house that \"seemed / A Swelling of the Ground\" — the grave described with the softened, domestic word \"House.\"",
+        "The final image of the horses' heads pointed \"toward Eternity,\" left suspended without arrival."
       ],
       "whatToNotice": [
-        "Notice how quickly the poem moves from private confidence (\"Don't tell!\") to public satire (the frog) across just two stanzas.",
-        "Notice that \"Nobody\" is capitalized throughout, turning an absence of status into its own kind of identity.",
-        "Count the dashes in the first stanza and see where they fall relative to the line's grammar — they rarely land where a comma would.",
-        "Notice the exclamation points: the poem's two strongest feelings, secrecy and disdain, both get one."
+        "Death is personified as courteous and unhurried (\"He kindly stopped for me\"), never menacing — notice how that tone shapes your own sense of dread, or lack of it.",
+        "The speaker's clothing (\"Gossamer,\" \"Tulle\") is unfit for the cold, marking the crossing from the world of the living into something else without ever naming it directly.",
+        "Time collapses in the final stanza: centuries feel shorter than the single day of the ride. Notice how the poem never actually arrives anywhere — it ends suspended, mid-journey.",
+        "The dashes control pacing more than grammar does. Try reading a stanza aloud, pausing only where a dash falls.",
+        "Notice the third stanza's triple anaphora, \"We passed... We passed... We passed...\" — a steady procession that stops abruptly when the syntax flips in the next line: \"Or rather – He passed us.\""
       ],
       "discussionQuestions": [
-        "Is the speaker's claim to \"Nobody\" status entirely sincere, or is there some pride hiding inside the modesty?",
-        "What is the effect of comparing public self-announcement to a frog's croaking rather than to another person?",
-        "Why might Dickinson end on mockery of \"Somebody\" rather than on the earlier warmth of \"there's a pair of us\"?"
+        "Why might Dickinson have chosen to make Death a polite, familiar figure rather than a frightening one?",
+        "What is the effect of ending the poem mid-journey, with the horses still \"toward Eternity,\" rather than at a clear arrival?",
+        "How does the hymn-like meter interact with the poem's subject? Does the familiarity of the rhythm comfort, unsettle, or both?",
+        "The speaker says she \"could not stop for Death\" — what does it change that Death, not the speaker, controls the pace of the whole ride?"
       ],
       "furtherReading": [
-        "\"Because I could not stop for Death\" (Dickinson) — for the same dash-driven meter turned toward a much graver subject.",
-        "Helen Vendler, *Dickinson: Selected Poems and Commentaries* — includes a close reading of this poem's shift in tone between stanzas."
+        "Helen Vendler, *Dickinson: Selected Poems and Commentaries* — a close-reading companion covering this poem in detail.",
+        "[Poetry Foundation: Emily Dickinson](https://www.poetryfoundation.org/poets/emily-dickinson) — biography and further poems.",
+        "\"I'm Nobody! Who are you?\" (Dickinson) — for the same dash-driven meter turned toward a much lighter subject."
       ]
     },
     "pipeline": {
-      "batchId": "2026-09-13-seed",
+      "batchId": "2026-09-13-seed-b",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "id": "donne-death-be-not-proud-1633",
+    "type": "poem",
+    "title": "Death, be not proud (Holy Sonnet X)",
+    "author": "John Donne",
+    "year": 1633,
+    "era": "renaissance",
+    "form": "sonnet, metaphysical",
+    "themes": [
+      "death",
+      "mortality",
+      "faith"
+    ],
+    "tags": [
+      "holy-sonnets",
+      "divine-meditations",
+      "metaphysical-poetry",
+      "needs-link-verification"
+    ],
+    "length": {
+      "unit": "lines",
+      "value": 14
+    },
+    "difficulty": 4,
+    "source": {
+      "name": "Standard Ebooks (GitHub mirror)",
+      "url": "https://raw.githubusercontent.com/standardebooks/john-donne_poetry/master/src/epub/text/divine-poems.xhtml",
+      "license": "public-domain",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "full",
+    "text": "Death, be not proud, though some have called thee\nMighty and dreadful, for thou art not so;\nFor those, whom thou think’st thou dost overthrow,\nDie not, poor Death, nor yet canst thou kill me.\nFrom rest and sleep, which but thy picture be,\nMuch pleasure, then from thee much more must flow,\nAnd soonest our best men with thee do go,\nRest of their bones, and soul’s delivery.\nThou’rt slave to Fate, chance, kings, and desperate men,\nAnd dost with poison, war, and sickness dwell,\nAnd poppy, or charms can make us sleep as well,\nAnd better than thy stroke; why swell’st thou then?\nOne short sleep past, we wake eternally,\nAnd Death shall be no more; Death, thou shalt die.",
+    "ebookLinks": [
+      {
+        "provider": "standard-ebooks",
+        "format": "epub",
+        "url": "https://standardebooks.org/ebooks/john-donne/poetry/downloads/john-donne_poetry.epub"
+      }
+    ],
+    "externalLinks": [
+      {
+        "kind": "poetry-foundation",
+        "url": "https://www.poetryfoundation.org/search?q=Death+be+not+proud+John+Donne",
+        "label": "Search Poetry Foundation for this poem"
+      }
+    ],
+    "masterNotes": {
+      "context": "Donne wrote his Holy Sonnets, this one among them, around 1609–1610, in the years after he had abandoned an early ambition for court advancement and before he was ordained in the Church of England in 1615. He circulated them privately in manuscript; they were not printed until 1633, two years after his death, in the first collected edition of his *Poems*. This sonnet is conventionally numbered the tenth in that sequence, following the ordering long used in anthologies and classrooms. Donne had lived through serious illness and the deaths of several close family members by the time he wrote it, and the poem reads less like a settled theological position than an argument the speaker is actively working himself into believing, sentence by sentence, in real time.",
+      "form": "The poem is a direct address to a personified Death, structured as a single sustained argument across an Italian (Petrarchan) sonnet form, though Donne bends its octave/sestet logic to his own rhetorical needs. Each quatrain supplies a fresh reason Death has been overrated — a rest that resembles sleep, a servant to other, greater forces, a mere passage rather than an end — building toward the famous closing paradox, a final couplet that inverts the sonnet's addressee from feared power to condemned prisoner. The argumentative, almost legalistic momentum, characteristic of the metaphysical style, matters more here than any single image: the poem enacts persuasion rather than simply stating a conclusion.",
+      "keyImages": [
+        "Death addressed directly as a person the speaker can rebuke to its face, sustained across all fourteen lines rather than dropped after an opening apostrophe.",
+        "Death likened to rest and sleep, images the poem treats as pleasurable rather than fearsome, undercutting Death's claim to being anything worse than a nap.",
+        "Death recast as a servant of larger forces — chance, kings, and desperate men — stripping it of independent power rather than granting it any.",
+        "The closing paradox in which Death itself is said to die, the poem's rhetorical payoff after thirteen lines of buildup."
+      ],
+      "whatToNotice": [
+        "Notice that the poem opens by forbidding Death an emotion, pride, before it has offered a single argument — the rebuke comes first, the reasoning after.",
+        "Track how each quatrain adds one more argument rather than repeating the first; the poem accumulates its case instead of restating it.",
+        "Notice how often the poem compares Death to something ordinary and survivable, rather than describing Death's own terrors.",
+        "Watch the final couplet's grammar carefully — the poem's whole argument is compressed into a single reversal of subject and object.",
+        "Notice the sonnet never claims the speaker isn't afraid; it stages an argument against fear rather than an absence of it."
+      ],
+      "discussionQuestions": [
+        "Is the speaker fully convinced by his own argument, or does the poem's insistence suggest he is still working to persuade himself?",
+        "What is the effect of addressing Death directly, in the second person, rather than describing it from a distance?",
+        "How does comparing Death to sleep change the emotional register of the poem compared to more conventional images of Death as a reaper or destroyer?",
+        "Does the poem's confidence depend on its Christian framework, or could a reader without that belief still find the argument persuasive on its own terms?"
+      ],
+      "furtherReading": [
+        "Donne's other Holy Sonnets (e.g. \"Batter my heart, three-personed God\") — for the same argumentative intensity turned toward a pleading rather than defiant address.",
+        "John Donne, sermon \"Death's Duel\" — his final sermon, delivered while visibly dying, on a related but far darker view of mortality.",
+        "Helen Gardner (ed.), *The Divine Poems of John Donne* — the standard scholarly edition and textual history of this sequence."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed-b",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "id": "douglass-what-to-the-slave-is-the-fourth-of-july-1852",
+    "type": "essay",
+    "title": "What to the Slave Is the Fourth of July?",
+    "author": "Frederick Douglass",
+    "year": 1852,
+    "era": "19th_century",
+    "form": "oration (public address)",
+    "themes": [
+      "justice",
+      "race",
+      "power",
+      "faith"
+    ],
+    "tags": [
+      "needs-anchor-recheck",
+      "needs-link-verification",
+      "oratory",
+      "abolitionism",
+      "rochester"
+    ],
+    "length": {
+      "unit": "words",
+      "value": 9000
+    },
+    "difficulty": 3,
+    "source": {
+      "name": "Project Gutenberg (GITenberg mirror)",
+      "url": "https://raw.githubusercontent.com/GITenberg/My-Bondage-and-My-Freedom_202/master/202.txt",
+      "license": "public-domain",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "excerpt",
+    "excerpt": "What to the American slave is your Fourth of July? I answer, a day that reveals to him, more than all other days in the year, the gross injustice and cruelty to which he is the constant victim. To him, your celebration is a sham; your boasted liberty, an unholy license; your national greatness, swelling vanity; your sounds of rejoicing are empty and heartless; your denunciations of tyrants, brass-fronted impudence; your shouts of liberty and equality, hollow mockery; your prayers and hymns, your sermons and thanksgivings, with all your religious parade and solemnity,{353} are to him mere bombast, fraud, deception, impiety, and hypocrisy--a thin veil to cover up crimes which would disgrace a nation of savages. There is not a nation on the earth guilty of practices more shocking and bloody, than are the people of these United States, at this very hour.\n\nGo where you may, search where you will, roam through all the monarchies and despotisms of the old world, travel through South America, search out every abuse, and when you have found the last, lay your facts by the side of the every-day practices of this nation, and you will say with me, that, for revolting barbarity and shameless hypocrisy, America reigns without a rival.\n\nTHE INTERNAL SLAVE TRADE. Extract from an Oration, at Rochester, July 5, 1852\n\nTake the American slave trade, which, we are told by the papers, is especially prosperous just now. Ex-senator Benton tells us that the price of men was never higher than now. He mentions the fact to show that slavery is in no danger. This trade is one of the peculiarities of American institutions. It is carried on in all the large towns and cities in one-half of this confederacy; and millions are pocketed every year by dealers in this horrid traffic. In several states this trade is a chief source of wealth. It is called (in contradistinction to the foreign slave trade) _\"the internal slave trade_.\" It is, probably, called so, too, in order to divert from it the horror with which the foreign slave trade is contemplated. That trade has long since been denounced by this government as piracy. It has been denounced with burning words, from the high places of the nation, as an execrable traffic. To arrest it, to put an end to it, this nation keeps a squadron, at immense cost, on the coast of Africa. Everywhere in this country, it is safe to speak of this foreign slave trade as a most inhuman traffic, opposed alike to the laws of God and of man. The duty to extirpate and destroy it is admitted even by our _doctors of divinity_. In order to put an end to it, some of these last have consented that their colored brethren (nominally free) should leave this country, and establish themselves on the western coast of Africa. It is, however, a notable fact, that, while so much execration is poured out by Americans, upon those engaged in the foreign slave trade, the men engaged in the slave trade between the states pass without condemnation, and their business is deemed honorable.\n\nBehold the practical operation of this internal slave trade--the American slave trade sustained by American politics and American religion! Here you will see men and women reared like swine for the market. You know what is a swine-drover? I will show you a man-drover. They inhabit all our southern states. They perambulate the country, and crowd the{355} highways of the nation with droves of human stock. You will see one of these human-flesh-jobbers, armed with pistol, whip, and bowie-knife, driving a company of a hundred men, women, and children, from the Potomac to the slave market at New Orleans. These wretched people are to be sold singly, or in lots, to suit purchasers. They are food for the cotton-field and the deadly sugar-mill. Mark the sad procession as it moves wearily along, and the inhuman wretch who drives them. Hear his savage yells and his blood-chilling oaths, as he hurries on his affrighted captives. There, see the old man, with locks thinned and gray. Cast one glance, if you please, upon that young mother, whose shoulders are bare to the scorching sun, her briny tears falling on the brow of the babe in her arms. See, too, that girl of thirteen, weeping, yes, weeping, as she thinks of the mother from whom she has been torn. The drove moves tardily. Heat and sorrow have nearly consumed their strength. Suddenly you hear a quick snap, like the discharge of a rifle; the fetters clank, and the chain rattles simultaneously; your ears are saluted with a scream that seems to have torn its way to the center of your soul. The crack you heard was the sound of the slave whip; the scream you heard was from the woman you saw with the babe. Her speed had faltered under the weight of her child and her chains; that gash on her shoulder tells her to move on. Follow this drove to New Orleans. Attend the auction; see men examined like horses; see the forms of women rudely and brutally exposed to the shocking gaze of American slave-buyers. See this drove sold and separated forever; and never forget the deep, sad sobs that arose from that scattered multitude. Tell me, citizens, where, under the sun, can you witness a spectacle more fiendish and shocking. Yet this is but a glance at the American slave trade, as it exists at this moment, in the ruling part of the United States.\n\nI was born amid such sights and scenes. To me the American slave trade is a terrible reality. When a child, my soul was often pierced with a sense of its horrors. I lived on Philpot street, Fell's Point, Baltimore, and have watched from the wharves the slave ships in the basin, anchored from the shore, with their cargoes of human flesh, waiting for favorable winds to waft them down the Chesapeake. There was, at that time, a grand slave mart kept at the head of Pratt street, by Austin Woldfolk. His agents were sent into every town and county in Maryland, announcing their arrival through the papers, and on flaming hand-bills, headed, \"cash for negroes.\" These men were generally well dressed, and very captivating in their manners; ever ready to drink, to treat, and to gamble. The fate{356} of many a slave has depended upon the turn of a single card; and many a child has been snatched from the arms of its mothers by bargains arranged in a state of brutal drunkenness.\n\nThe flesh-mongers gather up their victims by dozens, and drive them, chained, to the general depot at Baltimore. When a sufficient number have been collected here, a ship is chartered, for the purpose of conveying the forlorn crew to Mobile or to New Orleans. From the slave-prison to the ship, they are usually driven in the darkness of night; for since the anti-slavery agitation a certain caution is observed.\n\nIn the deep, still darkness of midnight, I have been often aroused by the dead, heavy footsteps and the piteous cries of the chained gangs that passed our door. The anguish of my boyish heart was intense; and I was often consoled, when speaking to my mistress in the morning, to hear her say that the custom was very wicked; that she hated to hear the rattle of the chains, and the heart-rending cries. I was glad to find one who sympathized with me in my horror.\n\nFellow citizens, this murderous traffic is to-day in active operation in this boasted republic. In the solitude of my spirit, I see clouds of dust raised on the highways of the south; I see the bleeding footsteps; I hear the doleful wail of fettered humanity, on the way to the slave markets, where the victims are to be sold like horses, sheep, and swine, knocked off to the highest bidder. There I see the tenderest ties ruthlessly broken, to gratify the lust, caprice, and rapacity of the buyers and sellers of men. My soul sickens at the sight.\n\n_Is this the land your fathers loved?\nThe freedom which they toiled to win?\nIs this the earth whereon they moved?\nAre these the graves they slumber in?_",
+    "excerptNote": "Opening 1383 words of the work, ending at a paragraph break (source: raw.githubusercontent.com/GITenberg/My-Bondage-and-My-Freedom_202)",
+    "ebookLinks": [
+      {
+        "provider": "gutenberg",
+        "format": "html",
+        "url": "https://www.gutenberg.org/ebooks/search/?query=Frederick+Douglass"
+      }
+    ],
+    "externalLinks": [
+      {
+        "kind": "other",
+        "url": "https://en.wikisource.org/wiki/What_to_the_Slave_is_the_Fourth_of_July%3F",
+        "label": "Full text at Wikisource"
+      },
+      {
+        "kind": "other",
+        "url": "https://en.wikipedia.org/wiki/What_to_the_Slave_Is_the_Fourth_of_July%3F",
+        "label": "Background at Wikipedia"
+      }
+    ],
+    "masterNotes": {
+      "context": "Douglass delivered this address on July 5, 1852, at Corinthian Hall in Rochester, New York, having accepted an invitation from the Rochester Ladies' Anti-Slavery Society to speak at the city's Independence Day observance, deliberately scheduled a day after the actual holiday. Douglass, a formerly enslaved man who had become the era's most prominent Black abolitionist orator and editor, used the occasion to test what a national holiday of freedom could mean addressed to an audience that included people still legally enslaved elsewhere in the country. The speech was quickly printed as a pamphlet and remains one of the most anthologized pieces of American oratory, still read aloud publicly around the Fourth of July. The passage given here comes from partway through the address, at the point where Douglass turns the day's meaning directly onto the people listening to him.",
+      "form": "Douglass builds this passage on classical rhetorical technique, direct address, escalating repetition, and rhetorical questions that require no answer because the answer is already implied. Having spent earlier portions of the speech establishing common ground and even praising the nation's founders, he pivots here into second person, separating himself and the audience by pronoun before separating them by argument. The effect is cumulative: each repeated phrase narrows the distance between celebration and accusation, so that by the passage's end the holiday itself has been redefined without any single explicit thesis statement announcing the turn.",
+      "keyImages": [
+        "The repeated second-person address, \"you\" and \"your,\" used to hold the holiday at arm's length from the speaker and, implicitly, from anyone still enslaved.",
+        "The image of national celebration, bells, parades, patriotic songs, described as continuing at full volume just outside the experience of the enslaved.",
+        "The rhetorical question format itself, posed again and again so that the audience is made to supply an answer Douglass never states outright.",
+        "The turn from earlier praise of the nation's founding generation to a direct challenge aimed at the generation now listening to him."
+      ],
+      "whatToNotice": [
+        "Notice the shift into second person, you and your, and how that pronoun choice positions Douglass outside the holiday he is describing.",
+        "Notice how each rhetorical question builds on the one before it, narrowing rather than repeating the same point.",
+        "Notice that Douglass never directly states his conclusion here, letting the accumulation of questions carry the argument instead.",
+        "Notice the contrast this passage draws between public patriotic display and private, unheard experience.",
+        "Notice how formal and controlled the sentence structure remains even as the accusation intensifies."
+      ],
+      "discussionQuestions": [
+        "Why might Douglass choose escalating rhetorical questions rather than a single direct statement to make this argument?",
+        "What effect does the shift into second person have on an audience that considers itself the intended celebrants of the holiday?",
+        "How does irony function here as argument rather than as ornament?",
+        "Beyond this excerpt: given how sharply this passage turns the day's meaning back on its listeners, how might the speech's tone need to change again before it can close?"
+      ],
+      "furtherReading": [
+        "Douglass's *Narrative of the Life of Frederick Douglass* — his own account of enslavement underlying the authority of this address.",
+        "David W. Blight's *Frederick Douglass: Prophet of Freedom* — a Pulitzer-winning biography with extensive treatment of this speech's composition and reception.",
+        "James Baldwin's essays on American racial hypocrisy — a later writer working a related rhetorical vein of turned national self-image."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed-b",
       "dateAdded": "2026-09-13",
       "curatedBy": "claude",
       "schemaVersion": 1
@@ -476,6 +822,337 @@
     },
     "pipeline": {
       "batchId": "2026-09-13-seed",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "id": "eliot-the-love-song-of-j-alfred-prufrock-1915",
+    "type": "poem",
+    "title": "The Love Song of J. Alfred Prufrock",
+    "author": "T. S. Eliot",
+    "year": 1915,
+    "era": "early_20th_century",
+    "form": "dramatic monologue, free verse with intermittent rhyme",
+    "themes": [
+      "solitude",
+      "doubt",
+      "time",
+      "the-city"
+    ],
+    "tags": [
+      "modernism",
+      "interior-monologue",
+      "prufrock-and-other-observations",
+      "needs-link-verification"
+    ],
+    "length": {
+      "unit": "lines",
+      "value": 131
+    },
+    "difficulty": 4,
+    "source": {
+      "name": "Standard Ebooks (GitHub mirror)",
+      "url": "https://raw.githubusercontent.com/standardebooks/t-s-eliot_poetry/master/src/epub/text/poetry.xhtml",
+      "license": "public-domain",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "full",
+    "text": "Let us go then, you and I,\nWhen the evening is spread out against the sky\nLike a patient etherized upon a table;\nLet us go, through certain half-deserted streets,\nThe muttering retreats\nOf restless nights in one-night cheap hotels\nAnd sawdust restaurants with oyster-shells:\nStreets that follow like a tedious argument\nOf insidious intent\nTo lead you to an overwhelming question.⁠ ⁠…\nOh, do not ask, “What is it?”\nLet us go and make our visit.\n\nIn the room the women come and go\nTalking of Michelangelo.\n\nThe yellow fog that rubs its back upon the windowpanes,\nThe yellow smoke that rubs its muzzle on the windowpanes\nLicked its tongue into the corners of the evening,\nLingered upon the pools that stand in drains,\nLet fall upon its back the soot that falls from chimneys,\nSlipped by the terrace, made a sudden leap,\nAnd seeing that it was a soft October night,\nCurled once about the house, and fell asleep.\n\nAnd indeed there will be time\nFor the yellow smoke that slides along the street,\nRubbing its back upon the window panes;\nThere will be time, there will be time\nTo prepare a face to meet the faces that you meet\nThere will be time to murder and create,\nAnd time for all the works and days of hands\nThat lift and drop a question on your plate;\nTime for you and time for me,\nAnd time yet for a hundred indecisions,\nAnd for a hundred visions and revisions,\nBefore the taking of a toast and tea.\n\nIn the room the women come and go\nTalking of Michelangelo.\n\nAnd indeed there will be time\nTo wonder, “Do I dare?” and, “Do I dare?”\nTime to turn back and descend the stair,\nWith a bald spot in the middle of my hair⁠—\n(They will say: “How his hair is growing thin!”)\nMy morning coat, my collar mounting firmly to the chin,\nMy necktie rich and modest, but asserted by a simple pin⁠—\n(They will say: “But how his arms and legs are thin!”)\nDo I dare\nDisturb the universe?\nIn a minute there is time\nFor decisions and revisions which a minute will reverse.\n\nFor I have known them all already, known them all:\nHave known the evenings, mornings, afternoons,\nI have measured out my life with coffee spoons;\nI know the voices dying with a dying fall\nBeneath the music from a farther room.\nSo how should I presume?\n\nAnd I have known the eyes already, known them all⁠—\nThe eyes that fix you in a formulated phrase,\nAnd when I am formulated, sprawling on a pin,\nWhen I am pinned and wriggling on the wall,\nThen how should I begin\nTo spit out all the butt-ends of my days and ways?\nAnd how should I presume?\n\nAnd I have known the arms already, known them all⁠—\nArms that are braceleted and white and bare\n(But in the lamplight, downed with light brown hair!)\nIs it perfume from a dress\nThat makes me so digress?\nArms that lie along a table, or wrap about a shawl.\nAnd should I then presume?\nAnd how should I begin?\n\nShall I say, I have gone at dusk through narrow streets\nAnd watched the smoke that rises from the pipes\nOf lonely men in shirtsleeves, leaning out of windows?⁠ ⁠…\n\nI should have been a pair of ragged claws\nScuttling across the floors of silent seas.\n\nAnd the afternoon, the evening, sleeps so peacefully!\nSmoothed by long fingers,\nAsleep⁠ ⁠… tired⁠ ⁠… or it malingers.\nStretched on the floor, here beside you and me.\nShould I, after tea and cakes and ices,\nHave the strength to force the moment to its crisis?\nBut though I have wept and fasted, wept and prayed,\nThough I have seen my head (grown slightly bald) brought in upon a platter,\nI am no prophet⁠—and here’s no great matter;\nI have seen the moment of my greatness flicker,\nAnd I have seen the eternal Footman hold my coat, and snicker,\nAnd in short, I was afraid.\n\nAnd would it have been worth it, after all,\nAfter the cups, the marmalade, the tea,\nAmong the porcelain, among some talk of you and me,\nWould it have been worth while,\nTo have bitten off the matter with a smile,\nTo have squeezed the universe into a ball\nTo roll it toward some overwhelming question,\nTo say: “I am Lazarus, come from the dead,\nCome back to tell you all, I shall tell you all”⁠—\nIf one, settling a pillow by her head,\nShould say: “That is not what I meant at all;\nThat is not it, at all.”\n\nAnd would it have been worth it, after all,\nWould it have been worth while,\nAfter the sunsets and the dooryards and the sprinkled streets,\nAfter the novels, after the teacups, after the skirts that trail along the floor⁠—\nAnd this, and so much more?⁠—\nIt is impossible to say just what I mean!\nBut as if a magic lantern threw the nerves in patterns on a screen:\nWould it have been worth while\nIf one, settling a pillow or throwing off a shawl,\nAnd turning toward the window, should say:\n“That is not it at all,\nThat is not what I meant, at all.”\n\nNo! I am not Prince Hamlet, nor was meant to be;\nAm an attendant lord, one that will do\nTo swell a progress, start a scene or two,\nAdvise the prince; no doubt, an easy tool,\nDeferential, glad to be of use,\nPolitic, cautious, and meticulous;\nFull of high sentence, but a bit obtuse;\nAt times, indeed, almost ridiculous⁠—\nAlmost, at times, the Fool.\n\nI grow old⁠ ⁠… I grow old⁠ ⁠…\nI shall wear the bottoms of my trousers rolled.\n\nShall I part my hair behind? Do I dare to eat a peach?\nI shall wear white flannel trousers, and walk upon the beach.\nI have heard the mermaids singing, each to each.\n\nI do not think that they will sing to me.\n\nI have seen them riding seaward on the waves\nCombing the white hair of the waves blown back\nWhen the wind blows the water white and black.\n\nWe have lingered in the chambers of the sea\nBy sea-girls wreathed with seaweed red and brown\nTill human voices wake us, and we drown.",
+    "ebookLinks": [
+      {
+        "provider": "standard-ebooks",
+        "format": "epub",
+        "url": "https://standardebooks.org/ebooks/t-s-eliot/poetry/downloads/t-s-eliot_poetry.epub"
+      }
+    ],
+    "externalLinks": [
+      {
+        "kind": "poetry-foundation",
+        "url": "https://www.poetryfoundation.org/search?q=The+Love+Song+of+J+Alfred+Prufrock+T+S+Eliot",
+        "label": "Search Poetry Foundation for this poem"
+      }
+    ],
+    "masterNotes": {
+      "context": "Eliot wrote most of this poem between 1910 and 1911, while a graduate student in his early twenties, though it did not find a publisher until 1915, when Ezra Pound championed it into the magazine *Poetry*; it then gave its name to Eliot's first collection, *Prufrock and Other Observations* (1917). The poem arrived just as English-language poetry was breaking from Victorian and Georgian convention, and its jarring first move, comparing an evening sky to a patient on an operating table, announced that break immediately. Eliot was an American living in England, steeped in French Symbolist poetry, and the poem's speaker, an anxious, aging man rehearsing a social visit he may never make, became one of modernism's founding voices of self-conscious paralysis.",
+      "form": "The poem takes its title's promise, a love song, and undercuts it: instead of address to a beloved, it is an interior monologue in which the speaker circles, stalls, and interrupts himself, drafting and discarding the visit he claims he is about to make. Eliot mixes passages of loose iambic rhythm and intermittent rhyme with lines that break into free verse entirely, so the form itself seems to lose its nerve alongside the speaker. Recurring refrains (women coming and going, the recurring question \"do I dare\") give the poem a circling, non-linear structure rather than forward narrative movement, and the epigraph, borrowed from Dante's *Inferno*, frames everything that follows as a confession the speaker believes will never be repeated back to the world.",
+      "keyImages": [
+        "The evening sky compared to a patient etherized on a table — the poem's opening gesture, replacing a conventional romantic image with a clinical, unsettling one.",
+        "The recurring image of women in a room discussing Michelangelo — a social scene the speaker observes from outside his own nerve to enter it.",
+        "The fog compared to a cat, curling and settling around a house — an image of hesitation given a body of its own.",
+        "The mermaids at the poem's end, singing to each other but not, the speaker is certain, to him — the poem's final image of exclusion from a beauty he can only overhear."
+      ],
+      "whatToNotice": [
+        "Notice how often the speaker rehearses a question he never actually asks, and how many times some version of \"do I dare\" recurs.",
+        "Notice the shift in scale between the poem's grand literary and biblical allusions and the speaker's small, specific anxieties about clothing and appearance.",
+        "Track the refrain about the women and Michelangelo — notice it returns without developing, as if the speaker cannot get past this image.",
+        "Notice how the poem measures the speaker's life in small units, coffee spoons among them, rather than in large accomplishments.",
+        "Watch for the moment the poem shifts from a real or imagined social visit into an explicitly imagined, almost mythic seascape at the end."
+      ],
+      "discussionQuestions": [
+        "Is Prufrock's paralysis primarily about fear of romantic rejection, or something larger about his sense of his own insignificance?",
+        "What does the epigraph from Dante suggest about how honestly, or dishonestly, the speaker expects to be heard?",
+        "Why might Eliot have chosen an aging, self-conscious speaker rather than a young one for a poem framed as a \"love song\"?",
+        "How does the poem's fragmented, circling structure support or undercut its speaker's claim that he has already \"known them all\"?"
+      ],
+      "furtherReading": [
+        "\"Portrait of a Lady\" (Eliot, also in *Prufrock and Other Observations*) — a companion study in social hesitation and interior monologue.",
+        "Dante, *Inferno*, Canto XXVII — the source of the poem's epigraph, spoken by a damned soul who believes his confession will never leave Hell.",
+        "Ezra Pound's correspondence with Harriet Monroe advocating for the poem's publication — for the story of how it nearly went unprinted."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed-b",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "id": "hughes-harlem-1951",
+    "type": "poem",
+    "title": "Harlem",
+    "author": "Langston Hughes",
+    "year": 1951,
+    "era": "mid_20th_century",
+    "form": "free verse, short lyric built on a rhetorical question",
+    "themes": [
+      "race",
+      "desire",
+      "the-city"
+    ],
+    "tags": [
+      "montage-of-a-dream-deferred",
+      "harlem-renaissance-legacy",
+      "needs-text"
+    ],
+    "length": {
+      "unit": "lines",
+      "value": 11
+    },
+    "difficulty": 2,
+    "source": {
+      "name": "Langston Hughes, Montage of a Dream Deferred (Henry Holt, 1951); rights held by the Langston Hughes estate",
+      "url": "https://www.poetryfoundation.org/poets/langston-hughes",
+      "license": "all-rights-reserved",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "pending",
+    "externalLinks": [
+      {
+        "kind": "poetry-foundation",
+        "url": "https://www.poetryfoundation.org/search?q=Harlem+Langston+Hughes+dream+deferred",
+        "label": "Search Poetry Foundation for this poem"
+      },
+      {
+        "kind": "bookstore",
+        "url": "https://bookshop.org/search?keywords=Montage+of+a+Dream+Deferred+Langston+Hughes",
+        "label": "Find Montage of a Dream Deferred at Bookshop.org"
+      }
+    ],
+    "masterNotes": {
+      "context": "Hughes wrote this poem for *Montage of a Dream Deferred* (1951), a book-length sequence built to evoke, in his own description, the broken, syncopated feel of bebop jazz rather than a single continuous argument. It arrived well after the Harlem Renaissance of the 1920s that had made Hughes famous, at a moment when the postwar promises of prosperity and full citizenship were visibly not reaching Black America, and Harlem itself had shifted from the symbol of cultural flowering it had been decades earlier to a neighborhood facing overcrowding and disinvestment. The poem takes as its subject a single unanswered question about what happens to a postponed hope, and it has since become one of the most frequently taught and quoted short poems in American literature, cited everywhere from classrooms to the title of a Lorraine Hansberry play.",
+      "form": "The poem is built almost entirely from a series of similes answering one opening question, each proposing a different fate for a deferred dream, before ending on a final, isolated line set off in italics that breaks from the pattern the earlier lines established. Hughes's line lengths are short and irregular, closer to spoken rhythm or jazz phrasing than to a fixed meter, which fits the poem's place inside a sequence explicitly modeled on bebop's broken, additive structure. The poem never answers its own question directly; it only offers possibilities, and the final line's shift in form, rather than content, is where the poem lands its full weight.",
+      "keyImages": [
+        "The central comparison of a deferred dream to dried-out fruit, an image of something that was once fresh curdling from neglect rather than being destroyed outright.",
+        "The image of a load being carried until it becomes unbearable, shifting the poem from private disappointment toward the possibility of collective consequence.",
+        "The poem's closing line, visually and rhythmically set apart from everything before it, the one moment the question format breaks down entirely."
+      ],
+      "whatToNotice": [
+        "Notice that the poem is structured as a single question followed entirely by proposed answers, none of them confirmed as correct.",
+        "Notice how the similes escalate in intensity as the poem goes on, moving from images of decay toward images of danger.",
+        "Notice the formatting of the final line — it stands apart from the rest of the poem visually as well as rhythmically.",
+        "Notice how short each line is, and consider what effect that clipped, jazz-influenced phrasing has on how quickly you read the poem."
+      ],
+      "discussionQuestions": [
+        "Why might Hughes end on a question that breaks from the poem's own pattern of similes rather than resolving it?",
+        "How does the poem's placement within a book modeled on jazz and bebop change how its short, fragmented form should be read?",
+        "Is the \"dream\" in the poem a specifically Black American aspiration, a more universal one, or does the poem depend on holding both readings open?",
+        "What is the effect of answering a serious question with a series of everyday, domestic images rather than abstract language?"
+      ],
+      "furtherReading": [
+        "*Montage of a Dream Deferred* (full sequence) — for how this poem functions as one movement within Hughes's larger jazz-structured book.",
+        "Lorraine Hansberry, *A Raisin in the Sun* — a play whose title is drawn directly from this poem's opening image.",
+        "Langston Hughes, \"The Negro Artist and the Racial Mountain\" — Hughes's earlier essay on the pressures facing a Black writer's subject matter, useful context for this later, harder-edged poem."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed-b",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "id": "ibsen-a-dolls-house-1879",
+    "type": "play",
+    "title": "A Doll's House",
+    "author": "Henrik Ibsen",
+    "year": 1879,
+    "era": "19th_century",
+    "form": "play in three acts (prose realist drama)",
+    "themes": [
+      "gender",
+      "family",
+      "power",
+      "home",
+      "doubt"
+    ],
+    "tags": [
+      "needs-anchor-recheck",
+      "needs-link-verification",
+      "translation",
+      "norwegian-literature"
+    ],
+    "length": {
+      "unit": "pages",
+      "value": 90
+    },
+    "difficulty": 3,
+    "source": {
+      "name": "Standard Ebooks (GitHub mirror)",
+      "url": "https://raw.githubusercontent.com/standardebooks/henrik-ibsen_a-dolls-house_r-farquharson-sharp/master/src/epub/text/act-1.xhtml",
+      "license": "public-domain",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "excerpt",
+    "excerpt": "Act I\n\nA room furnished comfortably and tastefully, but not extravagantly. At the back, a door to the right leads to the entrance hall, another to the left leads to Helmer’s study. Between the doors stands a piano. In the middle of the left-hand wall is a door, and beyond it a window. Near the window are a round table, armchairs and a small sofa. In the right-hand wall, at the farther end, another door; and on the same side, nearer the footlights, a stove, two easy chairs and a rocking chair; between the stove and the door, a small table. Engravings on the walls; a cabinet with china and other small objects; a small bookcase with well-bound books. The floors are carpeted, and a fire burns in the stove. It is winter.\n\nA bell rings in the hall; shortly afterwards the door is heard to open. Enter Nora, humming a tune and in high spirits. She is in outdoor dress and carries a number of parcels; these she lays on the table to the right. She leaves the outer door open after her, and through it is seen a Porter who is carrying a Christmas tree and a basket, which he gives to the Maid who has opened the door.\n\nNora\n\nHide the Christmas tree carefully, Helen. Be sure the children do not see it until this evening, when it is dressed. To the Porter, taking out her purse. How much?\n\nPorter\n\nSixpence.\n\nNora\n\nThere is a shilling. No, keep the change. The Porter thanks her, and goes out. Nora shuts the door. She is laughing to herself, as she takes off her hat and coat. She takes a packet of macaroons from her pocket and eats one or two; then goes cautiously to her husband’s door and listens. Yes, he is in. Still humming, she goes to the table on the right.\n\nHelmer\n\nCalls out from his room. Is that my little lark twittering out there?\n\nNora\n\nBusy opening some of the parcels. Yes, it is!\n\nHelmer\n\nIs it my little squirrel bustling about?\n\nNora\n\nYes!\n\nHelmer\n\nWhen did my squirrel come home?\n\nNora\n\nJust now. Puts the bag of macaroons into her pocket and wipes her mouth. Come in here, Torvald, and see what I have bought.\n\nHelmer\n\nDon’t disturb me. A little later, he opens the door and looks into the room, pen in hand. Bought, did you say? All these things? Has my little spendthrift been wasting money again?\n\nNora\n\nYes but, Torvald, this year we really can let ourselves go a little. This is the first Christmas that we have not needed to economise.\n\nHelmer\n\nStill, you know, we can’t spend money recklessly.\n\nNora\n\nYes, Torvald, we may be a wee bit more reckless now, mayn’t we? Just a tiny wee bit! You are going to have a big salary and earn lots and lots of money.\n\nHelmer\n\nYes, after the New Year; but then it will be a whole quarter before the salary is due.\n\nNora\n\nPooh! we can borrow until then.\n\nHelmer\n\nNora! Goes up to her and takes her playfully by the ear. The same little featherhead! Suppose, now, that I borrowed fifty pounds today, and you spent it all in the Christmas week, and then on New Year’s Eve a slate fell on my head and killed me, and⁠—\n\nNora\n\nPutting her hands over his mouth. Oh! don’t say such horrid things.\n\nHelmer\n\nStill, suppose that happened⁠—what then?\n\nNora\n\nIf that were to happen, I don’t suppose I should care whether I owed money or not.\n\nHelmer\n\nYes, but what about the people who had lent it?\n\nNora\n\nThey? Who would bother about them? I should not know who they were.\n\nHelmer\n\nThat is like a woman! But seriously, Nora, you know what I think about that. No debt, no borrowing. There can be no freedom or beauty about a home life that depends on borrowing and debt. We two have kept bravely on the straight road so far, and we will go on the same way for the short time longer that there need be any struggle.\n\nNora\n\nMoving towards the stove. As you please, Torvald.\n\nHelmer\n\nFollowing her. Come, come, my little skylark must not droop her wings. What is this! Is my little squirrel out of temper? Taking out his purse. Nora, what do you think I have got here?\n\nNora\n\nTurning round quickly. Money!\n\nHelmer\n\nThere you are. Gives her some money. Do you think I don’t know what a lot is wanted for housekeeping at Christmas-time?\n\nNora\n\nCounting. Ten shillings⁠—a pound⁠—two pounds! Thank you, thank you, Torvald; that will keep me going for a long time.\n\nHelmer\n\nIndeed it must.\n\nNora\n\nYes, yes, it will. But come here and let me show you what I have bought. And all so cheap! Look, here is a new suit for Ivar, and a sword; and a horse and a trumpet for Bob; and a doll and dolly’s bedstead for Emmy⁠—they are very plain, but anyway she will soon break them in pieces. And here are dress-lengths and handkerchiefs for the maids; old Anne ought really to have something better.\n\nHelmer\n\nAnd what is in this parcel?\n\nNora\n\nCrying out. No, no! you mustn’t see that until this evening.\n\nHelmer\n\nVery well. But now tell me, you extravagant little person, what would you like for yourself?\n\nNora\n\nFor myself? Oh, I am sure I don’t want anything.\n\nHelmer\n\nYes, but you must. Tell me something reasonable that you would particularly like to have.\n\nNora\n\nNo, I really can’t think of anything⁠—unless, Torvald⁠—\n\nHelmer\n\nWell?\n\nNora\n\nPlaying with his coat buttons, and without raising her eyes to his. If you really want to give me something, you might⁠—you might⁠—\n\nHelmer\n\nWell, out with it!\n\nNora\n\nSpeaking quickly. You might give me money, Torvald. Only just as much as you can afford; and then one of these days I will buy something with it.\n\nHelmer\n\nBut, Nora⁠—\n\nNora\n\nOh, do! dear Torvald; please, please do! Then I will wrap it up in beautiful gilt paper and hang it on the Christmas tree. Wouldn’t that be fun?\n\nHelmer\n\nWhat are little people called that are always wasting money?\n\nNora\n\nSpendthrifts⁠—I know. Let us do as you suggest, Torvald, and then I shall have time to think what I am most in want of. That is a very sensible plan, isn’t it?\n\nHelmer\n\nSmiling. Indeed it is⁠—that is to say, if you were really to save out of the money I give you, and then really buy something for yourself. But if you spend it all on the housekeeping and any number of unnecessary things, then I merely have to pay up again.\n\nNora\n\nOh but, Torvald⁠—\n\nHelmer\n\nYou can’t deny it, my dear little Nora. Puts his arm round her waist. It’s a sweet little spendthrift, but she uses up a deal of money. One would hardly believe how expensive such little persons are!\n\nNora\n\nIt’s a shame to say that. I do really save all I can.\n\nHelmer\n\nLaughing. That’s very true⁠—all you can. But you can’t save anything!\n\nNora\n\nSmiling quietly and happily. You haven’t any idea how many expenses we skylarks and squirrels have, Torvald.\n\nHelmer\n\nYou are an odd little soul. Very like your father. You always find some new way of wheedling money out of me, and, as soon as you have got it, it seems to melt in your hands. You never know where it has gone. Still, one must take you as you are. It is in the blood; for indeed it is true that you can inherit these things, Nora.\n\nNora\n\nAh, I wish I had inherited many of Papa’s qualities.\n\nHelmer\n\nAnd I would not wish you to be anything but just what you are, my sweet little skylark. But, do you know, it strikes me that you are looking rather⁠—what shall I say⁠—rather uneasy today?\n\nNora\n\nDo I?\n\nHelmer\n\nYou do, really. Look straight at me.\n\nNora\n\nLooks at him. Well?\n\nHelmer\n\nWagging his finger at her. Hasn’t Miss Sweet Tooth been breaking rules in town today?\n\nNora\n\nNo; what makes you think that?\n\nHelmer\n\nHasn’t she paid a visit to the confectioner’s?\n\nNora\n\nNo, I assure you, Torvald⁠—\n\nHelmer\n\nNot been nibbling sweets?\n\nNora\n\nNo, certainly not.\n\nHelmer\n\nNot even taken a bite at a macaroon or two?\n\nNora\n\nNo, Torvald, I assure you really⁠—\n\nHelmer\n\nThere, there, of course I was only joking.\n\nNora\n\nGoing to the table on the right. I should not think of going against your wishes.\n\nHelmer\n\nNo, I am sure of that; besides, you gave me your word⁠—Going up to her. Keep your little Christmas secrets to yourself, my darling. They will all be revealed tonight when the Christmas tree is lit, no doubt.\n\nNora\n\nDid you remember to invite Doctor Rank?\n\nHelmer",
+    "excerptNote": "Opening 1479 words of the work, ending at a paragraph break (source: raw.githubusercontent.com/standardebooks/henrik-ibsen_a-dolls-house_r-farquharson-sharp)",
+    "ebookLinks": [
+      {
+        "provider": "gutenberg",
+        "format": "html",
+        "url": "https://www.gutenberg.org/ebooks/2542"
+      }
+    ],
+    "externalLinks": [
+      {
+        "kind": "other",
+        "url": "https://en.wikipedia.org/wiki/A_Doll%27s_House",
+        "label": "Background at Wikipedia"
+      }
+    ],
+    "masterNotes": {
+      "context": "Ibsen wrote *A Doll's House* in Danish-Norwegian in 1879, midway through a run of prose \"problem plays\" that turned away from his earlier verse dramas to examine contemporary middle-class life. Set in a Norwegian household at Christmastime, it became one of the founding texts of modern realist theater and provoked immediate controversy over its treatment of marriage and a wife's independence, controversy sharp enough that some European productions were staged with an altered ending against Ibsen's wishes. R. Farquharson Sharp's early-twentieth-century English translation, used here, remains one of the most widely read public-domain versions. The play opens on Nora Helmer returning home with Christmas shopping, just as her husband Torvald has secured a promotion that will finally ease the household's finances.",
+      "form": "Ibsen builds the play from detailed stage directions and naturalistic dialogue confined to a single household set, letting backstory emerge gradually through conversation rather than exposition or monologue. The opening exchange between Nora and Torvald is built almost entirely from small domestic business, arriving home, tidying parcels, a private treat quickly hidden, establishing rhythm and character before any larger conflict is named. Torvald's habit of addressing Nora with affectionate diminutives, heard from his very first lines, does quiet double duty, sounding like tenderness while also marking exactly how he expects her to behave.",
+      "keyImages": [
+        "Nora hiding a bag of macaroons the moment she hears Torvald's study door, a small private rule-breaking established before he even enters.",
+        "Torvald's pet names for Nora, calling her his little skylark and his little squirrel, heard within his first lines onstage.",
+        "The Christmas tree Nora asks to have kept out of sight until it can be properly decorated, held in reserve for later in the scene.",
+        "The two characters' contrasting entrances: Nora arriving from outside, laden with parcels and humming, Torvald emerging from his study to correct and inquire."
+      ],
+      "whatToNotice": [
+        "Notice how quickly Torvald's opening lines settle into diminutives and gentle correction rather than plain conversation.",
+        "Notice Nora's small act of concealment with the macaroons, happening before any larger secret in the play is even hinted at.",
+        "Notice how much of the early dialogue turns on money, Torvald's new position, and what it will finally let the household afford.",
+        "Notice the difference in physical energy between Nora's entrance and Torvald's, and what that contrast suggests about each character's relationship to the household.",
+        "Notice that Nora's evident delight is tied specifically to financial security, not to the position itself."
+      ],
+      "discussionQuestions": [
+        "What does the teasing, affectionate tone of this opening exchange reveal, and what might it be covering over?",
+        "Why might Ibsen choose to open on a small domestic secret, the hidden macaroons, rather than a more overtly dramatic moment?",
+        "How do Torvald's pet names for Nora function here, and does their affection change how you read the control embedded in them?",
+        "What does Nora's happiness about the family's improved finances suggest about what security means to her at this point in the play?"
+      ],
+      "furtherReading": [
+        "Ibsen's *Hedda Gabler* — a bleaker study of a woman confined by social convention.",
+        "Ibsen's *Ghosts* — a companion play continuing debates this one provoked about marriage and inherited obligation.",
+        "George Bernard Shaw's *The Quintessence of Ibsenism* — an influential contemporary defense of Ibsen's realist method."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed-b",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "id": "kafka-the-metamorphosis-1915",
+    "type": "book",
+    "title": "The Metamorphosis",
+    "author": "Franz Kafka",
+    "year": 1915,
+    "era": "early_20th_century",
+    "form": "novella",
+    "themes": [
+      "family",
+      "work",
+      "the-body",
+      "illness",
+      "solitude"
+    ],
+    "tags": [
+      "needs-anchor-recheck",
+      "needs-link-verification",
+      "german-literature",
+      "translation",
+      "prague"
+    ],
+    "length": {
+      "unit": "words",
+      "value": 22300
+    },
+    "difficulty": 5,
+    "source": {
+      "name": "Project Gutenberg (GITenberg mirror)",
+      "url": "https://raw.githubusercontent.com/GITenberg/Metamorphosis_5200/master/5200.txt",
+      "license": "public-domain",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "excerpt",
+    "excerpt": "One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.  He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.  The bedding was hardly able to cover it and seemed ready to slide off any moment.  His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.\n\n\"What's happened to me?\" he thought.  It wasn't a dream.  His room, a proper human room although a little too small, lay peacefully between its four familiar walls.  A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame.  It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer.\n\nGregor then turned to look out the window at the dull weather. Drops of rain could be heard hitting the pane, which made him feel quite sad.  \"How about if I sleep a little bit longer and forget all this nonsense\", he thought, but that was something he was unable to do because he was used to sleeping on his right, and in his present state couldn't get into that position.  However hard he threw himself onto his right, he always rolled back to where he was.  He must have tried it a hundred times, shut his eyes so that he wouldn't have to look at the floundering legs, and only stopped when he began to feel a mild, dull pain there that he had never felt before.\n\n\"Oh, God\", he thought, \"what a strenuous career it is that I've chosen! Travelling day in and day out.  Doing business like this takes much more effort than doing your own business at home, and on top of that there's the curse of travelling, worries about making train connections, bad and irregular food, contact with different people all the time so that you can never get to know anyone or become friendly with them.  It can all go to Hell!\"  He felt a slight itch up on his belly; pushed himself slowly up on his back towards the headboard so that he could lift his head better; found where the itch was, and saw that it was covered with lots of little white spots which he didn't know what to make of; and when he tried to feel the place with one of his legs he drew it quickly back because as soon as he touched it he was overcome by a cold shudder.\n\nHe slid back into his former position.  \"Getting up early all the time\", he thought, \"it makes you stupid.  You've got to get enough sleep.  Other travelling salesmen live a life of luxury.  For instance, whenever I go back to the guest house during the morning to copy out the contract, these gentlemen are always still sitting there eating their breakfasts.  I ought to just try that with my boss; I'd get kicked out on the spot.  But who knows, maybe that would be the best thing for me.  If I didn't have my parents to think about I'd have given in my notice a long time ago, I'd have gone up to the boss and told him just what I think, tell him everything I would, let him know just what I feel.  He'd fall right off his desk! And it's a funny sort of business to be sitting up there at your desk, talking down at your subordinates from up there, especially when you have to go right up close because the boss is hard of hearing.  Well, there's still some hope; once I've got the money together to pay off my parents' debt to him - another five or six years I suppose - that's definitely what I'll do.  That's when I'll make the big change.  First of all though, I've got to get up, my train leaves at five.\"\n\nAnd he looked over at the alarm clock, ticking on the chest of drawers.  \"God in Heaven!\" he thought.  It was half past six and the hands were quietly moving forwards, it was even later than half past, more like quarter to seven.  Had the alarm clock not rung? He could see from the bed that it had been set for four o'clock as it should have been; it certainly must have rung.  Yes, but was it possible to quietly sleep through that furniture-rattling noise? True, he had not slept peacefully, but probably all the more deeply because of that.  What should he do now? The next train went at seven; if he were to catch that he would have to rush like mad and the collection of samples was still not packed, and he did not at all feel particularly fresh and lively.  And even if he did catch the train he would not avoid his boss's anger as the office assistant would have been there to see the five o'clock train go, he would have put in his report about Gregor's not being there a long time ago.  The office assistant was the boss's man, spineless, and with no understanding.  What about if he reported sick? But that would be extremely strained and suspicious as in fifteen years of service Gregor had never once yet been ill.  His boss would certainly come round with the doctor from the medical insurance company, accuse his parents of having a lazy son, and accept the doctor's recommendation not to make any claim as the doctor believed that no-one was ever ill but that many were workshy.  And what's more, would he have been entirely wrong in this case? Gregor did in fact, apart from excessive sleepiness after sleeping for so long, feel completely well and even felt much hungrier than usual.\n\nHe was still hurriedly thinking all this through, unable to decide to get out of the bed, when the clock struck quarter to seven. There was a cautious knock at the door near his head.  \"Gregor\", somebody called - it was his mother - \"it's quarter to seven. Didn't you want to go somewhere?\"  That gentle voice! Gregor was shocked when he heard his own voice answering, it could hardly be recognised as the voice he had had before.  As if from deep inside him, there was a painful and uncontrollable squeaking mixed in with it, the words could be made out at first but then there was a sort of echo which made them unclear, leaving the hearer unsure whether he had heard properly or not.  Gregor had wanted to give a full answer and explain everything, but in the circumstances contented himself with saying: \"Yes, mother, yes, thank-you, I'm getting up now.\"  The change in Gregor's voice probably could not be noticed outside through the wooden door, as his mother was satisfied with this explanation and shuffled away.  But this short conversation made the other members of the family aware that Gregor, against their expectations was still at home, and soon his father came knocking at one of the side doors, gently, but with his fist. \"Gregor, Gregor\", he called, \"what's wrong?\"  And after a short while he called again with a warning deepness in his voice: \"Gregor! Gregor!\"  At the other side door his sister came plaintively: \"Gregor? Aren't you well? Do you need anything?\"  Gregor answered to both sides: \"I'm ready, now\", making an effort to remove all the strangeness from his voice by enunciating very carefully and putting long pauses between each, individual word.  His father went back to his breakfast, but his sister whispered: \"Gregor, open the door, I beg of you.\"  Gregor, however, had no thought of opening the door, and instead congratulated himself for his cautious habit, acquired from his travelling, of locking all doors at night even when he was at home.\n\nThe first thing he wanted to do was to get up in peace without being disturbed, to get dressed, and most of all to have his breakfast. Only then would he consider what to do next, as he was well aware that he would not bring his thoughts to any sensible conclusions by lying in bed.  He remembered that he had often felt a slight pain in bed, perhaps caused by lying awkwardly, but that had always turned out to be pure imagination and he wondered how his imaginings would slowly resolve themselves today.  He did not have the slightest doubt that the change in his voice was nothing more than the first sign of a serious cold, which was an occupational hazard for travelling salesmen.",
+    "excerptNote": "Opening 1489 words of the work, ending at a paragraph break (source: raw.githubusercontent.com/GITenberg/Metamorphosis_5200)",
+    "ebookLinks": [
+      {
+        "provider": "gutenberg",
+        "format": "html",
+        "url": "https://www.gutenberg.org/ebooks/5200"
+      },
+      {
+        "provider": "standard-ebooks",
+        "format": "html",
+        "url": "https://standardebooks.org/ebooks?query=Kafka+Metamorphosis"
+      }
+    ],
+    "externalLinks": [
+      {
+        "kind": "other",
+        "url": "https://en.wikipedia.org/wiki/The_Metamorphosis",
+        "label": "Background at Wikipedia"
+      }
+    ],
+    "masterNotes": {
+      "context": "Kafka wrote *The Metamorphosis* in late 1912 and published it in 1915, while working by day at a Prague workers'-insurance institute and writing, exhaustedly, by night. He was a German-speaking Jewish writer in a largely Czech city within the Austro-Hungarian Empire, a triple outsider status that shadows much of his fiction. The David Wyllie translation used here entered the public domain and became one of the most widely circulated English versions once Project Gutenberg released it in the early 2000s. Largely unread in Kafka's lifetime, the novella became, after his death and against his own instructions to destroy his manuscripts, a founding text of twentieth-century literature about bureaucratic dread and the body's betrayal, giving the adjective \"Kafkaesque\" to the language.",
+      "form": "The story is told in close third person fixed almost entirely to Gregor's perspective, so the reader experiences his transformation from the inside while everyone around him reacts from the outside. Kafka's prose is famously flat and procedural, describing an impossible event in the same deliberate, unexcitable register a clerk might use for an inventory, which is precisely what makes the opening so unsettling: no one, including Gregor, treats the transformation as the story's biggest problem. The opening section unfolds in near-real time within a single room, building tension through small physical logistics rather than incident.",
+      "keyImages": [
+        "Gregor's many legs, waving helplessly in the air as he lies on his now-unfamiliar back, unable to right himself.",
+        "The framed picture Gregor cut from a magazine and mounted himself, the one personal object in an otherwise bare room.",
+        "The alarm clock on the chest of drawers, fixing Gregor's anxiety on a specific missed train rather than on his transformed body.",
+        "The three separate voices at three doors, mother, father, and sister, each addressing Gregor without yet seeing him."
+      ],
+      "whatToNotice": [
+        "Notice that Gregor's very first extended worry is professional, about the train he is missing, not about what has happened to his body.",
+        "Notice how long the narration stays purely physical and logistical, on doorknobs and bedcovers, before any character actually sees Gregor.",
+        "Notice the family's three separate, differently toned approaches at three different doors, and what each voice implies about that family member's role in the household.",
+        "Notice the arrival of the chief clerk in person, sent to check on a single morning's lateness, and what that says about Gregor's employer's authority over his time.",
+        "Notice the framed picture as the excerpt's one detail belonging to Gregor alone, unconnected to his job or his family."
+      ],
+      "discussionQuestions": [
+        "Why might Kafka have Gregor react to his transformation with professional anxiety rather than horror or panic?",
+        "What does it suggest about this household that three different family members approach Gregor's door in three distinct ways?",
+        "How does the story's flat, procedural tone shape your emotional response to an event that should be shocking?",
+        "Beyond this excerpt: given how quickly the chief clerk appears over one missed morning, what does this opening already suggest about how precarious Gregor's place in this family and workplace might be?"
+      ],
+      "furtherReading": [
+        "Kafka's *The Trial* — another protagonist caught by an authority that never explains itself, at greater length.",
+        "Kafka's short story \"The Judgment\" — written the same period, sharing its abrupt, punishing family dynamics.",
+        "Reiner Stach's three-volume Kafka biography — the standard modern account of the life behind these fictions."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed-b",
       "dateAdded": "2026-09-13",
       "curatedBy": "claude",
       "schemaVersion": 1
@@ -1010,151 +1687,78 @@
     }
   },
   {
-    "id": "millay-first-fig-1918",
+    "id": "millay-time-does-not-bring-relief-1917",
     "type": "poem",
-    "title": "First Fig",
+    "title": "Time does not bring relief; you all have lied",
     "author": "Edna St. Vincent Millay",
-    "year": 1918,
+    "year": 1917,
     "era": "early_20th_century",
-    "form": "epigrammatic quatrain",
+    "form": "sonnet, Petrarchan",
     "themes": [
-      "mortality",
-      "time",
-      "humor"
+      "grief",
+      "memory",
+      "time"
     ],
     "tags": [
-      "greenwich-village",
-      "epigram",
-      "new-woman",
+      "renascence-and-other-poems",
+      "sonnet",
       "needs-link-verification"
     ],
     "length": {
       "unit": "lines",
-      "value": 4
+      "value": 14
     },
-    "difficulty": 1,
+    "difficulty": 2,
     "source": {
-      "name": "Edna St. Vincent Millay, A Few Figs from Thistles (1920)",
-      "url": "https://www.gutenberg.org/ebooks/search/?query=Edna+St+Vincent+Millay+A+Few+Figs+from+Thistles",
+      "name": "Project Gutenberg (GITenberg mirror)",
+      "url": "https://raw.githubusercontent.com/GITenberg/Renascence-and-Other-Poems_109/master/109.txt",
       "license": "public-domain",
       "retrievedDate": "2026-09-13"
     },
     "textPolicy": "full",
-    "text": "My candle burns at both ends;\n   It will not last the night;\nBut ah, my foes, and oh, my friends—\n   It gives a lovely light!",
+    "text": "Time does not bring relief; you all have lied\nWho told me time would ease me of my pain!\nI miss him in the weeping of the rain;\nI want him at the shrinking of the tide;\nThe old snows melt from every mountain-side,\nAnd last year's leaves are smoke in every lane;\nBut last year's bitter loving must remain\nHeaped on my heart, and my old thoughts abide!\n\nThere are a hundred places where I fear\nTo go,--so with his memory they brim!\nAnd entering with relief some quiet place\nWhere never fell his foot or shone his face\nI say, \"There is no memory of him here!\"\nAnd so stand stricken, so remembering him!",
     "ebookLinks": [
       {
         "provider": "gutenberg",
-        "format": "html",
-        "url": "https://www.gutenberg.org/ebooks/search/?query=Edna+St+Vincent+Millay+A+Few+Figs+from+Thistles"
+        "format": "epub",
+        "url": "https://www.gutenberg.org/ebooks/109.epub.images"
       }
     ],
     "externalLinks": [
       {
         "kind": "poetry-foundation",
-        "url": "https://www.poetryfoundation.org/search?q=First+Fig+Edna+St+Vincent+Millay",
+        "url": "https://www.poetryfoundation.org/search?q=Time+does+not+bring+relief+Edna+St+Vincent+Millay",
         "label": "Search Poetry Foundation for this poem"
       }
     ],
     "masterNotes": {
-      "context": "Millay published \"First Fig\" in *Poetry* magazine in 1918 and again in her 1920 collection *A Few Figs from Thistles*, a book built deliberately from short, epigrammatic poems rather than her longer, more traditionally lyric work. She had just left Vassar College and moved to New York's Greenwich Village, where she became one of the era's most visible symbols of the \"New Woman\" — financially independent, sexually frank, unapologetic about pleasure. The book scandalized some early reviewers precisely because its speaker treats a short, burning life as a boast rather than a warning. Millay went on to win the Pulitzer Prize for Poetry in 1923, becoming the third woman to receive it, and \"First Fig\" remains her single most quoted quatrain.",
-      "form": "Four lines, a single extended metaphor, and a defiant tone are doing all of the poem's work. The candle burning \"at both ends\" was already a known figure for a reckless, short life; Millay's contribution is the tone she gives it — not regret but pride, delivered straight to an audience she splits into \"foes\" and \"friends\" as if daring either to disapprove. The exclamation point on the final line carries the whole poem's argument: the light is worth the shortened night. Millay compresses an entire attitude toward mortality into a form usually reserved for greeting-card sentiment, and undercuts the sentimentality by refusing any hint of apology.",
+      "context": "Millay published this sonnet in 1917 in her first full collection, *Renascence and Other Poems*, released the same year she graduated from Vassar College, when she was twenty-five. The book made her reputation less on its title poem, an ambitious meditation on death and rebirth she had written as a teenager, than on a cluster of shorter lyrics and sonnets, this one among them, that showed a colder, more skeptical voice than the era's popular sentimental verse about grief. Millay would go on to become one of the most widely read American poets of the 1920s, celebrated for exactly this kind of formally traditional but emotionally blunt sonnet. The poem takes direct aim at a piece of common consolation, that time heals loss, and refuses it outright rather than easing into agreement.",
+      "form": "The poem is a Petrarchan sonnet, its octave built almost entirely from a list of ordinary places and objects the speaker still cannot encounter without grief resurfacing, before the closing sestet turns from complaint to a sharper, more specific admission. Millay's diction throughout is plain and declarative rather than ornate, which sharpens the argument: this is a poem that wants to sound like blunt fact, not decorated feeling. The formal control of the sonnet, its steady meter and full rhymes, sits in deliberate tension with the raw claim being made inside it, so that composure and grief are made to occupy the same lines rather than one giving way to the other.",
       "keyImages": [
-        "The candle \"burning at both ends\" — the poem's whole argument compressed into a single image of accelerated, deliberate consumption.",
-        "The direct address split between \"my foes\" and \"my friends\" — the speaker imagining, and dismissing in advance, two different kinds of disapproval."
+        "The catalogue of ordinary, unremarkable places the speaker still cannot pass without being reminded of the loss — grief attached to geography rather than to any single dramatic scene.",
+        "The direct rebuttal of secondhand comfort in the opening line, the poem positioning itself against everyone else's reassurance before offering its own view.",
+        "The turn in the sestet toward a narrower, more physical admission of what the speaker still cannot do, sharpening the poem's abstract claim about grief into something concrete."
       ],
       "whatToNotice": [
-        "Notice the poem never claims the short life is a mistake — the tone is pride, not warning.",
-        "Notice that \"foes\" and \"friends\" are addressed identically; the speaker doesn't perform more vulnerability for one than the other.",
-        "Notice how much weight the single exclamation point at the end is asked to carry.",
-        "Notice the poem's total absence of regret language — no \"but,\" no \"if only.\""
+        "Notice that the poem opens by contradicting other people's comfort rather than describing the loss itself — the argument comes before the grief is even named.",
+        "Notice how the octave accumulates ordinary settings rather than one big, dramatic scene of mourning.",
+        "Watch for the sonnet's turn between octave and sestet, and notice how the claim narrows rather than widens at that point.",
+        "Notice how plain and unadorned the diction stays throughout, even as the feeling being described is severe."
       ],
       "discussionQuestions": [
-        "What does it change that the poem treats a self-consuming life as something to boast about rather than confess?",
-        "Why might Millay address both \"foes\" and \"friends\" in the same breath, rather than singling out one audience?",
-        "Does the poem's brevity work with or against its argument about living intensely and briefly?"
+        "Why might Millay open by rejecting other people's comfort rather than describing her own grief first?",
+        "What is the effect of using a traditional, tightly rhymed sonnet form to make an argument against a comforting cliché?",
+        "Does the poem's insistence that time does not heal read as more true, or less, for being stated so flatly rather than dramatized?",
+        "How does moving from general claim (octave) to specific admission (sestet) change how convincing the poem feels by its final lines?"
       ],
       "furtherReading": [
-        "\"Second Fig\" (Millay) — the companion quatrain in the same sequence, arguing nearly the opposite case.",
-        "Nancy Milford, *Savage Beauty: The Life of Edna St. Vincent Millay* — a biography covering the Greenwich Village years this poem comes out of."
+        "\"Renascence\" (Millay, same collection) — the volume's more famous title poem, for a very different, visionary treatment of death and survival.",
+        "Edna St. Vincent Millay, *A Few Figs from Thistles* (1920) — for the wittier, more defiant voice she became known for shortly after this collection.",
+        "Nancy Milford, *Savage Beauty: The Life of Edna St. Vincent Millay* — a biography covering the period of Millay's early sonnets."
       ]
     },
     "pipeline": {
-      "batchId": "2026-09-13-seed",
-      "dateAdded": "2026-09-13",
-      "curatedBy": "claude",
-      "schemaVersion": 1
-    }
-  },
-  {
-    "id": "oliver-wild-geese-1986",
-    "type": "poem",
-    "title": "Wild Geese",
-    "author": "Mary Oliver",
-    "year": 1986,
-    "era": "contemporary",
-    "form": "free verse",
-    "themes": [
-      "nature",
-      "solitude",
-      "wonder",
-      "home"
-    ],
-    "tags": [
-      "direct-address",
-      "provincetown",
-      "needs-text",
-      "needs-link-verification"
-    ],
-    "length": {
-      "unit": "lines",
-      "value": 18
-    },
-    "difficulty": 2,
-    "source": {
-      "name": "Mary Oliver, Dream Work (Atlantic Monthly Press, 1986)",
-      "url": "https://www.poetryfoundation.org/search?q=Wild+Geese+Mary+Oliver",
-      "license": "all-rights-reserved",
-      "retrievedDate": "2026-09-13"
-    },
-    "textPolicy": "pending",
-    "externalLinks": [
-      {
-        "kind": "poetry-foundation",
-        "url": "https://www.poetryfoundation.org/search?q=Wild+Geese+Mary+Oliver",
-        "label": "Search Poetry Foundation for this poem"
-      },
-      {
-        "kind": "publisher",
-        "url": "https://groveatlantic.com/?s=Mary+Oliver+Dream+Work",
-        "label": "Search Grove Atlantic for this collection"
-      }
-    ],
-    "masterNotes": {
-      "context": "Oliver published \"Wild Geese\" in *Dream Work* (1986), by which point she had already spent decades writing quietly about the natural world around her home in Provincetown, Massachusetts, largely outside the literary mainstream of her contemporaries. She went on to win the Pulitzer Prize in 1984 (for *American Primitive*) and the National Book Award in 1992, but her poems remained deliberately plain in diction, resistant to the difficulty many of her peers prized. \"Wild Geese\" opens by directly addressing a reader carrying guilt or self-judgment, then pivots outward to the natural world as a counter-argument to that guilt. It has become one of the most widely shared and quoted poems in English, sometimes to the point of overfamiliarity, which can make it hard to read the poem itself rather than its reputation.",
-      "form": "The poem moves in a single unbroken argument built from short declarative sentences and a repeated \"Meanwhile,\" a word that does a great deal of structural work — each repetition shifts attention further from the human guilt of the opening lines toward the indifferent, ongoing motion of geese, rain, and mountains. The poem never rhymes and rarely varies its line lengths dramatically; its persuasive power comes from accumulation rather than any single striking image. The final image — the geese \"announcing your place / in the family of things\" — arrives only after the poem has spent its whole length earning the right to make that claim.",
-      "keyImages": [
-        "The repeated word \"Meanwhile,\" returning to redirect attention from human self-judgment to the ongoing natural world.",
-        "The wild geese \"heading home again,\" offered as an image of belonging that requires no explanation or effort.",
-        "The closing phrase \"the family of things\" — extending kinship past the human world entirely."
-      ],
-      "whatToNotice": [
-        "Notice the poem opens with two flat negations (\"You do not have to...\") before offering anything in their place.",
-        "Track each appearance of \"Meanwhile\" and notice how far the poem's attention has traveled by the last one.",
-        "Notice the poem addresses \"you\" throughout — this is a poem of direct instruction, not description.",
-        "Notice that \"the family of things\" arrives only in the poem's final line, after everything else has built toward it."
-      ],
-      "discussionQuestions": [
-        "What is the effect of opening the poem with what the reader does not have to do, rather than what they should do?",
-        "How does repeating \"Meanwhile\" change the reader's sense of scale between the personal and the natural?",
-        "Does closing on \"the family of things\" resolve the guilt introduced in the first lines, or simply set it aside?"
-      ],
-      "furtherReading": [
-        "\"The Summer Day\" (Oliver) — for the same directly instructive address, ending in the well-known question about \"your one wild and precious life.\"",
-        "*American Primitive* (Oliver) — the Pulitzer-winning collection that established her plain-spoken attention to the natural world."
-      ]
-    },
-    "pipeline": {
-      "batchId": "2026-09-13-seed",
+      "batchId": "2026-09-13-seed-b",
       "dateAdded": "2026-09-13",
       "curatedBy": "claude",
       "schemaVersion": 1
@@ -1331,6 +1935,82 @@
     },
     "pipeline": {
       "batchId": "2026-09-13-seed",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "id": "szymborska-the-end-and-the-beginning-1993",
+    "type": "poem",
+    "title": "The End and the Beginning",
+    "author": "Wisława Szymborska (translated by Stanisław Barańczak and Clare Cavanagh)",
+    "year": 1993,
+    "era": "contemporary",
+    "form": "free verse, translated from Polish",
+    "themes": [
+      "war",
+      "memory",
+      "time"
+    ],
+    "tags": [
+      "translation",
+      "poland",
+      "postwar-europe",
+      "needs-text"
+    ],
+    "length": {
+      "unit": "lines",
+      "value": 48
+    },
+    "difficulty": 3,
+    "source": {
+      "name": "Wisława Szymborska, \"Koniec i początek\" (1993), trans. Stanisław Barańczak and Clare Cavanagh, in View with a Grain of Sand: Selected Poems (Harcourt Brace, 1995); English translation copyright held separately from the Polish original by the translators/publisher",
+      "url": "https://www.poetryfoundation.org/poets/wislawa-szymborska",
+      "license": "all-rights-reserved",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "pending",
+    "externalLinks": [
+      {
+        "kind": "poetry-foundation",
+        "url": "https://www.poetryfoundation.org/search?q=The+End+and+the+Beginning+Szymborska+Baranczak+Cavanagh",
+        "label": "Search Poetry Foundation for this poem"
+      },
+      {
+        "kind": "bookstore",
+        "url": "https://bookshop.org/search?keywords=View+with+a+Grain+of+Sand+Szymborska",
+        "label": "Find View with a Grain of Sand at Bookshop.org"
+      }
+    ],
+    "masterNotes": {
+      "context": "Szymborska published \"Koniec i początek\" in Polish in 1993, in the collection of the same name, four years after the fall of Communist rule in Poland and not long after the wars in the former Yugoslavia had returned large-scale European war to daily headlines. Szymborska had lived through the German occupation of Poland and the destruction of Warsaw in the Second World War, and this poem's flat, almost administrative tone toward the labor of cleanup after war reads as hard-won rather than detached. The widely used English version is by Stanisław Barańczak and Clare Cavanagh, whose translations did much to build Szymborska's English-language readership; it appears in *View with a Grain of Sand* (1995). Szymborska won the Nobel Prize in Literature in 1996, three years after this poem's original publication, and it remains one of her most frequently cited works on the aftermath of war.",
+      "form": "The poem proceeds as a plain, unornamented list of the unglamorous physical and social tasks that follow a war, refusing the elevated register readers might expect from a poem on this subject. Its short, declarative lines and matter-of-fact tone are characteristic of Szymborska's broader style, which favors irony and understatement over overt emotion, and the translators have preserved that flatness in English rather than smoothing it into more conventionally poetic language. The poem moves in stages, from immediate physical cleanup toward the slower work of memory and forgetting, ending on figures who were not present for the events at all — a structural choice that carries the poem's real argument about how history gets absorbed.",
+      "keyImages": [
+        "The recurring image of physical rubble and debris being cleared by unnamed, uncelebrated workers, the poem's insistence on the unglamorous labor that always follows a war.",
+        "The figure who leans on a broom and still remembers how it was, a single human presence who has not yet caught up to the poem's larger movement toward forgetting.",
+        "The closing figures too young to have witnessed the events at all, lying in the grass and looking up at clouds, marking how completely the past can be absorbed by those who come after."
+      ],
+      "whatToNotice": [
+        "Notice how deliberately the poem avoids naming any specific war, army, or nation, keeping its subject general rather than tied to one conflict.",
+        "Notice the shift partway through from concrete physical labor toward more abstract processes of memory and explanation.",
+        "Notice how the poem's tone stays level and almost bureaucratic throughout, even as its subject grows larger and more painful.",
+        "Notice who the poem chooses to end on, and how much distance separates that final figure from the poem's opening images."
+      ],
+      "discussionQuestions": [
+        "Why might Szymborska have chosen a flat, list-like structure to describe the aftermath of war rather than a more overtly emotional one?",
+        "What is the effect of ending the poem with people who have no memory of the events it describes?",
+        "Does the poem's refusal to name a specific war make its argument more universal, or does it risk flattening real historical differences?",
+        "How does translation — the choice to keep the English plain rather than more lyrical — affect how this poem's argument lands for an English-language reader?"
+      ],
+      "furtherReading": [
+        "Wisława Szymborska, \"Could Have\" — another poem taking a similarly flat, ironic approach to catastrophe and survival.",
+        "Czesław Miłosz, *The Captive Mind* — a prose companion from another Polish writer on living through and after totalitarian upheaval.",
+        "Clare Cavanagh, *Lyric Poetry and Modern Politics* — discusses Szymborska's translated reception and the politics of postwar Polish poetry."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-seed-b",
       "dateAdded": "2026-09-13",
       "curatedBy": "claude",
       "schemaVersion": 1

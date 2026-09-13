@@ -1,9 +1,38 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-13T09:15:57.758Z",
-  "count": 17,
+  "generatedAt": "2026-09-13T09:37:40.817Z",
+  "count": 25,
   "shards": 1,
   "works": [
+    {
+      "id": "achebe-things-fall-apart-1958",
+      "title": "Things Fall Apart",
+      "author": "Chinua Achebe",
+      "year": 1958,
+      "era": "mid_20th_century",
+      "type": "book",
+      "form": "novel",
+      "themes": [
+        "power",
+        "family",
+        "faith",
+        "home"
+      ],
+      "tags": [
+        "needs-text",
+        "needs-anchor-recheck",
+        "nigerian-literature",
+        "igbo",
+        "postcolonial-literature"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "words",
+        "value": 66000
+      },
+      "textPolicy": "pending",
+      "shard": 0
+    },
     {
       "id": "blake-the-tyger-1794",
       "title": "The Tyger",
@@ -30,6 +59,36 @@
         "value": 24
       },
       "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "borges-the-garden-of-forking-paths-1941",
+      "title": "The Garden of Forking Paths",
+      "author": "Jorge Luis Borges",
+      "year": 1941,
+      "era": "mid_20th_century",
+      "type": "short_story",
+      "form": "short story (metaphysical spy fiction)",
+      "themes": [
+        "time",
+        "war",
+        "doubt",
+        "wonder"
+      ],
+      "tags": [
+        "needs-text",
+        "needs-anchor-recheck",
+        "needs-link-verification",
+        "argentine-literature",
+        "translation",
+        "labyrinth"
+      ],
+      "difficulty": 4,
+      "length": {
+        "unit": "words",
+        "value": 5600
+      },
+      "textPolicy": "pending",
       "shard": 0
     },
     {
@@ -116,30 +175,88 @@
       "shard": 0
     },
     {
-      "id": "dickinson-im-nobody-who-are-you-1861",
-      "title": "I'm Nobody! Who are you?",
+      "id": "dickinson-because-i-could-not-stop-for-death-1863",
+      "title": "Because I could not stop for Death",
       "author": "Emily Dickinson",
-      "year": 1861,
+      "year": 1863,
       "era": "19th_century",
       "type": "poem",
-      "form": "lyric poem, common meter",
+      "form": "lyric poem, ballad meter",
       "themes": [
-        "solitude",
-        "humor",
-        "language"
+        "mortality",
+        "time",
+        "nature",
+        "wonder"
       ],
       "tags": [
-        "fascicle",
-        "anonymity",
-        "irony",
-        "needs-link-verification"
+        "carriage",
+        "afterlife",
+        "personification",
+        "franklin-479",
+        "johnson-712"
       ],
       "difficulty": 2,
       "length": {
         "unit": "lines",
-        "value": 8
+        "value": 24
       },
       "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "donne-death-be-not-proud-1633",
+      "title": "Death, be not proud (Holy Sonnet X)",
+      "author": "John Donne",
+      "year": 1633,
+      "era": "renaissance",
+      "type": "poem",
+      "form": "sonnet, metaphysical",
+      "themes": [
+        "death",
+        "mortality",
+        "faith"
+      ],
+      "tags": [
+        "holy-sonnets",
+        "divine-meditations",
+        "metaphysical-poetry",
+        "needs-link-verification"
+      ],
+      "difficulty": 4,
+      "length": {
+        "unit": "lines",
+        "value": 14
+      },
+      "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "douglass-what-to-the-slave-is-the-fourth-of-july-1852",
+      "title": "What to the Slave Is the Fourth of July?",
+      "author": "Frederick Douglass",
+      "year": 1852,
+      "era": "19th_century",
+      "type": "essay",
+      "form": "oration (public address)",
+      "themes": [
+        "justice",
+        "race",
+        "power",
+        "faith"
+      ],
+      "tags": [
+        "needs-anchor-recheck",
+        "needs-link-verification",
+        "oratory",
+        "abolitionism",
+        "rochester"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "words",
+        "value": 9000
+      },
+      "textPolicy": "excerpt",
       "shard": 0
     },
     {
@@ -168,6 +285,119 @@
         "value": 15
       },
       "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "eliot-the-love-song-of-j-alfred-prufrock-1915",
+      "title": "The Love Song of J. Alfred Prufrock",
+      "author": "T. S. Eliot",
+      "year": 1915,
+      "era": "early_20th_century",
+      "type": "poem",
+      "form": "dramatic monologue, free verse with intermittent rhyme",
+      "themes": [
+        "solitude",
+        "doubt",
+        "time",
+        "the-city"
+      ],
+      "tags": [
+        "modernism",
+        "interior-monologue",
+        "prufrock-and-other-observations",
+        "needs-link-verification"
+      ],
+      "difficulty": 4,
+      "length": {
+        "unit": "lines",
+        "value": 131
+      },
+      "textPolicy": "full",
+      "shard": 0
+    },
+    {
+      "id": "hughes-harlem-1951",
+      "title": "Harlem",
+      "author": "Langston Hughes",
+      "year": 1951,
+      "era": "mid_20th_century",
+      "type": "poem",
+      "form": "free verse, short lyric built on a rhetorical question",
+      "themes": [
+        "race",
+        "desire",
+        "the-city"
+      ],
+      "tags": [
+        "montage-of-a-dream-deferred",
+        "harlem-renaissance-legacy",
+        "needs-text"
+      ],
+      "difficulty": 2,
+      "length": {
+        "unit": "lines",
+        "value": 11
+      },
+      "textPolicy": "pending",
+      "shard": 0
+    },
+    {
+      "id": "ibsen-a-dolls-house-1879",
+      "title": "A Doll's House",
+      "author": "Henrik Ibsen",
+      "year": 1879,
+      "era": "19th_century",
+      "type": "play",
+      "form": "play in three acts (prose realist drama)",
+      "themes": [
+        "gender",
+        "family",
+        "power",
+        "home",
+        "doubt"
+      ],
+      "tags": [
+        "needs-anchor-recheck",
+        "needs-link-verification",
+        "translation",
+        "norwegian-literature"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "pages",
+        "value": 90
+      },
+      "textPolicy": "excerpt",
+      "shard": 0
+    },
+    {
+      "id": "kafka-the-metamorphosis-1915",
+      "title": "The Metamorphosis",
+      "author": "Franz Kafka",
+      "year": 1915,
+      "era": "early_20th_century",
+      "type": "book",
+      "form": "novella",
+      "themes": [
+        "family",
+        "work",
+        "the-body",
+        "illness",
+        "solitude"
+      ],
+      "tags": [
+        "needs-anchor-recheck",
+        "needs-link-verification",
+        "german-literature",
+        "translation",
+        "prague"
+      ],
+      "difficulty": 5,
+      "length": {
+        "unit": "words",
+        "value": 22300
+      },
+      "textPolicy": "excerpt",
       "shard": 0
     },
     {
@@ -337,58 +567,29 @@
       "shard": 0
     },
     {
-      "id": "millay-first-fig-1918",
-      "title": "First Fig",
+      "id": "millay-time-does-not-bring-relief-1917",
+      "title": "Time does not bring relief; you all have lied",
       "author": "Edna St. Vincent Millay",
-      "year": 1918,
+      "year": 1917,
       "era": "early_20th_century",
       "type": "poem",
-      "form": "epigrammatic quatrain",
+      "form": "sonnet, Petrarchan",
       "themes": [
-        "mortality",
-        "time",
-        "humor"
+        "grief",
+        "memory",
+        "time"
       ],
       "tags": [
-        "greenwich-village",
-        "epigram",
-        "new-woman",
-        "needs-link-verification"
-      ],
-      "difficulty": 1,
-      "length": {
-        "unit": "lines",
-        "value": 4
-      },
-      "textPolicy": "full",
-      "shard": 0
-    },
-    {
-      "id": "oliver-wild-geese-1986",
-      "title": "Wild Geese",
-      "author": "Mary Oliver",
-      "year": 1986,
-      "era": "contemporary",
-      "type": "poem",
-      "form": "free verse",
-      "themes": [
-        "nature",
-        "solitude",
-        "wonder",
-        "home"
-      ],
-      "tags": [
-        "direct-address",
-        "provincetown",
-        "needs-text",
+        "renascence-and-other-poems",
+        "sonnet",
         "needs-link-verification"
       ],
       "difficulty": 2,
       "length": {
         "unit": "lines",
-        "value": 18
+        "value": 14
       },
-      "textPolicy": "pending",
+      "textPolicy": "full",
       "shard": 0
     },
     {
@@ -445,6 +646,33 @@
         "value": 130000
       },
       "textPolicy": "excerpt",
+      "shard": 0
+    },
+    {
+      "id": "szymborska-the-end-and-the-beginning-1993",
+      "title": "The End and the Beginning",
+      "author": "Wisława Szymborska (translated by Stanisław Barańczak and Clare Cavanagh)",
+      "year": 1993,
+      "era": "contemporary",
+      "type": "poem",
+      "form": "free verse, translated from Polish",
+      "themes": [
+        "war",
+        "memory",
+        "time"
+      ],
+      "tags": [
+        "translation",
+        "poland",
+        "postwar-europe",
+        "needs-text"
+      ],
+      "difficulty": 3,
+      "length": {
+        "unit": "lines",
+        "value": 48
+      },
+      "textPolicy": "pending",
       "shard": 0
     },
     {

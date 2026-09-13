@@ -210,15 +210,32 @@ export function xhtmlToText(xhtml) {
   return paragraphs.join('\n\n');
 }
 
-const GUTENBERG_START_RE = /\*\*\*\s*START OF (?:THE|THIS)[^\n]*\*\*\*/i;
-const GUTENBERG_END_RE = /\*\*\*\s*END OF (?:THE|THIS)[^\n]*\*\*\*/i;
+// Tolerant of both modern marker phrasings ("START OF THE PROJECT GUTENBERG
+// EBOOK" / "START OF THIS PROJECT GUTENBERG EBOOK") and the pre-1997
+// "small print" era, whose boilerplate ends with a "*END*THE SMALL
+// PRINT...*END*" marker instead of a "*** START OF ... ***" line.
+const GUTENBERG_START_RE =
+  /\*\*\*\s*START OF (?:THE|THIS)\s+PROJECT GUTENBERG[^\n]*\*\*\*|\*END\*\s*THE SMALL PRINT!?[\s\S]*?\*END\*/i;
+const GUTENBERG_END_RE = /\*\*\*\s*END OF (?:THE|THIS)\s+PROJECT GUTENBERG[^\n]*\*\*\*/i;
+
+/**
+ * A block reads as verse (a poem stanza) rather than word-wrapped prose when
+ * every one of its lines is indented — Gutenberg plain-text poetry is
+ * conventionally indented on every line, whereas hard-wrapped prose is
+ * indented (if at all) only on a paragraph's first line, with continuation
+ * lines flush left.
+ * @param {string[]} rawLines - non-blank lines of one block, before trimming
+ */
+function isVerseBlock(rawLines) {
+  return rawLines.length > 1 && rawLines.every((line) => /^[ \t]/.test(line));
+}
 
 /**
  * Convert a Project Gutenberg / GITenberg plain-text file to plain text:
  * strips the `*** START OF ... ***` / `*** END OF ... ***` header and
- * footer markers (and everything outside them), then rejoins
- * line-wrapped prose into one line per paragraph, paragraphs separated
- * by a blank line.
+ * footer markers (and everything outside them), then rejoins line-wrapped
+ * prose into one line per paragraph (paragraphs separated by a blank line),
+ * while preserving verse line breaks within an indented (poem) block.
  * @param {string} raw
  * @returns {string}
  */
@@ -237,13 +254,11 @@ export function gutenbergToText(raw) {
 
   const paragraphs = text
     .split(/\n{2,}/)
-    .map((block) =>
-      block
-        .split('\n')
-        .map((line) => line.trim())
-        .filter((line) => line.length > 0)
-        .join(' ')
-    )
+    .map((block) => {
+      const rawLines = block.split('\n').filter((line) => line.trim().length > 0);
+      const trimmedLines = rawLines.map((line) => line.trim());
+      return trimmedLines.join(isVerseBlock(rawLines) ? '\n' : ' ');
+    })
     .filter((block) => block.length > 0);
 
   return paragraphs.join('\n\n');
@@ -275,6 +290,68 @@ export function plainTextToText(raw) {
 // -------- excerpt slicing (pure) --------
 
 /**
+ * Collapse all whitespace runs (including line breaks) to a single space,
+ * lowercase, and trim. Used only to *locate* --start/--end phrases that a
+ * source has hard-wrapped across a line break; the stored/returned text is
+ * never altered by this.
+ * @param {string} str
+ */
+function normalizeForMatch(str) {
+  return str.replace(/\s+/g, ' ').trim().toLowerCase();
+}
+
+/** A numeral/roman-numeral heading glued to the front of a paragraph, e.g. "II Time does not...". */
+const LEADING_NUMERAL_RE = /^\s*([IVXLC]+|\d+)\.?\s+/i;
+
+/**
+ * True for a short, punctuation-less paragraph that reads as a heading or
+ * section number rather than prose/verse content — a bare roman numeral
+ * ("XI"), a bare number ("11."), or any paragraph of 6 words or fewer with
+ * no terminal sentence punctuation (a title line like "Contents" or a poem
+ * heading).
+ * @param {string} paragraph
+ */
+function isHeadingLikeParagraph(paragraph) {
+  const normalized = paragraph.replace(/\s+/g, ' ').trim();
+  if (!normalized) return false;
+  if (/^[IVXLC]+\.?$/i.test(normalized)) return true;
+  if (/^\d+\.?$/.test(normalized)) return true;
+  const words = normalized.split(' ').filter(Boolean);
+  const endsWithTerminalPunctuation = /[.!?]["'’”)\]]?$/.test(normalized);
+  return words.length <= 6 && !endsWithTerminalPunctuation;
+}
+
+/** Generous upper bound on an epigraph/attribution quote's length, to tell it apart from a real stanza. */
+const SANDWICHED_QUOTE_MAX_WORDS = 60;
+
+/**
+ * Drop trailing front matter from the *next* section that --end pulled in:
+ * repeatedly pop a heading-like trailing paragraph, and pop a short
+ * non-heading paragraph too when it directly follows a heading-like one
+ * (an epigraph quote sitting between a section's title and its short
+ * attribution/numeral, e.g. title / quote / "The Jew of Malta" / "I").
+ * Mutates and returns `paragraphs`.
+ * @param {string[]} paragraphs
+ */
+function trimTrailingFrontMatter(paragraphs) {
+  while (paragraphs.length > 1) {
+    const lastIndex = paragraphs.length - 1;
+    if (isHeadingLikeParagraph(paragraphs[lastIndex])) {
+      paragraphs.pop();
+      continue;
+    }
+    const precededByHeading = lastIndex >= 1 && isHeadingLikeParagraph(paragraphs[lastIndex - 1]);
+    const isShortQuote = countWords(paragraphs[lastIndex]) <= SANDWICHED_QUOTE_MAX_WORDS;
+    if (precededByHeading && isShortQuote) {
+      paragraphs.pop();
+      continue;
+    }
+    break;
+  }
+  return paragraphs;
+}
+
+/**
  * Slice `text` (paragraphs separated by a blank line) down to an excerpt:
  * optionally starts at the first paragraph containing `start` (throws if
  * not found — the caller asked to skip to a specific point and it isn't
@@ -282,6 +359,16 @@ export function plainTextToText(raw) {
  * (silently ignored if not found — it's just a safety net), then takes
  * whole paragraphs until the word count is >= `min`, stopping at the last
  * paragraph boundary before exceeding `max`.
+ *
+ * `start`/`end` are located against a whitespace-normalised copy of each
+ * paragraph (so a phrase the source hard-wrapped across a line break, e.g.
+ * Gutenberg's ~70-column .txt wrapping, still matches) without altering the
+ * paragraph text itself. Once sliced, a heading-like numeral prefix glued to
+ * the start paragraph (e.g. "II Time does not bring relief...") is
+ * stripped, and any leftover heading-like paragraphs (a bare numeral, or a
+ * short titleless line — commonly the next section's heading, dragged in
+ * because --end matched a phrase in the following section) are dropped from
+ * both ends of the result.
  * @param {string} text
  * @param {{ min?: number, max?: number, start?: string|null, end?: string|null }} [options]
  * @returns {SlicedExcerpt}
@@ -292,20 +379,33 @@ export function sliceExcerpt(text, options = {}) {
   let paragraphs = text.split(/\n{2,}/).filter((p) => p.trim().length > 0);
 
   if (start) {
-    const needle = start.toLowerCase();
-    const index = paragraphs.findIndex((p) => p.toLowerCase().includes(needle));
+    const needle = normalizeForMatch(start);
+    const index = paragraphs.findIndex((p) => normalizeForMatch(p).includes(needle));
     if (index === -1) {
       throw new Error(`--start phrase not found in fetched text: ${JSON.stringify(start)}`);
     }
     paragraphs = paragraphs.slice(index);
+
+    const numeralMatch = LEADING_NUMERAL_RE.exec(paragraphs[0]);
+    if (numeralMatch) {
+      const rest = paragraphs[0].slice(numeralMatch[0].length);
+      if (normalizeForMatch(rest).startsWith(needle)) {
+        paragraphs[0] = rest;
+      }
+    }
   }
 
   if (end) {
-    const needle = end.toLowerCase();
-    const index = paragraphs.findIndex((p) => p.toLowerCase().includes(needle));
+    const needle = normalizeForMatch(end);
+    const index = paragraphs.findIndex((p) => normalizeForMatch(p).includes(needle));
     if (index !== -1) {
       paragraphs = paragraphs.slice(0, index);
     }
+  }
+
+  trimTrailingFrontMatter(paragraphs);
+  if (paragraphs.length > 1 && isHeadingLikeParagraph(paragraphs[0])) {
+    paragraphs.shift();
   }
 
   const included = [];

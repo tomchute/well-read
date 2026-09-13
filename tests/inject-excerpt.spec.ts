@@ -153,6 +153,80 @@ describe('inject-excerpt: pure converters', () => {
     expect(result).not.toContain('placeholder\nparagraph'); // wrapped line was rejoined
   });
 
+  it('gutenbergToText handles the old-style "START OF THIS PROJECT GUTENBERG EBOOK" marker (front matter kept, sliced later by --start)', () => {
+    const raw = [
+      "Project Gutenberg's A Placeholder Title, by A Placeholder Author",
+      '',
+      '*** START OF THIS PROJECT GUTENBERG EBOOK A PLACEHOLDER TITLE ***',
+      '',
+      'Produced by A Placeholder Contributor.',
+      '',
+      'Placeholder Contents heading paragraph goes here for testing.',
+      '',
+      '*** END OF THIS PROJECT GUTENBERG EBOOK A PLACEHOLDER TITLE ***',
+      '',
+      'End of Project Gutenberg boilerplate footer text placeholder.',
+    ].join('\n');
+
+    const result = gutenbergToText(raw);
+
+    expect(result).not.toContain("Project Gutenberg's A Placeholder Title");
+    expect(result).not.toContain('End of Project Gutenberg boilerplate');
+    expect(result).toContain('Produced by A Placeholder Contributor.');
+    expect(result).toContain('Placeholder Contents heading paragraph');
+  });
+
+  it('gutenbergToText preserves verse line breaks in an indented (poem) block but still reflows flush-left prose', () => {
+    const raw = [
+      '*** START OF THE PROJECT GUTENBERG EBOOK A PLACEHOLDER TITLE ***',
+      '',
+      '  Placeholder verse line one of the stanza,',
+      '    placeholder verse line two indented further,',
+      '  placeholder verse line three closing the stanza.',
+      '',
+      'This is a flush-left placeholder paragraph that wraps',
+      'across two lines of hard-wrapped prose for testing.',
+      '',
+      '*** END OF THE PROJECT GUTENBERG EBOOK A PLACEHOLDER TITLE ***',
+    ].join('\n');
+
+    const result = gutenbergToText(raw);
+    const paragraphs = result.split('\n\n');
+
+    const versePara = paragraphs.find((p) => p.includes('verse line one'));
+    expect(versePara?.split('\n')).toEqual([
+      'Placeholder verse line one of the stanza,',
+      'placeholder verse line two indented further,',
+      'placeholder verse line three closing the stanza.',
+    ]);
+
+    const prosePara = paragraphs.find((p) => p.includes('flush-left placeholder'));
+    expect(prosePara).toBe(
+      'This is a flush-left placeholder paragraph that wraps across two lines of hard-wrapped prose for testing.'
+    );
+  });
+
+  it('gutenbergToText handles the old pre-1997 "*END*THE SMALL PRINT" header style', () => {
+    const raw = [
+      'The Project Gutenberg Etext of A Placeholder Title',
+      '',
+      '**Welcome To The World of Free Plain Vanilla Electronic Texts**',
+      '',
+      '*END*THE SMALL PRINT! FOR PUBLIC DOMAIN ETEXTS*Ver.04.29.93*END*',
+      '',
+      'Placeholder first paragraph of the actual placeholder content.',
+      '',
+      'Placeholder second paragraph of the actual placeholder content.',
+    ].join('\n');
+
+    const result = gutenbergToText(raw);
+
+    expect(result).not.toContain('Welcome To The World');
+    expect(result).not.toContain('SMALL PRINT');
+    expect(result).toContain('Placeholder first paragraph of the actual placeholder content.');
+    expect(result).toContain('Placeholder second paragraph of the actual placeholder content.');
+  });
+
   it('plainTextToText preserves verse line breaks and splits on blank lines', () => {
     const plainText = [
       'First placeholder line of verse',
@@ -251,6 +325,100 @@ describe('inject-excerpt: sliceExcerpt', () => {
     expect(() =>
       sliceExcerpt('Some paragraph.\n\nAnother paragraph.', { start: 'NOWHERE TO BE FOUND' })
     ).toThrow(/--start phrase not found/);
+  });
+
+  it('locates --start/--end phrases hard-wrapped across a line break, without altering the stored paragraph text', () => {
+    const paragraphs = [
+      'Front matter paragraph that is not relevant to the excerpt at all.',
+      'This placeholder phrase wraps across a line\nbreak in the source file.',
+      'Middle paragraph that should be included in the sliced excerpt text.',
+      'This is the end phrase wrapped across a\nline in the source as well.',
+      'Trailing paragraph that must never appear in the sliced excerpt output.',
+    ];
+    const text = paragraphs.join('\n\n');
+
+    const { excerpt } = sliceExcerpt(text, {
+      min: 1,
+      max: 1000,
+      start: 'phrase wraps across a line break',
+      end: 'end phrase wrapped across a line',
+    });
+
+    // The line break inside the matched paragraph is preserved verbatim.
+    expect(excerpt).toContain(
+      'This placeholder phrase wraps across a line\nbreak in the source file.'
+    );
+    expect(excerpt).toContain('Middle paragraph');
+    expect(excerpt).not.toContain('Front matter');
+    expect(excerpt).not.toContain('Trailing paragraph');
+  });
+
+  it('drops trailing heading-like paragraphs left over when --end matches a phrase in the next section', () => {
+    const paragraphs = [
+      'IV',
+      'Placeholder first line of the target section content here now.',
+      'Placeholder second line finishing off the target section body.',
+      'V',
+      'Placeholder first line of the next section that follows after.',
+    ];
+    const text = paragraphs.join('\n\n');
+
+    const { excerpt } = sliceExcerpt(text, {
+      min: 1,
+      max: 1000,
+      start: 'Placeholder first line of the target',
+      end: 'Placeholder first line of the next section',
+    });
+
+    expect(excerpt).toBe(
+      [
+        'Placeholder first line of the target section content here now.',
+        'Placeholder second line finishing off the target section body.',
+      ].join('\n\n')
+    );
+  });
+
+  it('drops a leading heading-like paragraph when no --start is given to skip past it', () => {
+    const paragraphs = [
+      'I',
+      'Placeholder content paragraph that should remain in the excerpt text.',
+      'Second placeholder paragraph that should also remain in the excerpt.',
+      'Trailing paragraph that must never appear in the sliced excerpt output.',
+    ];
+    const text = paragraphs.join('\n\n');
+
+    const { excerpt } = sliceExcerpt(text, {
+      min: 1,
+      max: 1000,
+      end: 'Trailing paragraph that must never appear',
+    });
+
+    expect(excerpt.split('\n\n')[0]).not.toBe('I');
+    expect(excerpt).not.toContain('Trailing paragraph');
+    expect(excerpt).toBe(
+      [
+        'Placeholder content paragraph that should remain in the excerpt text.',
+        'Second placeholder paragraph that should also remain in the excerpt.',
+      ].join('\n\n')
+    );
+  });
+
+  it('strips a numeral/roman-numeral prefix glued to the front of the start paragraph', () => {
+    const paragraphs = [
+      'Front matter paragraph unrelated to the target section entirely here.',
+      'II Placeholder poem opening line that follows the section numeral directly.',
+      'Second line of the placeholder poem section content for testing purposes.',
+    ];
+    const text = paragraphs.join('\n\n');
+
+    const { excerpt } = sliceExcerpt(text, {
+      min: 1,
+      max: 1000,
+      start: 'Placeholder poem opening line',
+    });
+
+    expect(excerpt.startsWith('Placeholder poem opening line')).toBe(true);
+    expect(excerpt).not.toContain('II Placeholder');
   });
 });
 
