@@ -175,6 +175,8 @@ const WorkBaseSchema = z.object({
   cover: z.string().min(1).optional(),
   masterNotes: MasterNotesSchema,
   pipeline: PipelineSchema,
+  authorGender: z.enum(['woman', 'man', 'non-binary', 'unknown']).optional(),
+  authorRegion: z.string().min(1).optional(),
 });
 
 /**

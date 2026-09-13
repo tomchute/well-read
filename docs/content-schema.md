@@ -105,6 +105,8 @@ interface Work {
   cover?: string;         // optional cover/illustration image URL
   masterNotes: MasterNotes;
   pipeline: Pipeline;
+  authorGender?: 'woman' | 'man' | 'non-binary' | 'unknown'; // optional author gender for coverage tracking
+  authorRegion?: string;  // optional author region/country for coverage tracking, e.g. "US", "UK", "Nigeria", "Russia"
 }
 ```
 
