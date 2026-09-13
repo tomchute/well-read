@@ -37,7 +37,8 @@
       "**/*.jsonc",
       "**/*.css",
       "!**/*.svelte",
-      "!public/data"
+      "!public/data",
+      "!content/works"
     ]
   },
   "linter": {
