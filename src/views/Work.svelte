@@ -3,8 +3,9 @@
   import MasterNotes from '$lib/components/MasterNotes.svelte';
   import WorkLinks from '$lib/components/WorkLinks.svelte';
   // biome-ignore-end lint/correctness/noUnusedImports: used in template
+  import { isSaved, moreLikeThis, toggleRead, toggleSaved } from '$lib/actions';
   import { loadWork } from '$lib/data/work';
-  import { read } from '$lib/stores/index.svelte';
+  import { read, saved, weights } from '$lib/stores/index.svelte';
   import type { Era, Work as WorkRecord } from '$lib/types/work';
 
   interface Props {
@@ -37,6 +38,8 @@
 
   // biome-ignore lint/correctness/noUnusedVariables: used in template
   const isRead = $derived(work ? read.value.includes(work.id) : false);
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
+  const isWorkSaved = $derived(work ? isSaved(saved.value, work.id) : false);
 
   // Splits shipped prose (short_story/book/essay/play `text`/`excerpt`) into
   // paragraphs on blank lines, so it renders as real `<p>` paragraphs rather
@@ -57,12 +60,21 @@
   }
 
   // biome-ignore lint/correctness/noUnusedVariables: used in template
-  function toggleRead(): void {
+  function handleToggleRead(): void {
     if (!work) return;
-    const currentId = work.id;
-    read.update((ids) =>
-      ids.includes(currentId) ? ids.filter((existing) => existing !== currentId) : [...ids, currentId]
-    );
+    toggleRead(read, work.id);
+  }
+
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
+  function handleToggleSaved(): void {
+    if (!work) return;
+    toggleSaved(saved, work.id);
+  }
+
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
+  function handleMoreLikeThis(): void {
+    if (!work) return;
+    moreLikeThis({ weights }, work);
   }
 
   $effect(() => {
@@ -128,8 +140,20 @@
       <button type="button" class="notes-button" onclick={() => (notesOpen = true)}>
         Master notes
       </button>
-      <button type="button" class="read-button" class:is-read={isRead} onclick={toggleRead}>
+      <button type="button" class="read-button" class:is-read={isRead} onclick={handleToggleRead}>
         {isRead ? 'Read ✓' : 'Mark as read'}
+      </button>
+      <button
+        type="button"
+        class="save-button"
+        class:is-active={isWorkSaved}
+        aria-pressed={isWorkSaved}
+        onclick={handleToggleSaved}
+      >
+        {isWorkSaved ? 'Saved ✓' : 'Save'}
+      </button>
+      <button type="button" class="more-button" onclick={handleMoreLikeThis}>
+        More like this
       </button>
     </div>
 
@@ -207,7 +231,9 @@
   }
 
   .notes-button,
-  .read-button {
+  .read-button,
+  .save-button,
+  .more-button {
     min-height: 44px;
     padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-md);
@@ -220,14 +246,32 @@
       border-color var(--duration-fast) var(--ease-out-soft);
   }
 
-  .notes-button {
+  .notes-button,
+  .more-button {
     border: 1px solid var(--hairline);
     background: var(--surface-raised);
     color: var(--text);
   }
 
-  .notes-button:hover {
+  .notes-button:hover,
+  .more-button:hover {
     background: var(--surface-pressed);
+  }
+
+  .save-button {
+    border: 1px solid var(--hairline);
+    background: var(--surface-raised);
+    color: var(--text);
+  }
+
+  .save-button:hover {
+    background: var(--surface-pressed);
+  }
+
+  .save-button.is-active {
+    border-color: var(--accent-saved-text);
+    background: var(--accent-saved-tint);
+    color: var(--accent-saved-text);
   }
 
   .read-button {

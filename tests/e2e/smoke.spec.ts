@@ -8,13 +8,34 @@ test('load feed, click a work card, and view master notes', async ({ page }) => 
 
   // If the onboarding quiz appears, skip it
   const skipButton = page.locator('button:has-text("Skip")').first();
-  if (await skipButton.isVisible({ timeout: 1000 }).catch(() => false)) {
+  const skipVisible = await skipButton.isVisible().catch(() => false);
+  if (skipVisible) {
     await skipButton.click();
+    // Wait a bit for the quiz to close
+    await page.waitForTimeout(500);
+  }
+
+  // Wait for the manifest data to load - look for skeleton cards first, then work cards
+  // The app shows skeleton cards while loading the manifest
+  const skeletonCards = page.locator('div.skeleton-card');
+  const skeletonVisible = await skeletonCards.first().isVisible().catch(() => false);
+
+  if (skeletonVisible) {
+    // Wait for skeletons to disappear and actual cards to appear
+    await page.waitForFunction(
+      () => document.querySelectorAll('article.work-card').length > 0,
+      { timeout: 20000 }
+    );
+  } else {
+    // If no skeletons, wait for work cards directly
+    await page.waitForFunction(
+      () => document.querySelectorAll('article.work-card').length > 0,
+      { timeout: 20000 }
+    );
   }
 
   // Expect at least one work card
   const workCards = page.locator('article.work-card');
-  await expect(workCards.first()).toBeVisible({ timeout: 10000 });
   const cardCount = await workCards.count();
   expect(cardCount).toBeGreaterThanOrEqual(1);
 

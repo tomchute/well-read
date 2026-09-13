@@ -1,7 +1,15 @@
 <script lang="ts">
   import { createVirtualizer } from '@tanstack/svelte-virtual';
   import { onMount } from 'svelte';
-  import { isLiked, isSaved, likeWork, markSeen, moreLikeThis, dislikeWork, toggleSaved } from '$lib/actions';
+  import {
+    dislikeWork,
+    isLiked,
+    isSaved,
+    likeWork,
+    markSeen,
+    moreLikeThis,
+    toggleSaved,
+  } from '$lib/actions';
   // biome-ignore lint/correctness/noUnusedImports: used in template
   import SteeringBar from '$lib/components/SteeringBar.svelte';
   // biome-ignore lint/correctness/noUnusedImports: used in template
