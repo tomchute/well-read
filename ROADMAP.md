@@ -35,7 +35,7 @@ Verification: seed works render as cards; detail view shows all master-notes sec
 - [ ] [WP-2.2](docs/work-packages/WP-2.2-app-shell-routing-manifest.md) App shell, hash routing, manifest + shard loading
 - [ ] [WP-2.3](docs/work-packages/WP-2.3-work-card-virtual-feed.md) `WorkCard` + virtualised feed
 - [ ] [WP-2.4](docs/work-packages/WP-2.4-work-detail-master-notes.md) Work detail + master-notes side/bottom sheet
-- [ ] [WP-2.5](docs/work-packages/WP-2.5-links-by-text-policy.md) Ebook/external link rendering by `textPolicy`
+- [x] [WP-2.5](docs/work-packages/WP-2.5-links-by-text-policy.md) Ebook/external link rendering by `textPolicy`
 - [ ] [WP-2.6](docs/work-packages/WP-2.6-motion-polish-shortcuts.md) Motion, view transitions, keyboard shortcuts
 
 ## Phase 3 — Steering + library

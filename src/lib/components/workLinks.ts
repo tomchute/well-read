@@ -1,4 +1,4 @@
-import type { Work, EbookLink, ExternalLink, ExternalLinkKind } from '$lib/types/work';
+import type { EbookLink, ExternalLink, ExternalLinkKind, Work } from '$lib/types/work';
 
 export interface GroupedLinks {
   ebookLinks?: EbookLink[];
@@ -13,7 +13,9 @@ export interface GroupedLinks {
  * - full/contemporary: externalLinks only
  * - excerpt/pending: externalLinks grouped by kind
  */
-export function groupLinks(work: Pick<Work, 'textPolicy' | 'source' | 'ebookLinks' | 'externalLinks'>): GroupedLinks {
+export function groupLinks(
+  work: Pick<Work, 'textPolicy' | 'source' | 'ebookLinks' | 'externalLinks'>
+): GroupedLinks {
   const result: GroupedLinks = {
     hasEpub: false,
   };
@@ -36,14 +38,14 @@ export function groupLinks(work: Pick<Work, 'textPolicy' | 'source' | 'ebookLink
   ) {
     if (work.externalLinks && work.externalLinks.length > 0) {
       result.externalLinksByKind = work.externalLinks.reduce(
-        (acc, link) => {
+        (acc: Record<ExternalLinkKind, ExternalLink[]>, link: ExternalLink) => {
           if (!acc[link.kind]) {
             acc[link.kind] = [];
           }
           acc[link.kind].push(link);
           return acc;
         },
-        {} as Record<ExternalLinkKind, ExternalLink[]>,
+        {} as Record<ExternalLinkKind, ExternalLink[]>
       );
     }
   }

@@ -1,16 +1,19 @@
-import { describe, it, expect } from 'vitest';
-import { groupLinks } from '../src/lib/components/workLinks';
+import { describe, expect, it } from 'vitest';
 import type { Work } from '$lib/types/work';
 
+import { groupLinks } from '../src/lib/components/workLinks';
+
 describe('groupLinks', () => {
-  const createWork = (overrides: Partial<Work>): Pick<Work, 'textPolicy' | 'source' | 'ebookLinks' | 'externalLinks'> => ({
-    textPolicy: 'full',
+  const createWork = (
+    overrides: Partial<Work>
+  ): Pick<Work, 'textPolicy' | 'source' | 'ebookLinks' | 'externalLinks'> => ({
+    textPolicy: overrides.textPolicy ?? 'full',
     source: {
       name: 'Test Source',
       url: 'https://example.com',
       license: 'public-domain',
       retrievedDate: '2026-09-13',
-      ...overrides.source,
+      ...(overrides.source as Record<string, unknown>),
     },
     ebookLinks: overrides.ebookLinks,
     externalLinks: overrides.externalLinks,
@@ -20,7 +23,7 @@ describe('groupLinks', () => {
     it('includes ebookLinks', () => {
       const work = createWork({
         textPolicy: 'full',
-        source: { license: 'public-domain' } as any,
+        source: { license: 'public-domain' as const } as Record<string, unknown>,
         ebookLinks: [
           { provider: 'standard-ebooks', format: 'epub', url: 'https://example.com/epub' },
           { provider: 'gutenberg', format: 'pdf', url: 'https://example.com/pdf' },
@@ -37,9 +40,13 @@ describe('groupLinks', () => {
     it('detects EPUB for Kindle helper', () => {
       const work = createWork({
         textPolicy: 'full',
-        source: { license: 'public-domain' } as any,
+        source: { license: 'public-domain' as const } as Record<string, unknown>,
         ebookLinks: [
-          { provider: 'standard-ebooks', format: 'epub', url: 'https://example.com/epub' },
+          {
+            provider: 'standard-ebooks',
+            format: 'epub',
+            url: 'https://example.com/epub',
+          },
         ],
       });
 
@@ -51,7 +58,7 @@ describe('groupLinks', () => {
     it('returns hasEpub false when no EPUB', () => {
       const work = createWork({
         textPolicy: 'full',
-        source: { license: 'public-domain' } as any,
+        source: { license: 'public-domain' as const } as Record<string, unknown>,
         ebookLinks: [{ provider: 'gutenberg', format: 'pdf', url: 'https://example.com/pdf' }],
       });
 
@@ -65,7 +72,7 @@ describe('groupLinks', () => {
     it('includes externalLinks grouped by kind, not ebookLinks', () => {
       const work = createWork({
         textPolicy: 'full',
-        source: { license: 'all-rights-reserved' } as any,
+        source: { license: 'all-rights-reserved' as const } as Record<string, unknown>,
         externalLinks: [
           { kind: 'publisher', url: 'https://publisher.com', label: 'Publisher' },
           { kind: 'poetry-foundation', url: 'https://poetry.org', label: 'Poetry Foundation' },
@@ -85,7 +92,7 @@ describe('groupLinks', () => {
     it('groups externalLinks by kind', () => {
       const work = createWork({
         textPolicy: 'excerpt',
-        source: { license: 'all-rights-reserved' } as any,
+        source: { license: 'all-rights-reserved' as const } as Record<string, unknown>,
         externalLinks: [
           { kind: 'publisher', url: 'https://publisher.com' },
           { kind: 'library', url: 'https://library.com' },
@@ -134,7 +141,13 @@ describe('groupLinks', () => {
     it('sets hasEpub true when EPUB exists in any policy', () => {
       const work = createWork({
         textPolicy: 'excerpt',
-        ebookLinks: [{ provider: 'standard-ebooks', format: 'epub', url: 'https://example.com/epub' }],
+        ebookLinks: [
+          {
+            provider: 'standard-ebooks',
+            format: 'epub',
+            url: 'https://example.com/epub',
+          },
+        ],
       });
 
       const result = groupLinks(work);
