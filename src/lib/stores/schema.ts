@@ -40,9 +40,16 @@ export type SessionPins = z.infer<typeof SessionPinsSchema>;
 // Not one of the versioned `wellread:v1:*` scoring keys (see
 // docs/work-packages/WP-3.6-kindle-helper-export-import.md) but bundled here
 // so the whole app state can round-trip through one export/import pair.
+//
+// `onboardingDone` (WP-3.5) is optional-without-default on purpose: existing
+// stored/serialized settings that predate this field must keep parsing to
+// exactly the same shape they had before (no key silently injected), so
+// `shouldShowOnboarding` in src/lib/components/onboarding.ts treats a
+// missing value the same as `false`.
 export const SettingsSchema = z.object({
   theme: z.enum(['light', 'dark', 'system']),
   kindleEmail: z.string().nullable(),
+  onboardingDone: z.boolean().optional(),
 });
 export type Settings = z.infer<typeof SettingsSchema>;
 
@@ -52,4 +59,8 @@ export const DEFAULT_REACTIONS: Reactions = {};
 export const DEFAULT_SAVED: Saved = [];
 export const DEFAULT_READ: Read = [];
 export const DEFAULT_SESSION_PINS: SessionPins = [];
-export const DEFAULT_SETTINGS: Settings = { theme: 'system', kindleEmail: null };
+export const DEFAULT_SETTINGS: Settings = {
+  theme: 'system',
+  kindleEmail: null,
+  onboardingDone: false,
+};
