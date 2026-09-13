@@ -87,6 +87,85 @@
     "authorRegion": "Nigeria"
   },
   {
+    "id": "adichie-the-thing-around-your-neck-2009",
+    "type": "short_story",
+    "title": "The Thing Around Your Neck",
+    "author": "Chimamanda Ngozi Adichie",
+    "year": 2009,
+    "era": "contemporary",
+    "form": "short story, second-person narration",
+    "themes": [
+      "migration",
+      "exile",
+      "home",
+      "solitude"
+    ],
+    "tags": [
+      "diaspora",
+      "second-person",
+      "needs-text"
+    ],
+    "length": {
+      "unit": "words",
+      "value": 4300
+    },
+    "difficulty": 2,
+    "source": {
+      "name": "Chimamanda Ngozi Adichie, The Thing Around Your Neck (Fourth Estate / Knopf, 2009); rights held by the author",
+      "url": "https://search.worldcat.org/search?q=The+Thing+Around+Your+Neck+Adichie",
+      "license": "all-rights-reserved",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "pending",
+    "externalLinks": [
+      {
+        "kind": "bookstore",
+        "url": "https://bookshop.org/search?keywords=The+Thing+Around+Your+Neck+Adichie",
+        "label": "Search Bookshop.org"
+      },
+      {
+        "kind": "library",
+        "url": "https://search.worldcat.org/search?q=The+Thing+Around+Your+Neck+Adichie",
+        "label": "Find a library copy on WorldCat"
+      }
+    ],
+    "masterNotes": {
+      "context": "Adichie published \"The Thing Around Your Neck\" as the title story of her 2009 collection, following the two novels — *Purple Hibiscus* and the Orange Prize-winning *Half of a Yellow Sun* — that had already made her one of the most closely watched writers of contemporary Anglophone African fiction. Where those novels are set mostly in Nigeria, several stories in this collection, including this one, follow characters who leave it. The story tracks a young Nigerian woman who wins a US visa lottery — a system that decides who gets to emigrate essentially by chance — and moves to a small Connecticut town to live with an uncle, only to find the promise of America delivering isolation, casual exploitation, and a string of people who are curious about her mainly as a type rather than as a person.",
+      "form": "The story is narrated in the second person throughout, addressing its protagonist as \"you\" rather than \"I\" or \"she.\" That choice does two things at once: it reads at first like a flat, almost instructional account of what happens to someone in this situation, and it holds the reader at a slight remove from feelings the narration refuses to name directly. Adichie's prose stays plain and unadorned even at the story's most painful turns, which matches its larger argument — that a life-altering migration, and the losses folded into it, can look almost unremarkable from the outside.",
+      "keyImages": [
+        "The visa lottery letter — an arbitrary piece of paper that decides, essentially by chance, who gets to leave and who doesn't.",
+        "The uncle's house and his unwanted advances — the story's first and sharpest disappointment about what \"family\" abroad turns out to mean.",
+        "The title image itself, a felt tightening around the throat that recurs at moments of dislocation, never explained away as a simple metaphor.",
+        "The American boyfriend's assumption that she must want to visit \"the real Africa\" one day — a small, telling instance of being flattened into an idea."
+      ],
+      "whatToNotice": [
+        "Notice the effect of being addressed as \"you\" for the whole story, and whether that distance closes or widens as the story goes on.",
+        "Notice how often other characters explain Nigeria, or Africa, back to the protagonist — and how the story handles those moments without editorial comment.",
+        "Notice the plainness of the prose even at the story's most difficult moments — Adichie is not reaching for lyrical effect there.",
+        "Notice what role money, or its absence, plays in nearly every relationship the protagonist has in America."
+      ],
+      "discussionQuestions": [
+        "What does the second-person address let Adichie do that first or third person wouldn't, especially at the story's most painful moments?",
+        "How does the story distinguish between the people who are curious about the protagonist and the people who actually see her?",
+        "Is the title's central image — a tightening around the neck — better read as suffocation, grief, or something the story deliberately leaves open?",
+        "What does the story suggest about the cost of the specific, arbitrary process (the visa lottery) that got her to America in the first place?"
+      ],
+      "furtherReading": [
+        "Chimamanda Ngozi Adichie, *Americanah* (2013) — a novel-length treatment of many of the same questions about migration, race, and return.",
+        "Adichie's TED talk \"The Danger of a Single Story\" (2009) — her own account of the flattening this story dramatizes.",
+        "Jhumpa Lahiri, \"Interpreter of Maladies\" — a comparable close study of cultural distance and misreading between people who should understand each other."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-dogfood",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    },
+    "authorGender": "woman",
+    "authorRegion": "Nigeria"
+  },
+  {
     "id": "blake-the-tyger-1794",
     "type": "poem",
     "title": "The Tyger",
@@ -677,6 +756,84 @@
     "authorRegion": "UK"
   },
   {
+    "id": "dorfman-death-and-the-maiden-1990",
+    "type": "play",
+    "title": "Death and the Maiden",
+    "author": "Ariel Dorfman",
+    "year": 1990,
+    "era": "contemporary",
+    "form": "three-character stage drama, single setting, real-time confrontation",
+    "themes": [
+      "justice",
+      "power",
+      "memory",
+      "doubt"
+    ],
+    "tags": [
+      "chile",
+      "truth-commission",
+      "needs-text"
+    ],
+    "length": {
+      "unit": "pages",
+      "value": 70
+    },
+    "difficulty": 3,
+    "source": {
+      "name": "Ariel Dorfman, Death and the Maiden (Nick Hern Books, 1991; Spanish-language premiere in Chile, 1990); rights held by the author",
+      "url": "https://search.worldcat.org/search?q=Death+and+the+Maiden+Dorfman",
+      "license": "all-rights-reserved",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "pending",
+    "externalLinks": [
+      {
+        "kind": "bookstore",
+        "url": "https://bookshop.org/search?keywords=Death+and+the+Maiden+Dorfman",
+        "label": "Search Bookshop.org"
+      },
+      {
+        "kind": "library",
+        "url": "https://search.worldcat.org/search?q=Death+and+the+Maiden+Dorfman",
+        "label": "Find a library copy on WorldCat"
+      }
+    ],
+    "masterNotes": {
+      "context": "Dorfman wrote *Death and the Maiden* in 1990, immediately after Chile's return to civilian rule following the Pinochet dictatorship, at the moment when the new government's truth commission was investigating past human rights abuses without any power to prosecute them. The play's unnamed country deliberately mirrors Chile's specific, unresolved position: a nation asked to move forward without full justice, or even full certainty, for individual victims of torture. It premiered in London in 1991, was staged internationally within a few years, and was adapted into a 1994 film by Roman Polanski. Its title borrows Schubert's string quartet of the same name, which the play's accused torturer is said to have played during the protagonist's interrogation sessions years earlier.",
+      "form": "The play holds to three characters and essentially one room, building its tension the way a real interrogation would rather than through scene changes or a larger cast. Paulina, a torture survivor, takes a man her husband brings home captive, convinced he is the doctor who abused her years before; her husband Gerardo, newly appointed to the country's truth commission, is caught between his professional commitment to due process and his wife's certainty. Dorfman withholds definitive proof either way, so the audience is placed in Gerardo's position exactly — asked to judge a claim it cannot independently verify.",
+      "keyImages": [
+        "Schubert's \"Death and the Maiden\" quartet, which the visitor happens to have in his car — treated by Paulina as confirmation rather than coincidence.",
+        "Paulina's improvised tribunal, tying her accused torturer to a chair inside her own home — staging the trial the state itself never held.",
+        "Gerardo's appointment to the new truth commission, which asks him to investigate abuses of exactly the kind he cannot resolve inside his own marriage."
+      ],
+      "whatToNotice": [
+        "Notice that the audience is kept in the same position as Gerardo throughout: unable to independently confirm Paulina's identification.",
+        "Notice how the single confined setting is used to build pressure across the play, rather than through incident or event.",
+        "Notice how often the Schubert quartet is returned to as the play's closest thing to material evidence.",
+        "Notice how the play is reported to resist a clean resolution of guilt or innocence by its final scene."
+      ],
+      "discussionQuestions": [
+        "Does the play ultimately want the audience to know whether the accused is guilty, or is sustained uncertainty the point?",
+        "What does Paulina's private tribunal suggest about the limits of official truth commissions for survivors seeking individual justice?",
+        "How does the confined, real-time setting shift your sympathies among the three characters as the play goes on?",
+        "Gerardo believes in due process professionally but is placed in an impossible position personally. What does the play argue about that gap?"
+      ],
+      "furtherReading": [
+        "Ariel Dorfman, *Heading South, Looking North* (memoir) — for the experience of exile that shaped Dorfman's political writing.",
+        "The 1994 film adaptation, directed by Roman Polanski — for how the confrontation translates to a different medium.",
+        "Chile's National Commission for Truth and Reconciliation (the Rettig Report, 1991) — the real historical process the play directly responds to."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-dogfood",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    },
+    "authorGender": "man",
+    "authorRegion": "Chile"
+  },
+  {
     "id": "douglass-what-to-the-slave-is-the-fourth-of-july-1852",
     "type": "essay",
     "title": "What to the Slave Is the Fourth of July?",
@@ -930,6 +1087,161 @@
     },
     "authorGender": "man",
     "authorRegion": "US"
+  },
+  {
+    "id": "frost-after-apple-picking-1914",
+    "type": "poem",
+    "title": "After Apple-Picking",
+    "author": "Robert Frost",
+    "year": 1914,
+    "era": "early_20th_century",
+    "form": "irregular rhymed lyric, dream-monologue",
+    "themes": [
+      "work",
+      "mortality",
+      "nature",
+      "seasons"
+    ],
+    "tags": [
+      "north-of-boston",
+      "harvest",
+      "sleep-and-death"
+    ],
+    "length": {
+      "unit": "lines",
+      "value": 42
+    },
+    "difficulty": 4,
+    "source": {
+      "name": "Standard Ebooks (GitHub mirror)",
+      "url": "https://raw.githubusercontent.com/standardebooks/robert-frost_north-of-boston/master/src/epub/text/north-of-boston.xhtml",
+      "license": "public-domain",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "full",
+    "text": "My long two-pointed ladder’s sticking through a tree\nToward heaven still,\nAnd there’s a barrel that I didn’t fill\nBeside it, and there may be two or three\nApples I didn’t pick upon some bough.\nBut I am done with apple-picking now.\nEssence of winter sleep is on the night,\nThe scent of apples: I am drowsing off.\nI cannot rub the strangeness from my sight\nI got from looking through a pane of glass\nI skimmed this morning from the drinking trough\nAnd held against the world of hoary grass.\nIt melted, and I let it fall and break.\nBut I was well\nUpon my way to sleep before it fell,\nAnd I could tell\nWhat form my dreaming was about to take.\nMagnified apples appear and disappear,\nStem end and blossom end,\nAnd every fleck of russet showing clear.\nMy instep arch not only keeps the ache,\nIt keeps the pressure of a ladder-round.\nI feel the ladder sway as the boughs bend.\nAnd I keep hearing from the cellar bin\nThe rumbling sound\nOf load on load of apples coming in.\nFor I have had too much\nOf apple-picking: I am overtired\nOf the great harvest I myself desired.\nThere were ten thousand thousand fruit to touch,\nCherish in hand, lift down, and not let fall.\nFor all\nThat struck the earth,\nNo matter if not bruised or spiked with stubble,\nWent surely to the cider-apple heap\nAs of no worth.\nOne can see what will trouble\nThis sleep of mine, whatever sleep it is.\nWere he not gone,\nThe woodchuck could say whether it’s like his\nLong sleep, as I describe its coming on,\nOr just some human sleep.",
+    "ebookLinks": [
+      {
+        "provider": "standard-ebooks",
+        "format": "epub",
+        "url": "https://standardebooks.org/ebooks/robert-frost/north-of-boston/downloads/robert-frost_north-of-boston.epub"
+      }
+    ],
+    "masterNotes": {
+      "context": "Frost wrote \"After Apple-Picking\" for *North of Boston* (1914), his second book, published in London after he had moved his family to England in 1912 in search of the readership American publishers hadn't given him. Where most of the volume's poems are dramatic narratives spoken by New England farmers and neighbors to one another, this one is a private lyric monologue, spoken by someone still half-inside the labor he claims to be finished with. Apple-picking was seasonal, exhausting, repetitive work, done from ladders against trees rather than from the ground, and the poem trusts the reader to know that literal exhaustion before it starts asking what else the exhaustion might mean. It has since become one of Frost's most frequently anthologized and taught shorter poems, prized for how quietly it slides from harvest labor into something closer to a meditation on ending.",
+      "form": "The poem's lines are loosely iambic but irregular in length, and its rhymes arrive unevenly — sometimes in quick pairs, sometimes held apart for many lines — which gives the whole poem a drifting, half-asleep momentum rather than a fixed pattern. It moves without warning between plain physical description and dream-logic image, and its tenses blur: the speaker describes what he did, what he is still seeing, and what he expects to dream, often within the same few lines. The poem never states outright whether the \"sleep\" it is approaching is ordinary tiredness or something more final, and that unresolved doubling is the poem's real subject, not a puzzle to be solved by the end.",
+      "keyImages": [
+        "The ladder \"sticking through a tree / Toward heaven still\" — a literal harvest tool left pointing past the world it was used in.",
+        "The sheet of ice \"skimmed\" from the drinking trough and held up to see the \"world of hoary grass\" through it, before it melts and breaks.",
+        "\"Magnified apples appear and disappear\" behind the speaker's closed eyes — the day's labor replaying on its own, before real sleep even arrives.",
+        "The closing appeal to the woodchuck, whose \"long sleep\" the speaker can't quite claim to share or rule out."
+      ],
+      "whatToNotice": [
+        "Notice how the poem opens in the past tense, describing finished labor, then drifts into present-tense description of a half-dream state.",
+        "Notice how many times some form of the word \"sleep\" appears, and how its meaning shifts each time — physical tiredness, hibernation, and something more final all use the same word.",
+        "Notice the exaggerated count, \"ten thousand thousand fruit to touch\" — a number too large to be literal, signaling exhaustion rather than arithmetic.",
+        "Notice that the speaker claims in the first stanza to be \"done with apple-picking now,\" then spends the rest of the poem still doing it, in his mind.",
+        "Notice where the rhymes fall close together and where they're held apart across many lines — the pattern loosens exactly where the speaker's thinking does."
+      ],
+      "discussionQuestions": [
+        "Is this poem finally about the end of a season's labor, or about mortality — and what in the poem keeps both readings open at once?",
+        "Why end by handing the question of what kind of sleep this is to an animal, rather than answering it directly?",
+        "The speaker announces early on that he's finished with the harvest. What does the rest of the poem suggest about when work actually ends?",
+        "How does the poem's loose, uneven form — its irregular rhyme and blurred tense — help make its argument, rather than just decorate it?"
+      ],
+      "furtherReading": [
+        "Robert Frost, \"Mending Wall\" (same collection) — for the volume's more typical mode, a dialogue between neighbors rather than a private monologue.",
+        "Robert Frost, \"Directive\" (from *Steeple Bush*, 1947) — a later poem returning to exhaustion and near-allegorical retreat from a much older vantage point.",
+        "Randall Jarrell, \"The Other Frost\" (in *Poetry and the Age*) — an influential essay arguing for reading past Frost's folksy public reputation into darker poems like this one."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-dogfood",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    },
+    "authorGender": "man",
+    "authorRegion": "US"
+  },
+  {
+    "id": "han-kang-the-vegetarian-2007",
+    "type": "book",
+    "title": "The Vegetarian",
+    "author": "Han Kang",
+    "year": 2007,
+    "era": "contemporary",
+    "form": "novel in three linked parts, told through the perspectives of the protagonist's family",
+    "themes": [
+      "the-body",
+      "power",
+      "family",
+      "illness"
+    ],
+    "tags": [
+      "man-booker-international",
+      "translation",
+      "needs-text"
+    ],
+    "length": {
+      "unit": "words",
+      "value": 47000
+    },
+    "difficulty": 3,
+    "source": {
+      "name": "Han Kang, The Vegetarian, trans. Deborah Smith (Portobello Books / Hogarth, 2015; Korean original 2007); rights held by the author and translator",
+      "url": "https://search.worldcat.org/search?q=The+Vegetarian+Han+Kang",
+      "license": "all-rights-reserved",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "pending",
+    "externalLinks": [
+      {
+        "kind": "bookstore",
+        "url": "https://bookshop.org/search?keywords=The+Vegetarian+Han+Kang",
+        "label": "Search Bookshop.org"
+      },
+      {
+        "kind": "library",
+        "url": "https://search.worldcat.org/search?q=The+Vegetarian+Han+Kang",
+        "label": "Find a library copy on WorldCat"
+      }
+    ],
+    "masterNotes": {
+      "context": "Han Kang published *The Vegetarian* in Korean in 2007; Deborah Smith's English translation appeared in 2015 and won the Man Booker International Prize the following year, an award given jointly to author and translator, which brought Han international attention nearly a decade before she won the Nobel Prize in Literature in 2024. The novel is built from three parts, each narrated by a different person close to its protagonist, Yeong-hye — so the reader never gets direct access to her own account of the decision, beginning with a sudden refusal to eat meat, that reshapes and eventually unravels the ordinary life built around her.",
+      "form": "Each of the novel's three parts belongs to someone else's point of view — her husband, then her brother-in-law, then her sister — so Yeong-hye herself is only ever described, never self-narrating. That structural choice keeps her reasoning permanently just out of reach, and it shifts the novel's real subject from \"why does she stop eating meat\" to \"what does her refusal reveal about the people around her,\" each of whom is shown to be more preoccupied with what her transformation costs or means for them than with understanding her. Han Kang's prose is often described as spare and clinical even in the novel's most extreme scenes, letting restraint rather than explicit description carry the disturbance.",
+      "keyImages": [
+        "Yeong-hye's recurring nightmare of blood and violence, described only in fragments, which precedes and is never fully explained by her decision to stop eating meat.",
+        "Her brother-in-law's video art project involving a body painted with flowers — one of the novel's most discussed and unsettling stretches.",
+        "The hospital force-feeding scenes, which convert what began as a private, personal refusal into a matter of medical and legal control over her body.",
+        "The closing image of Yeong-hye trying to become like a tree — the novel's most direct statement of what her refusal was reaching toward all along."
+      ],
+      "whatToNotice": [
+        "Notice that no part of the novel is narrated by Yeong-hye herself — everything we learn about her reasoning comes secondhand, through people who largely fail to understand it.",
+        "Notice how each narrator's account is shaped by what Yeong-hye's transformation costs them personally, not by curiosity about her interior life.",
+        "Notice the novel's escalation, from a private dietary choice, to family conflict, to full institutional control over her body.",
+        "Notice where the prose stays flat and clinical even at the most extreme moments — restraint doing the unsettling work instead of explicit description."
+      ],
+      "discussionQuestions": [
+        "Why might Han Kang have chosen to keep Yeong-hye's own voice entirely out of a novel that is fundamentally about her body and her choices?",
+        "Is Yeong-hye's transformation best read as self-destruction, as a form of self-assertion, or does the novel deliberately refuse to resolve it into either?",
+        "How does each narrator's self-interest limit or distort what the reader is allowed to know about Yeong-hye?",
+        "What does the novel suggest about the limits of family loyalty when a loved one's choices can't be made to make sense?"
+      ],
+      "furtherReading": [
+        "Han Kang, *Human Acts* (2014) — her novel about the 1980 Gwangju massacre, for a different treatment of the body under state violence.",
+        "Han Kang's 2024 Nobel Prize in Literature citation — for how the international attention this novel first brought her culminated.",
+        "Franz Kafka, \"A Hunger Artist\" — an earlier story about a body's public refusal of food, useful as a contrast in how each writer stages the refusal."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-dogfood",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    },
+    "authorGender": "woman",
+    "authorRegion": "South Korea"
   },
   {
     "id": "hughes-harlem-1951",
@@ -2060,6 +2372,81 @@
     },
     "authorGender": "woman",
     "authorRegion": "Poland"
+  },
+  {
+    "id": "tagore-gitanjali-45-1912",
+    "type": "poem",
+    "title": "Gitanjali, Song XLV",
+    "author": "Rabindranath Tagore",
+    "year": 1912,
+    "era": "early_20th_century",
+    "form": "prose poem (devotional song), translated from Bengali by the poet himself",
+    "themes": [
+      "faith",
+      "wonder",
+      "time",
+      "desire"
+    ],
+    "tags": [
+      "gitanjali",
+      "bhakti",
+      "translation",
+      "refrain"
+    ],
+    "length": {
+      "unit": "lines",
+      "value": 6
+    },
+    "difficulty": 3,
+    "source": {
+      "name": "Standard Ebooks (GitHub mirror)",
+      "url": "https://raw.githubusercontent.com/standardebooks/rabindranath-tagore_gitanjali/master/src/epub/text/gitanjali.xhtml",
+      "license": "public-domain",
+      "retrievedDate": "2026-09-13"
+    },
+    "textPolicy": "full",
+    "text": "Have you not heard his silent steps? He comes, comes, ever comes.\n\nEvery moment and every age, every day and every night he comes, comes, ever comes.\n\nMany a song have I sung in many a mood of mind, but all their notes have always proclaimed, “He comes, comes, ever comes.”\n\nIn the fragrant days of sunny April through the forest path he comes, comes, ever comes.\n\nIn the rainy gloom of July nights on the thundering chariot of clouds he comes, comes, ever comes.\n\nIn sorrow after sorrow it is his steps that press upon my heart, and it is the golden touch of his feet that makes my joy to shine.",
+    "ebookLinks": [
+      {
+        "provider": "standard-ebooks",
+        "format": "epub",
+        "url": "https://standardebooks.org/ebooks/rabindranath-tagore/gitanjali/downloads/rabindranath-tagore_gitanjali.epub"
+      }
+    ],
+    "masterNotes": {
+      "context": "Tagore translated *Gitanjali* into English himself in 1912 during a stay in London, drawing on Bengali devotional songs he had written over the preceding years. The manuscript found early, influential admirers among London literary circles — W. B. Yeats wrote the introduction to the English edition — and the collection won Tagore the Nobel Prize in Literature the following year, in 1913, making him the first non-European laureate. Song XLV sits within the collection's devotional mode: it addresses an unnamed \"he\" whose arrival the speaker experiences as constant and ongoing rather than as a single, datable event, which is characteristic of the bhakti devotional tradition the songs draw on, where longing itself is treated as a form of worship rather than a problem to be resolved.",
+      "form": "Tagore's own English rendering abandons metrical verse for short prose paragraphs, so the poem's unity comes from a repeated refrain — a variation on \"he comes, comes, ever comes\" — rather than from rhyme or line count. The refrain's own internal repetition (the same verb three times in a row) works like a chant or a held note, insisting on a claim rather than building an argument toward it. Each paragraph relocates the refrain to a different season or moment, so the form itself performs the poem's central idea: arrival that keeps happening, in different guises, rather than arrival as a single completed event.",
+      "keyImages": [
+        "The refrain \"he comes, comes, ever comes,\" repeated with a different surrounding clause in nearly every paragraph — closer to a chant than a description.",
+        "The pairing of \"the fragrant days of sunny April\" against \"the rainy gloom of July nights\" — opposite seasons treated as equally valid sites of the same arrival.",
+        "The closing image of \"the golden touch of his feet\" turning sorrow into shine — the poem's one moment where abstract devotion becomes something felt on the body."
+      ],
+      "whatToNotice": [
+        "Notice how the refrain's surrounding clause changes each time — silent steps, every age, the forest path, a thundering chariot of clouds — while its ending never varies.",
+        "Notice that the poem opens with a question posed outward (\"Have you not heard...\") before turning entirely inward for the rest of its length.",
+        "Notice that \"he\" is never named or described physically — track what associations the poem lets you bring to that blank instead.",
+        "Notice the final sentence's turn from \"sorrow after sorrow\" to \"joy\" arriving in the same breath, without any transition between them."
+      ],
+      "discussionQuestions": [
+        "What does the poem gain by placing the same arrival inside completely different seasons and settings, rather than picking one?",
+        "Is the poem's insistence through repetition more persuasive than a single vivid image would be? Why might Tagore have chosen to repeat rather than to describe?",
+        "The poem never names who \"he\" is. Does that openness make it more devotional, more universal, or does it do something else entirely?",
+        "This is Tagore's own English rendering of his Bengali original, not a translation by someone else. Does knowing that change how you read its plain, repeated diction?"
+      ],
+      "furtherReading": [
+        "*Gitanjali*, Song I (\"Thou hast made me endless\") — the collection's opening, establishing the devotional address this poem continues.",
+        "W. B. Yeats's introduction to the 1912 English *Gitanjali* — an early, influential piece of reception from one of Tagore's first Western advocates.",
+        "Tagore's 1913 Nobel Prize in Literature citation — context for how this specific English collection was received abroad."
+      ]
+    },
+    "pipeline": {
+      "batchId": "2026-09-13-dogfood",
+      "dateAdded": "2026-09-13",
+      "curatedBy": "claude",
+      "schemaVersion": 1
+    },
+    "authorGender": "man",
+    "authorRegion": "India"
   },
   {
     "id": "toni-morrison-beloved-1987",
