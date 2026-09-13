@@ -366,8 +366,9 @@
     transition: border-color var(--duration-base) var(--ease-out-soft);
   }
 
-  input[type='email']:focus {
-    outline: none;
+  input[type='email']:focus-visible {
+    outline: 2px solid var(--accent-poem-text);
+    outline-offset: 2px;
     border-color: var(--accent-poem-text);
   }
 
@@ -512,11 +513,12 @@
   }
 
   .sources-list a {
-    color: var(--accent-poem);
-    text-decoration: none;
-  }
-
-  .sources-list a:hover {
+    /* WP-5.2 audit: --accent-poem as link text measured ~3.2:1 against
+     * paper (below the 4.5:1 AA-normal-text threshold) and, being
+     * distinguished only by colour inside a run of text, also failed
+     * axe's link-in-text-block check — the *-text variant plus a
+     * permanent underline fixes both. */
+    color: var(--accent-poem-text);
     text-decoration: underline;
   }
 
@@ -526,11 +528,7 @@
   }
 
   .settings-section a {
-    color: var(--accent-poem);
-    text-decoration: none;
-  }
-
-  .settings-section a:hover {
+    color: var(--accent-poem-text);
     text-decoration: underline;
   }
 

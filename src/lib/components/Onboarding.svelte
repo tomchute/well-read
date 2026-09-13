@@ -51,7 +51,7 @@
 <div class="onboarding">
   <header class="intro">
     <p class="eyebrow">Before you begin</p>
-    <h1>What draws you to a page?</h1>
+    <h2>What draws you to a page?</h2>
     <p class="hint">
       Pick as many as sound good, or none at all — you can always steer the feed later.
     </p>
@@ -105,7 +105,7 @@
     color: var(--text-muted);
   }
 
-  h1 {
+  h2 {
     font-size: var(--text-2xl);
     line-height: var(--leading-2xl);
   }
@@ -194,7 +194,11 @@
   }
 
   .btn-start {
-    background: var(--accent-poem);
+    /* AA-safe combination: the darkened *-text variant as a solid fill with
+     * near-white text (WP-5.2 audit — the raw --accent-poem fill against
+     * --paper-100 text measured ~3.4:1, below the 4.5:1 AA-normal-text
+     * threshold; --accent-poem-text as the fill clears 5:1+ in both themes). */
+    background: var(--accent-poem-text);
     border: 1px solid transparent;
     color: var(--paper-100);
   }
@@ -211,5 +215,19 @@
   .btn-start:focus-visible {
     outline: 2px solid var(--accent-poem-text);
     outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card,
+    .btn-skip,
+    .btn-start {
+      transition: none;
+    }
+
+    .card:active,
+    .btn-start:hover,
+    .btn-start:active {
+      transform: none;
+    }
   }
 </style>

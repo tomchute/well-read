@@ -51,24 +51,40 @@
   function handleTabChange(newTab: TabType) {
     activeTab = newTab;
     typeFilter = 'all';
-    navigate({ name: 'library' });
   }
 
   function handleRemove(workId: string) {
     saved.update((current) => current.filter((id) => id !== workId));
   }
 
+  /** Moves both the roving-tabindex selection and DOM focus to `tab`'s tab button (WAI-ARIA tabs pattern). */
+  function focusTab(tab: TabType): void {
+    handleTabChange(tab);
+    requestAnimationFrame(() => {
+      document.getElementById(`tab-${tab}`)?.focus();
+    });
+  }
+
+  // Roving tabindex + arrow-key navigation (WAI-ARIA "Tabs" pattern,
+  // WP-5.2): only the selected tab is in the Tab order (tabindex 0), every
+  // other tab is -1; arrow keys move both the selection and DOM focus.
   function handleKeyDown(e: KeyboardEvent, tab: TabType) {
     const currentIndex = TAB_ORDER.indexOf(activeTab);
 
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
       e.preventDefault();
       const nextIndex = (currentIndex + 1) % TAB_ORDER.length;
-      handleTabChange(TAB_ORDER[nextIndex]);
+      focusTab(TAB_ORDER[nextIndex]);
     } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
       e.preventDefault();
       const prevIndex = (currentIndex - 1 + TAB_ORDER.length) % TAB_ORDER.length;
-      handleTabChange(TAB_ORDER[prevIndex]);
+      focusTab(TAB_ORDER[prevIndex]);
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      focusTab(TAB_ORDER[0]);
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      focusTab(TAB_ORDER[TAB_ORDER.length - 1]);
     }
   }
 
@@ -94,16 +110,19 @@
     <p role="alert" class="error">Couldn't load the library: {errorMessage}</p>
   {:else}
     <div class="tabs-container">
-      <div class="tabs" role="tablist">
+      <div class="tabs" role="tablist" aria-label="Library sections">
         {#each TAB_ORDER as tab (tab)}
           <button
+            id="tab-{tab}"
             class="tab"
             class:active={activeTab === tab}
             role="tab"
+            type="button"
             aria-selected={activeTab === tab}
             aria-controls="tab-panel-{tab}"
-            on:click={() => handleTabChange(tab)}
-            on:keydown={(e) => handleKeyDown(e, tab)}
+            tabindex={activeTab === tab ? 0 : -1}
+            onclick={() => handleTabChange(tab)}
+            onkeydown={(e) => handleKeyDown(e, tab)}
           >
             <span class="tab-label">{tab.charAt(0).toUpperCase() + tab.slice(1)}</span>
             <span class="tab-count">{tabCounts[tab]}</span>
@@ -145,7 +164,7 @@
                   <button
                     class="remove-button"
                     aria-label="Remove {entry.title} from saved"
-                    on:click={() => handleRemove(entry.id)}
+                    onclick={() => handleRemove(entry.id)}
                     title="Remove from Saved"
                   >
                     ×
@@ -196,6 +215,7 @@
     background: transparent;
     border: none;
     border-bottom: 2px solid transparent;
+    min-height: 44px;
     padding: var(--space-3) 0;
     cursor: pointer;
     font-family: var(--font-serif);

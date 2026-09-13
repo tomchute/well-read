@@ -61,7 +61,7 @@ Verification: one Routine (or local `/curate`) run lands a validated batch on `m
 Verification: Lighthouse accessibility score recorded in the WP; Playwright smoke passes in CI.
 
 - [x] [WP-5.1](docs/work-packages/WP-5.1-pwa.md) PWA manifest + offline shell
-- [ ] [WP-5.2](docs/work-packages/WP-5.2-accessibility-pass.md) Accessibility pass
+- [x] [WP-5.2](docs/work-packages/WP-5.2-accessibility-pass.md) Accessibility pass
 - [x] [WP-5.3](docs/work-packages/WP-5.3-lazy-shards-images.md) Lazy shard + image loading
 - [x] [WP-5.4](docs/work-packages/WP-5.4-playwright-smoke.md) Playwright smoke test
 - [x] [WP-5.5](docs/work-packages/WP-5.5-empty-error-states.md) Empty and error states

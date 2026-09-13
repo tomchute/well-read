@@ -222,7 +222,9 @@
   }
 
   .link-badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     padding: var(--space-2) var(--space-3);
     background-color: var(--accent-poem-tint);
     color: var(--accent-poem-text);

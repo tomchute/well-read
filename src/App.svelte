@@ -54,6 +54,61 @@
   // a capture-phase listener on `window` always runs before any
   // bubble-phase one, regardless of which component attached first.
   let shortcutsOpen = $state(false);
+  let shortcutsCloseEl = $state<HTMLButtonElement | undefined>(undefined);
+  let shortcutsPanelEl = $state<HTMLDivElement | undefined>(undefined);
+  let mainEl = $state<HTMLElement | undefined>(undefined);
+
+  // When the onboarding quiz finishes (Skip or Start reading), its Skip/Start
+  // button is removed from the DOM as Feed takes its place — left alone, the
+  // browser drops keyboard focus to <body>, so the very next Tab press lands
+  // wherever the browser's internal focus cursor happens to sit rather than
+  // at the top of the new view (WP-5.2: predictable focus order). Moving
+  // focus onto `<main>` (already a valid focus target via the `tabindex="-1"`
+  // set below for the skip link) gives the reader a sane, predictable place
+  // to resume keyboard navigation instead.
+  function focusMainAfterOnboarding(): void {
+    mainEl?.focus();
+  }
+
+  const FOCUSABLE_SELECTOR =
+    'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+
+  // Focus trap + restore for the shortcuts overlay (WP-5.2, docs/design-system.md
+  // §7: dialogs get a focus trap and restore focus to whatever opened them).
+  // Mirrors MasterNotes.svelte's dialog handling: move focus into the panel
+  // on open, trap Tab/Shift+Tab within it, and restore the previously
+  // focused element on close.
+  $effect(() => {
+    if (!shortcutsOpen) return;
+
+    const previouslyFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const focusFrame = requestAnimationFrame(() => shortcutsCloseEl?.focus());
+
+    function handleKeydown(event: KeyboardEvent): void {
+      if (event.key !== 'Tab' || !shortcutsPanelEl) return;
+      const focusable = Array.from(
+        shortcutsPanelEl.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
+    }
+
+    window.addEventListener('keydown', handleKeydown);
+
+    return () => {
+      cancelAnimationFrame(focusFrame);
+      window.removeEventListener('keydown', handleKeydown);
+      previouslyFocused?.focus();
+    };
+  });
 
   function readStoredTheme(): Theme | null {
     try {
@@ -123,9 +178,11 @@
   }
 </script>
 
+<a class="skip-link" href="#main-content">Skip to content</a>
+
 <div class="shell">
   <header class="header">
-    <a class="app-name" href="#/">well-read</a>
+    <h1 class="app-name-heading"><a class="app-name" href="#/">well-read</a></h1>
 
     <nav class="nav" aria-label="Primary">
       <a href="#/" class:active={isActive('feed')} aria-current={isActive('feed') ? 'page' : undefined}>
@@ -152,9 +209,9 @@
     </button>
   </header>
 
-  <main class="page">
+  <main class="page" id="main-content" tabindex="-1" bind:this={mainEl}>
     {#if shouldShowOnboarding(settings.value)}
-      <Onboarding />
+      <Onboarding onDone={focusMainAfterOnboarding} />
     {:else if current.name === 'feed'}
       <Feed />
     {:else if current.name === 'work'}
@@ -179,12 +236,19 @@
       aria-hidden="true"
       onclick={() => (shortcutsOpen = false)}
     ></button>
-    <div class="shortcuts-overlay" role="dialog" aria-modal="true" aria-labelledby="shortcuts-heading">
+    <div
+      class="shortcuts-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="shortcuts-heading"
+      bind:this={shortcutsPanelEl}
+    >
       <header class="shortcuts-header">
         <h2 id="shortcuts-heading" class="shortcuts-title">Keyboard shortcuts</h2>
         <button
           type="button"
           class="shortcuts-close"
+          bind:this={shortcutsCloseEl}
           onclick={() => (shortcutsOpen = false)}
           aria-label="Close keyboard shortcuts"
         >
@@ -205,6 +269,35 @@
 </div>
 
 <style>
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: var(--space-4);
+    z-index: 100;
+    padding: var(--space-3) var(--space-4);
+    background: var(--surface-raised);
+    color: var(--text);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    text-decoration: none;
+    transition: top var(--duration-fast) var(--ease-out-soft);
+  }
+
+  .skip-link:focus-visible,
+  .skip-link:focus {
+    top: var(--space-3);
+    outline: 2px solid var(--accent-poem-text);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .skip-link {
+      transition: none;
+    }
+  }
+
   .shell {
     max-width: var(--measure);
     margin: 0 auto;
@@ -217,6 +310,11 @@
     gap: var(--space-3) var(--space-5);
     padding: var(--space-4);
     border-bottom: 1px solid var(--hairline);
+  }
+
+  .app-name-heading {
+    margin: 0;
+    line-height: 1;
   }
 
   .app-name {
@@ -237,6 +335,9 @@
   }
 
   .nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     color: var(--text-muted);
     text-decoration: none;
     padding: var(--space-1) 0;
@@ -255,6 +356,7 @@
   .theme-toggle {
     font-family: var(--font-ui);
     font-size: var(--text-sm);
+    min-height: 44px;
     padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-md);
     border: 1px solid var(--hairline);

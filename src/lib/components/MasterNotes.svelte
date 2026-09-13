@@ -52,6 +52,37 @@
     return Array.isArray(value) ? value : [];
   }
 
+  const SECTION_KEYS: SectionKey[] = SECTIONS.map((section) => section.key);
+
+  /** Moves both the roving-tabindex selection and DOM focus to `key`'s tab button (WAI-ARIA tabs pattern). */
+  function focusSection(key: SectionKey): void {
+    activeTab = key;
+    requestAnimationFrame(() => {
+      document.getElementById(`notes-tab-${key}`)?.focus();
+    });
+  }
+
+  // Roving tabindex + arrow-key navigation (WAI-ARIA "Tabs" pattern, WP-5.2):
+  // only the selected tab sits in the Tab order; Left/Right (and Home/End)
+  // move both the selection and DOM focus among the section tabs.
+  // biome-ignore lint/correctness/noUnusedVariables: used in template
+  function handleTabKeydown(event: KeyboardEvent, key: SectionKey): void {
+    const currentIndex = SECTION_KEYS.indexOf(key);
+    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+      event.preventDefault();
+      focusSection(SECTION_KEYS[(currentIndex + 1) % SECTION_KEYS.length]);
+    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      focusSection(SECTION_KEYS[(currentIndex - 1 + SECTION_KEYS.length) % SECTION_KEYS.length]);
+    } else if (event.key === 'Home') {
+      event.preventDefault();
+      focusSection(SECTION_KEYS[0]);
+    } else if (event.key === 'End') {
+      event.preventDefault();
+      focusSection(SECTION_KEYS[SECTION_KEYS.length - 1]);
+    }
+  }
+
   // biome-ignore lint/correctness/noUnusedVariables: used in template
   let activeTab = $state<SectionKey>('context');
   let panelEl = $state<HTMLElement | undefined>(undefined);
@@ -162,9 +193,11 @@
           id={`notes-tab-${section.key}`}
           aria-selected={activeTab === section.key}
           aria-controls={`notes-panel-${section.key}`}
+          tabindex={activeTab === section.key ? 0 : -1}
           class="tab"
           class:active={activeTab === section.key}
           onclick={() => (activeTab = section.key)}
+          onkeydown={(event) => handleTabKeydown(event, section.key)}
         >
           {section.label}
         </button>
